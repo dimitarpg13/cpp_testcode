@@ -1,0 +1,15 @@
+13:45:31 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+
+13:45:32 Build Finished (took 617ms)
+

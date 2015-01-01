@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cHelpSettings>
+<project name="algorithms01">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="glibc library"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCHelpProvider">
+<book enabled="true" title="MPI C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCPPHelpProvider">
+<book enabled="true" title="MPI C++ Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openacc.editorHelp.OpenACCCHelpInfoProvider">
+<book enabled="true" title="OpenACC C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openmp.core.editorHelp.OpenMPCHelpProvider">
+<book enabled="true" title="OpenMP C and Fortran Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openshmem.editorHelp.OpenshmemCHelpInfoProvider">
+<book enabled="true" title="OPEN SHMEM C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.upc.editorHelp.UPCCHelpInfoProvider">
+<book enabled="true" title="UPC C Help Book"/>
+</provider>
+</project>
+<project name="coding">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="devhelp"/>
+<book enabled="true" title="glibc library"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCHelpProvider">
+<book enabled="true" title="MPI C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCPPHelpProvider">
+<book enabled="true" title="MPI C++ Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openacc.editorHelp.OpenACCCHelpInfoProvider">
+<book enabled="true" title="OpenACC C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openmp.core.editorHelp.OpenMPCHelpProvider">
+<book enabled="true" title="OpenMP C and Fortran Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openshmem.editorHelp.OpenshmemCHelpInfoProvider">
+<book enabled="true" title="OPEN SHMEM C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.upc.editorHelp.UPCCHelpInfoProvider">
+<book enabled="true" title="UPC C Help Book"/>
+</provider>
+</project>
+<project name="Test5">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="devhelp"/>
+<book enabled="true" title="glibc library"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCHelpProvider">
+<book enabled="true" title="MPI C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCPPHelpProvider">
+<book enabled="true" title="MPI C++ Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openacc.editorHelp.OpenACCCHelpInfoProvider">
+<book enabled="true" title="OpenACC C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openmp.core.editorHelp.OpenMPCHelpProvider">
+<book enabled="true" title="OpenMP C and Fortran Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openshmem.editorHelp.OpenshmemCHelpInfoProvider">
+<book enabled="true" title="OPEN SHMEM C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.upc.editorHelp.UPCCHelpInfoProvider">
+<book enabled="true" title="UPC C Help Book"/>
+</provider>
+</project>
+<project name="BoostTest">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="devhelp"/>
+<book enabled="true" title="glibc library"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCHelpProvider">
+<book enabled="true" title="MPI C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.mpi.core.editorHelp.MpiCPPHelpProvider">
+<book enabled="true" title="MPI C++ Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openacc.editorHelp.OpenACCCHelpInfoProvider">
+<book enabled="true" title="OpenACC C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openmp.core.editorHelp.OpenMPCHelpProvider">
+<book enabled="true" title="OpenMP C and Fortran Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.openshmem.editorHelp.OpenshmemCHelpInfoProvider">
+<book enabled="true" title="OPEN SHMEM C Help Book"/>
+</provider>
+<provider id="org.eclipse.ptp.pldt.upc.editorHelp.UPCCHelpInfoProvider">
+<book enabled="true" title="UPC C Help Book"/>
+</provider>
+</project>
+</cHelpSettings>

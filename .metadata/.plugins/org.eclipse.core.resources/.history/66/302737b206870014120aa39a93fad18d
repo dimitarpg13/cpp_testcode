@@ -1,0 +1,25 @@
+//============================================================================
+// Name        : moveCtorExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+struct A
+{
+	std::string s;
+	A() : s("test") {}
+	A(const A& o) : s(o.s) { std::cout << "move failed!\n"; }
+
+};
+
+int main() {
+	cout << "move constructor example" << endl; // prints move constructor example
+	return 0;
+}

@@ -1,0 +1,19 @@
+16:48:31 **** Incremental Build of configuration Debug for project cormen ****
+make all 
+Building file: ../src/RBT.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RBT.d" -MT"src/RBT.d" -o "src/RBT.o" "../src/RBT.cpp"
+../src/RBT.cpp: In member function ‘Algorithms::RBTNode* Algorithms::RBT::find_inf(Algorithms::RBTNode*)’:
+../src/RBT.cpp:44:19: warning: variable ‘parent’ set but not used [-Wunused-but-set-variable]
+         RBTNode * parent = nullptr;
+                   ^
+Finished building: ../src/RBT.cpp
+ 
+Building target: cormen
+Invoking: GCC C++ Linker
+g++ -pthread  -o "cormen"  ./src/RBT.o ./src/RBT_test.o ./src/cormen.o   -lboost_system -lboost_thread
+Finished building target: cormen
+ 
+
+16:48:31 Build Finished (took 164ms)
+

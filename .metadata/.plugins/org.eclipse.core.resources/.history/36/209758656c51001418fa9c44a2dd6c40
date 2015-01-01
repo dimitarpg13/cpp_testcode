@@ -1,0 +1,32 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo(string name)  {
+   m_sName = name;
+
+}
+
+IndustryInfo::~IndustryInfo() {
+	set<IndustryInfo*,Comparer>::iterator it;
+	for (it = m_setChildren.begin(); it != m_setChildren.end(); ++it )
+		delete *it;
+
+}
+
+IndustryInfo* IndustryInfo::makeTree(string line)
+{
+	return nullptr;
+}
+
+
+
+} /* namespace Algorithms */
+

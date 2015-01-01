@@ -1,0 +1,42 @@
+//============================================================================
+// Name        : BoostBellmanFord.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <iomanip>
+#include <boost/config.hpp>
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/bellman_ford_shortest_paths.hpp>
+
+using namespace std;
+using namespace boost;
+
+template < typename Graph, typename ParentMap >
+struct edge_writer
+{
+	const Graph & m_g;
+	ParentMap m_parent;
+
+	edge_writer(const Graph & g, const ParentMap & p) : m_g(g), m_parent(p)
+	{
+	}
+
+	template < typename Edge >
+	void operator() ( ostream & out, const Edge & e ) const
+	{
+		out << "[label=\"" << get(edge_weight, m_g, e) << "\"";
+	}
+
+
+};
+
+int main() {
+	cout << "Bellman Ford algorithm example" << endl; // prints Bellman Ford algorithm example
+	return 0;
+}

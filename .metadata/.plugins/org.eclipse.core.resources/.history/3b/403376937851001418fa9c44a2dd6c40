@@ -1,0 +1,38 @@
+/*
+ * CompanyInfo.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef COMPANYINFO_H_
+#define COMPANYINFO_H_
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+namespace Algorithms {
+
+class CompanyInfo {
+public:
+	CompanyInfo(string name, string industry, float marketCap, float revenue);
+	virtual ~CompanyInfo();
+    string getName() { return m_sName; };
+    string getIndustry() { return m_sIndustry; };
+    float getMarketCap() { return m_fMarketCap; };
+    float getRevenue() { return m_fRevenue; };
+
+
+private:
+	string m_sName;
+	string m_sIndustry;
+	float m_fMarketCap;
+	float m_fRevenue;
+    vector<IndustryInfo*> m_vIndustries;
+};
+
+} /* namespace Algorithms */
+
+#endif /* COMPANYINFO_H_ */

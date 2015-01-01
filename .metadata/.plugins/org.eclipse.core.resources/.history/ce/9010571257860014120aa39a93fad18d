@@ -1,0 +1,33 @@
+//============================================================================
+// Name        : reverseExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <iterator>
+#include <vector>
+#include <list>
+
+using namespace std;
+
+template< class BidirIt >
+void my_reverse(BidirIt first, BidirIt last)
+{
+	typename std::iterator_traits<BidirIt>::difference_type n = std::distance(first, last);
+	--n;
+	while (n > 0)
+	{
+		typename std::iterator_traits<BidirIt>::value_type tmp = *first;
+		*first++ = *--last;
+
+	}
+
+}
+
+int main() {
+	cout << "reverse example" << endl; // prints reverse example
+	return 0;
+}

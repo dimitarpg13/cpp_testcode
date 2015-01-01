@@ -1,0 +1,26 @@
+//============================================================================
+// Name        : isMemberPtrExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <type_traits>
+
+struct A { int x; };
+
+using namespace std;
+
+int main() {
+	cout << "is_member_pointer and is_member_function_pointer example" << endl; // prints is_member_pointer and is_member_function_pointer example
+
+	int A::* pt = &A::x;
+	cout << boolalpha;
+	cout << "is_member_pointer: " << endl;
+    cout << "A*: " << is_member_pointer<A*>::value << endl;
+    cout << "int A::*: " << is_member_pointer<int A::*>::value << endl;
+
+	return 0;
+}

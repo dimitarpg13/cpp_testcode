@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.systemtap.ui.ide.SystemTapLaunchConfigurationType">
+<stringAttribute key="MiscComandLineOptions" value=""/>
+<stringAttribute key="RStapPreference" value=""/>
+<stringAttribute key="ScriptPath" value=""/>
+<booleanAttribute key="bStapPreference" value="false"/>
+<stringAttribute key="cStapPreference" value=""/>
+<booleanAttribute key="dyninstStapPreference" value="false"/>
+<booleanAttribute key="executeAsCurrentUser" value="true"/>
+<booleanAttribute key="executeOnLocalHost" value="true"/>
+<stringAttribute key="hostName" value=""/>
+<booleanAttribute key="kStapPreference" value="false"/>
+<intAttribute key="numberOfColumns_0" value="0"/>
+<intAttribute key="numberOfExtras_0" value="0"/>
+<intAttribute key="numberOfGraphs0" value="0"/>
+<intAttribute key="numberOfRegexs" value="1"/>
+<stringAttribute key="oStapPreference" value=""/>
+<stringAttribute key="pStapPreference" value=""/>
+<stringAttribute key="rStapPreference" value=""/>
+<stringAttribute key="regularExpression_0" value=""/>
+<booleanAttribute key="runWithChart" value="false"/>
+<stringAttribute key="sStapPreference" value=""/>
+<stringAttribute key="sampleOutput_0" value=""/>
+<booleanAttribute key="tStapPreference" value="false"/>
+<booleanAttribute key="uStapPreference" value="false"/>
+<stringAttribute key="userName" value=""/>
+<stringAttribute key="userPassword" value=""/>
+<booleanAttribute key="vStapPreference" value="false"/>
+<stringAttribute key="xStapPreference" value=""/>
+</launchConfiguration>

@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : parameterPackExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+template<typename...> struct Tuple {};
+template<typename T1, typename T2> struct Pair {};
+
+template<class ...Args1> struct zip {
+	template<class ...Args2> struct with {
+		typedef Tuple<Pair<Args1,Args2>...> type;
+	};
+};
+
+int main() {
+	cout << "parameter pack example" << endl; // prints parameter pack example
+	return 0;
+}

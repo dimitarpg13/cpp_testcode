@@ -1,0 +1,68 @@
+//============================================================================
+// Name        : BoostBellmanFord.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <iomanip>
+#include <boost/config.hpp>
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/bellman_ford_shortest_paths.hpp>
+
+using namespace std;
+using namespace boost;
+
+template < typename Graph, typename ParentMap >
+struct edge_writer
+{
+	const Graph & m_g;
+	ParentMap m_parent;
+
+	edge_writer(const Graph & g, const ParentMap & p) : m_g(g), m_parent(p)
+	{
+	}
+
+	template < typename Edge >
+	void operator() ( ostream & out, const Edge & e ) const
+	{
+		out << "[label=\"" << get(edge_weight, m_g, e) << "\"";
+		typename graph_traits < Graph >::vertex_descriptor u = source(e, m_g), v = target(e, m_g);
+		if (m_parent[v] == u)
+			out << ", color=\"black\"";
+		else
+			out << ", color=\"grey\"";
+		out << "]";
+	}
+
+};
+
+template < typename Graph, typename Parent >
+edge_writer < Graph, Parent >
+make_edge_writer(const Graph & g, const Parent & p)
+{
+	return edge_writer < Graph, Parent > (g, p);
+}
+
+struct EdgeProperties
+{
+	int weight;
+};
+
+int main() {
+	enum { u, v, x, y, z, N };
+	char name[] = { 'u', 'v', 'x', 'y', 'z' };
+	typedef pair< int, int > E;
+	const int n_edges = 10;
+	E edge_array[] = { E(u, y), E(u, x), E(u, v), E(v, u), E(x, y), E(x, v), E(y, v), E(y, z), E(z, u), E(z, x)  };
+	int weight[n_edges] = { -4, 8, 5, -2, 9, -3, 7, 2, 6, 7 };
+	typedef adjacency_list < vecS, vecS, directedS, no_property, EdgeProperties > Graph;
+    Graph g(edge_array, edge_array + n_edges, N);
+    graph_traits <Graph >::edge_iterator ei, ei_end;
+
+	return 0;
+}

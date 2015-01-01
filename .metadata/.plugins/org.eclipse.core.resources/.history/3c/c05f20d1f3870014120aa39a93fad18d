@@ -1,0 +1,15 @@
+//============================================================================
+// Name        : isTriviallyDestructibleExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "is_trivially_destructible example" << endl; // prints is_trivially_destructible example
+	return 0;
+}

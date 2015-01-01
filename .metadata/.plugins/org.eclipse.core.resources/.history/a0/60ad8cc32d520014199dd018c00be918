@@ -1,0 +1,28 @@
+/*
+ * MemsetTest.h
+ *
+ *  Created on: Oct 12, 2014
+ *      Author: root
+ */
+
+#ifndef MEMSETTEST_H_
+#define MEMSETTEST_H_
+
+#include <stdio.h>
+
+namespace Algorithms {
+
+class MemsetTest {
+public:
+	   MemsetTest();
+private:
+	   int a;
+	   float f;
+	   char str[35];
+	   long *lp;
+
+};
+
+} /* namespace Algorithms */
+
+#endif /* MEMSETTEST_H_ */

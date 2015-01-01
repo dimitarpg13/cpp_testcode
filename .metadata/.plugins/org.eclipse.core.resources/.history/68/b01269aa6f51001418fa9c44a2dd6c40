@@ -1,0 +1,53 @@
+/*
+ * IndustryInfo.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYINFO_H_
+#define INDUSTRYINFO_H_
+
+#include <string>
+#include <set>
+//#include "IndustryComp.h"
+
+
+using namespace std;
+
+namespace Algorithms {
+
+
+
+
+
+class IndustryInfo {
+public:
+	IndustryInfo(string name);
+	virtual ~IndustryInfo();
+
+	string getName() { return m_sName; }
+    IndustryInfo* getParent() { return m_pParent; }
+
+
+    struct IndustryComparer {
+        bool operator() (const IndustryInfo  * lhs, const IndustryInfo * rhs) const {
+        	 if (lhs->getName().compare(rhs->getName()) < 0)
+        		   return true;
+        	   else
+        		   return false;
+        }
+    };
+
+private:
+	string m_sName;
+	IndustryInfo* m_pParent;
+	set<IndustryInfo*,IndustryComparer> m_setChildren;
+	//set
+};
+
+
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYINFO_H_ */

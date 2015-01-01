@@ -1,0 +1,28 @@
+/*
+ * IndustryComp.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYCOMP_H_
+#define INDUSTRYCOMP_H_
+
+#include <string>
+
+using namespace std;
+
+namespace Algorithms {
+
+struct IndustryComp {
+    bool operator() (IndustryComp * lhs, IndustryComp * rhs) const{
+    	 if (lhs->getName().compare(rhs->getName()) < 0)
+    		   return true;
+    	   else
+    		   return false;
+    }
+};
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYCOMP_H_ */

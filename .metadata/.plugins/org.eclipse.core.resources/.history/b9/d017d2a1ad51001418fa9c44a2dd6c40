@@ -1,0 +1,73 @@
+/*
+ * IndustryTree.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYTREE_H_
+#define INDUSTRYTREE_H_
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+#include <exception>
+#include <stdexcept>
+#include <map>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
+#include "IndustryInfo.h"
+
+using namespace std;
+
+namespace Algorithms {
+
+class IndustryTree {
+public:
+
+	IndustryTree(string fileName);
+	virtual ~IndustryTree();
+	bool addCompanies(string fileName);
+	bool addIndustries(string fileName);
+
+
+    void printIndustries();
+    void findCompanies(string industry, string property);
+    void findIndustries(string company);
+
+
+private:
+	IndustryInfo* m_pRoot;
+	bool parseIndustries (string fileName);
+    string getCompanyKey(string name, float marketCap, float revenue);
+    // the industry key is the industry name. The assumption is that the industry names
+    // are unique
+    map<string, IndustryInfo*> m_mapIndustries;
+    // the company key is the pair "[company name]:[market cap %.2f]:[revenue %.3f]"
+    map<string, CompanyInfo*> m_mapCompanies;
+
+    struct IndustryComparer {
+           bool operator() (const IndustryInfo  * lhs, const IndustryInfo * rhs) const {
+           	 if (lhs->getName().compare(rhs->getName()) < 0)
+           		   return true;
+           	   else
+           		   return false;
+           };
+    };
+
+    struct CompanyComparer {
+               bool operator() (const CompanyInfo  * lhs, const CompanyInfo * rhs) const {
+               	 if (lhs->getName().compare(rhs->getName()) < 0)
+               		   return true;
+               	   else
+               		   return false;
+               };
+    };
+};
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYTREE_H_ */

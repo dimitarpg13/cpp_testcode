@@ -1,0 +1,15 @@
+21:00:24 **** Incremental Build of configuration Debug for project reverseExample ****
+make all 
+Building file: ../src/reverseExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/reverseExample.d" -MT"src/reverseExample.d" -o "src/reverseExample.o" "../src/reverseExample.cpp"
+Finished building: ../src/reverseExample.cpp
+ 
+Building target: reverseExample
+Invoking: GCC C++ Linker
+g++  -o "reverseExample"  ./src/reverseExample.o   
+Finished building target: reverseExample
+ 
+
+21:00:24 Build Finished (took 721ms)
+

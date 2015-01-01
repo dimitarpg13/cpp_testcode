@@ -1,0 +1,15 @@
+//============================================================================
+// Name        : zipFuncTemplExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "Python zip function  example implemented with templates" << endl; // prints Python zip function  example implemented with templates
+	return 0;
+}

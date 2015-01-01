@@ -1,0 +1,10 @@
+13:05:00 **** Build of configuration Debug for project BoostTest02 ****
+make all 
+Building file: ../src/BoostTest02.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostTest02.d" -MT"src/BoostTest02.d" -o "src/BoostTest02.o" "../src/BoostTest02.cpp"
+make: *** [src/BoostTest02.o] Terminated
+Command canceled
+
+13:05:02 Build Cancelled (took 2s.541ms)
+

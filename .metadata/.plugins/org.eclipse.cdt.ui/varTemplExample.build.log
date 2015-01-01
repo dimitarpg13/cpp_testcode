@@ -1,0 +1,15 @@
+16:32:55 **** Incremental Build of configuration Debug for project varTemplExample ****
+make all 
+Building file: ../src/varTemplExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/varTemplExample.d" -MT"src/varTemplExample.d" -o "src/varTemplExample.o" "../src/varTemplExample.cpp"
+Finished building: ../src/varTemplExample.cpp
+ 
+Building target: varTemplExample
+Invoking: GCC C++ Linker
+g++  -o "varTemplExample"  ./src/varTemplExample.o   
+Finished building target: varTemplExample
+ 
+
+16:32:56 Build Finished (took 615ms)
+

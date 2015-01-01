@@ -1,0 +1,21 @@
+/*
+ * RBT.h
+ *
+ *  Created on: Dec 1, 2014
+ *      Author: root
+ */
+
+#ifndef RBT_H_
+#define RBT_H_
+
+namespace Algorithms {
+
+class RBT {
+public:
+	RBT();
+	virtual ~RBT();
+};
+
+} /* namespace Algorithms */
+
+#endif /* RBT_H_ */

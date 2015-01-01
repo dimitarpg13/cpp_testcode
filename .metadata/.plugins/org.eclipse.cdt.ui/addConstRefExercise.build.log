@@ -1,0 +1,15 @@
+12:23:55 **** Incremental Build of configuration Debug for project addConstRefExercise ****
+make all 
+Building file: ../src/addConstRefExercise.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/addConstRefExercise.d" -MT"src/addConstRefExercise.d" -o "src/addConstRefExercise.o" "../src/addConstRefExercise.cpp"
+Finished building: ../src/addConstRefExercise.cpp
+ 
+Building target: addConstRefExercise
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "addConstRefExercise"  ./src/addConstRefExercise.o   -lboost_system -lboost_thread
+Finished building target: addConstRefExercise
+ 
+
+12:23:55 Build Finished (took 570ms)
+

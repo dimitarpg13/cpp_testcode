@@ -1,0 +1,18 @@
+/*
+ * LCS.h
+ *
+ *  Created on: Oct 12, 2014
+ *      Author: root
+ */
+
+#ifndef LCS_H_
+#define LCS_H_
+
+namespace Algorithms {
+
+class LCS {
+};
+
+} /* namespace Algorithms */
+
+#endif /* LCS_H_ */

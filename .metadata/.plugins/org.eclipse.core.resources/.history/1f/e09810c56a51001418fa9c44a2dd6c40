@@ -1,0 +1,25 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo(string name)  {
+   this->m_sName = name;
+
+}
+
+IndustryInfo::~IndustryInfo() {
+
+
+}
+
+
+
+} /* namespace Algorithms */
+

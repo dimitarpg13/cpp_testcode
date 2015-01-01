@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ptp.launch.parallelLaunch">
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<booleanAttribute key="org.eclipse.ptp.launch.ATTR_LOCAL_EXECUTABLE_PATH" value="false"/>
+<booleanAttribute key="org.eclipse.ptp.launch.ATTR_SYNC_AFTER" value="false"/>
+<booleanAttribute key="org.eclipse.ptp.launch.ATTR_SYNC_BEFORE" value="false"/>
+<listAttribute key="org.eclipse.ptp.launch.ATTR_SYNC_RULES"/>
+<stringAttribute key="org.eclipse.ptp.launch.PROJECT_ATTR" value="TestMPI01"/>
+</launchConfiguration>

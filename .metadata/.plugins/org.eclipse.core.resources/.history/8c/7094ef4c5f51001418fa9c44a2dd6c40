@@ -1,0 +1,21 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo() {
+	// TODO Auto-generated constructor stub
+
+}
+
+IndustryInfo::~IndustryInfo() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace Algorithms */

@@ -1,0 +1,12 @@
+//Type|CompanyName|Industry|MarketCap|IndustryRevenue|
+Company|Pfizer|Large Pharmaceuticals|200|51|
+Company|Merck|Large Pharmaceuticals|170|44|
+Company|Mylan|Generic Pharmaceuticals|18|6|
+Company|Boeing|Commercial Aircraft|94|86|
+Company|Lockheed Martin|Defense Primes|52|45|
+Company|Amgen|Mature Biotechnology|84|18|
+Company|Cubist|Commercial Growth Biotech|5|1|
+Company|CSL Ltd|Biotech|33|5|
+Company|Gemvax & Kael|Air Purification|31|20|
+Company|Gemvax & Kael|Chemicals & Allied|31|10|
+

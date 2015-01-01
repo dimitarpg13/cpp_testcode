@@ -1,0 +1,117 @@
+//============================================================================
+// Name        : Test5.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <map>
+//#include <complex>
+
+using namespace std;
+
+int j = 110;
+
+void afunc(const int * iptr)
+{
+	iptr = &j;
+	//*iptr=111;
+}
+
+
+
+void bfunc(int * const iptr)
+{
+   //iptr
+}
+
+void f(string& s, int n, char ch)
+{
+	//s.move(string({n,ch}));
+}
+
+struct Point {
+	int x, y, z;
+	constexpr Point up(int d) { return {x,y,z+d}; }
+	constexpr Point move(int dx, int dy) { return {x+dx,y+dy}; }
+};
+
+/*template<> class complex<double> {
+public:
+	constexpr complex (double re = 0.0, double im = 0.0);
+	constexpr complex (const complex<float>& );
+	explicit constexpr complex(const complex<long double>&);
+	constexpr double real();
+	void real(double);
+	constexpr double imag();
+	void imag(double);
+	complex<double>& operator= (double);
+	complex<double>& operator+=(double);
+
+};*/
+
+void print_modulo(const vector<int>& v, ostream& os, int m)
+// output v[i] to os if v[i]%m == 0
+{
+	for_each(v.begin(), v.end(),
+			[&os,m](int x) { /*if (x%m == 0)*/ os << x << '\n'; });
+}
+
+/*int n = 0;
+struct C {
+  explicit C(int) {}
+  C(const C&) { ++n; } // the copy constructor has a visible side effect
+};                     // it modifies an object with static storage duration
+*/
+
+void f(vector<int>& v)
+{
+	bool sensitive = true;
+	sort(v.begin(),v.end(),
+			[sensitive](int x, int y) { return sensitive ? x<y : abs(x) < abs(y); } );
+};
+
+template<typename... Values> class mytuple;
+mytuple<int, vector<int>, map<string, vector<int> > > some_instance_name;
+
+int main() {
+
+	//int i = 101;
+	//afunc(&i);
+	//cout << "j=" << j << endl;
+    //int* ii  = (int*) ((int[]){ 1, 2, 3 });
+    //ii[0] = 3;
+    //cout << ii[0];
+
+//	constexpr Point origo {0,0};
+//	constexpr int z = origo.x;
+//
+//	constexpr Point a[] = {
+//			origo, Point{1,1}, Point{2,2}, origo.move(3,3)
+//	};
+//
+//	constexpr int x = a[1].x;
+//
+//	constexpr Point xy{0,sqrt(9)};
+//
+//	cout << "xy.x="  << xy.x << ", xy.y=" << xy.y << endl;
+
+//	 C c1(42); // direct-initialization, calls C::C(42)
+//	  C c2 = C(42); // copy-initialization, calls C::C( C(42) )
+//
+//	  std::cout << n << std::endl; // prints 0 if the copy was elided, 1 otherwise
+
+    vector<int> v { 1, 4, 7, 11, 3 };
+    //cout << v.size();
+    //print_modulo(v, cout, 6);
+    f(v);
+    print_modulo(v, cout, 6);
+
+	return 0;
+}

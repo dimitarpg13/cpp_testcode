@@ -1,0 +1,21 @@
+/*
+ * ContainerT.cpp
+ *
+ *  Created on: Oct 8, 2014
+ *      Author: root
+ */
+
+#include "ContainerT.h"
+
+namespace Algorithms {
+
+ContainerT::ContainerT() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ContainerT::~ContainerT() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace Algorithms */

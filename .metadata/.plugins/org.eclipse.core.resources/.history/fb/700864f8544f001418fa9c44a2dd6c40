@@ -1,0 +1,21 @@
+/*
+ * ContainerT.h
+ *
+ *  Created on: Oct 8, 2014
+ *      Author: root
+ */
+
+#ifndef CONTAINERT_H_
+#define CONTAINERT_H_
+
+namespace Algorithms {
+
+class ContainerT {
+public:
+	ContainerT();
+	virtual ~ContainerT();
+};
+
+} /* namespace Algorithms */
+
+#endif /* CONTAINERT_H_ */

@@ -1,0 +1,119 @@
+//============================================================================
+// Name        : Test3.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+template<typename Iter, typename Val>
+Val accumulate2(Iter first, Iter last, Val s)
+{
+	while (first != last)
+	{
+		s = s + *first;
+		++first;
+	}
+
+	return s;
+}
+
+struct Entry
+{
+   string name;
+   int number;
+
+};
+
+ostream& operator<<(ostream& os, const Entry& e)
+{
+	return os << "{\"" << e.name << "\", " << e.number << "}";
+}
+
+istream& operator>>(istream& is, Entry& e)
+{
+	char c, c2;
+	if (is>>c && c=='{' && is>>c2 && c2=='"')
+	{
+       string name ;
+       while (is.get(c) && c!='"')
+    	   name += c;
+
+       if (is>>c && c==',')
+       {
+    	   int number = 0;
+    	   if (is>>number>>c && c=='}')
+    	   {
+    		   e = {name,number};
+    		   return is;
+    	   }
+       }
+	}
+
+	is.setstate(ios_base::failbit);
+	return is;
+}
+
+template<typename C, typename V>
+vector<typename C::iterator> find_all(C& c, V v)
+{
+	vector<typename C::iterator> res;
+	for (auto p = c.begin(); p!=c.end(); ++p)
+	{
+		if (*p == v)
+			res.push_back(p);
+	}
+
+	return res;
+
+}
+
+template<typename T>
+using Iterator = typename T::iterator; // T's iterator
+template<typename C, typename V>
+vector<Iterator<C>> find_all2(C& c, V v)
+{
+	vector<Iterator<C>> res;
+	for (auto p = c.begin(); p!=c.end(); ++p)
+	{
+		if (*p == v)
+			res.push_back(p);
+	}
+
+	return res;
+}
+
+void test ()
+{
+   string m {"Mary had a little lamb"};
+   cout << "This is what I read: " << endl;
+   for (auto p : find_all(m, 'a'))
+   {
+	   cout << *p;
+   }
+}
+
+
+int main() {
+//	double ad[] = {1.1,2.2,3.3,4.4};
+//
+//
+//	double s1 = accumulate2(ad,ad+4,0.0);
+//	cout << "The result from accumulate over double is " << s1 << endl;
+//	int s2 = accumulate2(ad,ad+4,0);
+//	cout << "The result from accumulate over int is " << s2 << endl;
+//
+//	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	for (Entry ee; cin>>ee;)
+	{
+		cout << ee << '\n';
+	}
+	return 0;
+}

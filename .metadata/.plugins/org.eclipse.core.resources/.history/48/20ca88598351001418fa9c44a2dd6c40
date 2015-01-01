@@ -1,0 +1,69 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo(string name)  {
+   m_sName = name;
+
+}
+
+IndustryInfo::~IndustryInfo() {
+
+	for (vector<IndustryInfo*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); ++it )
+		delete *it;
+
+}
+
+string IndustryInfo::getName()
+{
+	return m_sName;
+}
+
+IndustryInfo* IndustryInfo::getParent()
+{
+	return m_pParent;
+}
+
+CompanyInfo::CompanyInfo(string name, string industry, float marketCap, float revenue)
+{
+    m_sName = name;
+	m_sIndustry = industry;
+	m_fMarketCap = marketCap;
+	m_fRevenue = revenue;
+}
+
+CompanyInfo::~CompanyInfo()
+{
+	// TODO Auto-generated destructor stub
+}
+
+string CompanyInfo::getName()
+{
+	return m_sName;
+};
+
+string CompanyInfo::getIndustry()
+{
+	return m_sIndustry;
+};
+
+float CompanyInfo::getMarketCap()
+{
+	return m_fMarketCap;
+};
+
+float CompanyInfo::getRevenue()
+{
+	return m_fRevenue;
+};
+
+
+} /* namespace Algorithms */
+

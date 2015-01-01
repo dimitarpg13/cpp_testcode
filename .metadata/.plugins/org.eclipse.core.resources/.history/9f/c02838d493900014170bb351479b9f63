@@ -1,0 +1,25 @@
+//============================================================================
+// Name        : typeDescriptorExcercise.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+#include <typeinfo>
+
+using namespace std;
+
+template<typename type>
+struct type_descriptor
+{
+    string operator() () { return string("test"); }
+};
+
+int main() {
+	cout << "type descriptor exercise 2.3" << endl; // prints type descriptor exericise 2.3
+	cout << type_descriptor<int>() << endl;
+	return 0;
+}

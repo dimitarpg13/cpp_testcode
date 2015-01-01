@@ -1,0 +1,38 @@
+//============================================================================
+// Name        : polymorphicDowncastExcercise.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+//#include <boost/polymorphic_cast.hpp>
+
+using namespace std;
+
+struct A { virtual ~A() {}; virtual string name() { return string("A"); }; };
+struct B : A { string name() { return string("B"); }; };
+
+int main() {
+	cout << "polymorphic downcast example" << endl; // prints polymorphic downcast example
+
+//	A * inst = new B();
+//
+//
+//	B * b = boost::polymorphic_downcast<B*>(inst);
+//	A * a = new A();
+//    cout << b->name() << endl;
+//    cout << a->name() << endl;
+
+    B x;
+    B & y = x;
+    A & z = x;
+
+    B & t = static_cast<B&> (z);
+
+    cout << t.name() << endl;
+
+	return 0;
+}

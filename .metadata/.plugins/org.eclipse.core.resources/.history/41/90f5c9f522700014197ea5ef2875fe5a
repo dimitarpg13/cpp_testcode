@@ -1,0 +1,64 @@
+//============================================================================
+// Name        : BoostTest02.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/depth_first_search.hpp>
+#include <boost/range/irange.hpp>
+#include <boost/pending/indirect_cmp.hpp>
+
+#include <iostream>
+
+using namespace boost;
+
+using namespace std;
+
+template <typename TimeMap> class dfs_time_visitor : public default_dfs_visitor {
+	typedef typename property_traits <TimeMap>::value_type T;
+public:
+	dfs_time_visitor(TimeMap dmap, TimeMap fmap, T & t) : m_dtimemap(dmap), m_ftimemap(fmap), m_time(t)
+    {
+
+    }
+
+	template < typename Vertex, typename Graph >
+	void discover_vertex(Vertex u, const Graph& g) const
+	{
+		put(m_dtimemap, u, m_time++);
+	}
+
+	template< typename Vertex, typename Graph >
+	void finish_vertex(Vertex u, const Graph & g) const
+	{
+		put(m_ftimemap, u, m_time++);
+	}
+
+	TimeMap m_dtimemap;
+	TimeMap m_ftimemap;
+	T & m_time;
+
+
+};
+
+
+int main() {
+
+	// select the graph type we wish to use
+	typedef adjacency_list < vecS, vecS, directedS > graph_t;
+	typedef graph_traits < graph_t >::vertices_size_type size_type;
+	// set up the vertex names
+	enum
+	{
+		u, v, w, x, y, z, N
+	};
+	char name[] = { 'u', 'v', 'w', 'x', 'y', 'z', 'N' };
+	// Specify the edges in the graph
+	typedef pair<int,int> E;
+	E edge_array[] = { E(u, v), E(u, x), E(x, v), E(y, x), E(v, y), E(w, y), E(w, z), E(z, z) };
+
+	return 0;
+}

@@ -1,0 +1,37 @@
+/*
+ * RBT.h
+ *
+ *  Created on: Dec 1, 2014
+ *      Author: root
+ */
+
+#ifndef RBT_H_
+#define RBT_H_
+
+namespace Algorithms {
+
+enum class Color
+{
+	Red=1,
+	Black=2
+};
+
+class RBTNode
+{
+	void* value;
+	Color color;
+};
+
+class RBT {
+public:
+	RBT();
+	RBT(int (*)(const void* p, const void* q) );
+
+	virtual ~RBT();
+private:
+	int _cmp(const void* p, const void* q);
+};
+
+} /* namespace Algorithms */
+
+#endif /* RBT_H_ */

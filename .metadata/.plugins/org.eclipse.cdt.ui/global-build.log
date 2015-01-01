@@ -1,0 +1,144 @@
+18:15:38 **** Build of configuration Debug for project zipFuncTemplExample ****
+make all 
+Building file: ../src/zipFuncTemplExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/zipFuncTemplExample.d" -MT"src/zipFuncTemplExample.d" -o "src/zipFuncTemplExample.o" "../src/zipFuncTemplExample.cpp"
+Finished building: ../src/zipFuncTemplExample.cpp
+ 
+Building target: zipFuncTemplExample
+Invoking: GCC C++ Linker
+g++  -o "zipFuncTemplExample"  ./src/zipFuncTemplExample.o   
+Finished building target: zipFuncTemplExample
+ 
+13:07:13 **** Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:10:40 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:11:58 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+../src/variadicDataStructExample.cpp:23:8: error: ‘elem_type_holder’ is not a class template
+ struct elem_type_holder<0, tuple<T, Ts...>> {
+        ^
+make: *** [src/variadicDataStructExample.o] Error 1
+13:13:45 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+../src/variadicDataStructExample.cpp:23:8: error: ‘elem_type_holder’ is not a class template
+ struct elem_type_holder<0, tuple<T, Ts...>> {
+        ^
+../src/variadicDataStructExample.cpp:28:44: error: type/value mismatch at argument 1 in template parameter list for ‘template<class T, class ... Ts> struct elem_type_holder’
+ struct elem_type_holder<k, mytuple<T, Ts...>> {
+                                            ^
+../src/variadicDataStructExample.cpp:28:44: error:   expected a type, got ‘k’
+make: *** [src/variadicDataStructExample.o] Error 1
+13:13:59 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+../src/variadicDataStructExample.cpp:23:8: error: ‘elem_type_holder’ is not a class template
+ struct elem_type_holder<0, mytuple<T, Ts...>> {
+        ^
+../src/variadicDataStructExample.cpp:28:44: error: type/value mismatch at argument 1 in template parameter list for ‘template<class T, class ... Ts> struct elem_type_holder’
+ struct elem_type_holder<k, mytuple<T, Ts...>> {
+                                            ^
+../src/variadicDataStructExample.cpp:28:44: error:   expected a type, got ‘k’
+make: *** [src/variadicDataStructExample.o] Error 1
+13:15:51 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+../src/variadicDataStructExample.cpp:23:8: error: ‘elem_type_holder’ is not a class template
+ struct elem_type_holder<0, mytuple<T, Ts...>> {
+        ^
+../src/variadicDataStructExample.cpp:28:44: error: type/value mismatch at argument 1 in template parameter list for ‘template<class T, class ... Ts> struct elem_type_holder’
+ struct elem_type_holder<k, mytuple<T, Ts...>> {
+                                            ^
+../src/variadicDataStructExample.cpp:28:44: error:   expected a type, got ‘k’
+make: *** [src/variadicDataStructExample.o] Error 1
+13:17:41 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:27:27 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:32:30 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:42:48 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 
+13:45:31 **** Incremental Build of configuration Debug for project variadicDataStructExample ****
+make all 
+Building file: ../src/variadicDataStructExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/variadicDataStructExample.d" -MT"src/variadicDataStructExample.d" -o "src/variadicDataStructExample.o" "../src/variadicDataStructExample.cpp"
+Finished building: ../src/variadicDataStructExample.cpp
+ 
+Building target: variadicDataStructExample
+Invoking: GCC C++ Linker
+g++  -o "variadicDataStructExample"  ./src/variadicDataStructExample.o   
+Finished building target: variadicDataStructExample
+ 

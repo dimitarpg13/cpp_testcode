@@ -1,0 +1,34 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo(string name)  {
+
+	this->sName = name;
+	//bool(*fn_pt)(IndustryInfo*,IndustryInfo*) = compare;
+	//this->pChildren = new set<IndustryInfo*,bool(IndustryInfo::*)(IndustryInfo* lhs, IndustryInfo* rhs)>(&compare);
+	this
+
+}
+
+IndustryInfo::~IndustryInfo() {
+	// TODO Auto-generated destructor stub
+}
+
+bool IndustryInfo::compare (IndustryInfo* lhs, IndustryInfo* rhs)
+{
+   if (lhs->getName().compare(rhs->getName()) < 0)
+	   return true;
+   else
+	   return false;
+}
+
+} /* namespace Algorithms */
+

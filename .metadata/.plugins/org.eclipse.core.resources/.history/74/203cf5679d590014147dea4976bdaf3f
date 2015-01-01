@@ -1,0 +1,22 @@
+/*
+ * String.cpp
+ *
+ *  Created on: Oct 21, 2014
+ *      Author: root
+ */
+
+#include "String.h"
+
+namespace Algorithms {
+
+
+//template<typename C> String<C>::String() {
+//	// TODO Auto-generated constructor stub
+//
+//}
+//
+//template<typename C> String<C>::~String() {
+//	// TODO Auto-generated destructor stub
+//}
+
+} /* namespace Algorithms */

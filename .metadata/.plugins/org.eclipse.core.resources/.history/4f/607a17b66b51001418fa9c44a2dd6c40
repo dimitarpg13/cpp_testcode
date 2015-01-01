@@ -1,0 +1,30 @@
+/*
+ * IndustryTree.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYTREE_H_
+#define INDUSTRYTREE_H_
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <exception>
+
+using namespace std;
+
+namespace Algorithms {
+
+class IndustryTree {
+public:
+	IndustryTree();
+	virtual ~IndustryTree();
+
+	bool parse (string fileName);
+};
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYTREE_H_ */

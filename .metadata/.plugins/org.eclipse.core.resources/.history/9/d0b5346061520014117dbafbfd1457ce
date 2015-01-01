@@ -1,0 +1,67 @@
+/*
+ * LCS.cpp
+ *
+ *  Created on: Oct 12, 2014
+ *      Author: root
+ */
+
+#include "LCS.h"
+
+namespace Algorithms {
+
+  LCS::LCS()
+  {
+  }
+
+  LCS::print(vector<int> s)
+  {
+      vector<int> lcs, buf;
+      bool asc = false;
+      bool desc = false;
+      for (int i = 0; i < s.size(); i++)
+      {
+    	  if (s[i+1] - s[i] == 1)
+    	  {
+             if (desc) // this is a new sequence so reset the buffer
+             {
+            	 buf.push_back(s[i]);
+            	 if (buf.size() > lcs.size())
+            		lcs.assign(buf.begin(),buf.end());
+            	 else
+            		buf.clear();
+            	 desc = false;
+             }
+             else
+             {   // we are still churning along the same sequence
+                 // so add the current number to the buffer
+            	 buf.push_back(s[i]);
+             }
+    	  }
+    	  else if (s[i] - s[i+1] == 1)
+    	  {
+    		 if (desc) // this is a new sequence so reset the buffer
+    		 {
+    		     buf.push_back(s[i]);
+    		     if (buf.size() > lcs.size())
+    		        lcs.assign(buf.begin(),buf.end());
+    		     else
+    		        buf.clear();
+    		     desc = false;
+    		 }
+    		 else
+    		 {   // we are still churning along the same sequence
+    		     // so add the current number to the buffer
+    		     buf.push_back(s[i]);
+    		 }
+    	  }
+    	  else
+    	  {
+
+    	  }
+      }
+
+
+  }
+
+
+} /* namespace Algorithms */

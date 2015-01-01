@@ -1,0 +1,56 @@
+//============================================================================
+// Name        : moveCtorExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+struct A
+{
+	std::string s;
+	A() : s("test") {}
+	A(const A& o) : s(o.s) { std::cout << "move failed!\n"; }
+	A(A&& o) : s(std::move(o.s)) {}
+};
+
+A f(A a)
+{
+	return a;
+}
+
+struct B : A {
+	std::string s2;
+	int n;
+	// implicit move constructor
+	// calls A's move constructor
+	// calls s2's move constructor
+	// and makes a bitwise copy of n
+};
+
+struct C : B {
+	~C() {}; // destructor prevents implicit move constructor C::C(C&&)
+};
+
+struct D : B {
+	D() {};
+	~D() {};
+	D(D&&) = default; // force a move ctor anyway
+};
+
+
+
+int main() {
+	cout << "move constructor example" << endl; // prints move constructor example
+	A a1 = f(A()); // move-construct from rvalue temporary
+	A a2 =std::move(a1);
+
+    cout << "a2.s = " << a2.s << endl;
+
+	return 0;
+}

@@ -1,0 +1,42 @@
+/*
+ * IndustryInfo.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYINFO_H_
+#define INDUSTRYINFO_H_
+
+#include <string>
+#include <set>
+//#include "IndustryComp.h"
+
+
+using namespace std;
+
+namespace Algorithms {
+
+
+
+class IndustryInfo {
+public:
+	IndustryInfo(string name);
+	virtual ~IndustryInfo();
+
+	string getName() { return sName; }
+    IndustryInfo* getParent() { return pParent; }
+    bool compare (IndustryInfo*, IndustryInfo*);
+
+private:
+	string sName;
+	IndustryInfo* pParent;
+	//set<IndustryInfo*,bool(IndustryInfo::*)(IndustryInfo* lhs, IndustryInfo* rhs)>* pChildren;
+	//set<IndustryInfo*, >
+};
+
+
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYINFO_H_ */

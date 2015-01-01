@@ -1,0 +1,25 @@
+21:54:25 **** Incremental Build of configuration Debug for project addPointerExample ****
+make all 
+Building file: ../src/addPointerExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/addPointerExample.d" -MT"src/addPointerExample.d" -o "src/addPointerExample.o" "../src/addPointerExample.cpp"
+../src/addPointerExample.cpp: In function ‘int main()’:
+../src/addPointerExample.cpp:34:8: warning: unused variable ‘v2’ [-Wunused-variable]
+     t2 v2;
+        ^
+../src/addPointerExample.cpp:35:8: warning: unused variable ‘v3’ [-Wunused-variable]
+     t3 v3 = v1;
+        ^
+../src/addPointerExample.cpp:36:8: warning: unused variable ‘v4’ [-Wunused-variable]
+     t4 v4 = &v1;
+        ^
+Finished building: ../src/addPointerExample.cpp
+ 
+Building target: addPointerExample
+Invoking: GCC C++ Linker
+g++  -o "addPointerExample"  ./src/addPointerExample.o   
+Finished building target: addPointerExample
+ 
+
+21:54:26 Build Finished (took 625ms)
+

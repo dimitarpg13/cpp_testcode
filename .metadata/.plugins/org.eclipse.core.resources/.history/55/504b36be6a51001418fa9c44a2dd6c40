@@ -1,0 +1,25 @@
+/*
+ * IndustryInfo.cpp
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#include "IndustryInfo.h"
+
+namespace Algorithms {
+
+IndustryInfo::IndustryInfo(string name)  {
+   this->sName = name;
+
+}
+
+IndustryInfo::~IndustryInfo() {
+	// TODO Auto-generated destructor stub
+	delete pParent;
+}
+
+
+
+} /* namespace Algorithms */
+

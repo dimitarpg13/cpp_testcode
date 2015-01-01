@@ -1,0 +1,32 @@
+//============================================================================
+// Name        : BoostPropertyMapConcept.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <map>
+#include <string>
+#include <boost/property_map/property_map.hpp>
+
+using namespace std;
+
+template <typename AddressMap>
+void foo (AddressMap address)
+{
+   typedef typename boost::property_traits<AddressMap>::value_type value_type;
+   typedef typename boost::property_traits<AddressMap>::key_type key_type;
+
+   value_type old_address, new_address;
+   key_type fred = "Fred";
+   old_address = get(address,fred);
+
+
+}
+
+int main() {
+	cout << "PropertyMapConcept" << endl; // prints PropertyMapConcept
+	return 0;
+}

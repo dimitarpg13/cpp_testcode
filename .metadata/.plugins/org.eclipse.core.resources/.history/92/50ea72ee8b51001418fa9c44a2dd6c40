@@ -1,0 +1,60 @@
+/*
+ * IndustryInfo.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYINFO_H_
+#define INDUSTRYINFO_H_
+
+#include <string>
+#include <vector>
+
+
+using namespace std;
+
+namespace Algorithms {
+
+
+
+class CompanyInfo;
+
+class IndustryInfo {
+public:
+	IndustryInfo(string name);
+	virtual ~IndustryInfo();
+
+	string getName();
+    IndustryInfo* getParent();
+    void addChild(IndustryInfo * child);
+
+
+private:
+	string m_sName;
+	IndustryInfo* m_pParent;
+	vector<IndustryInfo*> m_vChildren;
+	vector<CompanyInfo*> m_vCompanies;
+};
+
+class CompanyInfo {
+public:
+	CompanyInfo(string name, string industry, float marketCap, float revenue);
+	virtual ~CompanyInfo();
+    string getName();
+    string getIndustry();
+    float getMarketCap();
+    float getRevenue();
+
+
+private:
+	string m_sName;
+	string m_sIndustry;
+	float m_fMarketCap;
+	float m_fRevenue;
+    vector<IndustryInfo*> m_vIndustries;
+};
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYINFO_H_ */

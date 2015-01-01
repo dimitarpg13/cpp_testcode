@@ -1,0 +1,30 @@
+//============================================================================
+// Name        : Test5.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <map>
+
+using namespace std;
+
+void afunc(int * iptr)
+{
+	*iptr=102;
+}
+
+int main() {
+
+	int i = 101;
+	afunc(&i);
+	cout << "i=" << i << endl;
+
+	return 0;
+}

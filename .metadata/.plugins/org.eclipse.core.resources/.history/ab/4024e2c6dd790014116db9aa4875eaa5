@@ -1,0 +1,35 @@
+/*
+ * RBT.cpp
+ *
+ *  Created on: Dec 1, 2014
+ *      Author: root
+ */
+
+#include "RBT.h"
+
+namespace Algorithms {
+
+RBT::RBT(int cmp(const void* p, const void* q)) {
+    _cmp = cmp;
+    _root = nullptr;
+    _nil = nullptr;
+}
+
+RBT::~RBT() {
+	delete _root;
+	delete _nil;
+}
+
+
+
+RBTNode::RBTNode()
+{
+	value = nullptr;
+	p = nullptr;
+	left = nullptr;
+	right = nullptr;
+	color = Color::Black;
+}
+
+} /* namespace Algorithms */
+

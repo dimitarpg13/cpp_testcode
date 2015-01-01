@@ -1,0 +1,15 @@
+18:15:38 **** Build of configuration Debug for project zipFuncTemplExample ****
+make all 
+Building file: ../src/zipFuncTemplExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/zipFuncTemplExample.d" -MT"src/zipFuncTemplExample.d" -o "src/zipFuncTemplExample.o" "../src/zipFuncTemplExample.cpp"
+Finished building: ../src/zipFuncTemplExample.cpp
+ 
+Building target: zipFuncTemplExample
+Invoking: GCC C++ Linker
+g++  -o "zipFuncTemplExample"  ./src/zipFuncTemplExample.o   
+Finished building target: zipFuncTemplExample
+ 
+
+18:15:39 Build Finished (took 571ms)
+

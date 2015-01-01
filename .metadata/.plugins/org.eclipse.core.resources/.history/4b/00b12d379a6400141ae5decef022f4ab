@@ -1,0 +1,12 @@
+/*
+ * DCalc_test.cpp
+ *
+ *  Created on: Nov 4, 2014
+ *      Author: root
+ */
+
+#include "DCalc.h"
+
+namespace Algorithms {
+
+} /* namespace Algorithms */

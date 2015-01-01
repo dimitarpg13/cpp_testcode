@@ -1,0 +1,57 @@
+//============================================================================
+// Name        : DCalc.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+enum class Kind : char {
+	name, number, end,
+	plus='+', minus='-', mul='*', div='/', print=';',
+	assign='=', lp='(', rp=')'
+};
+
+struct Token {
+	Kind kind;
+	string string_value;
+	double number_value;
+};
+
+class Token_stream
+{
+public:
+	Token get();
+	const Token& current();
+
+};
+
+Token_stream ts;
+
+double expr(bool get)
+{
+	double left = term(get);
+
+	for (;;)
+	{
+		switch (ts.current().kind)
+		{
+		case Kind::plus:
+			left += term(true);
+			break;
+		case Kind::minus:
+			left -= term(true);
+			break;
+		default:
+			return left;
+		}
+	}
+}
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

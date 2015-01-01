@@ -1,0 +1,23 @@
+/*
+ * concurentqueue.cpp
+ *
+ *  Created on: Oct 19, 2014
+ *      Author: root
+ */
+
+#include "concurentqueue.h"
+
+namespace Algorithms {
+
+
+concurent_queue<D>::concurent_queue() {
+	// TODO Auto-generated constructor stub
+
+}
+
+
+concurent_queue<D>::~concurent_queue() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace Algorithms */

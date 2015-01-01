@@ -1,0 +1,28 @@
+/*
+ * RBT.h
+ *
+ *  Created on: Dec 1, 2014
+ *      Author: root
+ */
+
+#ifndef RBT_H_
+#define RBT_H_
+
+namespace Algorithms {
+
+class enum Color
+{
+	Red=1,
+	Black=2
+};
+
+class RBT {
+public:
+	RBT();
+
+	virtual ~RBT();
+};
+
+} /* namespace Algorithms */
+
+#endif /* RBT_H_ */

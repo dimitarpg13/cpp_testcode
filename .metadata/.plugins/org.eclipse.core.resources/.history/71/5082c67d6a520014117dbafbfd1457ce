@@ -1,0 +1,21 @@
+/*
+ * Car.h
+ *
+ *  Created on: Oct 12, 2014
+ *      Author: root
+ */
+
+#ifndef CAR_H_
+#define CAR_H_
+
+namespace Algorithms {
+
+class Car {
+public:
+	Car();
+	virtual ~Car();
+};
+
+} /* namespace Algorithms */
+
+#endif /* CAR_H_ */

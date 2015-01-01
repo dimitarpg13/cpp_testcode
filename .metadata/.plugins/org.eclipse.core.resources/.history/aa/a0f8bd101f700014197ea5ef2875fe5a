@@ -1,0 +1,33 @@
+//============================================================================
+// Name        : BoostTest02.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/depth_first_search.hpp>
+#include <boost/range/irange.hpp>
+#include <boost/pending/indirect_cmp.hpp>
+
+#include <iostream>
+
+using namespace boost;
+
+using namespace std;
+
+template <typename TimeMap> class dfs_time_visitor : public default_dfs_visitor {
+	typedef typename property_traits <TimeMap>::value_type T;
+public:
+
+};
+
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	vector<int>::value_type a;
+	a = 101;
+	cout << a;
+	return 0;
+}

@@ -1,0 +1,27 @@
+//============================================================================
+// Name        : Test4.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+int main() {
+
+    vector<int> vec;
+
+    vec.push_back(10);
+    vec.push_back(11);
+    vec.push_back(7);
+    vec.iterator it;
+
+
+
+	return 0;
+}

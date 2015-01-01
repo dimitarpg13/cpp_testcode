@@ -1,0 +1,21 @@
+//============================================================================
+// Name        : BoostTest03.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <map>
+#include <string>
+#include <boost/property_map/property_map.hpp>
+
+using namespace std;
+
+
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

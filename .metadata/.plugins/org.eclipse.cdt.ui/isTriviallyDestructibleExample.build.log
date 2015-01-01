@@ -1,0 +1,15 @@
+22:04:59 **** Incremental Build of configuration Debug for project isTriviallyDestructibleExample ****
+make all 
+Building file: ../src/isTriviallyDestructibleExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/isTriviallyDestructibleExample.d" -MT"src/isTriviallyDestructibleExample.d" -o "src/isTriviallyDestructibleExample.o" "../src/isTriviallyDestructibleExample.cpp"
+Finished building: ../src/isTriviallyDestructibleExample.cpp
+ 
+Building target: isTriviallyDestructibleExample
+Invoking: GCC C++ Linker
+g++  -o "isTriviallyDestructibleExample"  ./src/isTriviallyDestructibleExample.o   
+Finished building target: isTriviallyDestructibleExample
+ 
+
+22:05:00 Build Finished (took 579ms)
+

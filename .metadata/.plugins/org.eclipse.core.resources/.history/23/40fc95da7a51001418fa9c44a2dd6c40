@@ -1,0 +1,44 @@
+/*
+ * IndustryTree.h
+ *
+ *  Created on: Oct 11, 2014
+ *      Author: root
+ */
+
+#ifndef INDUSTRYTREE_H_
+#define INDUSTRYTREE_H_
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <exception>
+#include <map>
+#include "IndustryInfo.h"
+#include "CompanyInfo.h"
+
+using namespace std;
+
+namespace Algorithms {
+
+class IndustryTree {
+public:
+
+	IndustryTree(string fileName);
+	virtual ~IndustryTree();
+	bool addCompanies(string fileName);
+	bool addIndustries(string fileName);
+
+
+
+private:
+	IndustryInfo* m_pRoot;
+	bool parseIndustries (string fileName);
+    IndustryInfo* updateTree(string line);
+    map<string, IndustryInfo*> m_mapIndustries;
+    map<string, CompanyInfo*> m_mapCompanies;
+
+};
+
+} /* namespace Algorithms */
+
+#endif /* INDUSTRYTREE_H_ */

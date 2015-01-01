@@ -1,0 +1,30 @@
+//============================================================================
+// Name        : addPointerExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+typedef int t1;
+typedef add_pointer<t1>::type A; 	//int*
+
+
+int main() {
+	cout << "add_pointer example" << endl; // prints add_pointer example
+	A var1 = new t1[2];
+    var1[0] = 101;
+    var1[1] = 1113;
+
+    cout << "var1[0] = " << var1[0] << ", var1[1] = " << var1[1] << endl;
+
+    iterator_traits<int>::value_type t1;
+
+
+	return 0;
+}

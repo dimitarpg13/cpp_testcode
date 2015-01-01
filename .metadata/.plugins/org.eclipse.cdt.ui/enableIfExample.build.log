@@ -1,0 +1,15 @@
+18:13:57 **** Incremental Build of configuration Debug for project enableIfExample ****
+make all 
+Building file: ../src/enableIfExample.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/enableIfExample.d" -MT"src/enableIfExample.d" -o "src/enableIfExample.o" "../src/enableIfExample.cpp"
+Finished building: ../src/enableIfExample.cpp
+ 
+Building target: enableIfExample
+Invoking: GCC C++ Linker
+g++  -o "enableIfExample"  ./src/enableIfExample.o   
+Finished building target: enableIfExample
+ 
+
+18:13:58 Build Finished (took 570ms)
+

@@ -1,0 +1,38 @@
+//============================================================================
+// Name        : variadicDataStructExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+
+using namespace std;
+
+template <class... Ts> struct mytuple {};
+
+template <class T, class... Ts>
+struct mytuple<T, Ts...> : mytuple<Ts...> {
+	mytuple(T t, Ts... ts) : mytuple<Ts...>(ts...), tail(t)  {}
+
+	T tail;
+};
+
+template <class T, class... Ts>
+struct elem_type_holder<0, tuple<T, Ts...>> {
+	typedef T type;
+};
+
+template <size_t k, class T, class... Ts>
+struct elem_type_holder<k, mytuple<T, Ts...>> {
+	typedef typename elem_type_holder<k-1, mytuple<Ts...>>::type type;
+};
+
+
+
+
+int main() {
+	cout << "variadic data structure example from Eli Bendersky's web site" << endl; // prints variadic data structure example from Eli Bendersky's web site
+	return 0;
+}

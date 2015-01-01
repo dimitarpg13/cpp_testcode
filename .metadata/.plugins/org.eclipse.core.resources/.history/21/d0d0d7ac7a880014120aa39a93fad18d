@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : replaceTypeExcercise.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+template <class C, class X, class Y>
+struct replace_type
+{
+
+};
+
+int main() {
+	cout << "Template Metaprogramming Exercise 2.1 : replace_type" << endl; // prints Template Metaprogramming Exercise 2.0 : add_const_reference
+
+	return 0;
+}

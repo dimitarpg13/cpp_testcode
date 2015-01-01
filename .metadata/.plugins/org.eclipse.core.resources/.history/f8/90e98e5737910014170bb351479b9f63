@@ -1,0 +1,39 @@
+//============================================================================
+// Name        : enableIfExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <type_traits>
+
+using namespace std;
+
+
+// fool overloads are enabled via the return type
+template<class T>
+typename enable_if<is_floating_point<T>::value, T>::type
+	   fool(T t)
+{
+    cout << "fool: float" << endl;
+	return t;
+}
+
+template<class T>
+   enable_if<is_integral<T>::value, T>
+       fool(T t)
+{
+	cout << "fool: int" << endl;
+	return t;
+}
+
+
+
+int main() {
+	cout << "enable_if usage example" << endl; // prints enable_if usage example
+
+
+	return 0;
+}
