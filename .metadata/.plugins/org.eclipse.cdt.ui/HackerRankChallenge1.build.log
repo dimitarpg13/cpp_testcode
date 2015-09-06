@@ -1,0 +1,15 @@
+21:36:50 **** Incremental Build of configuration Debug for project HackerRankChallenge1 ****
+make all 
+Building file: ../src/HackerRankChallenge1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HackerRankChallenge1.d" -MT"src/HackerRankChallenge1.d" -o "src/HackerRankChallenge1.o" "../src/HackerRankChallenge1.cpp"
+Finished building: ../src/HackerRankChallenge1.cpp
+ 
+Building target: HackerRankChallenge1
+Invoking: GCC C++ Linker
+g++  -o "HackerRankChallenge1"  ./src/HackerRankChallenge1.o   
+Finished building target: HackerRankChallenge1
+ 
+
+21:36:51 Build Finished (took 468ms)
+

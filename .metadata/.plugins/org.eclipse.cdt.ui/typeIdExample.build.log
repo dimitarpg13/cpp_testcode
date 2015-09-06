@@ -1,19 +1,6 @@
-17:31:18 **** Incremental Build of configuration Debug for project typeIdExample ****
+14:14:00 **** Build of configuration Debug for project typeIdExample ****
 make all 
-Building file: ../src/typeIdExample.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/typeIdExample.d" -MT"src/typeIdExample.d" -o "src/typeIdExample.o" "../src/typeIdExample.cpp"
-../src/typeIdExample.cpp: In function ‘int main()’:
-../src/typeIdExample.cpp:30:19: warning: unused variable ‘ti2’ [-Wunused-variable]
-  const type_info& ti2 = typeid(mystr2);
-                   ^
-Finished building: ../src/typeIdExample.cpp
- 
-Building target: typeIdExample
-Invoking: GCC C++ Linker
-g++  -o "typeIdExample"  ./src/typeIdExample.o   
-Finished building target: typeIdExample
- 
+make: Nothing to be done for `all'.
 
-17:31:19 Build Finished (took 679ms)
+14:14:00 Build Finished (took 79ms)
 

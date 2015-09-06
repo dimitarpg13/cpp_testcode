@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SudokuQlik/src/Solver.h&apos;" deleteContents="false" description="Delete resource &apos;SudokuQlik/src/Solver.h&apos;" element1="/SudokuQlik/src/Solver.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1441550445638"/>
+</session>

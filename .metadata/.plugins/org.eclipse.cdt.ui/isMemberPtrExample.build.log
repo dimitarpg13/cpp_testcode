@@ -1,15 +1,6 @@
-08:11:44 **** Incremental Build of configuration Debug for project isMemberPtrExample ****
+14:13:56 **** Build of configuration Debug for project isMemberPtrExample ****
 make all 
-Building file: ../src/isMemberPtrExample.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/isMemberPtrExample.d" -MT"src/isMemberPtrExample.d" -o "src/isMemberPtrExample.o" "../src/isMemberPtrExample.cpp"
-Finished building: ../src/isMemberPtrExample.cpp
- 
-Building target: isMemberPtrExample
-Invoking: GCC C++ Linker
-g++  -o "isMemberPtrExample"  ./src/isMemberPtrExample.o   
-Finished building target: isMemberPtrExample
- 
+make: Nothing to be done for `all'.
 
-08:11:44 Build Finished (took 577ms)
+14:13:56 Build Finished (took 64ms)
 

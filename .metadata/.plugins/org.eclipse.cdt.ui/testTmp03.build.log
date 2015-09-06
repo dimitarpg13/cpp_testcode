@@ -1,22 +1,6 @@
-10:28:33 **** Incremental Build of configuration Debug for project testTmp03 ****
+14:13:59 **** Build of configuration Debug for project testTmp03 ****
 make all 
-Building file: ../src/testTmp03.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testTmp03.d" -MT"src/testTmp03.d" -o "src/testTmp03.o" "../src/testTmp03.cpp"
-../src/testTmp03.cpp: In function ‘int main()’:
-../src/testTmp03.cpp:28:5: warning: unused variable ‘x2’ [-Wunused-variable]
-  t2 x2; // OK, declarations check out
-     ^
-../src/testTmp03.cpp:25:24: warning: typedef ‘t1’ locally defined but not used [-Wunused-local-typedefs]
-  typedef X<int&, char> t1; // OK, no instantiation yet
-                        ^
-Finished building: ../src/testTmp03.cpp
- 
-Building target: testTmp03
-Invoking: GCC C++ Linker
-g++  -o "testTmp03"  ./src/testTmp03.o   
-Finished building target: testTmp03
- 
+make: Nothing to be done for `all'.
 
-10:28:34 Build Finished (took 572ms)
+14:13:59 Build Finished (took 68ms)
 

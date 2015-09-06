@@ -1,0 +1,37 @@
+//============================================================================
+// Name        : OptimizedCopyExample.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <boost/type_traits.hpp>
+
+using namespace std;
+
+// opt::copy
+// same semantics as std::copy
+// calls memcpy where appropriate
+
+namespace detail {
+   template<typename I1, typename I2, bool b>
+   I2 copy_imp(I1 first, I2 last, I2 out, const boost::integral_constant<bool, b>&)
+   {
+	   while (first != last)
+	   {
+		   *out = *first;
+		   ++out;
+		   ++first;
+	   }
+	   return out;
+   }
+
+}
+
+int main() {
+	cout << "Optimized Copy Example (From Boost.TypeTraits tutorial)" << endl; // prints Optimized Copy Example (From Boost.TypeTraits tutorial)
+
+	return 0;
+}

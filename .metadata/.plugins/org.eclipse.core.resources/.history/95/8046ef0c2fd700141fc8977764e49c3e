@@ -1,0 +1,54 @@
+//============================================================================
+// Name        : BoostMetaProgrammingPart1.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+template < unsigned n >
+struct factorial
+{
+	static const unsigned value = n * factorial<n-1>::value;
+};
+
+template<>
+struct factorial<0>
+{
+	static const unsigned value = 1;
+};
+
+// permutation_holder<T>::type is an array type which can contain
+// all permutations of a given T
+
+// unspecified template for scalars
+template< typename T >
+struct permutation_holder
+{
+	typedef T type[1][1];
+};
+
+// specialization for array types
+template < typename T, unsigned N >
+struct permutation_holder<T[N]>
+{
+	typedef T type[factorial<N>::value][N];
+};
+
+template< typename First, typename Rest >
+struct cons
+{
+	typedef First first;
+	typedef Rest rest;
+};
+
+struct nil {};
+typedef cons < int, cons <long, cons < std::vector<double>, nil > > > my_types;
+
+int main() {
+	cout << "Boost : Template Metaprogramming Part 1" << endl; // prints Boost : Template Metaprogramming Part 1
+	return 0;
+}

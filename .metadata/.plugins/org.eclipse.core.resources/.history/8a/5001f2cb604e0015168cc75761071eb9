@@ -1,0 +1,34 @@
+//============================================================================
+// Name        : HackerRankTests.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+int main() {
+	cout << "HackerRank tests" << endl; // prints HackerRank tests
+	int n;
+	int v[n];
+	cin >> n;
+	cin >> v[0] >> v[1] >> v[2];
+
+	string sNumbers;
+    //for (int i=0; i<n; i++)
+    //{
+	  // getline(cin,sNumbers,' ');
+      //	cin >> v[i] >>
+
+    //}
+
+	int missingTerm = -1;
+
+
+
+
+	cout << missingTerm;
+
+	return 0;
+}

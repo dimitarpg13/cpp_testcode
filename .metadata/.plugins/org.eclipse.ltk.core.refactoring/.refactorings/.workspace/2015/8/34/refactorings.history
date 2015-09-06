@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;BoostAppDevCookbookCh1/src/example.txt&apos;" deleteContents="false" description="Delete resource &apos;BoostAppDevCookbookCh1/src/example.txt&apos;" element1="/BoostAppDevCookbookCh1/src/example.txt" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1440210835394"/>
+</session>

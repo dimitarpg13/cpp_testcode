@@ -1,10 +1,6 @@
-18:51:35 **** Incremental Build of configuration Debug for project replaceTypeExcercise ****
+14:13:57 **** Build of configuration Debug for project replaceTypeExcercise ****
 make all 
-Building target: replaceTypeExcercise
-Invoking: GCC C++ Linker
-g++ -L/opt/boost/boost_1_57_0/stage/lib -o "replaceTypeExcercise"  ./src/replaceTypeExcercise.o   -lboost_system -lboost_thread
-Finished building target: replaceTypeExcercise
- 
+make: Nothing to be done for `all'.
 
-18:51:35 Build Finished (took 165ms)
+14:13:57 Build Finished (took 117ms)
 

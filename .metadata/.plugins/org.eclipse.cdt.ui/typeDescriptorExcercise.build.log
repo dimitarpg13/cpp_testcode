@@ -1,15 +1,6 @@
-21:49:03 **** Incremental Build of configuration Debug for project typeDescriptorExcercise ****
+14:13:59 **** Build of configuration Debug for project typeDescriptorExcercise ****
 make all 
-Building file: ../src/typeDescriptorExcercise.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/typeDescriptorExcercise.d" -MT"src/typeDescriptorExcercise.d" -o "src/typeDescriptorExcercise.o" "../src/typeDescriptorExcercise.cpp"
-Finished building: ../src/typeDescriptorExcercise.cpp
- 
-Building target: typeDescriptorExcercise
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "typeDescriptorExcercise"  ./src/typeDescriptorExcercise.o   -lboost_system -lboost_thread
-Finished building target: typeDescriptorExcercise
- 
+make: Nothing to be done for `all'.
 
-21:49:04 Build Finished (took 565ms)
+14:13:59 Build Finished (took 73ms)
 

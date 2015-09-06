@@ -1,0 +1,45 @@
+//============================================================================
+// Name        : HackerRankPureStorage.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+struct node
+{
+	node (int v) : v(v), next(NULL) {};
+
+
+	int v;
+	node * next;
+};
+
+
+void init_list(node ** list, int n, int arr[])
+{
+   *list = new node(1);
+   node * last = *list;
+
+   node * el = new node(3);
+   last->next = el;
+   last = el;
+
+
+
+
+};
+
+int main() {
+	cout << "HackerRank coding challenge for PureStorage interview" << endl; // prints HackerRank coding challenge for PureStorage interview
+    node * list = NULL;
+    int arr[] = new int[8] {1, 2, 5, 2, 2, 3, 7, 8};
+    init_list(&list, 8 , arr);
+
+
+
+	return 0;
+}

@@ -1,0 +1,49 @@
+/*
+ * Parser.h
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+#ifndef PARSER_H_
+#define PARSER_H_
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <set>
+
+#include "Line.h"
+#include "Symbol.h"
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Parser
+{
+public:
+	Parser(char sep, int symbCount);
+	bool parse(string inputFile);
+	~Parser() { delete m_pSymbols; };
+    vector<HorizLine*> & getHorizLines() { return horizLines; }
+    vector<VertLine*> & getVertLines() { return vertLines; }
+
+private:
+	bool is_symbol(char c);
+	bool is_separator(char c);
+	bool is_end_of_line(char c);
+    set<char> * m_pSymbols;
+    char m_cSep;
+    char m_cEol;
+    vector<HorizLine*> horizLines;
+    vector<VertLine*> vertLines;
+
+    static char symbolTable[];
+};
+
+}
+
+#endif /* PARSER_H_ */

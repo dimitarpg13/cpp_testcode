@@ -1,0 +1,15 @@
+//============================================================================
+// Name        : 1.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "Concurency In Action Listing 1.1" << endl; // prints Concurency In Action Listing 1.1
+	return 0;
+}

@@ -1,0 +1,18 @@
+/*
+ * Solver.h
+ *
+ *  Created on: Sep 6, 2015
+ *      Author: root
+ */
+
+#ifndef SOLVER_H_
+#define SOLVER_H_
+
+class Solver
+{
+
+};
+
+
+
+#endif /* SOLVER_H_ */

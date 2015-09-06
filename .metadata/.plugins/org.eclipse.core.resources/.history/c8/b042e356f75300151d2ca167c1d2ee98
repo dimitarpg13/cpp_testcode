@@ -1,0 +1,31 @@
+//============================================================================
+// Name        : SudokuQlik.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <fstream>
+
+#include "Parser.h"
+#include "Symbol.h"
+
+using namespace std;
+using namespace sudoku;
+
+int main() {
+	cout << "SudokuQlik" << endl; // prints SudokuQlik
+
+
+    char symbols[] = {'1','2','3','4','5','6','7','8','9'};
+	Parser parser('.',9,symbols);
+
+	parser.parse("./src/example1.txt");
+
+    Symbol s;
+    Region r;
+
+	return 0;
+}

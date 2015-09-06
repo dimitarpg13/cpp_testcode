@@ -1,0 +1,36 @@
+/*
+ * ProblemParser.cpp
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+#include "ProblemParser.h"
+
+bool ProblemParser::is_symbol(char c)
+{
+	if (c >= '1' && c <= '9')
+		return true;
+	else
+		return false;
+}
+
+
+bool parse(string inputFile)
+{
+	ifstream fs (inputFile, std::ifstream::in);
+
+	char c = fs.get();
+	while (fs.good())
+	{
+	  if ( c >= '1' && c <= '9' )
+	  {
+	     std::cout << c;
+	     c = fs.get();
+	  }
+	}
+
+	fs.close();
+
+	return false;
+}

@@ -1,0 +1,20 @@
+//============================================================================
+// Name        : BoostAppDevCookbookCh1.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <auto_ptr.h>
+
+using namespace std;
+
+int main() {
+	cout << "Boost C++ Application Dev Cookbook Chapter 1" << endl; // prints Boost C++ Application Dev Cookbook Chapter 1
+    typedef std::auto_ptr<Object> object_ptr;
+	return 0;
+}

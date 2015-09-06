@@ -1,0 +1,28 @@
+//============================================================================
+// Name        : SudokuQlik.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+	cout << "SudokuQlik" << endl; // prints SudokuQlik
+
+	ifstream fs ("example1.txt", std::ifstream::in);
+	char c = fs.get();
+
+	while (fs.good()) {
+	   std::cout << c;
+	   c = fs.get();
+	}
+
+	fs.close();
+
+	return 0;
+}

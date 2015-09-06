@@ -1,15 +1,6 @@
-09:21:21 **** Incremental Build of configuration Debug for project parameterPackExample ****
+14:13:56 **** Build of configuration Debug for project parameterPackExample ****
 make all 
-Building file: ../src/parameterPackExample.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/parameterPackExample.d" -MT"src/parameterPackExample.d" -o "src/parameterPackExample.o" "../src/parameterPackExample.cpp"
-Finished building: ../src/parameterPackExample.cpp
- 
-Building target: parameterPackExample
-Invoking: GCC C++ Linker
-g++  -o "parameterPackExample"  ./src/parameterPackExample.o   
-Finished building target: parameterPackExample
- 
+make: Nothing to be done for `all'.
 
-09:21:22 Build Finished (took 632ms)
+14:13:56 Build Finished (took 68ms)
 

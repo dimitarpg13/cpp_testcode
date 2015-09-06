@@ -1,15 +1,6 @@
-15:17:00 **** Incremental Build of configuration Debug for project declTypeExample ****
+14:13:55 **** Build of configuration Debug for project declTypeExample ****
 make all 
-Building file: ../src/declTypeExample.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/declTypeExample.d" -MT"src/declTypeExample.d" -o "src/declTypeExample.o" "../src/declTypeExample.cpp"
-Finished building: ../src/declTypeExample.cpp
- 
-Building target: declTypeExample
-Invoking: GCC C++ Linker
-g++  -o "declTypeExample"  ./src/declTypeExample.o   
-Finished building target: declTypeExample
- 
+make: Nothing to be done for `all'.
 
-15:17:01 Build Finished (took 573ms)
+14:13:55 Build Finished (took 72ms)
 

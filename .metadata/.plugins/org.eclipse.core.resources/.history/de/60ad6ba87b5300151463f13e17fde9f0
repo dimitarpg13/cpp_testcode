@@ -1,0 +1,27 @@
+/*
+ * ProblemParser.h
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+#ifndef PROBLEMPARSER_H_
+#define PROBLEMPARSER_H_
+
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+class ProblemParser
+{
+private:
+	bool is_symbol(char c);
+
+public:
+	bool parse(string inputFile);
+};
+
+
+
+#endif /* PROBLEMPARSER_H_ */

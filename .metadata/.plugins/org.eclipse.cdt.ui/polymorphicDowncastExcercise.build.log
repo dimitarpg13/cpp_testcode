@@ -1,22 +1,6 @@
-15:25:16 **** Incremental Build of configuration Debug for project polymorphicDowncastExcercise ****
+14:13:57 **** Build of configuration Debug for project polymorphicDowncastExcercise ****
 make all 
-Building file: ../src/polymorphicDowncastExcercise.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/polymorphicDowncastExcercise.d" -MT"src/polymorphicDowncastExcercise.d" -o "src/polymorphicDowncastExcercise.o" "../src/polymorphicDowncastExcercise.cpp"
-../src/polymorphicDowncastExcercise.cpp: In function ‘int main()’:
-../src/polymorphicDowncastExcercise.cpp:90:9: warning: unused variable ‘y’ [-Wunused-variable]
-     B & y = x;
-         ^
-../src/polymorphicDowncastExcercise.cpp:91:9: warning: unused variable ‘z’ [-Wunused-variable]
-     A & z = x;
-         ^
-Finished building: ../src/polymorphicDowncastExcercise.cpp
- 
-Building target: polymorphicDowncastExcercise
-Invoking: GCC C++ Linker
-g++ -pthread  -o "polymorphicDowncastExcercise"  ./src/polymorphicDowncastExcercise.o   
-Finished building target: polymorphicDowncastExcercise
- 
+make: Nothing to be done for `all'.
 
-15:25:17 Build Finished (took 561ms)
+14:13:57 Build Finished (took 69ms)
 

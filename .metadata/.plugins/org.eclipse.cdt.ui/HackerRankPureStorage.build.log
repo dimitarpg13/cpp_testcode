@@ -1,0 +1,15 @@
+23:00:34 **** Incremental Build of configuration Debug for project HackerRankPureStorage ****
+make all 
+Building file: ../src/HackerRankPureStorage.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HackerRankPureStorage.d" -MT"src/HackerRankPureStorage.d" -o "src/HackerRankPureStorage.o" "../src/HackerRankPureStorage.cpp"
+Finished building: ../src/HackerRankPureStorage.cpp
+ 
+Building target: HackerRankPureStorage
+Invoking: GCC C++ Linker
+g++  -o "HackerRankPureStorage"  ./src/HackerRankPureStorage.o   
+Finished building target: HackerRankPureStorage
+ 
+
+23:00:35 Build Finished (took 418ms)
+

@@ -1,15 +1,6 @@
-21:47:02 **** Build of configuration Debug for project BoostBellmanFord ****
+14:13:45 **** Build of configuration Debug for project BoostBellmanFord ****
 make all 
-Building file: ../src/BoostBellmanFord.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBellmanFord.d" -MT"src/BoostBellmanFord.d" -o "src/BoostBellmanFord.o" "../src/BoostBellmanFord.cpp"
-Finished building: ../src/BoostBellmanFord.cpp
- 
-Building target: BoostBellmanFord
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBellmanFord"  ./src/BoostBellmanFord.o   -lboost_system -lboost_thread
-Finished building target: BoostBellmanFord
- 
+make: Nothing to be done for `all'.
 
-21:47:08 Build Finished (took 5s.388ms)
+14:13:45 Build Finished (took 66ms)
 

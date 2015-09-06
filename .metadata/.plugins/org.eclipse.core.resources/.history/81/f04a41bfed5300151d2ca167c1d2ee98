@@ -1,0 +1,49 @@
+/*
+ * ProblemParser.cpp
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+
+#include "ProblemParser.h"
+
+ProblemParser::ProblemParser(char sep, int symbCount, char symbols[])
+{
+    m_pSymbols = new set<char>(symbols,symbols+symbCount);
+    m_pSep = sep;
+}
+
+bool ProblemParser::is_symbol(char c)
+{
+	set<char>::iterator it = m_pSymbols->find(c);
+	if (it != set<char>::end)
+		return true;
+	else
+		return false;
+}
+
+bool ProblemParser::is_separator(char c)
+{
+   return c == m_cSep;
+}
+
+
+bool parse(string inputFile)
+{
+	ifstream fs (inputFile.c_str(), std::ifstream::in);
+
+	char c = fs.get();
+	while (fs.good())
+	{
+	  if ( is_symbol(c) )
+	  {
+	     std::cout << c;
+	     c = fs.get();
+	  }
+	}
+
+	fs.close();
+
+	return false;
+}

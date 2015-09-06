@@ -1,0 +1,26 @@
+20:33:06 **** Incremental Build of configuration Debug for project HackerRankTests ****
+make all 
+Building file: ../src/HackerRankTests.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HackerRankTests.d" -MT"src/HackerRankTests.d" -o "src/HackerRankTests.o" "../src/HackerRankTests.cpp"
+../src/HackerRankTests.cpp: In function ‘void arithmetic_progression_hole_test()’:
+../src/HackerRankTests.cpp:49:6: warning: unused variable ‘N’ [-Wunused-variable]
+  int N = 2500;
+      ^
+../src/HackerRankTests.cpp: In function ‘int main()’:
+../src/HackerRankTests.cpp:138:9: warning: unused variable ‘n’ [-Wunused-variable]
+     int n;
+         ^
+../src/HackerRankTests.cpp:124:23: warning: unused variable ‘j’ [-Wunused-variable]
+   int a[1000],K,i = 0,j = 0;
+                       ^
+Finished building: ../src/HackerRankTests.cpp
+ 
+Building target: HackerRankTests
+Invoking: GCC C++ Linker
+g++  -o "HackerRankTests"  ./src/HackerRankTests.o   
+Finished building target: HackerRankTests
+ 
+
+20:33:07 Build Finished (took 717ms)
+

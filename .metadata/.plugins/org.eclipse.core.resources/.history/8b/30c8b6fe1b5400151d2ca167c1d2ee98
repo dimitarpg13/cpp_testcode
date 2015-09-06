@@ -1,0 +1,45 @@
+/*
+ * Problem.h
+ *
+ *  Created on: Sep 5, 2015
+ *      Author: root
+ */
+
+#ifndef PROBLEM_H_
+#define PROBLEM_H_
+
+#include "Symbol.h"
+#include "Line.h"
+#include "Region.h"
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Problem
+{
+private:
+   int m_iHorizLineCount = 9;
+   int m_iVertLineCount = 9;
+   int m_iRegionCount = 9;
+
+   HorizLine * m_pHorizLineArr[];
+   VertLine * m_pVertLineArr[];
+   Region * m_pRegion[];
+
+public:
+   Problem(int horizLineCount, int vertLineCount, int regionCount) :
+	   m_iHorizLineCount(horizLineCount),
+	   m_iVertLineCount(vertLineCount),
+	   m_iRegionCount(regionCount)
+   {
+
+   }
+}
+
+};
+
+}
+
+#endif /* PROBLEM_H_ */

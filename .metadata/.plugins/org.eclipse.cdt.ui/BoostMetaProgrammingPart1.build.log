@@ -1,0 +1,15 @@
+14:13:52 **** Build of configuration Debug for project BoostMetaProgrammingPart1 ****
+make all 
+Building file: ../src/BoostMetaProgrammingPart1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostMetaProgrammingPart1.d" -MT"src/BoostMetaProgrammingPart1.d" -o "src/BoostMetaProgrammingPart1.o" "../src/BoostMetaProgrammingPart1.cpp"
+Finished building: ../src/BoostMetaProgrammingPart1.cpp
+ 
+Building target: BoostMetaProgrammingPart1
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "BoostMetaProgrammingPart1"  ./src/BoostMetaProgrammingPart1.o   -lboost_system -lboost_thread
+Finished building target: BoostMetaProgrammingPart1
+ 
+
+14:13:52 Build Finished (took 478ms)
+

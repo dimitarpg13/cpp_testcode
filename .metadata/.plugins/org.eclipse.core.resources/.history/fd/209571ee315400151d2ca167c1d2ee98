@@ -1,0 +1,37 @@
+/*
+ * Parser.h
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+#ifndef PARSER_H_
+#define PARSER_H_
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Parser
+{
+private:
+	bool is_symbol(char c);
+	bool is_separator(char c);
+    set<char> * m_pSymbols;
+    char m_cSep;
+
+public:
+	Parser(char sep, int symb_count, char symbols[]);
+	bool parse(string inputFile);
+	~Parser() { delete m_pSymbols; };
+};
+
+}
+
+#endif /* PARSER_H_ */

@@ -1,0 +1,61 @@
+/*
+ * ProblemParser.cpp
+ *
+ *  Created on: Sep 4, 2015
+ *      Author: root
+ */
+
+
+#include "Parser.h"
+
+namespace sudoku
+{
+
+Parser::Parser(char sep, int symbCount)
+{
+    m_pSymbols = new set<char>(symbolTable.begin(),symbolTable.begin()+symbCount);
+    m_cSep = sep;
+}
+
+
+bool Parser::is_symbol(char c)
+{
+	set<char>::iterator it = m_pSymbols->find(c);
+	if (it != m_pSymbols->end())
+		return true;
+	else
+		return false;
+}
+
+bool Parser::is_separator(char c)
+{
+   return c == m_cSep;
+}
+
+
+bool Parser::parse(string inputFile)
+{
+	ifstream fs (inputFile.c_str(), std::ifstream::in);
+
+	char c = fs.get();
+	while (fs.good())
+	{
+	  if ( is_symbol(c) )
+	  {
+
+	  }
+	  else if ( is_separator(c) )
+	  {
+
+	  }
+
+	  std::cout << c;
+	  c = fs.get();
+	}
+
+	fs.close();
+
+	return true;
+}
+
+}

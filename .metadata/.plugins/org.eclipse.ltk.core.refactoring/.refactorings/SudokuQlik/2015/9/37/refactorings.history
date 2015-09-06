@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;SudokuQlik/src/Problem.h&apos; to &apos;Puzzle.h&apos;" description="Rename resource &apos;Problem.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Problem.h" name="Puzzle.h" stamp="1441550286674" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;SudokuQlik/src/Solver&apos; to &apos;Solver.h&apos;" description="Rename resource &apos;Solver&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Solver" name="Solver.h" stamp="1441550439949" updateReferences="true"/>
+</session>

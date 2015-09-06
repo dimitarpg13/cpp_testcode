@@ -1,15 +1,6 @@
-09:24:47 **** Incremental Build of configuration Debug for project testTmp02 ****
+14:13:59 **** Build of configuration Debug for project testTmp02 ****
 make all 
-Building file: ../src/testTmp02.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/testTmp02.d" -MT"src/testTmp02.d" -o "src/testTmp02.o" "../src/testTmp02.cpp"
-Finished building: ../src/testTmp02.cpp
- 
-Building target: testTmp02
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "testTmp02"  ./src/testTmp02.o   -lboost_system -lboost_thread
-Finished building target: testTmp02
- 
+make: Nothing to be done for `all'.
 
-09:24:48 Build Finished (took 722ms)
+14:13:59 Build Finished (took 68ms)
 
