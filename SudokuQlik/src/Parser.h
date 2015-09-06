@@ -22,6 +22,13 @@ using namespace std;
 namespace sudoku
 {
 
+enum Error
+{
+  INCORRECT_FORMAT=0,
+  INCORRECT_ROW_COUNT=1,
+  INCORRECT_COL_COUNT=2
+};
+
 class Parser
 {
 public:

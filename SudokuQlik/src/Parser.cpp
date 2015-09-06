@@ -67,32 +67,56 @@ bool Parser::parse(string inputFile)
 	ifstream fs (inputFile.c_str(), std::ifstream::in);
 
 	char c = fs.get();
-	int curRowIdx = 0;
-    HorizLine * curRow = new HorizLine();
 
+	unsigned short curRowIdx = 0, curColIdx = 0;
+
+	Symbol * curSymbol = NULL;
+    HorizLine * curRow = NULL;
+    VertLine * curCol = NULL;
 	while (fs.good())
 	{
 
+	  if (curRow == NULL)
+		  curRow = new HorizLine();
+
+	  if (curColIdx < m_vCols.size())
+		  curCol = m_vCols[curColIdx];
+	  else
+	  {
+		  curCol = new VertLine();
+		  m_vCols.push_back(curCol);
+	  }
+
 	  if ( is_symbol(c) )
 	  {
-         curRow->addSymbol(new Symbol(c));
+		  curSymbol = new Symbol(c);
+          curRow->addSymbol(curSymbol);
+          curCol->addSymbol(curSymbol);
+          curColIdx++;
 	  }
 	  else if ( is_separator(c) )
 	  {
-         curRow->addSymbol(new Symbol());
+		  curSymbol = new Symbol();
+          curRow->addSymbol(curSymbol);
+          curCol->addSymbol(curSymbol);
+          curColIdx++;
 	  }
 	  else if ( is_end_of_line(c) )
 	  {
-
 		 m_vRows.push_back(curRow);
-
 		 curRow = NULL;
 		 curRowIdx++;
+		 curColIdx = 0;
 	  }
 
 	  std::cout << c;
 	  c = fs.get();
 	}
+
+	if (curRow != NULL)
+		m_vRows.push_back(curRow);
+
+
 
 	fs.close();
 
