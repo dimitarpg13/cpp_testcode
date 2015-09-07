@@ -73,7 +73,8 @@ public:
 		m_iDim(dim), m_iRegionDim(regionDim),
 		m_iLastSymbolIdx(0), m_iLastRowIdx(0), m_iLastColIdx(0)
     {
-		m_pSymbols = new Symbol* [m_iRegionDim * m_iRegionDim]; // the number of symbols in single region
+		m_iSymbCount = m_iRegionDim * m_iRegionDim;
+		m_pSymbols = new Symbol* [m_iSymbCount]; // the number of symbols in single region
 		m_pRows = new HorizLine* [m_iRegionDim];
 		m_pCols = new VertLine* [m_iRegionDim];
     };
@@ -94,6 +95,36 @@ public:
 
     };
 
+    bool addSymbol(Symbol * symbol)
+    {
+    	if (m_iLastSymbolIdx < m_iSymbCount)
+           m_pSymbols[m_iLastSymbolIdx++] = symbol;
+    	else
+    		return false;
+
+    	return true;
+    }
+
+    bool addRow(HorizLine * row)
+    {
+    	if (m_iLastRowIdx < m_iRegionDim)
+    		m_pRows[m_iLastRowIdx++] = row;
+    	else
+    		return false;
+
+        return true;
+    }
+
+    bool addCol(VertLine * col)
+    {
+    	if (m_iLastColIdx < m_iRegionDim)
+    		m_pCols[m_iLastColIdx++] = col;
+    	else
+    		return false;
+
+    	return true;
+    }
+
 private:
 	Symbol ** m_pSymbols;
 	HorizLine ** m_pRows;
@@ -101,6 +132,7 @@ private:
 
 	unsigned char m_iDim;
     unsigned char m_iRegionDim;
+    unsigned char m_iSymbCount;
 
     unsigned char m_iLastSymbolIdx;
     unsigned char m_iLastRowIdx;
@@ -144,7 +176,7 @@ public:
     	   return true;
         }
         else
-        	return false;
+           return false;
     }
 };
 

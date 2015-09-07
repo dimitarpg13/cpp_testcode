@@ -166,6 +166,13 @@ bool Parser::parse(string inputFile)
 		  curSymbol = new Symbol(c,curRow,curCol);
           curRow->addSymbol(curSymbol);
           curCol->addSymbol(curSymbol);
+          curRegion->addSymbol(curSymbol);
+
+          if (curColIdx == 0)
+        	  curRegion->addRow(curRow);
+
+          curRegion->addCol(curCol);
+
           curColIdx++;
 	  }
 	  else if ( is_separator(c) )
@@ -173,6 +180,12 @@ bool Parser::parse(string inputFile)
 		  curSymbol = new Symbol(curRow,curCol);
           curRow->addSymbol(curSymbol);
           curCol->addSymbol(curSymbol);
+
+          if (curColIdx == 0)
+        	  curRegion->addRow(curRow);
+
+          curRegion->addCol(curCol);
+
           curColIdx++;
 	  }
 	  else if ( is_end_of_line(c) )
