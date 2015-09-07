@@ -24,9 +24,9 @@ namespace sudoku
 
 enum Error
 {
-  ERROR_INCORRECT_INPUT_FORMAT=1,
-  ERROR_INCORRECT_INPUT_ROW_COUNT=2,
-  ERROR_INCORRECT_INPUT_COL_COUNT=4
+  ERROR_INCORRECT_FORMAT=1,
+  ERROR_INCORRECT_ROW_COUNT=2,
+  ERROR_INCORRECT_COL_COUNT=4
 };
 
 class Parser
@@ -39,7 +39,6 @@ public:
 	~Parser() { delete m_pSymbols; };
     vector<HorizLine*> & getRows() { return m_vRows; }
     vector<VertLine*> & getCols() { return m_vCols; }
-    long getError() { return m_lError; }
 
 private:
 	bool is_symbol(char c);

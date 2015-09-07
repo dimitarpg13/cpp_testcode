@@ -1,5 +1,10 @@
-18:06:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+22:59:07 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
 Building file: ../src/SudokuQlik.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
@@ -11,5 +16,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser
 Finished building target: SudokuQlik
  
 
-18:06:09 Build Finished (took 818ms)
+22:59:08 Build Finished (took 1s.368ms)
 

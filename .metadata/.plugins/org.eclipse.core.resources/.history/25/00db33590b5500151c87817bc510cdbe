@@ -64,14 +64,9 @@ bool Parser::is_end_of_line(char c)
 
 bool Parser::parse(string inputFile)
 {
-	bool res=true;
 	ifstream fs (inputFile.c_str(), std::ifstream::in);
 
 	char c = fs.get();
-    if (fs.bad())
-    {
-      m_lError |= ERROR_INCORRECT_INPUT_FORMAT;
-    }
 
 	unsigned short curRowIdx = 0, curColIdx = 0;
 
@@ -128,18 +123,12 @@ bool Parser::parse(string inputFile)
 	fs.close();
 
     if (curRowIdx != m_iDim)
-    {
-        m_lError |= ERROR_INCORRECT_INPUT_ROW_COUNT;
-        res=false;
-    }
+        m_vErrors.push_back(ERROR_INCORRECT_ROW_COUNT);
 
     if (curColIdx != m_iDim)
-    {
-    	m_lError |= ERROR_INCORRECT_INPUT_COL_COUNT;
-    	res=false;
-    }
+    	m_vErrors.push_back(ERROR_INCORRECT_COL_COUNT);
 
-	return res;
+	return true;
 }
 
 }

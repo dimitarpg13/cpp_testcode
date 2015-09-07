@@ -70,7 +70,7 @@ bool Parser::parse(string inputFile)
 	char c = fs.get();
     if (fs.bad())
     {
-      m_lError |= ERROR_INCORRECT_INPUT_FORMAT;
+
     }
 
 	unsigned short curRowIdx = 0, curColIdx = 0;
@@ -129,13 +129,13 @@ bool Parser::parse(string inputFile)
 
     if (curRowIdx != m_iDim)
     {
-        m_lError |= ERROR_INCORRECT_INPUT_ROW_COUNT;
+        m_lError |= ERROR_INCORRECT_ROW_COUNT;
         res=false;
     }
 
     if (curColIdx != m_iDim)
     {
-    	m_lError |= ERROR_INCORRECT_INPUT_COL_COUNT;
+    	m_lError |= ERROR_INCORRECT_COL_COUNT;
     	res=false;
     }
 
