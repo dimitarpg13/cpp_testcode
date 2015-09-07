@@ -180,7 +180,7 @@ bool Parser::parse(string inputFile)
 		  curSymbol = new Symbol(curRow,curCol);
           curRow->addSymbol(curSymbol);
           curCol->addSymbol(curSymbol);
-          curRegion->addSymbol(curSymbol);
+
           if (curColIdx == 0)
         	  curRegion->addRow(curRow);
 
