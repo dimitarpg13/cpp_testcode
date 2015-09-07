@@ -1,8 +1,15 @@
-23:08:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+23:15:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Puzzle.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+../src/Puzzle.cpp: In member function ‘bool sudoku::Puzzle::process_parsed_config()’:
+../src/Puzzle.cpp:16:25: warning: unused variable ‘rows’ [-Wunused-variable]
+    vector<HorizLine*> & rows = m_pParser->getRows();
+                         ^
+../src/Puzzle.cpp:17:24: warning: unused variable ‘cols’ [-Wunused-variable]
+    vector<VertLine*> & cols = m_pParser->getCols();
+                        ^
 Finished building: ../src/Puzzle.cpp
  
 Building target: SudokuQlik
@@ -11,5 +18,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser
 Finished building target: SudokuQlik
  
 
-23:08:37 Build Finished (took 216ms)
+23:15:39 Build Finished (took 618ms)
 
