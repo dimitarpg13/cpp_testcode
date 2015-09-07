@@ -104,7 +104,7 @@ void Parser::cleanup(unsigned char rowCount, unsigned char colCount, unsigned ch
 //
 unsigned char Parser::get_region_idx(unsigned char symbolRowIdx, unsigned char symbolColIdx)
 {
-   unsigned char M = m_iDim / m_iRegionDim;
+   unsigned char M = m_iDim / m_iRegionDim; // the number of regions spanning a single line
    unsigned char regRowIdx = symbolRowIdx / m_iRegionDim;
    unsigned char regColIdx = symbolColIdx / m_iRegionDim;
    return regRowIdx * M + regColIdx;
@@ -157,7 +157,7 @@ bool Parser::parse(string inputFile)
 	    curRegion = m_pRegions[curRegIdx];
 	  else
 	  {
-	    curRegion = new Region(m_iRegionDim);
+	    curRegion = new Region(m_iDim,m_iRegionDim);
 	    m_pRegions[curRegIdx] = curRegion;
 	  }
 

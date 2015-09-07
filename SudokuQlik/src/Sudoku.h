@@ -69,21 +69,44 @@ public:
 class Region
 {
 public:
-	Region(unsigned char regDim) : m_iRegDim(regDim) {};
+	Region(unsigned char dim, unsigned char regionDim) :
+		m_iDim(dim), m_iRegionDim(regionDim),
+		m_iLastSymbolIdx(0), m_iLastRowIdx(0), m_iLastColIdx(0)
+    {
+		m_pSymbols = new Symbol* [m_iRegionDim * m_iRegionDim]; // the number of symbols in single region
+		m_pRows = new HorizLine* [m_iRegionDim];
+		m_pCols = new VertLine* [m_iRegionDim];
+    };
+
     ~Region()
     {
     	// the symbols will be cleaned up by the HorizLine's destructors
     	if (m_pSymbols != NULL)
-    	{
     	   delete [] m_pSymbols;
-    	}
+
+    	// the rows will be cleaned up by Puzzle's destructor
+    	if (m_pRows != NULL)
+    		delete [] m_pRows;
+
+    	// the columns will be cleaned up by Puzzle's destructor
+    	if (m_pCols != NULL)
+    		delete [] m_pCols;
+
     };
 
 private:
 	Symbol ** m_pSymbols;
-    unsigned char m_iRegDim;
+	HorizLine ** m_pRows;
+	VertLine ** m_pCols;
 
+	unsigned char m_iDim;
+    unsigned char m_iRegionDim;
+
+    unsigned char m_iLastSymbolIdx;
+    unsigned char m_iLastRowIdx;
+    unsigned char m_iLastColIdx;
 };
+
 
 
 class Line
@@ -99,7 +122,7 @@ public:
 		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
     {
 		m_pSymbols = new Symbol* [m_iDim];
-	    m_pRegions = new Region* [m_iRegionDim];
+	    m_pRegions = new Region* [m_iDim / m_iRegionDim]; // the number of regions spanning single line
     }
 
 	bool addSymbol(Symbol* symb)
@@ -162,7 +185,6 @@ public:
 };
 
 
-
 class Parser
 {
 public:
@@ -191,6 +213,8 @@ private:
     long long m_lError;
     static char symbolTable[];
 };
+
+
 
 class Puzzle
 {
