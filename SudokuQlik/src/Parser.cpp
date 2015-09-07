@@ -113,12 +113,20 @@ bool Parser::parse(string inputFile)
 	  c = fs.get();
 	}
 
+	// the end of line char is missing on the last line of the input file
 	if (curRow != NULL)
+	{
 		m_vRows.push_back(curRow);
-
-
+		curRowIdx++;
+	}
 
 	fs.close();
+
+    if (curRowIdx != m_iDim)
+        m_vErrors.push_back(ERROR_INCORRECT_ROW_COUNT);
+
+    if (curColIdx != m_iDim)
+    	m_vErrors.push_back(ERROR_INCORRECT_COL_COUNT);
 
 	return true;
 }

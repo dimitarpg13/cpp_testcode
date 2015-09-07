@@ -21,7 +21,7 @@ int main() {
 
 
 
-	Parser parser('.',9);
+	Parser parser(9,'.');
 
 	parser.parse("./src/example1.txt");
 

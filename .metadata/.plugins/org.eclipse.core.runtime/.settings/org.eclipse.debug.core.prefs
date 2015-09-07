@@ -3,4 +3,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug
 eclipse.preferences.version=1
 org.eclipse.debug.core.PREF_BREAKPOINT_MANAGER_ENABLED_STATE=true
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="m_pHorizLineArr[2]"/>\n<expression enabled\="true" text\="i"/>\n<expression enabled\="true" text\="m_pHorizLineArr[3]"/>\n<expression enabled\="true" text\="m_pHorizLineArr[4]"/>\n<expression enabled\="true" text\="m_pHorizLineArr[0]"/>\n<expression enabled\="true" text\="m_iHorizLineCount"/>\n</watchExpressions>\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="curRowIdx"/>\n<expression enabled\="true" text\="curColIdx"/>\n<expression enabled\="true" text\="c"/>\n<expression enabled\="true" text\="m_cSep"/>\n<expression enabled\="true" text\="sep"/>\n<expression enabled\="true" text\="dim"/>\n</watchExpressions>\n

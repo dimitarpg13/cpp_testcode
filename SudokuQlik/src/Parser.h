@@ -24,9 +24,9 @@ namespace sudoku
 
 enum Error
 {
-  INCORRECT_FORMAT=0,
-  INCORRECT_ROW_COUNT=1,
-  INCORRECT_COL_COUNT=2
+  ERROR_INCORRECT_FORMAT=0,
+  ERROR_INCORRECT_ROW_COUNT=1,
+  ERROR_INCORRECT_COL_COUNT=2
 };
 
 class Parser
@@ -50,7 +50,7 @@ private:
     char m_cEol;
     vector<HorizLine*> m_vRows;
     vector<VertLine*> m_vCols;
-
+    vector<int> m_vErrors;
     static char symbolTable[];
 };
 
