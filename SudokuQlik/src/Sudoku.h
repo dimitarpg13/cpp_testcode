@@ -37,13 +37,19 @@ class Symbol
 private:
 	char m_cVal;
 
+	HorizLine * m_pRow;
+	VertLine * m_pCol;
 	Region * m_pRegion;
-	HorizLine * m_pHorizLine;
-	VertLine * m_pVertLine;
 
 public:
-	Symbol(char val)  { m_cVal = val; }
-	Symbol() { m_cVal = 0; }
+	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
+		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region)
+    { }
+
+
+	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
+		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region)
+	{ }
 
 	bool isEmpty() {  return m_cVal == 0; }
 
@@ -51,19 +57,31 @@ public:
     void setValue(char val) { m_cVal = val; }
 
 	Region * getRegion() { return m_pRegion; };
-	HorizLine * getHorizLine() { return m_pHorizLine; }
-	VertLine * getVertLine() { return m_pVertLine; }
+	HorizLine * getRow() { return m_pRow; }
+	VertLine * getCol() { return m_pCol; }
 
     void setRegion(Region * region) { m_pRegion = region; }
-    void setHorizLine(HorizLine * hline) { m_pHorizLine = hline; }
-    void setVertLine(VertLine * vline) { m_pVertLine = vline; }
+    void setRow(HorizLine * row) { m_pRow = row; }
+    void setCol(VertLine * col) { m_pCol = col; }
 
 };
 
 class Region
 {
+public:
+	Region(unsigned char regDim) : m_iRegDim(regDim) {};
+    ~Region()
+    {
+    	// the symbols will be cleaned up by the HorizLine's destructors
+    	if (m_pSymbols != NULL)
+    	{
+    	   delete [] m_pSymbols;
+    	}
+    };
+
 private:
-	vector<Symbol*> m_vSymbols;
+	Symbol ** m_pSymbols;
+    unsigned char m_iRegDim;
 
 };
 
@@ -115,7 +133,7 @@ public:
 
     ~HorizLine()
     {
-    	// the symbols will be cleaned up by the HorizLine's ctors
+    	// the symbols will be cleaned up by the HorizLine's destructors
     	if (m_pSymbols != NULL)
         {
     	   for (int i = 0; i < m_iDim; i++)
@@ -132,7 +150,14 @@ class VertLine : public Line
 public:
    VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
 
-
+   ~VertLine()
+   {
+      	// the symbols will be cleaned up by the HorizLine's destructors
+      	if (m_pSymbols != NULL)
+        {
+      	   delete [] m_pSymbols;
+      	}
+   }
 
 };
 
@@ -147,20 +172,22 @@ public:
 	~Parser();
     HorizLine ** getRows() { return m_pRows; }
     VertLine **  getCols() { return m_pCols; }
+    Region ** getRegions() { return m_pRegions; }
     long long getError() { return m_lError; }
 
 private:
 	bool is_symbol(char c);
 	bool is_separator(char c);
 	bool is_end_of_line(char c);
-	void cleanup_rows_and_cols(unsigned char rowCount, unsigned char colCount);
-
+	void cleanup(unsigned char rowCount, unsigned char colCount, unsigned char regCount);
+    unsigned char get_region_idx(unsigned char rowIdx, unsigned char colIdx);
     set<char> * m_pSymbols;
     unsigned char m_iDim, m_iRegionDim;
     char m_cSep;
     char m_cEol;
     HorizLine ** m_pRows;
     VertLine ** m_pCols;
+    Region ** m_pRegions;
     long long m_lError;
     static char symbolTable[];
 };

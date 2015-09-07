@@ -20,18 +20,6 @@ int main() {
 	cout << "SudokuQlik" << endl; // prints SudokuQlik
 
 
-
-	Parser parser(9,'.');
-
-	parser.parse("./src/example1.txt");
-
-    Symbol s('1');
-    Region * r = s.getRegion();
-    vector<Region *> v;
-    v.push_back(r);
-
-    cout << endl << endl << "Problem instance:" << endl;
-
     Puzzle * p = new Puzzle();
     p->load("./src/example1.txt");
     delete p;

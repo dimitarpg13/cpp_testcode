@@ -34,10 +34,12 @@ Parser::Parser(unsigned char dim, unsigned char regionDim, char sep, char eol) :
 	m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
 	m_pRows = new HorizLine* [m_iDim];
 	m_pCols = new VertLine* [m_iDim];
+	m_pRegions = new Region* [m_iDim];
 	for (int i=0; i<m_iDim; i++)
 	{
 		m_pRows[i] = NULL;
 		m_pCols[i] = NULL;
+		m_pRegions[i] = NULL;
 	}
 }
 
@@ -66,7 +68,7 @@ bool Parser::is_end_of_line(char c)
 	return c == m_cEol;
 }
 
-void Parser::cleanup_rows_and_cols(unsigned char rowCount, unsigned char colCount)
+void Parser::cleanup(unsigned char rowCount, unsigned char colCount, unsigned char regCount)
 {
 	if (m_pRows != NULL)
 	{
@@ -82,8 +84,30 @@ void Parser::cleanup_rows_and_cols(unsigned char rowCount, unsigned char colCoun
 	   delete [] m_pCols;
 	}
 
+	if (m_pRegions != NULL)
+	{
+	   for (unsigned short i = 0; i < regCount; i++)
+	     delete m_pRegions[i];
+	   delete [] m_pRegions;
+	}
+
 	m_pRows = NULL;
 	m_pCols = NULL;
+	m_pRegions = NULL;
+}
+
+// input:
+//   symbolRowIdx - the row index of the current symbol
+//   symbolColIdx - the col index of the current symbol
+// return:
+//   the index of the region in which the current symbol is in
+//
+unsigned char Parser::get_region_idx(unsigned char symbolRowIdx, unsigned char symbolColIdx)
+{
+   unsigned char M = m_iDim / m_iRegionDim;
+   unsigned char regRowIdx = symbolRowIdx / m_iRegionDim;
+   unsigned char regColIdx = symbolColIdx / m_iRegionDim;
+   return regRowIdx * M + regColIdx;
 }
 
 bool Parser::parse(string inputFile)
@@ -98,18 +122,22 @@ bool Parser::parse(string inputFile)
 
       delete [] m_pRows;
       delete [] m_pCols;
+      delete [] m_pRegions;
 
       m_pRows = NULL;
       m_pCols = NULL;
+      m_pRegions = NULL;
 
       return false;
     }
 
-	unsigned char curRowIdx = 0, curColIdx = 0;
+	unsigned char curRowIdx = 0, curColIdx = 0, curRegIdx = 0;
 
 	Symbol * curSymbol = NULL;
     HorizLine * curRow = NULL;
     VertLine * curCol = NULL;
+    Region * curRegion = NULL;
+
 	while (fs.good())
 	{
 
@@ -124,16 +152,25 @@ bool Parser::parse(string inputFile)
 		  m_pCols[curColIdx] = curCol;
 	  }
 
+	  curRegIdx = get_region_idx(curRowIdx, curColIdx);
+	  if (m_pRegions[curRegIdx] != NULL)
+	    curRegion = m_pRegions[curRegIdx];
+	  else
+	  {
+	    curRegion = new Region(m_iRegionDim);
+	    m_pRegions[curRegIdx] = curRegion;
+	  }
+
 	  if ( is_symbol(c) )
 	  {
-		  curSymbol = new Symbol(c);
+		  curSymbol = new Symbol(c,curRow,curCol);
           curRow->addSymbol(curSymbol);
           curCol->addSymbol(curSymbol);
           curColIdx++;
 	  }
 	  else if ( is_separator(c) )
 	  {
-		  curSymbol = new Symbol();
+		  curSymbol = new Symbol(curRow,curCol);
           curRow->addSymbol(curSymbol);
           curCol->addSymbol(curSymbol);
           curColIdx++;
@@ -163,7 +200,7 @@ bool Parser::parse(string inputFile)
     {
         m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT;
 
-        cleanup_rows_and_cols(curRowIdx, curColIdx);
+        cleanup(curRowIdx, curColIdx, curRegIdx);
 
         res=false;
     }
@@ -172,7 +209,7 @@ bool Parser::parse(string inputFile)
     {
     	m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT;
 
-    	cleanup_rows_and_cols(curRowIdx, curColIdx);
+    	cleanup(curRowIdx, curColIdx, curRegIdx);
 
     	res=false;
     }
@@ -191,7 +228,7 @@ bool Puzzle::process_parsed_config()
    {
       m_pRows = m_pParser->getRows();
       m_pCols = m_pParser->getCols();
-
+      m_pRegions = m_pParser->getRegions();
 
 
    }

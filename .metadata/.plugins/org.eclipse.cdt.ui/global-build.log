@@ -1,95 +1,54 @@
-13:18:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+15:04:52 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
-In file included from ../src/Sudoku.cpp:8:0:
-../src/Sudoku.h:140:13: error: ‘string’ has not been declared
-  bool parse(string inputFile);
-             ^
-../src/Sudoku.h:152:5: error: ‘set’ does not name a type
-     set<char> * m_pSymbols;
-     ^
-../src/Sudoku.h:230:14: error: ‘string’ has not been declared
-    bool load(string inputFile)
+../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
+../src/Sudoku.cpp:190:39: error: ‘curRegionIdx’ was not declared in this scope
+         cleanup(curRowIdx, curColIdx, curRegionIdx);
+                                       ^
+../src/Sudoku.cpp:199:36: error: ‘curRegionIdx’ was not declared in this scope
+      cleanup(curRowIdx, curColIdx, curRegionIdx);
+                                    ^
+../src/Sudoku.cpp:130:46: warning: unused variable ‘curRegIdx’ [-Wunused-variable]
+  unsigned char curRowIdx = 0, curColIdx = 0, curRegIdx = 0;
+                                              ^
+../src/Sudoku.cpp:135:14: warning: unused variable ‘curRegion’ [-Wunused-variable]
+     Region * curRegion = NULL;
               ^
-../src/Sudoku.h: In constructor ‘sudoku::Puzzle::Puzzle()’:
-../src/Sudoku.h:187:23: error: ‘NULL’ was not declared in this scope
-    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
-                       ^
-../src/Sudoku.h: In constructor ‘sudoku::Puzzle::Puzzle(unsigned char, unsigned char)’:
-../src/Sudoku.h:195:51: error: ‘NULL’ was not declared in this scope
-     m_iDim(dim), m_iRegionDim(regionDim), m_pRows(NULL),
-                                                   ^
-../src/Sudoku.h: In destructor ‘sudoku::Puzzle::~Puzzle()’:
-../src/Sudoku.h:203:20: error: ‘NULL’ was not declared in this scope
-     if (m_pRows != NULL)
-                    ^
-../src/Sudoku.h:210:20: error: ‘NULL’ was not declared in this scope
-     if (m_pCols != NULL)
-                    ^
-../src/Sudoku.h:217:23: error: ‘NULL’ was not declared in this scope
-     if (m_pRegions != NULL)
-                       ^
-../src/Sudoku.h:224:22: error: ‘NULL’ was not declared in this scope
-     if (m_pParser != NULL)
-                      ^
-../src/Sudoku.cpp: In constructor ‘sudoku::Parser::Parser(unsigned char, unsigned char, char, char)’:
-../src/Sudoku.cpp:34:2: error: ‘m_pSymbols’ was not declared in this scope
-  m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
-  ^
-../src/Sudoku.cpp:34:19: error: expected type-specifier before ‘set’
-  m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
-                   ^
-../src/Sudoku.cpp:34:19: error: expected ‘;’ before ‘set’
-../src/Sudoku.cpp:39:16: error: ‘NULL’ was not declared in this scope
-   m_pRows[i] = NULL;
-                ^
-../src/Sudoku.cpp: In destructor ‘sudoku::Parser::~Parser()’:
-../src/Sudoku.cpp:46:12: error: ‘m_pSymbols’ was not declared in this scope
-     delete m_pSymbols;
-            ^
-../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::is_symbol(char)’:
-../src/Sudoku.cpp:52:2: error: ‘set’ was not declared in this scope
-  set<char>::iterator it = m_pSymbols->find(c);
-  ^
-../src/Sudoku.cpp:52:6: error: expected primary-expression before ‘char’
-  set<char>::iterator it = m_pSymbols->find(c);
-      ^
-../src/Sudoku.cpp:52:6: error: expected ‘;’ before ‘char’
-../src/Sudoku.cpp:53:6: error: ‘it’ was not declared in this scope
-  if (it != m_pSymbols->end())
-      ^
-../src/Sudoku.cpp:53:12: error: ‘m_pSymbols’ was not declared in this scope
-  if (it != m_pSymbols->end())
-            ^
-../src/Sudoku.cpp: In member function ‘void sudoku::Parser::cleanup_rows_and_cols(unsigned char, unsigned char)’:
-../src/Sudoku.cpp:71:17: error: ‘NULL’ was not declared in this scope
-  if (m_pRows != NULL)
-                 ^
-../src/Sudoku.cpp:78:17: error: ‘NULL’ was not declared in this scope
-  if (m_pCols != NULL)
-                 ^
-../src/Sudoku.cpp:85:12: error: ‘NULL’ was not declared in this scope
-  m_pRows = NULL;
-            ^
-../src/Sudoku.cpp: At global scope:
-../src/Sudoku.cpp:89:20: error: ‘bool sudoku::Parser::parse’ is not a static member of ‘class sudoku::Parser’
- bool Parser::parse(string inputFile)
-                    ^
-../src/Sudoku.cpp:89:20: error: ‘string’ was not declared in this scope
-../src/Sudoku.cpp:90:1: error: expected ‘,’ or ‘;’ before ‘{’ token
- {
- ^
-../src/Sudoku.cpp:207:1: error: expected ‘}’ at end of input
- }
- ^
-../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::is_symbol(char)’:
-../src/Sudoku.cpp:57:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 make: *** [src/Sudoku.o] Error 1
-13:19:56 **** Incremental Build of configuration Debug for project SudokuQlik ****
+15:05:24 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
+../src/Sudoku.cpp:135:14: warning: unused variable ‘curRegion’ [-Wunused-variable]
+     Region * curRegion = NULL;
+              ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:14:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
+../src/Sudoku.cpp:156:16: error: cannot convert ‘sudoku::VertLine*’ to ‘sudoku::Region*’ in assignment
+      curRegion = new VertLine(m_iDim, m_iRegionDim);
+                ^
+make: *** [src/Sudoku.o] Error 1
+15:15:24 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
@@ -106,7 +65,7 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
-13:20:34 **** Incremental Build of configuration Debug for project SudokuQlik ****
+15:31:39 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
@@ -123,17 +82,43 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
-13:21:53 **** Incremental Build of configuration Debug for project SudokuQlik ****
+15:32:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+15:38:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In constructor ‘sudoku::Parser::Parser(unsigned char, unsigned char, char, char)’:
+../src/Sudoku.cpp:38:2: error: expected ‘;’ before ‘for’
+  for (int i=0; i<m_iDim; i++)
+  ^
+../src/Sudoku.cpp:38:16: error: ‘i’ was not declared in this scope
+  for (int i=0; i<m_iDim; i++)
+                ^
+../src/Sudoku.cpp:38:29: error: expected ‘;’ before ‘)’ token
+  for (int i=0; i<m_iDim; i++)
+                             ^
+make: *** [src/Sudoku.o] Error 1
+15:41:26 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
 Finished building: ../src/Sudoku.cpp
  
-Building file: ../src/SudokuQlik.cpp
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:50:28 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
