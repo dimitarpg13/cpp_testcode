@@ -7278,3 +7278,24 @@ Binding(CTRL+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.950
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.disable.grammar.constraints
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.950
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.reload.dependencies
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.952
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.disable.grammar.constraints
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.952
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.reload.dependencies
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.952
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.disable.grammar.constraints
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.952
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.reload.dependencies
+
+!ENTRY org.eclipse.ui 4 4 2015-09-07 00:52:12.957
+!MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.linuxtools.systemtap.ui.ide.RunScriptCommand

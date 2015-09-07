@@ -1,0 +1,25 @@
+/*
+ * Puzzle.cpp
+ *
+ *  Created on: Sep 6, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#include "Puzzle.h"
+
+namespace sudoku
+{
+
+bool Puzzle::process_parsed_config()
+{
+   bool res = true;
+   m_pRows = m_pParser->getRows();
+   m_pCols = m_pParser->getCols();
+
+   m_lErrors |= m_pParser->getError();
+
+
+   return res;
+}
+
+}

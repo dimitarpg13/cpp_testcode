@@ -13,10 +13,21 @@ namespace sudoku
 bool Puzzle::process_parsed_config()
 {
    bool res = true;
-   vector<HorizLine*> & rows = m_pParser->getRows();
-   vector<VertLine*> & cols = m_pParser->getCols();
+
+   m_lError |= m_pParser->getError();
+
+   if (m_lError == SUDOKU_NO_ERROR)
+   {
+      m_pRows = m_pParser->getRows();
+      m_pCols = m_pParser->getCols();
+
+
+   }
+   else
+	   res = false;
 
    return res;
+
 }
 
 }

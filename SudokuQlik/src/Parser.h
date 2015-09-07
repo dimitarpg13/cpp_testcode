@@ -24,33 +24,35 @@ namespace sudoku
 
 enum Error
 {
-  ERROR_INCORRECT_INPUT_FORMAT=1,
-  ERROR_INCORRECT_INPUT_ROW_COUNT=2,
-  ERROR_INCORRECT_INPUT_COL_COUNT=4
+   SUDOKU_NO_ERROR=0,
+   SUDOKU_ERROR_INCORRECT_INPUT_FORMAT=1,
+   SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT=2,
+   SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT=4
 };
 
 class Parser
 {
 public:
-	Parser(int dim);
-	Parser(int dim, char sep);
-	Parser(int dim, char sep, char eol);
+	Parser(int dim, char sep = '.', char eol = '\n');
+
 	bool parse(string inputFile);
-	~Parser() { delete m_pSymbols; };
-    vector<HorizLine*> & getRows() { return m_vRows; }
-    vector<VertLine*> & getCols() { return m_vCols; }
+	~Parser();
+    HorizLine ** getRows() { return m_pRows; }
+    VertLine **  getCols() { return m_pCols; }
     long long getError() { return m_lError; }
 
 private:
 	bool is_symbol(char c);
 	bool is_separator(char c);
 	bool is_end_of_line(char c);
+	void cleanup_rows_and_cols(int rowCount, int colCount);
+
     set<char> * m_pSymbols;
     int m_iDim;
     char m_cSep;
     char m_cEol;
-    vector<HorizLine*> m_vRows;
-    vector<VertLine*> m_vCols;
+    HorizLine ** m_pRows;
+    VertLine ** m_pCols;
     long long m_lError;
     static char symbolTable[];
 };

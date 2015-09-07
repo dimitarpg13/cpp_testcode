@@ -27,20 +27,25 @@ namespace sudoku
                           };
 
 
-Parser::Parser(int dim) : m_iDim(dim), m_cSep('.'), m_cEol('\n')
+
+Parser::Parser(int dim, char sep, char eol) : m_iDim(dim), m_cSep(sep), m_cEol(eol), m_lError(0)
 {
 	m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
+	m_pRows = new HorizLine* [m_iDim];
+	m_pCols = new VertLine* [m_iDim];
+	for (int i=0; i<m_iDim; i++)
+	{
+		m_pRows[i] = NULL;
+		m_pCols[i] = NULL;
+	}
 }
 
-Parser::Parser(int dim, char sep) : m_iDim(dim), m_cSep(sep), m_cEol('\n')
+Parser::~Parser()
 {
-    m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
-}
+	cleanup_rows_and_cols(m_iDim, m_iDim);
+    delete m_pSymbols;
+};
 
-Parser::Parser(int dim, char sep, char eol) : m_iDim(dim), m_cSep(sep), m_cEol(eol)
-{
-	m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
-}
 
 bool Parser::is_symbol(char c)
 {
@@ -61,6 +66,25 @@ bool Parser::is_end_of_line(char c)
 	return c == m_cEol;
 }
 
+void Parser::cleanup_rows_and_cols(int rowCount, int colCount)
+{
+	if (m_pRows != NULL)
+	{
+	   for (int i = 0; i < rowCount; i++)
+	      delete m_pRows[i];
+	   delete [] m_pRows;
+	}
+
+	if (m_pCols != NULL)
+	{
+	   for (int i = 0; i < colCount; i++)
+	     delete m_pCols[i];
+	   delete [] m_pCols;
+	}
+
+	m_pRows = NULL;
+	m_pCols = NULL;
+}
 
 bool Parser::parse(string inputFile)
 {
@@ -70,7 +94,15 @@ bool Parser::parse(string inputFile)
 	char c = fs.get();
     if (fs.bad())
     {
-      m_lError |= ERROR_INCORRECT_INPUT_FORMAT;
+      m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_FORMAT;
+
+      delete [] m_pRows;
+      delete [] m_pCols;
+
+      m_pRows = NULL;
+      m_pCols = NULL;
+
+      return false;
     }
 
 	unsigned short curRowIdx = 0, curColIdx = 0;
@@ -84,12 +116,12 @@ bool Parser::parse(string inputFile)
 	  if (curRow == NULL)
 		  curRow = new HorizLine();
 
-	  if (curColIdx < m_vCols.size())
-		  curCol = m_vCols[curColIdx];
+	  if (m_pCols[curColIdx] != NULL)
+		  curCol = m_pCols[curColIdx];
 	  else
 	  {
 		  curCol = new VertLine();
-		  m_vCols.push_back(curCol);
+		  m_pCols[curColIdx] = curCol;
 	  }
 
 	  if ( is_symbol(c) )
@@ -108,7 +140,7 @@ bool Parser::parse(string inputFile)
 	  }
 	  else if ( is_end_of_line(c) )
 	  {
-		 m_vRows.push_back(curRow);
+		 m_pRows[curRowIdx] = curRow;
 		 curRow = NULL;
 		 curRowIdx++;
 		 curColIdx = 0;
@@ -121,7 +153,7 @@ bool Parser::parse(string inputFile)
 	// the end of line char is missing on the last line of the input file
 	if (curRow != NULL)
 	{
-		m_vRows.push_back(curRow);
+		m_pRows[curRowIdx] = curRow;
 		curRowIdx++;
 	}
 
@@ -129,13 +161,19 @@ bool Parser::parse(string inputFile)
 
     if (curRowIdx != m_iDim)
     {
-        m_lError |= ERROR_INCORRECT_INPUT_ROW_COUNT;
+        m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT;
+
+        cleanup_rows_and_cols(curRowIdx, curColIdx);
+
         res=false;
     }
 
     if (curColIdx != m_iDim)
     {
-    	m_lError |= ERROR_INCORRECT_INPUT_COL_COUNT;
+    	m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT;
+
+    	cleanup_rows_and_cols(curRowIdx, curColIdx);
+
     	res=false;
     }
 

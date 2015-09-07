@@ -1,65 +1,283 @@
-22:42:41 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-make: Nothing to be done for `all'.
-22:59:07 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-23:03:55 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-23:08:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+23:56:09 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Puzzle.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
 Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+./src/SudokuQlik.o: In function `main':
+/root/workspace/SudokuQlik/Debug/../src/SudokuQlik.cpp:24: undefined reference to `sudoku::Parser::Parser(int, char)'
+./src/SudokuQlik.o: In function `sudoku::Puzzle::init()':
+/root/workspace/SudokuQlik/Debug/../src/Puzzle.h:47: undefined reference to `sudoku::Parser::Parser(int, char)'
+collect2: error: ld returned 1 exit status
+make: *** [SudokuQlik] Error 1
+23:57:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+../src/Parser.cpp:31:56: error: default argument given for parameter 2 of ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
+ Parser::Parser(int dim, char sep = '.', char eol = '\n') : m_iDim(dim), m_cSep(sep), m_cEol(eol)
+                                                        ^
+In file included from ../src/Parser.cpp:9:0:
+../src/Parser.h:35:2: error: after previous specification in ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
+  Parser(int dim, char sep = '.', char eol = '\n');
+  ^
+../src/Parser.cpp:31:56: error: default argument given for parameter 3 of ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
+ Parser::Parser(int dim, char sep = '.', char eol = '\n') : m_iDim(dim), m_cSep(sep), m_cEol(eol)
+                                                        ^
+In file included from ../src/Parser.cpp:9:0:
+../src/Parser.h:35:2: error: after previous specification in ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
+  Parser(int dim, char sep = '.', char eol = '\n');
+  ^
+make: *** [src/Parser.o] Error 1
+23:58:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
-23:15:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+00:04:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Puzzle.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-../src/Puzzle.cpp: In member function ‘bool sudoku::Puzzle::process_parsed_config()’:
-../src/Puzzle.cpp:16:25: warning: unused variable ‘rows’ [-Wunused-variable]
-    vector<HorizLine*> & rows = m_pParser->getRows();
-                         ^
-../src/Puzzle.cpp:17:24: warning: unused variable ‘cols’ [-Wunused-variable]
-    vector<VertLine*> & cols = m_pParser->getCols();
-                        ^
 Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:12:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:20:34 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:24:17 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:40:25 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:41:05 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:43:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:48:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:49:56 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+In file included from ../src/Parser.cpp:9:0:
+../src/Parser.h:27:14: error: expected ‘}’ before ‘;’ token
+    NO_ERROR=0;
+              ^
+../src/Parser.h:28:4: error: ‘ERROR_INCORRECT_INPUT_FORMAT’ does not name a type
+    ERROR_INCORRECT_INPUT_FORMAT=1,
+    ^
+../src/Parser.h:40:5: error: ‘HorizLine’ does not name a type
+     HorizLine ** getRows() { return m_pRows; }
+     ^
+../src/Parser.h:41:5: error: ‘VertLine’ does not name a type
+     VertLine **  getCols() { return m_pCols; }
+     ^
+../src/Parser.h:54:5: error: ‘HorizLine’ does not name a type
+     HorizLine ** m_pRows;
+     ^
+../src/Parser.h:55:5: error: ‘VertLine’ does not name a type
+     VertLine ** m_pCols;
+     ^
+../src/Parser.h:60:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/Parser.o] Error 1
+00:50:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:51:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Parser.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
+Finished building: ../src/Parser.cpp
+ 
+Building file: ../src/Puzzle.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
+Finished building: ../src/Puzzle.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
