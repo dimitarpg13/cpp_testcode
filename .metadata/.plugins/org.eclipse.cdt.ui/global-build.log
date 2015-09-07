@@ -1,629 +1,100 @@
-23:56:09 **** Incremental Build of configuration Debug for project SudokuQlik ****
+13:18:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
-Building file: ../src/Puzzle.cpp
+Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-./src/SudokuQlik.o: In function `main':
-/root/workspace/SudokuQlik/Debug/../src/SudokuQlik.cpp:24: undefined reference to `sudoku::Parser::Parser(int, char)'
-./src/SudokuQlik.o: In function `sudoku::Puzzle::init()':
-/root/workspace/SudokuQlik/Debug/../src/Puzzle.h:47: undefined reference to `sudoku::Parser::Parser(int, char)'
-collect2: error: ld returned 1 exit status
-make: *** [SudokuQlik] Error 1
-23:57:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-../src/Parser.cpp:31:56: error: default argument given for parameter 2 of ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
- Parser::Parser(int dim, char sep = '.', char eol = '\n') : m_iDim(dim), m_cSep(sep), m_cEol(eol)
-                                                        ^
-In file included from ../src/Parser.cpp:9:0:
-../src/Parser.h:35:2: error: after previous specification in ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
-  Parser(int dim, char sep = '.', char eol = '\n');
-  ^
-../src/Parser.cpp:31:56: error: default argument given for parameter 3 of ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
- Parser::Parser(int dim, char sep = '.', char eol = '\n') : m_iDim(dim), m_cSep(sep), m_cEol(eol)
-                                                        ^
-In file included from ../src/Parser.cpp:9:0:
-../src/Parser.h:35:2: error: after previous specification in ‘sudoku::Parser::Parser(int, char, char)’ [-fpermissive]
-  Parser(int dim, char sep = '.', char eol = '\n');
-  ^
-make: *** [src/Parser.o] Error 1
-23:58:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:04:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:12:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:20:34 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:24:17 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:40:25 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:41:05 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:43:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:48:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:49:56 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.cpp:9:0:
-../src/Parser.h:27:14: error: expected ‘}’ before ‘;’ token
-    NO_ERROR=0;
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:140:13: error: ‘string’ has not been declared
+  bool parse(string inputFile);
+             ^
+../src/Sudoku.h:152:5: error: ‘set’ does not name a type
+     set<char> * m_pSymbols;
+     ^
+../src/Sudoku.h:230:14: error: ‘string’ has not been declared
+    bool load(string inputFile)
               ^
-../src/Parser.h:28:4: error: ‘ERROR_INCORRECT_INPUT_FORMAT’ does not name a type
-    ERROR_INCORRECT_INPUT_FORMAT=1,
-    ^
-../src/Parser.h:40:5: error: ‘HorizLine’ does not name a type
-     HorizLine ** getRows() { return m_pRows; }
-     ^
-../src/Parser.h:41:5: error: ‘VertLine’ does not name a type
-     VertLine **  getCols() { return m_pCols; }
-     ^
-../src/Parser.h:54:5: error: ‘HorizLine’ does not name a type
-     HorizLine ** m_pRows;
-     ^
-../src/Parser.h:55:5: error: ‘VertLine’ does not name a type
-     VertLine ** m_pCols;
-     ^
-../src/Parser.h:60:1: error: expected declaration before ‘}’ token
+../src/Sudoku.h: In constructor ‘sudoku::Puzzle::Puzzle()’:
+../src/Sudoku.h:187:23: error: ‘NULL’ was not declared in this scope
+    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
+                       ^
+../src/Sudoku.h: In constructor ‘sudoku::Puzzle::Puzzle(unsigned char, unsigned char)’:
+../src/Sudoku.h:195:51: error: ‘NULL’ was not declared in this scope
+     m_iDim(dim), m_iRegionDim(regionDim), m_pRows(NULL),
+                                                   ^
+../src/Sudoku.h: In destructor ‘sudoku::Puzzle::~Puzzle()’:
+../src/Sudoku.h:203:20: error: ‘NULL’ was not declared in this scope
+     if (m_pRows != NULL)
+                    ^
+../src/Sudoku.h:210:20: error: ‘NULL’ was not declared in this scope
+     if (m_pCols != NULL)
+                    ^
+../src/Sudoku.h:217:23: error: ‘NULL’ was not declared in this scope
+     if (m_pRegions != NULL)
+                       ^
+../src/Sudoku.h:224:22: error: ‘NULL’ was not declared in this scope
+     if (m_pParser != NULL)
+                      ^
+../src/Sudoku.cpp: In constructor ‘sudoku::Parser::Parser(unsigned char, unsigned char, char, char)’:
+../src/Sudoku.cpp:34:2: error: ‘m_pSymbols’ was not declared in this scope
+  m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
+  ^
+../src/Sudoku.cpp:34:19: error: expected type-specifier before ‘set’
+  m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
+                   ^
+../src/Sudoku.cpp:34:19: error: expected ‘;’ before ‘set’
+../src/Sudoku.cpp:39:16: error: ‘NULL’ was not declared in this scope
+   m_pRows[i] = NULL;
+                ^
+../src/Sudoku.cpp: In destructor ‘sudoku::Parser::~Parser()’:
+../src/Sudoku.cpp:46:12: error: ‘m_pSymbols’ was not declared in this scope
+     delete m_pSymbols;
+            ^
+../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::is_symbol(char)’:
+../src/Sudoku.cpp:52:2: error: ‘set’ was not declared in this scope
+  set<char>::iterator it = m_pSymbols->find(c);
+  ^
+../src/Sudoku.cpp:52:6: error: expected primary-expression before ‘char’
+  set<char>::iterator it = m_pSymbols->find(c);
+      ^
+../src/Sudoku.cpp:52:6: error: expected ‘;’ before ‘char’
+../src/Sudoku.cpp:53:6: error: ‘it’ was not declared in this scope
+  if (it != m_pSymbols->end())
+      ^
+../src/Sudoku.cpp:53:12: error: ‘m_pSymbols’ was not declared in this scope
+  if (it != m_pSymbols->end())
+            ^
+../src/Sudoku.cpp: In member function ‘void sudoku::Parser::cleanup_rows_and_cols(unsigned char, unsigned char)’:
+../src/Sudoku.cpp:71:17: error: ‘NULL’ was not declared in this scope
+  if (m_pRows != NULL)
+                 ^
+../src/Sudoku.cpp:78:17: error: ‘NULL’ was not declared in this scope
+  if (m_pCols != NULL)
+                 ^
+../src/Sudoku.cpp:85:12: error: ‘NULL’ was not declared in this scope
+  m_pRows = NULL;
+            ^
+../src/Sudoku.cpp: At global scope:
+../src/Sudoku.cpp:89:20: error: ‘bool sudoku::Parser::parse’ is not a static member of ‘class sudoku::Parser’
+ bool Parser::parse(string inputFile)
+                    ^
+../src/Sudoku.cpp:89:20: error: ‘string’ was not declared in this scope
+../src/Sudoku.cpp:90:1: error: expected ‘,’ or ‘;’ before ‘{’ token
+ {
+ ^
+../src/Sudoku.cpp:207:1: error: expected ‘}’ at end of input
  }
  ^
-make: *** [src/Parser.o] Error 1
-00:50:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-00:51:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
- 
-Building target: SudokuQlik
-Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
-Finished building target: SudokuQlik
- 
-11:47:25 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine()’:
-../src/Line.h:64:5: error: no matching function for call to ‘sudoku::Line::Line()’
-     {
-     ^
-../src/Line.h:64:5: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine()’:
-../src/Line.h:71:7: error: no matching function for call to ‘sudoku::Line::Line()’
- class VertLine : public Line
-       ^
-../src/Line.h:71:7: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Parser.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Parser.cpp:123:27: note: synthesized method ‘sudoku::VertLine::VertLine()’ first required here 
-     curCol = new VertLine();
-                           ^
-make: *** [src/Parser.o] Error 1
-11:48:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine()’:
-../src/Line.h:60:7: error: no matching function for call to ‘sudoku::Line::Line()’
- class HorizLine : public Line
-       ^
-../src/Line.h:60:7: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Parser.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Parser.cpp:117:28: note: synthesized method ‘sudoku::HorizLine::HorizLine()’ first required here 
-     curRow = new HorizLine();
-                            ^
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine()’:
-../src/Line.h:67:7: error: no matching function for call to ‘sudoku::Line::Line()’
- class VertLine : public Line
-       ^
-../src/Line.h:67:7: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Parser.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Parser.cpp:123:27: note: synthesized method ‘sudoku::VertLine::VertLine()’ first required here 
-     curCol = new VertLine();
-                           ^
-make: *** [src/Parser.o] Error 1
-11:52:31 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-../src/Parser.cpp: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Parser.cpp:118:48: error: no matching function for call to ‘sudoku::HorizLine::HorizLine(unsigned char&, unsigned char&)’
-     curRow = new HorizLine(m_iDim, m_iRegionDim);
-                                                ^
-../src/Parser.cpp:118:48: note: candidates are:
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h:60:7: note: sudoku::HorizLine::HorizLine()
- class HorizLine : public Line
-       ^
-../src/Line.h:60:7: note:   candidate expects 0 arguments, 2 provided
-../src/Line.h:60:7: note: sudoku::HorizLine::HorizLine(const sudoku::HorizLine&)
-../src/Line.h:60:7: note:   candidate expects 1 argument, 2 provided
-../src/Parser.cpp:124:47: error: no matching function for call to ‘sudoku::VertLine::VertLine(unsigned char&, unsigned char&)’
-     curCol = new VertLine(m_iDim, m_iRegionDim);
-                                               ^
-../src/Parser.cpp:124:47: note: candidates are:
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h:67:7: note: sudoku::VertLine::VertLine()
- class VertLine : public Line
-       ^
-../src/Line.h:67:7: note:   candidate expects 0 arguments, 2 provided
-../src/Line.h:67:7: note: sudoku::VertLine::VertLine(const sudoku::VertLine&)
-../src/Line.h:67:7: note:   candidate expects 1 argument, 2 provided
-make: *** [src/Parser.o] Error 1
-11:54:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
-../src/Line.h:64:3: error: class ‘sudoku::HorizLine’ does not have any field named ‘m_iDim’
-   m_iDim(dim), m_iRegionDim(regionDim)
-   ^
-../src/Line.h:64:16: error: class ‘sudoku::HorizLine’ does not have any field named ‘m_iRegionDim’
-   m_iDim(dim), m_iRegionDim(regionDim)
-                ^
-../src/Line.h:64:38: error: no matching function for call to ‘sudoku::Line::Line()’
-   m_iDim(dim), m_iRegionDim(regionDim)
-                                      ^
-../src/Line.h:64:38: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: At global scope:
-../src/Line.h:79:4: error: expected ‘;’ after class definition
-    }
-    ^
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
-../src/Line.h:75:5: error: class ‘sudoku::VertLine’ does not have any field named ‘m_iDim’
-     m_iDim(dim), m_iRegionDim(regionDim)
-     ^
-../src/Line.h:75:18: error: class ‘sudoku::VertLine’ does not have any field named ‘m_iRegionDim’
-     m_iDim(dim), m_iRegionDim(regionDim)
-                  ^
-../src/Line.h:75:40: error: no matching function for call to ‘sudoku::Line::Line()’
-     m_iDim(dim), m_iRegionDim(regionDim)
-                                        ^
-../src/Line.h:75:40: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: At global scope:
-../src/Line.h:83:1: error: expected declaration before ‘}’ token
+../src/Sudoku.cpp: In member function ‘bool sudoku::Parser::is_symbol(char)’:
+../src/Sudoku.cpp:57:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-make: *** [src/Parser.o] Error 1
-11:56:03 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make: *** [src/Sudoku.o] Error 1
+13:19:56 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
-Building file: ../src/Parser.cpp
+Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
-../src/Line.h:64:3: error: class ‘sudoku::HorizLine’ does not have any field named ‘m_iDim’
-   m_iDim(dim), m_iRegionDim(regionDim)
-   ^
-../src/Line.h:64:16: error: class ‘sudoku::HorizLine’ does not have any field named ‘m_iRegionDim’
-   m_iDim(dim), m_iRegionDim(regionDim)
-                ^
-../src/Line.h:64:38: error: no matching function for call to ‘sudoku::Line::Line()’
-   m_iDim(dim), m_iRegionDim(regionDim)
-                                      ^
-../src/Line.h:64:38: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
-../src/Line.h:75:5: error: class ‘sudoku::VertLine’ does not have any field named ‘m_iDim’
-     m_iDim(dim), m_iRegionDim(regionDim)
-     ^
-../src/Line.h:75:18: error: class ‘sudoku::VertLine’ does not have any field named ‘m_iRegionDim’
-     m_iDim(dim), m_iRegionDim(regionDim)
-                  ^
-../src/Line.h:75:40: error: no matching function for call to ‘sudoku::Line::Line()’
-     m_iDim(dim), m_iRegionDim(regionDim)
-                                        ^
-../src/Line.h:75:40: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Line.h:74:4: error: ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’ is private
-    VertLine(unsigned char dim, unsigned char regionDim) :
-    ^
-../src/Parser.cpp:124:47: error: within this context
-     curCol = new VertLine(m_iDim, m_iRegionDim);
-                                               ^
-make: *** [src/Parser.o] Error 1
-11:56:39 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
-../src/Line.h:64:5: error: no matching function for call to ‘sudoku::Line::Line()’
-     {
-     ^
-../src/Line.h:64:5: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
-../src/Line.h:74:4: error: no matching function for call to ‘sudoku::Line::Line()’
-    {
-    ^
-../src/Line.h:74:4: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In member function ‘bool sudoku::Parser::parse(std::string)’:
-../src/Line.h:73:4: error: ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’ is private
-    VertLine(unsigned char dim, unsigned char regionDim)
-    ^
-../src/Parser.cpp:124:47: error: within this context
-     curCol = new VertLine(m_iDim, m_iRegionDim);
-                                               ^
-make: *** [src/Parser.o] Error 1
-11:56:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
-../src/Line.h:64:5: error: no matching function for call to ‘sudoku::Line::Line()’
-     {
-     ^
-../src/Line.h:64:5: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
-../src/Line.h:75:4: error: no matching function for call to ‘sudoku::Line::Line()’
-    {
-    ^
-../src/Line.h:75:4: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-make: *** [src/Parser.o] Error 1
-11:57:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-In file included from ../src/Parser.h:17:0,
-                 from ../src/Parser.cpp:9:
-../src/Line.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
-../src/Line.h:63:56: error: no matching function for call to ‘sudoku::Line::Line()’
-  HorizLine(unsigned char dim, unsigned char regionDim) {};
-                                                        ^
-../src/Line.h:63:56: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-../src/Line.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
-../src/Line.h:72:57: error: no matching function for call to ‘sudoku::Line::Line()’
-    VertLine(unsigned char dim, unsigned char regionDim) {};
-                                                         ^
-../src/Line.h:72:57: note: candidates are:
-../src/Line.h:30:2: note: sudoku::Line::Line(unsigned char, unsigned char)
-  Line(unsigned char dim, unsigned char regDim) :
-  ^
-../src/Line.h:30:2: note:   candidate expects 2 arguments, 0 provided
-../src/Line.h:21:7: note: sudoku::Line::Line(const sudoku::Line&)
- class Line
-       ^
-../src/Line.h:21:7: note:   candidate expects 1 argument, 0 provided
-make: *** [src/Parser.o] Error 1
-11:59:48 **** Incremental Build of configuration Debug for project SudokuQlik ****
-make all 
-Building file: ../src/Parser.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Parser.d" -MT"src/Parser.d" -o "src/Parser.o" "../src/Parser.cpp"
-Finished building: ../src/Parser.cpp
- 
-Building file: ../src/Puzzle.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
  
 Building file: ../src/SudokuQlik.cpp
 Invoking: GCC C++ Compiler
@@ -632,15 +103,15 @@ Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
-12:11:27 **** Incremental Build of configuration Debug for project SudokuQlik ****
+13:20:34 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
-Building file: ../src/Puzzle.cpp
+Building file: ../src/Sudoku.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Puzzle.d" -MT"src/Puzzle.d" -o "src/Puzzle.o" "../src/Puzzle.cpp"
-Finished building: ../src/Puzzle.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
  
 Building file: ../src/SudokuQlik.cpp
 Invoking: GCC C++ Compiler
@@ -649,6 +120,23 @@ Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
-g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Parser.o ./src/Puzzle.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+13:21:53 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  

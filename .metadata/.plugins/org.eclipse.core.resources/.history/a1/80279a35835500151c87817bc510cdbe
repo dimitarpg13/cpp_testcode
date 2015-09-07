@@ -1,0 +1,132 @@
+/*
+ * Line.h
+ *
+ *  Created on: Sep 5, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#ifndef SUDOKU_H_
+#define SUDOKU_H_
+
+#include <vector>
+
+
+
+
+using namespace std;
+
+namespace sudoku
+{
+
+class HorizLine;
+class VertLine;
+class Region;
+
+class Symbol
+{
+private:
+	char m_cVal;
+
+	Region * m_pRegion;
+	HorizLine * m_pHorizLine;
+	VertLine * m_pVertLine;
+
+public:
+	Symbol(char val)  { m_cVal = val; }
+	Symbol() { m_cVal = 0; }
+
+	bool isEmpty() {  return m_cVal == 0; }
+
+	char getValue() { return m_cVal; }
+    void setValue(char val) { m_cVal = val; }
+
+	Region * getRegion() { return m_pRegion; };
+	HorizLine * getHorizLine() { return m_pHorizLine; }
+	VertLine * getVertLine() { return m_pVertLine; }
+
+    void setRegion(Region * region) { m_pRegion = region; }
+    void setHorizLine(HorizLine * hline) { m_pHorizLine = hline; }
+    void setVertLine(VertLine * vline) { m_pVertLine = vline; }
+
+};
+
+class Region
+{
+private:
+	vector<Symbol*> m_vSymbols;
+
+};
+
+
+class Line
+{
+protected:
+	unsigned char m_iDim, m_iRegionDim;
+	Symbol **	m_pSymbols;
+	Region **   m_pRegions;
+	unsigned char m_iLastSymbolIdx;
+	unsigned char m_iLastRegionIdx;
+public:
+	Line(unsigned char dim, unsigned char regDim) :
+		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
+    {
+		m_pSymbols = new Symbol* [m_iDim];
+	    m_pRegions = new Region* [m_iRegionDim];
+    }
+
+	bool addSymbol(Symbol* symb)
+	{
+		if (m_iLastSymbolIdx < m_iDim)
+		{
+           m_pSymbols[m_iLastSymbolIdx++] = symb;
+           return true;
+		}
+		else
+			return false;
+	}
+
+    bool addRegion(Region* region)
+    {
+        if (m_iLastRegionIdx < m_iRegionDim)
+        {
+    	   m_pRegions[m_iLastRegionIdx++] = region;
+    	   return true;
+        }
+        else
+        	return false;
+    }
+};
+
+class HorizLine : public Line
+{
+public:
+	HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+
+
+    ~HorizLine()
+    {
+    	// the symbols will be cleaned up by the HorizLine's ctors
+    	if (m_pSymbols != NULL)
+        {
+    	   for (int i = 0; i < m_iDim; i++)
+    		  delete m_pSymbols[i];
+    	   delete [] m_pSymbols;
+    	}
+    }
+
+
+};
+
+class VertLine : public Line
+{
+public:
+   VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+
+
+
+};
+
+
+}
+
+#endif /* SUDOKU_H_ */

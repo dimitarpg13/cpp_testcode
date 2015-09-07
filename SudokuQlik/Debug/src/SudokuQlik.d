@@ -1,12 +1,3 @@
-src/SudokuQlik.d: ../src/SudokuQlik.cpp ../src/Parser.h ../src/Line.h \
- ../src/Symbol.h ../src/Region.h ../src/Puzzle.h
+src/SudokuQlik.d: ../src/SudokuQlik.cpp ../src/Sudoku.h
 
-../src/Parser.h:
-
-../src/Line.h:
-
-../src/Symbol.h:
-
-../src/Region.h:
-
-../src/Puzzle.h:
+../src/Sudoku.h:

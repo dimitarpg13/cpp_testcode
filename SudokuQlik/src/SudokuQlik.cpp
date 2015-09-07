@@ -9,9 +9,9 @@
 #include <iostream>
 #include <fstream>
 
-#include "Parser.h"
-#include "Symbol.h"
-#include "Puzzle.h"
+
+#include "Sudoku.h"
+
 
 using namespace std;
 using namespace sudoku;

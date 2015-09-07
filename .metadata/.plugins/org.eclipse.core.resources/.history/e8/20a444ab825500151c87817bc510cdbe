@@ -1,0 +1,23 @@
+/*
+ * Symbol.h
+ *
+ *  Created on: Sep 5, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#ifndef SYMBOL_H_
+#define SYMBOL_H_
+
+#include "Line.h"
+
+namespace sudoku
+{
+class HorizLine;
+class VertLine;
+class Region;
+
+
+
+}
+
+#endif /* SYMBOL_H_ */
