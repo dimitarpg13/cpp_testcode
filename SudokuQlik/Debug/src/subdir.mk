@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Parser.cpp \
+../src/Puzzle.cpp \
 ../src/SudokuQlik.cpp 
 
 OBJS += \
 ./src/Parser.o \
+./src/Puzzle.o \
 ./src/SudokuQlik.o 
 
 CPP_DEPS += \
 ./src/Parser.d \
+./src/Puzzle.d \
 ./src/SudokuQlik.d 
 
 

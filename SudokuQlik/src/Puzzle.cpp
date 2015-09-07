@@ -1,0 +1,19 @@
+/*
+ * Puzzle.cpp
+ *
+ *  Created on: Sep 6, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#include "Puzzle.h"
+
+namespace sudoku
+{
+
+bool Puzzle::process_parsed_config()
+{
+   vector<HorizLine*> & rows = m_pParser->getRows();
+
+}
+
+}

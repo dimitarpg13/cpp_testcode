@@ -29,8 +29,6 @@ private:
    Region ** m_pRegionArr;
    Parser * m_pParser;
 
-   long long m_lError;
-
    void init()
    {
 	   m_pHorizLineArr = new HorizLine* [m_iDim];
@@ -47,8 +45,6 @@ private:
        m_pParser = new Parser('.', m_iDim);
 
    }
-
-   bool process_parsed_config();
 
 public:
    static const int CLASSIC_SUDOKU_DIM = 9;
@@ -84,7 +80,6 @@ public:
 
    }
 
-
    bool load(string inputFile)
    {
       bool res = m_pParser->parse(inputFile);
@@ -92,7 +87,6 @@ public:
 
 	  return res;
    }
-
 
 
 };

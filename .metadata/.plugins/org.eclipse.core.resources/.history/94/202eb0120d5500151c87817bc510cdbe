@@ -39,7 +39,7 @@ public:
 	~Parser() { delete m_pSymbols; };
     vector<HorizLine*> & getRows() { return m_vRows; }
     vector<VertLine*> & getCols() { return m_vCols; }
-    long long getError() { return m_lError; }
+    long getError() { return m_lError; }
 
 private:
 	bool is_symbol(char c);
