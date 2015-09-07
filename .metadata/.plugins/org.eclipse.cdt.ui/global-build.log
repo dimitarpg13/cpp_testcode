@@ -332,3 +332,123 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+19:14:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/c++/4.8/unordered_map:35:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Sudoku.cpp:8:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:265:4: error: ‘unordered_map’ does not name a type
+    unordered_map<unsigned short,Symbol*> m_vEmptySymbols;
+    ^
+make: *** [src/Sudoku.o] Error 1
+19:16:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/c++/4.8/unordered_map:35:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Sudoku.cpp:8:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:265:4: error: ‘unordered_map’ in namespace ‘std’ does not name a type
+    std::unordered_map<unsigned short,Symbol*> m_vEmptySymbols;
+    ^
+make: *** [src/Sudoku.o] Error 1
+19:17:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/c++/4.8/unordered_map:35:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Sudoku.cpp:8:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:265:4: error: ‘unordered_map’ in namespace ‘std’ does not name a type
+    std::unordered_map<int,Symbol*> m_vEmptySymbols;
+    ^
+make: *** [src/Sudoku.o] Error 1
+19:17:40 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/c++/4.8/unordered_map:35:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Sudoku.cpp:8:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:265:4: error: ‘map’ does not name a type
+    map<unsigned short,Symbol*> m_vEmptySymbols;
+    ^
+make: *** [src/Sudoku.o] Error 1
+19:18:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/c++/4.8/unordered_map:35:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Sudoku.cpp:8:
+/usr/include/c++/4.8/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+make: *** [src/Sudoku.o] Error 1
+19:19:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:21:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:269:62: error: ‘>>’ should be ‘> >’ within a nested template argument list
+    map<unsigned short,vector<pair<Symbol*,list<unsigned short>>> > m_mRankedCandidates;
+                                                              ^
+make: *** [src/Sudoku.o] Error 1
+19:22:21 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

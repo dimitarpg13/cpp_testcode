@@ -1,5 +1,5 @@
 /*
- * Line.h
+ * Sudoku.h
  *
  *  Created on: Sep 5, 2015
  *      Author: Dimitar Gueorguiev
@@ -13,6 +13,8 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <map>
+#include <list>
 
 
 using namespace std;
@@ -259,6 +261,12 @@ private:
    VertLine ** m_pCols;
    Region ** m_pRegions;
    Parser * m_pParser;
+
+
+   map<unsigned short,Symbol*> m_mCandidates;
+
+   // the key is
+   map<unsigned short,vector<pair<Symbol*,list<unsigned short> > > > m_mRankedCandidates;
 
    long long m_lError;
 
