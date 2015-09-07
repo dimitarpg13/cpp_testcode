@@ -22,6 +22,7 @@ bool Puzzle::process_parsed_config()
       m_pCols = m_pParser->getCols();
 
 
+
    }
    else
 	   res = false;

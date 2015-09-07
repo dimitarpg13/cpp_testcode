@@ -1,0 +1,66 @@
+/*
+ * Line.h
+ *
+ *  Created on: Sep 5, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#ifndef LINE_H_
+#define LINE_H_
+
+#include <vector>
+#include <cmath>
+
+#include "Symbol.h"
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Line
+{
+protected:
+	unsigned char m_iDim, m_iRegionDim;
+	Symbol **	m_pSymbols;
+	Region **   m_pRegions;
+	unsigned char m_iLastSymbolIdx;
+	unsigned char m_iLastRegionIdx;
+public:
+	Line(unsigned char dim, unsigned char regDim) :
+		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
+    {
+		m_pSymbols = new Symbol* [m_iDim];
+	    m_pRegions = new Region* [m_iRegionDim];
+    }
+
+	void addSymbol(Symbol* symb)
+	{
+       m_pSymbols[m_iLastSymbolIdx++] = symb;
+	}
+
+    void addRegion(Region* region)
+    {
+    	m_pRegions[m_iLastRegionIdx++] = region;
+    }
+};
+
+class HorizLine : public Line
+{
+public:
+	HorizLine()
+    {
+
+    };
+
+
+};
+
+class VertLine : public Line
+{
+
+};
+
+}
+
+#endif /* LINE_H_ */

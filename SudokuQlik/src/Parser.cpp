@@ -28,7 +28,8 @@ namespace sudoku
 
 
 
-Parser::Parser(int dim, char sep, char eol) : m_iDim(dim), m_cSep(sep), m_cEol(eol), m_lError(0)
+Parser::Parser(unsigned char dim, unsigned char regionDim, char sep, char eol) :
+		m_iDim(dim), m_iRegionDim(regionDim), m_cSep(sep), m_cEol(eol), m_lError(0)
 {
 	m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
 	m_pRows = new HorizLine* [m_iDim];
@@ -66,18 +67,18 @@ bool Parser::is_end_of_line(char c)
 	return c == m_cEol;
 }
 
-void Parser::cleanup_rows_and_cols(int rowCount, int colCount)
+void Parser::cleanup_rows_and_cols(unsigned char rowCount, unsigned char colCount)
 {
 	if (m_pRows != NULL)
 	{
-	   for (int i = 0; i < rowCount; i++)
+	   for (unsigned short i = 0; i < rowCount; i++)
 	      delete m_pRows[i];
 	   delete [] m_pRows;
 	}
 
 	if (m_pCols != NULL)
 	{
-	   for (int i = 0; i < colCount; i++)
+	   for (unsigned short i = 0; i < colCount; i++)
 	     delete m_pCols[i];
 	   delete [] m_pCols;
 	}
@@ -105,7 +106,7 @@ bool Parser::parse(string inputFile)
       return false;
     }
 
-	unsigned short curRowIdx = 0, curColIdx = 0;
+	unsigned char curRowIdx = 0, curColIdx = 0;
 
 	Symbol * curSymbol = NULL;
     HorizLine * curRow = NULL;
@@ -114,13 +115,13 @@ bool Parser::parse(string inputFile)
 	{
 
 	  if (curRow == NULL)
-		  curRow = new HorizLine();
+		  curRow = new HorizLine(m_iDim, m_iRegionDim);
 
 	  if (m_pCols[curColIdx] != NULL)
 		  curCol = m_pCols[curColIdx];
 	  else
 	  {
-		  curCol = new VertLine();
+		  curCol = new VertLine(m_iDim, m_iRegionDim);
 		  m_pCols[curColIdx] = curCol;
 	  }
 

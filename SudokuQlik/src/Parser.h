@@ -33,7 +33,7 @@ enum Error
 class Parser
 {
 public:
-	Parser(int dim, char sep = '.', char eol = '\n');
+	Parser(unsigned char dim, unsigned char regionDim, char sep = '.', char eol = '\n');
 
 	bool parse(string inputFile);
 	~Parser();
@@ -45,10 +45,10 @@ private:
 	bool is_symbol(char c);
 	bool is_separator(char c);
 	bool is_end_of_line(char c);
-	void cleanup_rows_and_cols(int rowCount, int colCount);
+	void cleanup_rows_and_cols(unsigned char rowCount, unsigned char colCount);
 
     set<char> * m_pSymbols;
-    int m_iDim;
+    unsigned char m_iDim, m_iRegionDim;
     char m_cSep;
     char m_cEol;
     HorizLine ** m_pRows;

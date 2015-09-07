@@ -9,6 +9,7 @@
 #define LINE_H_
 
 #include <vector>
+#include <cmath>
 
 #include "Symbol.h"
 
@@ -20,33 +21,57 @@ namespace sudoku
 class Line
 {
 protected:
-	vector<Symbol*>	m_vSymbols;
-	vector<Region*> m_vRegions;
+	unsigned char m_iDim, m_iRegionDim;
+	Symbol **	m_pSymbols;
+	Region **   m_pRegions;
+	unsigned char m_iLastSymbolIdx;
+	unsigned char m_iLastRegionIdx;
 public:
-	void addSymbol(Symbol* symb)
+	Line(unsigned char dim, unsigned char regDim) :
+		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
+    {
+		m_pSymbols = new Symbol* [m_iDim];
+	    m_pRegions = new Region* [m_iRegionDim];
+    }
+
+	bool addSymbol(Symbol* symb)
 	{
-       m_vSymbols.push_back(symb);
+		if (m_iLastSymbolIdx < m_iDim)
+		{
+           m_pSymbols[m_iLastSymbolIdx++] = symb;
+           return true;
+		}
+		else
+			return false;
 	}
 
-    void addRegion(Region* region)
+    bool addRegion(Region* region)
     {
-    	m_vRegions.push_back(region);
+        if (m_iLastRegionIdx < m_iRegionDim)
+        {
+    	   m_pRegions[m_iLastRegionIdx++] = region;
+    	   return true;
+        }
+        else
+        	return false;
     }
 };
 
 class HorizLine : public Line
 {
 public:
-	HorizLine()
-    {
+	HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
 
-    };
 
 
 };
 
 class VertLine : public Line
 {
+public:
+   VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+
+
 
 };
 

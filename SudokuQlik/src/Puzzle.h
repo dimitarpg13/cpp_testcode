@@ -22,7 +22,8 @@ class Puzzle
 {
 
 private:
-   int m_iDim;
+   unsigned char m_iDim;
+   unsigned char m_iRegionDim;
 
    HorizLine ** m_pRows;
    VertLine ** m_pCols;
@@ -33,22 +34,25 @@ private:
 
    void init()
    {
-       m_pParser = new Parser(m_iDim,'.');
+       m_pParser = new Parser(m_iDim, m_iRegionDim, '.');
    }
 
    bool process_parsed_config();
 
 public:
-   static const int CLASSIC_SUDOKU_DIM = 9;
+   static const unsigned char CLASSIC_SUDOKU_DIM = 9;
+   static const unsigned char CLASSIC_SUDOKU_REGION_DIM = 3;
 
    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
    {
 	  m_iDim = CLASSIC_SUDOKU_DIM;
-
+      m_iRegionDim = CLASSIC_SUDOKU_REGION_DIM;
 	  init();
    }
 
-   Puzzle(int dim) : m_iDim(dim), m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
+   Puzzle(unsigned char dim, unsigned char regionDim) :
+	   m_iDim(dim), m_iRegionDim(regionDim), m_pRows(NULL),
+	   m_pCols(NULL), m_pRegions(NULL), m_lError(0)
    {
        init();
    }
