@@ -1,4 +1,4 @@
-21:56:45 **** Incremental Build of configuration Debug for project SudokuQlik ****
+22:03:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
@@ -13,17 +13,10 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solve
 ../src/Solver.cpp:18:19: warning: variable ‘curRow’ set but not used [-Wunused-but-set-variable]
        HorizLine * curRow=NULL;
                    ^
+../src/Solver.cpp:19:16: warning: unused variable ‘curSymbol’ [-Wunused-variable]
+       Symbol * curSymbol=NULL;
+                ^
 Finished building: ../src/Solver.cpp
- 
-Building file: ../src/Sudoku.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
-Finished building: ../src/Sudoku.cpp
- 
-Building file: ../src/SudokuQlik.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
-Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
@@ -31,5 +24,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver
 Finished building target: SudokuQlik
  
 
-21:56:47 Build Finished (took 1s.419ms)
+22:03:17 Build Finished (took 563ms)
 

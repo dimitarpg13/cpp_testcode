@@ -151,10 +151,6 @@ protected:
 	unsigned char m_iLastSymbolIdx;
 	unsigned char m_iLastRegionIdx;
 public:
-
-	Symbol ** const getSymbols() { return m_pSymbols; }
-	Region ** const getRegions() { return m_pRegions; }
-
 	Line(unsigned char dim, unsigned char regDim) :
 		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
     {
