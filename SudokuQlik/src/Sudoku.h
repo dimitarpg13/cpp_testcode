@@ -13,8 +13,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include <map>
-#include <list>
+
 
 
 using namespace std;
@@ -262,13 +261,8 @@ private:
    Region ** m_pRegions;
    Parser * m_pParser;
 
-   // the key is row_index * Dim + col_index
-   // TO DO: do we realy need this?
-   map<unsigned short,Symbol*> m_mCandidates;
 
-   // the key is the number of choices for value available for the current candidate
-   //
-   map<unsigned short,list<pair<Symbol*,list<unsigned short> > > > m_mRankedCandidates;
+
 
    long long m_lError;
 
@@ -282,6 +276,14 @@ private:
 public:
    static const unsigned char CLASSIC_SUDOKU_DIM = 9;
    static const unsigned char CLASSIC_SUDOKU_REGION_DIM = 3;
+
+   unsigned char getDim() { return m_iDim; }
+   unsigned char getRegionDim() { return m_iRegionDim; }
+
+   HorizLine ** const getRows() { return m_pRows; }
+   VertLine ** const getCols() { return m_pCols; }
+   Region ** const getRegion() { return m_pRegions; }
+
 
    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
    {
@@ -334,6 +336,8 @@ public:
 
 	  return res;
    }
+
+
 
 
 

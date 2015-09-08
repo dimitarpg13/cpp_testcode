@@ -242,8 +242,6 @@ bool Puzzle::process_parsed_config()
       m_pRows = m_pParser->getRows();
       m_pCols = m_pParser->getCols();
       m_pRegions = m_pParser->getRegions();
-
-
    }
    else
 	   res = false;

@@ -1,0 +1,57 @@
+/*
+ * Solver.h
+ *
+ *  Created on: Sep 6, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#ifndef SOLVER_H_
+#define SOLVER_H_
+
+#include <vector>
+#include <map>
+#include <list>
+
+#include "Solver.h"
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Solver
+{
+protected:
+	unsigned char m_iDim;
+	unsigned char m_iRegionDim;
+
+	HorizLine ** m_pRows;
+	VertLine ** m_pCols;
+	Region ** m_pRegions;
+
+public:
+    Solver(unsigned char dim, unsigned char regionDim, HorizLine ** rows, VertLine ** cols, Region ** regions) :
+    	m_iDim(dim), m_iRegionDim(regionDim), m_pRows(rows), m_pCols(cols), m_pRegions(regions) {};
+
+
+};
+
+
+//
+//
+//
+class BTSolver : public Solver
+{
+public:
+
+private:
+
+	// the key is the number of choices for value available for the current candidate
+	//
+	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
+};
+
+}
+
+
+#endif /* SOLVER_H_ */
