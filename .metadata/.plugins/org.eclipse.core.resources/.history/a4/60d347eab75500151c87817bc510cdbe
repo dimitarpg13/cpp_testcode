@@ -262,8 +262,7 @@ private:
    Region ** m_pRegions;
    Parser * m_pParser;
 
-   // the key is row_index * Dim + col_index
-   // TO DO: do we realy need this?
+
    map<unsigned short,Symbol*> m_mCandidates;
 
    // the key is the number of choices for value available for the current candidate
