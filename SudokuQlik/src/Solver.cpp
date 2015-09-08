@@ -11,6 +11,19 @@ namespace sudoku
 {
    void Solver::copy_input()
    {
+      HorizLine ** const rows = m_pPuzzle->getRows();
+      VertLine ** const cols = m_pPuzzle->getCols();
+      Region ** const regions = m_pPuzzle->getRegions();
+
+      HorizLine * curRow=NULL;
+      for (int i=0; i < m_iDim; i++)
+      {
+    	  curRow = rows[i];
+
+      }
+
+
+
 
    }
 

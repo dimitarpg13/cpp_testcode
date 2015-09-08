@@ -186,7 +186,6 @@ class HorizLine : public Line
 public:
 	HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
 
-
     ~HorizLine()
     {
     	// the symbols will be cleaned up by the HorizLine's destructors
@@ -282,7 +281,7 @@ public:
 
    HorizLine ** const getRows() { return m_pRows; }
    VertLine ** const getCols() { return m_pCols; }
-   Region ** const getRegion() { return m_pRegions; }
+   Region ** const getRegions() { return m_pRegions; }
 
 
    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
