@@ -12,7 +12,7 @@
 #include <map>
 #include <list>
 
-#include "Solver.h"
+#include "Sudoku.h"
 
 using namespace std;
 
@@ -31,17 +31,28 @@ protected:
 	VertLine ** m_pCols;
 	Region ** m_pRegions;
 
+	void copy_input();
 
 
 public:
+    HorizLine ** const getRows() { return m_pRows; }
+    VertLine ** const getCols() { return m_pCols; }
+    Region ** const getRegions() { return m_pRegions; }
+
+
     Solver(Puzzle * puzzle) : m_pPuzzle(puzzle)
     {
     	if (m_pPuzzle != NULL)
     	{
            m_iDim = m_pPuzzle->getDim();
            m_iRegionDim = m_pPuzzle->getRegionDim();
-
+           copy_input();
     	}
+    }
+
+    bool solve()
+    {
+    	return false;
     }
 
 

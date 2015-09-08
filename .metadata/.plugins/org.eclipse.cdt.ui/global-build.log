@@ -575,3 +575,83 @@ make: Nothing to be done for `all'.
 21:23:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 make: Nothing to be done for `all'.
+21:36:54 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp:10:9: error: ‘Solver’ has not been declared
+    void Solver::copy_input()
+         ^
+make: *** [src/Solver.o] Error 1
+21:37:18 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:25:2: error: ‘Puzzle’ does not name a type
+  Puzzle * m_pPuzzle;
+  ^
+../src/Solver.h:30:2: error: ‘HorizLine’ does not name a type
+  HorizLine ** m_pRows;
+  ^
+../src/Solver.h:31:2: error: ‘VertLine’ does not name a type
+  VertLine ** m_pCols;
+  ^
+../src/Solver.h:32:2: error: ‘Region’ does not name a type
+  Region ** m_pRegions;
+  ^
+../src/Solver.h:38:5: error: ‘HorizLine’ does not name a type
+     HorizLine ** const getRows() { return m_pRows; }
+     ^
+../src/Solver.h:39:5: error: ‘VertLine’ does not name a type
+     VertLine ** const getCols() { return m_pCols; }
+     ^
+../src/Solver.h:40:5: error: ‘Region’ does not name a type
+     Region ** const getRegions() { return m_pRegions; }
+     ^
+../src/Solver.h:43:19: error: expected ‘)’ before ‘*’ token
+     Solver(Puzzle * puzzle) : m_pPuzzle(puzzle)
+                   ^
+../src/Solver.cpp:18:1: error: expected ‘}’ at end of input
+ }
+ ^
+../src/Solver.cpp:18:1: error: expected unqualified-id at end of input
+../src/Solver.cpp:18:1: error: expected ‘}’ at end of input
+make: *** [src/Solver.o] Error 1
+21:37:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:15:20: fatal error: Puzzle.h: No such file or directory
+ #include "Puzzle.h"
+                    ^
+compilation terminated.
+make: *** [src/Solver.o] Error 1
+21:37:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+21:38:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

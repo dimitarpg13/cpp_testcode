@@ -5,6 +5,17 @@
  *      Author: Dimitar Gueorguiev
  */
 
+#include "Solver.h"
+
+namespace sudoku
+{
+   void Solver::copy_input()
+   {
+
+   }
+
+
+}
 
 
 
