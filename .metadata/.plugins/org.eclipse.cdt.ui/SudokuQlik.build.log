@@ -1,4 +1,4 @@
-22:03:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+22:05:11 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
@@ -10,10 +10,7 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solve
 ../src/Solver.cpp:16:23: warning: unused variable ‘regions’ [-Wunused-variable]
        Region ** const regions = m_pPuzzle->getRegions();
                        ^
-../src/Solver.cpp:18:19: warning: variable ‘curRow’ set but not used [-Wunused-but-set-variable]
-       HorizLine * curRow=NULL;
-                   ^
-../src/Solver.cpp:19:16: warning: unused variable ‘curSymbol’ [-Wunused-variable]
+../src/Solver.cpp:19:16: warning: variable ‘curSymbol’ set but not used [-Wunused-but-set-variable]
        Symbol * curSymbol=NULL;
                 ^
 Finished building: ../src/Solver.cpp
@@ -24,5 +21,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver
 Finished building target: SudokuQlik
  
 
-22:03:17 Build Finished (took 563ms)
+22:05:12 Build Finished (took 562ms)
 

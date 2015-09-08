@@ -17,10 +17,10 @@ namespace sudoku
 
       HorizLine * curRow=NULL;
       Symbol * curSymbol=NULL;
-      for (int i=0; i < m_iDim; i++) // i - row indx
+      for (int i=0; i < m_iDim; i++)
       {
     	  curRow = rows[i];
-          for (int j=0; j < m_iDim; j++) // j - col indx
+          for (int j=0; j < m_iDim; j++)
           {
               curSymbol = curRow->getSymbols()[j];
 
