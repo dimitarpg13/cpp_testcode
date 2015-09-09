@@ -97,6 +97,7 @@ private:
 	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
 
 	bool process_ranked_candidates(map<unsigned short,list<pair<Symbol*,list<char> > > > &);
+	void get_list_of_assignments(Symbol *,list<char> &);
 };
 
 }
