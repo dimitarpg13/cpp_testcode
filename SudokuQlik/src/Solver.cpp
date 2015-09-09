@@ -9,8 +9,10 @@
 
 namespace sudoku
 {
-
-
+  bool BTSolver::solve()
+  {
+	  return false;
+  }
 
 }
 

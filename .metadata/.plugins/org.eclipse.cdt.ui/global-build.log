@@ -2133,3 +2133,129 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+21:06:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+../src/SudokuQlik.cpp: In function ‘int main()’:
+../src/SudokuQlik.cpp:41:5: error: ‘Solver’ was not declared in this scope
+     Solver * s = new Solver(p);
+     ^
+../src/SudokuQlik.cpp:41:14: error: ‘s’ was not declared in this scope
+     Solver * s = new Solver(p);
+              ^
+../src/SudokuQlik.cpp:41:22: error: expected type-specifier before ‘Solver’
+     Solver * s = new Solver(p);
+                      ^
+../src/SudokuQlik.cpp:41:22: error: expected ‘;’ before ‘Solver’
+make: *** [src/SudokuQlik.o] Error 1
+21:06:55 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+21:09:13 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:63:10: error: initializer specified for non-virtual method ‘bool sudoku::Solver::solve()’
+     bool solve() = 0;
+          ^
+make: *** [src/Solver.o] Error 1
+21:11:54 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:75:13: warning: override controls (override/final) only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  bool solve() override;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h:75:13: warning: override controls (override/final) only available with -std=c++11 or -std=gnu++11 [enabled by default]
+  bool solve() override;
+             ^
+../src/SudokuQlik.cpp: In function ‘int main()’:
+../src/SudokuQlik.cpp:42:32: error: cannot allocate an object of abstract type ‘sudoku::Solver’
+     BTSolver * s = new Solver(p);
+                                ^
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h:22:7: note:   because the following virtual functions are pure within ‘sudoku::Solver’:
+ class Solver
+       ^
+../src/Solver.h:63:17: note: 	virtual bool sudoku::Solver::solve()
+    virtual bool solve() = 0;
+                 ^
+make: *** [src/SudokuQlik.o] Error 1
+21:12:27 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+../src/SudokuQlik.cpp: In function ‘int main()’:
+../src/SudokuQlik.cpp:42:32: error: cannot allocate an object of abstract type ‘sudoku::Solver’
+     BTSolver * s = new Solver(p);
+                                ^
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h:22:7: note:   because the following virtual functions are pure within ‘sudoku::Solver’:
+ class Solver
+       ^
+../src/Solver.h:63:17: note: 	virtual bool sudoku::Solver::solve()
+    virtual bool solve() = 0;
+                 ^
+make: *** [src/SudokuQlik.o] Error 1
+21:12:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+../src/SudokuQlik.cpp: In function ‘int main()’:
+../src/SudokuQlik.cpp:42:32: error: no matching function for call to ‘sudoku::BTSolver::BTSolver(sudoku::Puzzle*&)’
+     Solver * s = new BTSolver(p);
+                                ^
+../src/SudokuQlik.cpp:42:32: note: candidates are:
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h:72:7: note: sudoku::BTSolver::BTSolver()
+ class BTSolver : public Solver
+       ^
+../src/Solver.h:72:7: note:   candidate expects 0 arguments, 1 provided
+../src/Solver.h:72:7: note: sudoku::BTSolver::BTSolver(const sudoku::BTSolver&)
+../src/Solver.h:72:7: note:   no known conversion for argument 1 from ‘sudoku::Puzzle*’ to ‘const sudoku::BTSolver&’
+make: *** [src/SudokuQlik.o] Error 1
+21:13:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

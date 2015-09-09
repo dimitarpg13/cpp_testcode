@@ -60,10 +60,7 @@ public:
     	  m_pSol = NULL;
     }
 
-    bool solve()
-    {
-    	return false;
-    }
+   virtual bool solve() = 0;
 
 
 };
@@ -75,6 +72,8 @@ public:
 class BTSolver : public Solver
 {
 public:
+	BTSolver(Puzzle * puzzle) : Solver(puzzle) {};
+	bool solve();
 
 private:
 

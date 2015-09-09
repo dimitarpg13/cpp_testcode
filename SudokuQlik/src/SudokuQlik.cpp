@@ -11,6 +11,7 @@
 
 
 #include "Sudoku.h"
+#include "Solver.h"
 
 
 using namespace std;
@@ -37,6 +38,10 @@ int main() {
     cout << "Example4:" << endl;
     p->load("./src/example4.txt");
     cout << endl << endl;
+
+    Solver * s = new BTSolver(p);
+    s->solve();
+
     delete p;
 
 
