@@ -1,0 +1,92 @@
+/*
+ * Solver.h
+ *
+ *  Created on: Sep 6, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#ifndef SOLVER_H_
+#define SOLVER_H_
+
+#include <vector>
+#include <map>
+#include <list>
+
+#include "Sudoku.h"
+
+using namespace std;
+
+namespace sudoku
+{
+
+class Solver
+{
+protected:
+	Puzzle * m_pSrc;
+	Puzzle * m_pSol;
+
+
+public:
+    HorizLine ** const getRows()
+    {
+    	if (m_pSol != NULL)
+    	   return m_pSol->getRows();
+    	else
+    	   return NULL;
+    }
+
+    VertLine ** const getCols()
+    {
+       if (m_pSol != NULL)
+    	  return m_pSol->getCols();
+       else
+    	  return NULL;
+    }
+
+    Region ** const getRegions()
+    {
+    	if (m_pSol != NULL)
+    	   return m_pSol->getRegions();
+    	else
+    	   return NULL;
+    }
+
+
+    Solver(Puzzle * puzzle) : m_pSrc(puzzle)
+    {
+    	if (m_pSrc != NULL)
+          m_pSol = m_pSrc->getCopy();
+    	else
+    	  m_pSol = NULL;
+    }
+
+   virtual bool solve() = 0;
+
+
+};
+
+
+//
+//
+//
+class BTSolver : public Solver
+{
+public:
+	BTSolver(Puzzle * puzzle) : Solver(puzzle) {};
+	bool solve();
+
+private:
+
+	// the map entry key is the number of possible assignments available for the current candidate
+	// the map entry value is a list of pairs where the pair key is the current empty symbol which
+	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
+	//
+	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
+
+	process_ranked_candidates();
+};
+
+}
+
+
+#endif /* SOLVER_H_ */

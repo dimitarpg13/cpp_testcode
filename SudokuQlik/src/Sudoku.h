@@ -288,6 +288,7 @@ public:
    VertLine ** const getCols() { return m_pCols; }
    Region ** const getRegions() { return m_pRegions; }
 
+   long long getError() { return m_lError; };
 
    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
    {

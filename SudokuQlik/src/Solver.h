@@ -24,7 +24,7 @@ class Solver
 protected:
 	Puzzle * m_pSrc;
 	Puzzle * m_pSol;
-
+	long long m_lError;
 
 public:
     HorizLine ** const getRows()
@@ -55,13 +55,23 @@ public:
     Solver(Puzzle * puzzle) : m_pSrc(puzzle)
     {
     	if (m_pSrc != NULL)
+    	{
           m_pSol = m_pSrc->getCopy();
+          m_lError |= m_pSrc->getError();
+    	}
     	else
     	  m_pSol = NULL;
     }
 
-   virtual bool solve() = 0;
+    long long getError() { return m_lError; };
 
+    virtual bool solve() = 0;
+
+
+    virtual ~Solver()
+    {
+	   // TO DO: do base class clean-up
+    };
 
 };
 
@@ -74,12 +84,19 @@ class BTSolver : public Solver
 public:
 	BTSolver(Puzzle * puzzle) : Solver(puzzle) {};
 	bool solve();
-
+    ~BTSolver()
+    {
+    	// TO DO: do implementation cleanup
+    };
 private:
 
-	// the key is the number of choices for value available for the current candidate
+	// the map entry key is the number of possible assignments available for the current candidate
+	// the map entry value is a list of pairs where the pair key is the current empty symbol which
+	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
 	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
+
+	bool process_ranked_candidates(map<unsigned short,list<pair<Symbol*,list<char> > > > &);
 };
 
 }
