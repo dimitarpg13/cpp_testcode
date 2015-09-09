@@ -16,9 +16,76 @@ namespace sudoku
 	  return res;
   }
 
-  void BTSolver::get_list_of_assignments(Symbol * s,list<char> & assignments)
+  bool BTSolver::process_line_assignments(Line * l, set<char> & assigned)
   {
+	  if (l == NULL)
+	  {
+	     m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	     return false;
+	  }
 
+	  Symbol * cur=NULL;
+	  for (int i=0; i < l->getDim(); i++)
+	  {
+	     cur = l->getSymbols()[i];
+	     if (cur != NULL)
+	     {
+	        if (!cur->isEmpty())
+	           assigned.insert(cur->getValue());
+	     }
+	     else
+	     {
+	        m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	        return false;
+	     }
+	  }
+
+	  return true;
+  }
+
+  bool BTSolver::process_region_assignments(Region * r, set<char> & assigned)
+  {
+	  if (r == NULL)
+	  {
+	     m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	     return false;
+	  }
+
+	  Symbol * cur=NULL;
+
+	  for (int i=0; i < r->getSymbCount(); i++)
+	  {
+	     cur = r->getSymbols()[i];
+	     if (cur != NULL)
+	     {
+	        if (!cur->isEmpty())
+	           assigned.insert(cur->getValue());
+	     }
+	     else
+	     {
+	        m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	        return false;
+	     }
+	  }
+
+	  return true;
+  }
+
+  bool BTSolver::get_available_assignments(Symbol * s,list<char> & assignments)
+  {
+	  if (s == NULL)
+		  return false;
+
+      set<char> assigned;
+
+      if (!process_line_assignments(s->getRow(),assigned))
+    	  return false;
+
+      if (!process_line_assignments(s->getCol(),assigned))
+    	  return false;
+
+
+      return true;
   }
 
 
@@ -40,7 +107,7 @@ namespace sudoku
                if (curSymbol->isEmpty())
                {
                    curAssignments.clear();
-                   get_list_of_assignments(curSymbol,curAssignments);
+                   get_available_assignments(curSymbol,curAssignments);
                }
            }
 

@@ -30,7 +30,8 @@ enum Error
    SUDOKU_NO_ERROR=0,
    SUDOKU_ERROR_INCORRECT_INPUT_FORMAT=1,
    SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT=2,
-   SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT=4
+   SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT=4,
+   SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE=8
 };
 
 class Symbol
@@ -79,6 +80,9 @@ public:
 		m_pRows = new HorizLine* [m_iRegionDim];
 		m_pCols = new VertLine* [m_iRegionDim];
     };
+
+	unsigned char getSymbCount() { return m_iSymbCount; };
+	Symbol ** const getSymbols() { return m_pSymbols; };
 
     ~Region()
     {
@@ -151,7 +155,8 @@ protected:
 	unsigned char m_iLastSymbolIdx;
 	unsigned char m_iLastRegionIdx;
 public:
-
+    unsigned char getDim() { return m_iDim; }
+    unsigned char getRegionDim() { return m_iRegionDim; }
 	Symbol ** const getSymbols() { return m_pSymbols; }
 	Region ** const getRegions() { return m_pRegions; }
 
