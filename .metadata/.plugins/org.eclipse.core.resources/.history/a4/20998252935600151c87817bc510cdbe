@@ -20,7 +20,7 @@ namespace sudoku
 		  map<unsigned short,list<pair<Symbol*,list<char> > > > & rankedCandidates)
   {
      bool res=true;
-     if (m_pSol != NULL && m_lError == 0)
+     if (m_pSol != NUL)
      {
 
      }
