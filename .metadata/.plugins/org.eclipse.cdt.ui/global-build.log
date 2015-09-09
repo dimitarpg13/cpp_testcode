@@ -1820,3 +1820,316 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+20:23:45 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:305:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:306:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:307:32: warning: variable ‘copySymbol’ set but not used [-Wunused-but-set-variable]
+     Symbol * curSymbol=NULL, * copySymbol=NULL;
+                                ^
+../src/Sudoku.cpp:331:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:29:00 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:305:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:306:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:307:32: warning: variable ‘copySymbol’ set but not used [-Wunused-but-set-variable]
+     Symbol * curSymbol=NULL, * copySymbol=NULL;
+                                ^
+../src/Sudoku.cpp:346:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:32:03 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:305:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:306:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:349:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:39:51 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:305:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:306:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:356:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:42:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:305:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:306:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:356:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:50:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:311:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:312:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:362:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:56:48 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:316:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:317:14: warning: variable ‘curRegion’ set but not used [-Wunused-but-set-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:371:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:58:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:323:8: error: ‘curRow’ was not declared in this scope
+        curRow = m_pRows[i];
+        ^
+../src/Sudoku.cpp:329:12: error: ‘curCol’ was not declared in this scope
+            curCol = m_pCols[j];
+            ^
+../src/Sudoku.cpp:339:12: error: ‘curRegion’ was not declared in this scope
+            curRegion = m_pRegions[k];
+            ^
+../src/Sudoku.cpp:371:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [src/Sudoku.o] Error 1
+21:00:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from /usr/include/_G_config.h:15:0,
+                 from /usr/include/libio.h:31,
+                 from /usr/include/stdio.h:74,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/Sudoku.h:12,
+                 from ../src/Sudoku.cpp:8:
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:315:38: error: conversion from ‘long int’ to non-scalar type ‘sudoku::HorizLine’ requested
+     HorizLine * curRow=NULL, copyRow=NULL;
+                                      ^
+../src/Sudoku.cpp:324:16: error: no match for ‘operator=’ (operand types are ‘sudoku::HorizLine’ and ‘sudoku::HorizLine*’)
+        copyRow = new HorizLine(m_iDim,m_iRegionDim);
+                ^
+../src/Sudoku.cpp:324:16: note: candidate is:
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:189:7: note: sudoku::HorizLine& sudoku::HorizLine::operator=(const sudoku::HorizLine&)
+ class HorizLine : public Line
+       ^
+../src/Sudoku.h:189:7: note:   no known conversion for argument 1 from ‘sudoku::HorizLine*’ to ‘const sudoku::HorizLine&’
+../src/Sudoku.cpp:325:21: error: cannot convert ‘sudoku::HorizLine’ to ‘sudoku::HorizLine*’ in assignment
+         copyRows[i] = copyRow;
+                     ^
+../src/Sudoku.cpp:347:85: error: no matching function for call to ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine&, sudoku::VertLine*&, sudoku::Region*&)’
+             copySymbol = new Symbol(curSymbol->getValue(),copyRow,copyCol,copyRegion);
+                                                                                     ^
+../src/Sudoku.cpp:347:85: note: candidates are:
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:51:2: note: sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)
+  Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
+  ^
+../src/Sudoku.h:51:2: note:   candidate expects 3 arguments, 4 provided
+../src/Sudoku.h:46:2: note: sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)
+  Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
+  ^
+../src/Sudoku.h:46:2: note:   no known conversion for argument 2 from ‘sudoku::HorizLine’ to ‘sudoku::HorizLine*’
+../src/Sudoku.h:36:7: note: sudoku::Symbol::Symbol(const sudoku::Symbol&)
+ class Symbol
+       ^
+../src/Sudoku.h:36:7: note:   candidate expects 1 argument, 4 provided
+../src/Sudoku.cpp:348:20: error: base operand of ‘->’ has non-pointer type ‘sudoku::HorizLine’
+             copyRow->addSymbol(copySymbol);
+                    ^
+../src/Sudoku.cpp:350:24: error: base operand of ‘->’ has non-pointer type ‘sudoku::HorizLine’
+                 copyRow->addRegion(copyRegion);
+                        ^
+../src/Sudoku.cpp:358:42: error: no matching function for call to ‘sudoku::Region::addRow(sudoku::HorizLine&)’
+                copyRegion->addRow(copyRow);
+                                          ^
+../src/Sudoku.cpp:358:42: note: candidate is:
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:109:10: note: bool sudoku::Region::addRow(sudoku::HorizLine*)
+     bool addRow(HorizLine * row)
+          ^
+../src/Sudoku.h:109:10: note:   no known conversion for argument 1 from ‘sudoku::HorizLine’ to ‘sudoku::HorizLine*’
+../src/Sudoku.cpp:369:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [src/Sudoku.o] Error 1
+21:00:48 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:369:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+21:02:55 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+21:03:51 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

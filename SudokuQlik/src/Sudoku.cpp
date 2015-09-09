@@ -54,6 +54,8 @@ void Parser::init()
 		m_pCols[i] = NULL;
 		m_pRegions[i] = NULL;
 	}
+
+	m_lError=0;
 }
 
 bool Parser::is_symbol(char c)
@@ -171,9 +173,14 @@ bool Parser::parse(string inputFile)
 	  {
 		  curSymbol = new Symbol(c,curRow,curCol);
           curRow->addSymbol(curSymbol);
-          curCol->addSymbol(curSymbol);
-          curRegion->addSymbol(curSymbol);
+          if (curColIdx % m_iRegionDim == 0)
+        	  curRow->addRegion(curRegion);
 
+          curCol->addSymbol(curSymbol);
+          if (curRowIdx % m_iRegionDim == 0)
+        	  curCol->addRegion(curRegion);
+
+          curRegion->addSymbol(curSymbol);
           if (curColIdx == 0)
         	  curRegion->addRow(curRow);
 
@@ -185,7 +192,13 @@ bool Parser::parse(string inputFile)
 	  {
 		  curSymbol = new Symbol(curRow,curCol);
           curRow->addSymbol(curSymbol);
+          if (curColIdx % m_iRegionDim == 0)
+             curRow->addRegion(curRegion);
+
           curCol->addSymbol(curSymbol);
+          if (curRowIdx % m_iRegionDim == 0)
+             curCol->addRegion(curRegion);
+
           curRegion->addSymbol(curSymbol);
           if (curColIdx == 0)
         	  curRegion->addRow(curRow);
@@ -291,31 +304,68 @@ bool Puzzle::process_parsed_config()
 
 Puzzle * const Puzzle::getCopy()
 {
+	HorizLine ** copyRows = new HorizLine* [m_iDim];
+	VertLine ** copyCols = new VertLine* [m_iDim];
+	Region ** copyRegions = new Region* [m_iDim];
+	for (int i=0; i<m_iDim; i++)
+	{
+		copyRows[i] = NULL;
+		copyCols[i] = NULL;
+		copyRegions[i] = NULL;
+	}
 
-
-    HorizLine * curRow=NULL, * copyRow=NULL;
-    VertLine * curCol=NULL, * copyCol=NULL;
-    Region * curRegion=NULL, * copyRegion=NULL;
+    HorizLine * curRow=NULL, *copyRow=NULL;
+    VertLine * copyCol=NULL;
+    Region * copyRegion=NULL;
     Symbol * curSymbol=NULL, * copySymbol=NULL;
 
     int k=0; // region index
     for (int i=0; i < m_iDim; i++) // i - row indx
     {
-  	    curRow = m_pRows[i];
+    	curRow = m_pRows[i];
   	    copyRow = new HorizLine(m_iDim,m_iRegionDim);
+        copyRows[i] = copyRow;
 
         for (int j=0; j < m_iDim; j++) // j - col indx
         {
-        	k = m_pParser->getRegionIdx(i,j);
-      	    curCol = m_pCols[j];
+      	    if (copyCols[j] != NULL)
+      	    	copyCol = copyCols[j];
+      	    else
+      	    {
+      	    	copyCol = new VertLine(m_iDim,m_iRegionDim);
+      	    	copyCols[j] = copyCol;
+      	    }
+
+      	    k = m_pParser->getRegionIdx(i,j);
+      	    if (copyRegions[k] != NULL)
+      	    	copyRegion = copyRegions[k];
+      	    else
+      	    {
+      	    	copyRegion = new Region(m_iDim,m_iRegionDim);
+      	    	copyRegions[k] = copyRegion;
+      	    }
 
             curSymbol = curRow->getSymbols()[j];
+            copySymbol = new Symbol(curSymbol->getValue(),copyRow,copyCol,copyRegion);
+            copyRow->addSymbol(copySymbol);
+            if (j % m_iRegionDim == 0)
+                copyRow->addRegion(copyRegion);
 
+            copyCol->addSymbol(copySymbol);
+            if (i % m_iRegionDim == 0)
+                copyCol->addRegion(copyRegion);
 
+            copyRegion->addSymbol(copySymbol);
+            if (j == 0)
+               copyRegion->addRow(copyRow);
+
+            copyRegion->addCol(copyCol);
 
         }
 
     }
+
+    return new Puzzle(m_iDim,m_iRegionDim,copyRows,copyCols,copyRegions);
 
 }
 

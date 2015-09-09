@@ -145,7 +145,7 @@ private:
 class Line
 {
 protected:
-	unsigned char m_iDim, m_iRegionDim;
+	unsigned char m_iDim, m_iRegionDim, m_iRegionCount;
 	Symbol **	m_pSymbols;
 	Region **   m_pRegions;
 	unsigned char m_iLastSymbolIdx;
@@ -159,7 +159,8 @@ public:
 		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
     {
 		m_pSymbols = new Symbol* [m_iDim];
-	    m_pRegions = new Region* [m_iDim / m_iRegionDim]; // the number of regions spanning single line
+		m_iRegionCount = m_iDim / m_iRegionDim;
+	    m_pRegions = new Region* [m_iRegionCount]; // the number of regions spanning single line
     }
 
 	bool addSymbol(Symbol* symb)
@@ -175,7 +176,7 @@ public:
 
     bool addRegion(Region* region)
     {
-        if (m_iLastRegionIdx < m_iRegionDim)
+        if (m_iLastRegionIdx < m_iRegionCount)
         {
     	   m_pRegions[m_iLastRegionIdx++] = region;
     	   return true;
@@ -266,9 +267,6 @@ private:
    Region ** m_pRegions;
    Parser * m_pParser;
 
-
-
-
    long long m_lError;
 
    void init()
@@ -319,7 +317,7 @@ public:
    bool load(string inputFile)
    {
 
-
+      m_lError = 0;
 	  m_pRows=NULL;
 	  m_pCols=NULL;
 	  m_pRegions=NULL;
