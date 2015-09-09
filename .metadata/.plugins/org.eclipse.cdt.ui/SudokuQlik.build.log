@@ -1,19 +1,47 @@
-22:05:11 **** Incremental Build of configuration Debug for project SudokuQlik ****
+20:05:40 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
-../src/Solver.cpp: In member function ‘void sudoku::Solver::copy_input()’:
-../src/Solver.cpp:15:25: warning: unused variable ‘cols’ [-Wunused-variable]
-       VertLine ** const cols = m_pPuzzle->getCols();
-                         ^
-../src/Solver.cpp:16:23: warning: unused variable ‘regions’ [-Wunused-variable]
-       Region ** const regions = m_pPuzzle->getRegions();
-                       ^
-../src/Solver.cpp:19:16: warning: variable ‘curSymbol’ set but not used [-Wunused-but-set-variable]
-       Symbol * curSymbol=NULL;
-                ^
 Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:296:32: warning: variable ‘copyRow’ set but not used [-Wunused-but-set-variable]
+     HorizLine * curRow=NULL, * copyRow=NULL;
+                                ^
+../src/Sudoku.cpp:297:16: warning: variable ‘curCol’ set but not used [-Wunused-but-set-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                ^
+../src/Sudoku.cpp:297:31: warning: unused variable ‘copyCol’ [-Wunused-variable]
+     VertLine * curCol=NULL, * copyCol=NULL;
+                               ^
+../src/Sudoku.cpp:298:14: warning: unused variable ‘curRegion’ [-Wunused-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+              ^
+../src/Sudoku.cpp:298:32: warning: unused variable ‘copyRegion’ [-Wunused-variable]
+     Region * curRegion=NULL, * copyRegion=NULL;
+                                ^
+../src/Sudoku.cpp:299:14: warning: variable ‘curSymbol’ set but not used [-Wunused-but-set-variable]
+     Symbol * curSymbol=NULL, * copySymbol=NULL;
+              ^
+../src/Sudoku.cpp:299:32: warning: unused variable ‘copySymbol’ [-Wunused-variable]
+     Symbol * curSymbol=NULL, * copySymbol=NULL;
+                                ^
+../src/Sudoku.cpp:301:9: warning: variable ‘k’ set but not used [-Wunused-but-set-variable]
+     int k=0; // region index
+         ^
+../src/Sudoku.cpp:320:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
  
 Building target: SudokuQlik
 Invoking: GCC C++ Linker
@@ -21,5 +49,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver
 Finished building target: SudokuQlik
  
 
-22:05:12 Build Finished (took 562ms)
+20:05:42 Build Finished (took 1s.523ms)
 

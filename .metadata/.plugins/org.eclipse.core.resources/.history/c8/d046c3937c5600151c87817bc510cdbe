@@ -1,0 +1,61 @@
+/*
+ * Solver.cpp
+ *
+ *  Created on: Sep 7, 2015
+ *      Author: Dimitar Gueorguiev
+ */
+
+#include "Solver.h"
+
+namespace sudoku
+{
+// input:
+//   symbolRowIdx - the row index of the current symbol
+//   symbolColIdx - the col index of the current symbol
+// return:
+//   the index of the region in which the current symbol is in
+//
+unsigned char Solver::get_region_idx(unsigned char symbolRowIdx, unsigned char symbolColIdx)
+{
+   unsigned char M = m_iDim / m_iRegionDim; // the number of regions spanning a single line
+   unsigned char regRowIdx = symbolRowIdx / m_iRegionDim;
+   unsigned char regColIdx = symbolColIdx / m_iRegionDim;
+   return regRowIdx * M + regColIdx;
+}
+
+
+void Solver::copy_input()
+{
+    HorizLine ** const rows = m_pPuzzle->getRows();
+    VertLine ** const cols = m_pPuzzle->getCols();
+    Region ** const regions = m_pPuzzle->getRegions();
+
+    HorizLine * curRow=NULL;
+    VertLine * curCol=NULL;
+    Region * curRegion=NULL;
+    Symbol * curSymbol=NULL;
+
+    int k=0; // region index
+    for (int i=0; i < m_iDim; i++) // i - row indx
+    {
+  	    curRow = rows[i];
+        for (int j=0; j < m_iDim; j++) // j - col indx
+        {
+        	k = get_region_idx(i,j);
+      	    curCol = cols[j];
+
+            curSymbol = curRow->getSymbols()[j];
+
+
+
+        }
+
+    }
+
+}
+
+
+}
+
+
+

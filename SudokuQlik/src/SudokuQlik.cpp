@@ -17,14 +17,29 @@ using namespace std;
 using namespace sudoku;
 
 int main() {
-	cout << "SudokuQlik" << endl; // prints SudokuQlik
+	cout << "SudokuQlik" << endl << endl; // prints SudokuQlik
 
 
     Puzzle * p = new Puzzle();
+
+    cout << "Example1:" << endl;
     p->load("./src/example1.txt");
+    cout << endl << endl;
+
+    cout << "Example2:" << endl;
+    p->load("./src/example2.txt");
+    cout << endl << endl;
+
+    cout << "Example3:" << endl;
+    p->load("./src/example3.txt");
+    cout << endl << endl;
+
+    cout << "Example4:" << endl;
+    p->load("./src/example4.txt");
+    cout << endl << endl;
     delete p;
 
-    cout << endl << endl;
+
     char c = 0101;
     cout << c ;
 

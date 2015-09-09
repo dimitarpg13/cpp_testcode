@@ -232,21 +232,23 @@ public:
     VertLine **  getCols() { return m_pCols; }
     Region ** getRegions() { return m_pRegions; }
     long long getError() { return m_lError; }
+    unsigned char getRegionIdx(unsigned char rowIdx, unsigned char colIdx);
 
 private:
 	bool is_symbol(char c);
 	bool is_separator(char c);
 	bool is_end_of_line(char c);
+	void init();
 	void cleanup(unsigned char rowCount, unsigned char colCount, unsigned char regCount);
-    unsigned char get_region_idx(unsigned char rowIdx, unsigned char colIdx);
+
     set<char> * m_pSymbols;
     unsigned char m_iDim, m_iRegionDim;
     char m_cSep;
     char m_cEol;
+    long long m_lError;
     HorizLine ** m_pRows;
     VertLine ** m_pCols;
     Region ** m_pRegions;
-    long long m_lError;
     static char symbolTable[];
 };
 
@@ -276,6 +278,7 @@ private:
 
    bool process_parsed_config();
 
+
 public:
    static const unsigned char CLASSIC_SUDOKU_DIM = 9;
    static const unsigned char CLASSIC_SUDOKU_REGION_DIM = 3;
@@ -302,37 +305,25 @@ public:
        init();
    }
 
-   ~Puzzle()
+   Puzzle(unsigned char dim, unsigned char regionDim,
+		  HorizLine ** const rows, VertLine ** const cols, Region ** const regions) :
+		  m_iDim(dim), m_iRegionDim(regionDim), m_pRows(rows), m_pCols(cols),
+		  m_pRegions(regions), m_lError(0)
    {
-	   if (m_pRows != NULL)
-	   {
-		   for (int i = 0; i < m_iDim; i++)
-			  delete m_pRows[i];
-		   delete [] m_pRows;
-	   }
-
-	   if (m_pCols != NULL)
-	   {
-		   for (int i = 0; i < m_iDim; i++)
-			 delete m_pCols[i];
-		   delete [] m_pCols;
-	   }
-
-	   if (m_pRegions != NULL)
-	   {
-	      for (int i = 0; i < m_iDim; i++)
-		     delete m_pRegions[i];
-	      delete [] m_pRegions;
-	   }
-
-	   if (m_pParser != NULL)
-	      delete m_pParser;
-
+	   init();
    }
+
+   ~Puzzle();
 
 
    bool load(string inputFile)
    {
+
+
+	  m_pRows=NULL;
+	  m_pCols=NULL;
+	  m_pRegions=NULL;
+
       bool res = m_pParser->parse(inputFile);
 
       res = process_parsed_config();
@@ -340,7 +331,7 @@ public:
 	  return res;
    }
 
-
+   Puzzle * const getCopy();
 
 
 

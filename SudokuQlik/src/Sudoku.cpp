@@ -31,9 +31,20 @@ char Parser::symbolTable[] = {
 
 
 Parser::Parser(unsigned char dim, unsigned char regionDim, char sep, char eol) :
-		m_iDim(dim), m_iRegionDim(regionDim), m_cSep(sep), m_cEol(eol), m_lError(0)
+		m_iDim(dim), m_iRegionDim(regionDim), m_cSep(sep), m_cEol(eol),
+		m_lError(0), m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL)
 {
 	m_pSymbols = new set<char>(symbolTable,symbolTable+dim);
+}
+
+Parser::~Parser()
+{
+    delete m_pSymbols;
+};
+
+
+void Parser::init()
+{
 	m_pRows = new HorizLine* [m_iDim];
 	m_pCols = new VertLine* [m_iDim];
 	m_pRegions = new Region* [m_iDim];
@@ -44,12 +55,6 @@ Parser::Parser(unsigned char dim, unsigned char regionDim, char sep, char eol) :
 		m_pRegions[i] = NULL;
 	}
 }
-
-Parser::~Parser()
-{
-    delete m_pSymbols;
-};
-
 
 bool Parser::is_symbol(char c)
 {
@@ -75,6 +80,7 @@ void Parser::cleanup(unsigned char rowCount, unsigned char colCount, unsigned ch
 	if (m_pRows != NULL)
 	{
 	   for (unsigned short i = 0; i < rowCount; i++)
+		 if (m_pRows[i] != NULL)
 	      delete m_pRows[i];
 	   delete [] m_pRows;
 	}
@@ -82,14 +88,16 @@ void Parser::cleanup(unsigned char rowCount, unsigned char colCount, unsigned ch
 	if (m_pCols != NULL)
 	{
 	   for (unsigned short i = 0; i < colCount; i++)
-	     delete m_pCols[i];
+		 if (m_pCols[i] != NULL)
+	       delete m_pCols[i];
 	   delete [] m_pCols;
 	}
 
 	if (m_pRegions != NULL)
 	{
 	   for (unsigned short i = 0; i < regCount; i++)
-	     delete m_pRegions[i];
+		 if (m_pRegions[i] != NULL)
+	       delete m_pRegions[i];
 	   delete [] m_pRegions;
 	}
 
@@ -104,7 +112,7 @@ void Parser::cleanup(unsigned char rowCount, unsigned char colCount, unsigned ch
 // return:
 //   the index of the region in which the current symbol is in
 //
-unsigned char Parser::get_region_idx(unsigned char symbolRowIdx, unsigned char symbolColIdx)
+unsigned char Parser::getRegionIdx(unsigned char symbolRowIdx, unsigned char symbolColIdx)
 {
    unsigned char M = m_iDim / m_iRegionDim; // the number of regions spanning a single line
    unsigned char regRowIdx = symbolRowIdx / m_iRegionDim;
@@ -115,23 +123,19 @@ unsigned char Parser::get_region_idx(unsigned char symbolRowIdx, unsigned char s
 bool Parser::parse(string inputFile)
 {
 	bool res=true;
+	unsigned char M = m_iDim / m_iRegionDim;
+	cleanup(m_iDim, m_iDim, M*M );
+
 	ifstream fs (inputFile.c_str(), std::ifstream::in);
 
 	char c = fs.get();
     if (fs.bad())
     {
       m_lError |= SUDOKU_ERROR_INCORRECT_INPUT_FORMAT;
-
-      delete [] m_pRows;
-      delete [] m_pCols;
-      delete [] m_pRegions;
-
-      m_pRows = NULL;
-      m_pCols = NULL;
-      m_pRegions = NULL;
-
       return false;
     }
+
+    init();
 
 	unsigned char curRowIdx = 0, curColIdx = 0, curRegIdx = 0;
 
@@ -154,7 +158,7 @@ bool Parser::parse(string inputFile)
 		  m_pCols[curColIdx] = curCol;
 	  }
 
-	  curRegIdx = get_region_idx(curRowIdx, curColIdx);
+	  curRegIdx = getRegionIdx(curRowIdx, curColIdx);
 	  if (m_pRegions[curRegIdx] != NULL)
 	    curRegion = m_pRegions[curRegIdx];
 	  else
@@ -233,6 +237,38 @@ bool Parser::parse(string inputFile)
 }
 
 
+Puzzle::~Puzzle()
+{
+    if (m_pRows != NULL)
+	{
+	  for (int i = 0; i < m_iDim; i++)
+		 if (m_pRows[i] != NULL)
+			delete m_pRows[i];
+	  delete [] m_pRows;
+	}
+
+	if (m_pCols != NULL)
+	{
+	  for (int i = 0; i < m_iDim; i++)
+		 if (m_pCols[i] != NULL)
+			delete m_pCols[i];
+	  delete [] m_pCols;
+	}
+
+	if (m_pRegions != NULL)
+	{
+	   for (int i = 0; i < m_iDim; i++)
+	     if (m_pRegions[i] != NULL)
+		    delete m_pRegions[i];
+	   delete [] m_pRegions;
+	}
+
+	if (m_pParser != NULL)
+	   delete m_pParser;
+
+}
+
+
 bool Puzzle::process_parsed_config()
 {
    bool res = true;
@@ -252,6 +288,36 @@ bool Puzzle::process_parsed_config()
 
 }
 
+
+Puzzle * const Puzzle::getCopy()
+{
+
+
+    HorizLine * curRow=NULL, * copyRow=NULL;
+    VertLine * curCol=NULL, * copyCol=NULL;
+    Region * curRegion=NULL, * copyRegion=NULL;
+    Symbol * curSymbol=NULL, * copySymbol=NULL;
+
+    int k=0; // region index
+    for (int i=0; i < m_iDim; i++) // i - row indx
+    {
+  	    curRow = m_pRows[i];
+  	    copyRow = new HorizLine(m_iDim,m_iRegionDim);
+
+        for (int j=0; j < m_iDim; j++) // j - col indx
+        {
+        	k = m_pParser->getRegionIdx(i,j);
+      	    curCol = m_pCols[j];
+
+            curSymbol = curRow->getSymbols()[j];
+
+
+
+        }
+
+    }
+
+}
 
 
 }
