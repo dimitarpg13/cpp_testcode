@@ -238,7 +238,6 @@ public:
     VertLine **  getCols() { return m_pCols; }
     Region ** getRegions() { return m_pRegions; }
     long long getError() { return m_lError; }
-    const set<char> * getSymbolTable() { return m_pSymbols; }
     unsigned char getRegionIdx(unsigned char rowIdx, unsigned char colIdx);
 
 private:

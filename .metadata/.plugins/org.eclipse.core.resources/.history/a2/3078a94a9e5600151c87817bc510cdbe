@@ -246,7 +246,7 @@ private:
 	bool is_separator(char c);
 	bool is_end_of_line(char c);
 	void init();
-	void cleanup(unsigned char rowCount, unsigned char colCount, unsigned char regCount);
+	void cleanup(unsigned char rowCount, unsi gned char colCount, unsigned char regCount);
 
     set<char> * m_pSymbols;
     unsigned char m_iDim, m_iRegionDim;

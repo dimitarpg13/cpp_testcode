@@ -84,11 +84,6 @@ namespace sudoku
       if (!process_line_assignments(s->getCol(),assigned))
     	  return false;
 
-      if (!process_region_assignments(s->getRegion(),assigned))
-    	  return false;
-
-
-
 
       return true;
   }
