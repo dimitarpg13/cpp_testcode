@@ -19,9 +19,7 @@ namespace sudoku
   bool BTSolver::process_ranked_candidates(
 		  map<unsigned short,list<pair<Symbol*,list<char> > > > & rankedCandidates)
   {
-     bool res=true;
 
-     return res;
   }
 
 }
