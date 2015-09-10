@@ -2894,3 +2894,57 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+18:53:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+18:54:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+18:58:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

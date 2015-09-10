@@ -52,7 +52,7 @@ public:
     }
 
 
-    Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+    Solver(Puzzle * puzzle) : m_pSrc(puzzle)
     {
     	if (m_pSrc != NULL)
     	{

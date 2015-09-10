@@ -25,11 +25,7 @@ int main() {
 
     cout << "Example1:" << endl;
     p->load("./src/example1.txt");
-    Solver * s = new BTSolver(p);
-    s->solve();
     cout << endl << endl;
-
-
 
     cout << "Example2:" << endl;
     p->load("./src/example2.txt");
@@ -43,7 +39,8 @@ int main() {
     p->load("./src/example4.txt");
     cout << endl << endl;
 
-
+    Solver * s = new BTSolver(p);
+    s->solve();
 
     delete p;
 
