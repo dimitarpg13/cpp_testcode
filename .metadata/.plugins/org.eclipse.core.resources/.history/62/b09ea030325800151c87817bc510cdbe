@@ -185,13 +185,8 @@ namespace sudoku
      return res;
   }
 
-  bool BTSolver::update_ranked_list(map<unsigned short,rank_list > & c)
-  {
-	  bool res = true;
-	  return res;
-  }
 
-  bool BTSolver::solve_internal(map<unsigned short,rank_list > & c)
+  bool solve_internal(map<unsigned short,rank_list > & c)
   {
       bool res = true;
 	  map<unsigned short, rank_list>::iterator itC;
