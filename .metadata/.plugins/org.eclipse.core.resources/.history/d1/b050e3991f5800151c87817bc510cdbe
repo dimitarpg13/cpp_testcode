@@ -14,20 +14,12 @@ namespace sudoku
 	   cout << "Total number of distinct ranks: " << c.size() << endl;
 	 	map<unsigned short,rank_list>::iterator itR;
 	  	list<pair<Symbol*,list<char> > >::iterator itRL;
-	  	list<char>::iterator itCL;
 	  	for (itR = c.begin(); itR != c.end(); itR++)
 	  	{
 	  		rank_list & rl = itR->second;
-            cout << itR->first << " => " << endl;
+
             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
-            {
-            	std::cout << "\t{";
-            	for (itCL = itRL->second.begin(); itCL != itRL->second.end(); itCL++)
-            	{
-            		std::cout << *itCL << " ";
-            	}
-            	std::cout << "}" << endl;
-            }
+	  		   std::cout << itR->first << " => " << itRL->first->getValue() << endl;
 	  	}
    }
 

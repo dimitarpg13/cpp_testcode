@@ -18,13 +18,15 @@ namespace sudoku
 	  	for (itR = c.begin(); itR != c.end(); itR++)
 	  	{
 	  		rank_list & rl = itR->second;
-            cout << itR->first << " => " << endl;
+            cout << itR->first << " => ";
             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
             {
-            	std::cout << "\t{";
+            	std::cout << "{";
             	for (itCL = itRL->second.begin(); itCL != itRL->second.end(); itCL++)
             	{
+	  		  // std::cout << itR->first << " => " << itRL->first->getValue() << endl;
             		std::cout << *itCL << " ";
+
             	}
             	std::cout << "}" << endl;
             }
