@@ -39,6 +39,8 @@ namespace sudoku
 
       print_ranked_candidates(m_mRankedCandidates);
 
+
+
 	  return res;
   }
 
@@ -97,6 +99,12 @@ namespace sudoku
 	  return true;
   }
 
+  template<typename Iterator>
+  void BTSolver::print_collection(Iterator begin, Iterator end)
+  {
+     for_each(begin,end,printer(cout));
+  }
+
   bool BTSolver::get_available_assignments(Symbol * s,list<char> & assignments)
   {
 	  if (s == NULL)
@@ -113,8 +121,22 @@ namespace sudoku
       if (!process_region_assignments(s->getRegion(),assigned))
     	  return false;
 
+      const set<char>& symbTable = *m_pSrc->getSymbolTable();
 
-      assignments.assign(assigned.begin(), assigned.end());
+
+      cout << endl;
+      print_collection(symbTable.begin(),symbTable.end());
+      cout << endl;
+      print_collection(assigned.begin(),assigned.end());
+      cout << endl;
+
+      set<char> diff;
+      set_symmetric_difference(assigned.begin(),assigned.end(),symbTable.begin(),symbTable.end(),inserter(diff,diff.end()));
+      print_collection(diff.begin(),diff.end());
+      cout << endl;
+
+
+      assignments.assign(diff.begin(), diff.end());
 
 
       return true;
@@ -143,6 +165,7 @@ namespace sudoku
                {
                    curAssignments.clear();
                    get_available_assignments(curSymbol,curAssignments);
+
                    curRank = (unsigned short) curAssignments.size();
 
                    itR = rankedCandidates.find(curRank);
@@ -168,6 +191,22 @@ namespace sudoku
   }
 
 
+  bool solve_internal(map<unsigned short,rank_list > & c)
+  {
+
+	  map<unsigned short, rank_list>::iterator itC;
+	  list<pair<Symbol*,list<char> > >::iterator itRL;
+	  list<char>::iterator itCL;
+	  for (itC = c.begin(); itC != c.end(); itC++)
+	  {
+          for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+          {
+
+
+          }
+
+	  }
+  }
 
 
 }

@@ -11,6 +11,8 @@
 #include <vector>
 #include <map>
 #include <list>
+#include <algorithm>
+#include <iterator>
 
 #include "Sudoku.h"
 
@@ -76,6 +78,13 @@ public:
 };
 
 typedef list<pair<Symbol*,list<char> > > rank_list;
+
+struct printer {
+    std::ostream& os;
+    printer(std::ostream& os) : os(os) {}
+    template<typename T>
+    void operator()(const T& obj) { os << obj << ' '; }
+};
 //
 //
 //
@@ -100,7 +109,13 @@ private:
 	bool get_available_assignments(Symbol *,list<char> &);
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
+
+	void solve_internal(map<unsigned short,rank_list > &);
+
+	// helper methods for debugging
 	void print_ranked_candidates(map<unsigned short,rank_list > &);
+	template<typename Iterator>
+	void print_collection(Iterator begin, Iterator end);
 };
 
 

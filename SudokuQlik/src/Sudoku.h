@@ -295,6 +295,7 @@ public:
    Region ** const getRegions() { return m_pRegions; }
 
    long long getError() { return m_lError; };
+   const set<char> * getSymbolTable() { return m_pParser->getSymbolTable(); }
 
    Puzzle() : m_pRows(NULL), m_pCols(NULL), m_pRegions(NULL), m_lError(0)
    {

@@ -1,0 +1,28 @@
+//============================================================================
+// Name        : TestSudoku.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <algorithm>
+#include <iterator>
+#include <set>
+
+
+using namespace std;
+
+int main() {
+
+	cout << "TestSudoku" << endl; // prints TestSudoku
+
+	std::set<int> s1, s2;
+	// Fill in s1 and s2 with values
+	std::set<int> result;
+	std::set_difference(s1.begin(), s1.end(), s2.begin(), s2.end(),
+	    std::inserter(result, result.end()));
+
+	return 0;
+}

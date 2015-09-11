@@ -7449,3 +7449,27 @@ Caused by: java.lang.IllegalArgumentException: Argument cannot be null
 
 !ENTRY org.eclipse.ui 4 4 2015-09-10 18:54:03.222
 !MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.linuxtools.systemtap.ui.ide.RunScriptCommand
+
+!ENTRY org.eclipse.jface 2 0 2015-09-10 21:49:09.633
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-09-10 21:49:09.633
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(rpmEditor.toggleComment.command,Toggle Comment,
+		,
+		Category(rpmEditor.category,Editor Commands,Specfile Editor Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@fba5d86,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.copy,Copy,
+		,
+		Category(org.eclipse.tm.terminal.category1,Terminal view commands,Terminal view commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1e2d95f2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.tm.terminal.EditContext,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-10 22:19:54.615
+!MESSAGE Indexed 'TestSudoku' (1 sources, 138 headers) in 6.84 sec: 11,134 declarations; 18,119 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.01%)
