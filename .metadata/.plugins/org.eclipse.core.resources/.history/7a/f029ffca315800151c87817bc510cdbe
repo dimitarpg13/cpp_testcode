@@ -119,7 +119,7 @@ private:
 	{
 		for_each(begin,end,printer(cout));
 	}
-
+	}
 };
 
 

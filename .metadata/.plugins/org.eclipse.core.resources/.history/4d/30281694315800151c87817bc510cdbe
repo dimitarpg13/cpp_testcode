@@ -115,11 +115,7 @@ private:
 	// helper methods for debugging
 	void print_ranked_candidates(map<unsigned short,rank_list > &);
 	template<typename Iterator>
-	void print_collection(Iterator begin, Iterator end)
-	{
-		for_each(begin,end,printer(cout));
-	}
-
+	void print_collection(Iterator begin, Iterator end);
 };
 
 

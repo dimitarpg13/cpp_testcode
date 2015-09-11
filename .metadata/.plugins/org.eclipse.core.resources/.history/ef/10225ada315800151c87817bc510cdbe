@@ -188,7 +188,7 @@ namespace sudoku
 
   bool solve_internal(map<unsigned short,rank_list > & c)
   {
-      bool res = true;
+
 	  map<unsigned short, rank_list>::iterator itC;
 	  list<pair<Symbol*,list<char> > >::iterator itRL;
 	  list<char>::iterator itCL;
@@ -201,8 +201,6 @@ namespace sudoku
           }
 
 	  }
-
-	  return res;
   }
 
 
