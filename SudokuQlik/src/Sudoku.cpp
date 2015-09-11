@@ -219,6 +219,8 @@ bool Parser::parse(string inputFile)
 	  c = fs.get();
 	}
 
+	std::cout << endl;
+
 	// the end of line char is missing on the last line of the input file
 	if (curRow != NULL)
 	{

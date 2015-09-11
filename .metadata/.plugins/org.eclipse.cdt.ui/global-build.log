@@ -2948,3 +2948,620 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+19:15:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::get_available_assignments(sudoku::Symbol*, std::list<char>&)’:
+../src/Solver.cpp:90:11: warning: unused variable ‘sz’ [-Wunused-variable]
+       int sz = assigned.size();
+           ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:23:11 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:118:96: error: ‘>>’ should be ‘> >’ within a nested template argument list
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) ));
+                                                                                                ^
+../src/Solver.cpp:118:161: error: no matching function for call to ‘std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::pair(short unsigned int&, std::pair<sudoku::Symbol*, std::list<char> >)’
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) ));
+                                                                                                                                                                 ^
+../src/Solver.cpp:118:161: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:118:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)
+  pair(const pair<_U1, _U2>& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:118:2: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:118:161: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘short unsigned int’
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) ));
+                                                                                                                                                                 ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:112:26: note: std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _T1 = short unsigned int; _T2 = std::list<std::pair<sudoku::Symbol*, std::list<char> > >]
+       _GLIBCXX_CONSTEXPR pair(const _T1& __a, const _T2& __b)
+                          ^
+/usr/include/c++/4.8/bits/stl_pair.h:112:26: note:   no known conversion for argument 2 from ‘std::pair<sudoku::Symbol*, std::list<char> >’ to ‘const std::list<std::pair<sudoku::Symbol*, std::list<char> > >&’
+/usr/include/c++/4.8/bits/stl_pair.h:108:26: note: std::pair<_T1, _T2>::pair() [with _T1 = short unsigned int; _T2 = std::list<std::pair<sudoku::Symbol*, std::list<char> > >]
+       _GLIBCXX_CONSTEXPR pair()
+                          ^
+/usr/include/c++/4.8/bits/stl_pair.h:108:26: note:   candidate expects 0 arguments, 2 provided
+/usr/include/c++/4.8/bits/stl_pair.h:96:12: note: std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::pair(const std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)
+     struct pair
+            ^
+/usr/include/c++/4.8/bits/stl_pair.h:96:12: note:   candidate expects 1 argument, 2 provided
+../src/Solver.cpp:118:164: error: expected ‘;’ before ‘)’ token
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) ));
+                                                                                                                                                                    ^
+make: *** [src/Solver.o] Error 1
+19:24:14 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:118:96: error: ‘>>’ should be ‘> >’ within a nested template argument list
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) );
+                                                                                                ^
+../src/Solver.cpp:118:161: error: no matching function for call to ‘std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::pair(short unsigned int&, std::pair<sudoku::Symbol*, std::list<char> >)’
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) );
+                                                                                                                                                                 ^
+../src/Solver.cpp:118:161: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:118:2: note: template<class _U1, class _U2> std::pair<_T1, _T2>::pair(const std::pair<_U1, _U2>&)
+  pair(const pair<_U1, _U2>& __p)
+  ^
+/usr/include/c++/4.8/bits/stl_pair.h:118:2: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:118:161: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘short unsigned int’
+                    rankedCandidates.insert( pair<unsigned short,list<pair<Symbol*,list<char> > >> (curRank, pair<Symbol*,list<char> >(curSymbol, curAssignments)) );
+                                                                                                                                                                 ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:112:26: note: std::pair<_T1, _T2>::pair(const _T1&, const _T2&) [with _T1 = short unsigned int; _T2 = std::list<std::pair<sudoku::Symbol*, std::list<char> > >]
+       _GLIBCXX_CONSTEXPR pair(const _T1& __a, const _T2& __b)
+                          ^
+/usr/include/c++/4.8/bits/stl_pair.h:112:26: note:   no known conversion for argument 2 from ‘std::pair<sudoku::Symbol*, std::list<char> >’ to ‘const std::list<std::pair<sudoku::Symbol*, std::list<char> > >&’
+/usr/include/c++/4.8/bits/stl_pair.h:108:26: note: std::pair<_T1, _T2>::pair() [with _T1 = short unsigned int; _T2 = std::list<std::pair<sudoku::Symbol*, std::list<char> > >]
+       _GLIBCXX_CONSTEXPR pair()
+                          ^
+/usr/include/c++/4.8/bits/stl_pair.h:108:26: note:   candidate expects 0 arguments, 2 provided
+/usr/include/c++/4.8/bits/stl_pair.h:96:12: note: std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::pair(const std::pair<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)
+     struct pair
+            ^
+/usr/include/c++/4.8/bits/stl_pair.h:96:12: note:   candidate expects 1 argument, 2 provided
+make: *** [src/Solver.o] Error 1
+19:27:03 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:106:21: warning: variable ‘curRank’ set but not used [-Wunused-but-set-variable]
+      unsigned short curRank=0;
+                     ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:29:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:106:21: warning: variable ‘curRank’ set but not used [-Wunused-but-set-variable]
+      unsigned short curRank=0;
+                     ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:34:32 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:120:28: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::iterator {aka std::_Rb_tree_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’ and ‘std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::iterator {aka std::_Rb_tree_iterator<std::pair<const short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’)
+                    itRanks = rankedCandidates.find(curRank);
+                            ^
+../src/Solver.cpp:120:28: note: candidate is:
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:157:12: note: std::_Rb_tree_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >& std::_Rb_tree_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >::operator=(const std::_Rb_tree_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >&)
+     struct _Rb_tree_iterator
+            ^
+/usr/include/c++/4.8/bits/stl_tree.h:157:12: note:   no known conversion for argument 1 from ‘std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::iterator {aka std::_Rb_tree_iterator<std::pair<const short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’ to ‘const std::_Rb_tree_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >&’
+make: *** [src/Solver.o] Error 1
+19:35:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:120:28: error: no match for ‘operator=’ (operand types are ‘std::map<unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::const_iterator {aka std::_Rb_tree_const_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’ and ‘std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::iterator {aka std::_Rb_tree_iterator<std::pair<const short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’)
+                    itRanks = rankedCandidates.find(curRank);
+                            ^
+../src/Solver.cpp:120:28: note: candidate is:
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:228:12: note: std::_Rb_tree_const_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >& std::_Rb_tree_const_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >::operator=(const std::_Rb_tree_const_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >&)
+     struct _Rb_tree_const_iterator
+            ^
+/usr/include/c++/4.8/bits/stl_tree.h:228:12: note:   no known conversion for argument 1 from ‘std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >::iterator {aka std::_Rb_tree_iterator<std::pair<const short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >}’ to ‘const std::_Rb_tree_const_iterator<std::pair<const unsigned char, std::list<std::pair<sudoku::Symbol*, std::list<char> > > > >&’
+make: *** [src/Solver.o] Error 1
+19:37:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::process_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:120:20: error: ‘itRanks’ was not declared in this scope
+                    itRanks = rankedCandidates.find(curRank);
+                    ^
+make: *** [src/Solver.o] Error 1
+19:38:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:39:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::solve()’:
+../src/Solver.cpp:15:59: error: ‘process_ranked_candidates’ was not declared in this scope
+       res &= process_ranked_candidates(m_mRankedCandidates);
+                                                           ^
+make: *** [src/Solver.o] Error 1
+19:40:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:42:39 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::assign_rank_to_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:123:62: error: ‘>>’ should be ‘> >’ within a nested template argument list
+                     itR->second.insert(pair<Symbol*,list<char>>(curSymbol,curAssignments));
+                                                              ^
+../src/Solver.cpp:123:90: error: no matching function for call to ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::insert(std::pair<sudoku::Symbol*, std::list<char> >)’
+                     itR->second.insert(pair<Symbol*,list<char>>(curSymbol,curAssignments));
+                                                                                          ^
+../src/Solver.cpp:123:90: note: candidates are:
+In file included from /usr/include/c++/4.8/list:64:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/list.tcc:98:5: note: std::list<_Tp, _Alloc>::iterator std::list<_Tp, _Alloc>::insert(std::list<_Tp, _Alloc>::iterator, const value_type&) [with _Tp = std::pair<sudoku::Symbol*, std::list<char> >; _Alloc = std::allocator<std::pair<sudoku::Symbol*, std::list<char> > >; std::list<_Tp, _Alloc>::iterator = std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >; std::list<_Tp, _Alloc>::value_type = std::pair<sudoku::Symbol*, std::list<char> >]
+     list<_Tp, _Alloc>::
+     ^
+/usr/include/c++/4.8/bits/list.tcc:98:5: note:   candidate expects 2 arguments, 1 provided
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:1123:7: note: void std::list<_Tp, _Alloc>::insert(std::list<_Tp, _Alloc>::iterator, std::list<_Tp, _Alloc>::size_type, const value_type&) [with _Tp = std::pair<sudoku::Symbol*, std::list<char> >; _Alloc = std::allocator<std::pair<sudoku::Symbol*, std::list<char> > >; std::list<_Tp, _Alloc>::iterator = std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >; std::list<_Tp, _Alloc>::size_type = long unsigned int; std::list<_Tp, _Alloc>::value_type = std::pair<sudoku::Symbol*, std::list<char> >]
+       insert(iterator __position, size_type __n, const value_type& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_list.h:1123:7: note:   candidate expects 3 arguments, 1 provided
+/usr/include/c++/4.8/bits/stl_list.h:1149:9: note: template<class _InputIterator> void std::list<_Tp, _Alloc>::insert(std::list<_Tp, _Alloc>::iterator, _InputIterator, _InputIterator) [with _InputIterator = _InputIterator; _Tp = std::pair<sudoku::Symbol*, std::list<char> >; _Alloc = std::allocator<std::pair<sudoku::Symbol*, std::list<char> > >]
+         insert(iterator __position, _InputIterator __first,
+         ^
+/usr/include/c++/4.8/bits/stl_list.h:1149:9: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:123:90: note:   cannot convert ‘std::pair<sudoku::Symbol*, std::list<char> >((*(sudoku::Symbol* const*)(& curSymbol)), (*(const std::list<char>*)(& curAssignments)))’ (type ‘std::pair<sudoku::Symbol*, std::list<char> >’) to type ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’
+                     itR->second.insert(pair<Symbol*,list<char>>(curSymbol,curAssignments));
+                                                                                          ^
+make: *** [src/Solver.o] Error 1
+19:45:22 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:52:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::Solver::Solver(sudoku::Puzzle*)’:
+../src/Solver.h:27:12: warning: ‘sudoku::Solver::m_lError’ will be initialized after [-Wreorder]
+  long long m_lError;
+            ^
+../src/Solver.h:25:11: warning:   ‘sudoku::Puzzle* sudoku::Solver::m_pSrc’ [-Wreorder]
+  Puzzle * m_pSrc;
+           ^
+../src/Solver.h:55:5: warning:   when initialized here [-Wreorder]
+     Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+     ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::assign_rank_to_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char> > > >&)’:
+../src/Solver.cpp:124:65: error: ‘>>’ should be ‘> >’ within a nested template argument list
+                     itR->second.push_back(pair<Symbol*,list<char>>(curSymbol,curAssignments));
+                                                                 ^
+make: *** [src/Solver.o] Error 1
+19:53:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:59:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:16:21 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:20:51 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:22:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:25:09 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:25:31 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+20:27:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:30:21 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:40:15 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:40:22 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:42:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

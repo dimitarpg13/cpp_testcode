@@ -52,7 +52,7 @@ public:
     }
 
 
-    Solver(Puzzle * puzzle) : m_lError(0), m_pSrc(puzzle)
+    Solver(Puzzle * puzzle) : m_pSrc(puzzle), m_lError(0)
     {
     	if (m_pSrc != NULL)
     	{
@@ -75,7 +75,7 @@ public:
 
 };
 
-
+typedef list<pair<Symbol*,list<char> > > rank_list;
 //
 //
 //
@@ -96,11 +96,14 @@ private:
 	//
 	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
 
-	bool process_ranked_candidates(map<unsigned short,list<pair<Symbol*,list<char> > > > &);
+	bool assign_rank_to_candidates(map<unsigned short,rank_list > &);
 	bool get_available_assignments(Symbol *,list<char> &);
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
+	void print_ranked_candidates(map<unsigned short,rank_list > &);
 };
+
+
 
 }
 
