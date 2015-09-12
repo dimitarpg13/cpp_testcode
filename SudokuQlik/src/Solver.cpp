@@ -13,7 +13,7 @@ namespace sudoku
    {
 	   cout << "Total number of distinct ranks: " << c.size() << endl;
 	 	map<unsigned short,rank_list>::iterator itR;
-	  	list<pair<Symbol*,list<char> > >::iterator itRL;
+	  	list<pair<Symbol*,list<char>* > >::iterator itRL;
 	  	list<char>::iterator itCL;
 	  	for (itR = c.begin(); itR != c.end(); itR++)
 	  	{
@@ -22,7 +22,7 @@ namespace sudoku
             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
             {
             	std::cout << "\t{";
-            	for (itCL = itRL->second.begin(); itCL != itRL->second.end(); itCL++)
+            	for (itCL = itRL->second->begin(); itCL != itRL->second->end(); itCL++)
             	{
             		std::cout << *itCL << " ";
             	}
@@ -100,7 +100,7 @@ namespace sudoku
   }
 
 
-  bool BTSolver::get_available_assignments(Symbol * s,list<char> & assignments)
+  bool BTSolver::get_available_assignments(Symbol * s,list<char>&  assignments)
   {
 	  if (s == NULL)
 		  return false;
@@ -146,7 +146,7 @@ namespace sudoku
      {
     	HorizLine *  curRow=NULL;
     	Symbol * curSymbol=NULL;
-    	list<char> curAssignments;
+    	list<char> * curAssignments = NULL;
     	unsigned short curRank=0;
     	map<unsigned short,rank_list>::iterator itR;
     	rank_list curRankList;
@@ -158,20 +158,27 @@ namespace sudoku
                curSymbol = curRow->getSymbols()[j];
                if (curSymbol->isEmpty())
                {
-                   curAssignments.clear();
-                   get_available_assignments(curSymbol,curAssignments);
+            	   if (curSymbol->getAssignments() == NULL)
+                       curAssignments = new list<char>();
+            	   else
+            	   {
+            		   curAssignments = curSymbol->getAssignments();
+            		   curAssignments->clear();
+            	   }
 
-                   curRank = (unsigned short) curAssignments.size();
+                   get_available_assignments(curSymbol,*curAssignments);
+                   curSymbol->setAssignments(curAssignments);
+                   curRank = (unsigned short) curAssignments->size();
 
                    itR = rankedCandidates.find(curRank);
                    if (itR != rankedCandidates.end())
                    {
-                	   itR->second.push_back(pair<Symbol*,list<char> >(curSymbol,curAssignments));
+                	   itR->second.push_back(pair<Symbol*,list<char>* >(curSymbol,curAssignments));
                    }
                    else
                    {
                 	   curRankList.clear();
-                	   curRankList.push_back(pair<Symbol*,list<char> >(curSymbol,curAssignments));
+                	   curRankList.push_back(pair<Symbol*,list<char>* >(curSymbol,curAssignments));
                        rankedCandidates.insert(pair<unsigned short,rank_list>(curRank,curRankList));
                    }
                }
@@ -195,7 +202,7 @@ namespace sudoku
   {
       bool res = true;
 	  map<unsigned short, rank_list>::iterator itC;
-	  list<pair<Symbol*,list<char> > >::iterator itRL;
+	  list<pair<Symbol*,list<char>* > >::iterator itRL;
 	  list<char>::iterator itCL;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {

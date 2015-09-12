@@ -77,7 +77,7 @@ public:
 
 };
 
-typedef list<pair<Symbol*,list<char> > > rank_list;
+typedef list<pair<Symbol*,list<char>* > > rank_list;
 
 struct printer {
     std::ostream& os;
@@ -103,7 +103,7 @@ private:
 	// the map entry value is a list of pairs where the pair key is the current empty symbol which
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
-	map<unsigned short,list<pair<Symbol*,list<char> > > > m_mRankedCandidates;
+	map<unsigned short,rank_list> m_mRankedCandidates;
 
 	bool assign_rank_to_candidates(map<unsigned short,rank_list > &);
 	bool get_available_assignments(Symbol *,list<char> &);

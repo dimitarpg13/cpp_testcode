@@ -12,6 +12,7 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <list>
 #include <set>
 
 
@@ -42,29 +43,34 @@ private:
 	HorizLine * m_pRow;
 	VertLine * m_pCol;
 	Region * m_pRegion;
+	list<char> * m_pAssignments;
 
 public:
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
-		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region)
+		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region), m_pAssignments(NULL)
     { }
 
 
 	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
-		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region)
+		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region), m_pAssignments(NULL)
 	{ }
+
+	~Symbol() { if (m_pAssignments != NULL) delete m_pAssignments; }
 
 	bool isEmpty() {  return m_cVal == 0; }
 
 	char getValue() { return m_cVal; }
     void setValue(char val) { m_cVal = val; }
 
-	Region * getRegion() { return m_pRegion; };
+	Region * getRegion() { return m_pRegion; }
 	HorizLine * getRow() { return m_pRow; }
 	VertLine * getCol() { return m_pCol; }
+	list<char> * getAssignments() { return m_pAssignments; }
 
     void setRegion(Region * region) { m_pRegion = region; }
     void setRow(HorizLine * row) { m_pRow = row; }
     void setCol(VertLine * col) { m_pCol = col; }
+    void setAssignments(list<char> * assignments) { m_pAssignments = assignments; }
 
 };
 

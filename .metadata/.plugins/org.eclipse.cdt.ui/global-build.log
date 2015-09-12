@@ -5426,3 +5426,989 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+09:44:53 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+10:04:11 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:45:2: error: ‘list’ does not name a type
+  list<char> * m_pCandidates;
+  ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:49:61: error: class ‘sudoku::Symbol’ does not have any field named ‘m_pCandidates’
+   m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region), m_pCandidates(NULL)
+                                                             ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:54:59: error: class ‘sudoku::Symbol’ does not have any field named ‘m_pCandidates’
+   m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region), m_pCandidates(NULL)
+                                                           ^
+make: *** [src/Sudoku.o] Error 1
+10:04:58 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+10:16:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘void sudoku::BTSolver::print_ranked_candidates(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char>*> > >&)’:
+../src/Solver.cpp:22:23: error: no match for ‘operator=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                       ^
+../src/Solver.cpp:22:23: note: candidate is:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note: std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >& std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >::operator=(const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&)
+     struct _List_iterator
+            ^
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&’
+../src/Solver.cpp:22:42: error: no match for ‘operator!=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                          ^
+../src/Solver.cpp:22:42: note: candidates are:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note: bool std::_List_iterator<_Tp>::operator!=(const _Self&) const [with _Tp = std::pair<sudoku::Symbol*, std::list<char> >; std::_List_iterator<_Tp>::_Self = std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >]
+       operator!=(const _Self& __x) const
+       ^
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const _Self& {aka const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&}’
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::pair<_T1, _T2>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_Tp1>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator!=(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note: template<class _Val> bool std::operator!=(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator!=(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator!=(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator!=(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/map:62:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note: template<class _Val> bool std::operator!=(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Val>&)
+     operator!=(const _List_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ is not derived from ‘const std::_List_const_iterator<_Val>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::list<_Tp, _Alloc>&, const std::list<_Tp, _Alloc>&)
+     operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::list<_Tp, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::fpos<_StateT>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   mismatched types ‘const _CharT*’ and ‘std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/iterator:66:0,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator!=(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator!=(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/set:61:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator!=(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/set:62:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator!=(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/vector:61,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note: template<class _Tp> bool __gnu_cxx::operator!=(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note: template<class _Iterator, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator!=(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:22:52: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+             for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+                                                    ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char>*> > >&)’:
+../src/Solver.cpp:202:21: error: no match for ‘operator=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                     ^
+../src/Solver.cpp:202:21: note: candidate is:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note: std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >& std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >::operator=(const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&)
+     struct _List_iterator
+            ^
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&’
+../src/Solver.cpp:202:49: error: no match for ‘operator!=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                 ^
+../src/Solver.cpp:202:49: note: candidates are:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note: bool std::_List_iterator<_Tp>::operator!=(const _Self&) const [with _Tp = std::pair<sudoku::Symbol*, std::list<char> >; std::_List_iterator<_Tp>::_Self = std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >]
+       operator!=(const _Self& __x) const
+       ^
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const _Self& {aka const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&}’
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::pair<_T1, _T2>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_Tp1>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator!=(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note: template<class _Val> bool std::operator!=(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator!=(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator!=(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator!=(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:62:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note: template<class _Val> bool std::operator!=(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Val>&)
+     operator!=(const _List_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ is not derived from ‘const std::_List_const_iterator<_Val>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::list<_Tp, _Alloc>&, const std::list<_Tp, _Alloc>&)
+     operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::list<_Tp, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::fpos<_StateT>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   mismatched types ‘const _CharT*’ and ‘std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/iterator:66:0,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator!=(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator!=(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/set:61:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator!=(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/set:62:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator!=(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/vector:61,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note: template<class _Tp> bool __gnu_cxx::operator!=(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note: template<class _Iterator, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator!=(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+make: *** [src/Solver.o] Error 1
+10:17:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char>*> > >&)’:
+../src/Solver.cpp:202:21: error: no match for ‘operator=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                     ^
+../src/Solver.cpp:202:21: note: candidate is:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note: std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >& std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >::operator=(const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&)
+     struct _List_iterator
+            ^
+/usr/include/c++/4.8/bits/stl_list.h:125:12: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&’
+../src/Solver.cpp:202:49: error: no match for ‘operator!=’ (operand types are ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ and ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’)
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                 ^
+../src/Solver.cpp:202:49: note: candidates are:
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note: bool std::_List_iterator<_Tp>::operator!=(const _Self&) const [with _Tp = std::pair<sudoku::Symbol*, std::list<char> >; std::_List_iterator<_Tp>::_Self = std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >]
+       operator!=(const _Self& __x) const
+       ^
+/usr/include/c++/4.8/bits/stl_list.h:187:7: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const _Self& {aka const std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >&}’
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::pair<_T1, _T2>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:61:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_Tp1>&, const std::allocator<_Tp1>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::allocator<_Tp1>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator!=(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_vector.h:1428:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note: template<class _Val> bool std::operator!=(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator!=(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:316:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator!=(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator!=(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:927:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_map.h:986:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/map:62:0,
+                 from ../src/Solver.h:12,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multimap.h:888:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note: template<class _Val> bool std::operator!=(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Val>&)
+     operator!=(const _List_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:282:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ is not derived from ‘const std::_List_const_iterator<_Val>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note: template<class _Tp, class _Alloc> bool std::operator!=(const std::list<_Tp, _Alloc>&, const std::list<_Tp, _Alloc>&)
+     operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:1638:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::list<_Tp, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::fpos<_StateT>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   mismatched types ‘const _CharT*’ and ‘std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iterator:64,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/iterator:66:0,
+                 from ../src/Solver.h:15,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator!=(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator!=(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/4.8/bits/stream_iterator.h:137:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/set:61:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator!=(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_set.h:778:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/set:62:0,
+                 from ../src/Sudoku.h:16,
+                 from ../src/Solver.h:17,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator!=(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multiset.h:763:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/vector:61,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note: template<class _Tp> bool __gnu_cxx::operator!=(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator!=(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/ext/new_allocator.h:144:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note: template<class _Iterator, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:823:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/vector:60,
+                 from ../src/Solver.h:11,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator!=(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator!=(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:817:5: note:   template argument deduction/substitution failed:
+../src/Solver.cpp:202:68: note:   ‘std::list<std::pair<sudoku::Symbol*, std::list<char> > >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char> > >}’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+                                                                    ^
+make: *** [src/Solver.o] Error 1
+10:18:01 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::map<short unsigned int, std::list<std::pair<sudoku::Symbol*, std::list<char>*> > >&)’:
+../src/Solver.cpp:202:34: error: base operand of ‘->’ has non-pointer type ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >’
+           for (itRL = itC->second->begin(); itRL != itC->second->end(); itRL++)
+                                  ^
+../src/Solver.cpp:202:64: error: base operand of ‘->’ has non-pointer type ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >’
+           for (itRL = itC->second->begin(); itRL != itC->second->end(); itRL++)
+                                                                ^
+make: *** [src/Solver.o] Error 1
+10:18:27 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+10:32:07 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+10:33:00 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
