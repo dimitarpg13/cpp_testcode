@@ -9,17 +9,20 @@
 
 namespace sudoku
 {
-   void BTSolver::print_ranked_candidates(map<unsigned short,rank_list > & c)
+   void BTSolver::print_ranked_candidates(vector<rank_list *> & c)
    {
-	   cout << "Total number of distinct ranks: " << c.size() << endl;
-	 	map<unsigned short,rank_list>::iterator itR;
+	   cout << "Total number of distinct ranks: " << m_iRankCount << endl;
+	 	vector<rank_list *>::iterator itR;
 	  	list<pair<Symbol*,list<char>* > >::iterator itRL;
 	  	list<char>::iterator itCL;
+	  	int indx = 1;
 	  	for (itR = c.begin(); itR != c.end(); itR++)
 	  	{
-	  		rank_list & rl = itR->second;
-            cout << itR->first << " => " << endl;
-            for (itRL = rl.begin(); itRL != rl.end(); itRL++)
+	  		if (*itR == NULL)
+	  			continue;
+
+            cout << indx++ << " => " << endl;
+            for (itRL = (*itR)->begin(); itRL != (*itR)->end(); itRL++)
             {
             	std::cout << "\t{";
             	for (itCL = itRL->second->begin(); itCL != itRL->second->end(); itCL++)
@@ -35,11 +38,11 @@ namespace sudoku
   bool BTSolver::solve()
   {
 	  bool res = true;
-      res &= assign_rank_to_candidates(m_mRankedCandidates);
+      res &= assign_rank_to_candidates(m_vRankedCandidates);
       if (!res)
     	  return res;
 
-      print_ranked_candidates(m_mRankedCandidates);
+      print_ranked_candidates(m_vRankedCandidates);
 
 
 
@@ -141,7 +144,7 @@ namespace sudoku
 
 
   bool BTSolver::assign_rank_to_candidates(
-		  map<unsigned short,rank_list > & rankedCandidates)
+		  vector<rank_list *> & rankedCandidates)
   {
      bool res=true;
      if (m_pSol != NULL && m_lError == 0)
@@ -150,8 +153,8 @@ namespace sudoku
     	Symbol * curSymbol=NULL;
     	list<char> * curAssignments = NULL;
     	unsigned short curRank=0;
-    	map<unsigned short,rank_list>::iterator itR;
-    	rank_list curRankList;
+    	rank_list * curRankList = NULL;
+
         for (int i = 0; i < m_pSol->getDim(); i++)
         {
            curRow = m_pSol->getRows()[i];
@@ -182,18 +185,28 @@ namespace sudoku
 
                    get_available_assignments(curSymbol,*curAssignments);
                    curSymbol->setAssignments(curAssignments);
-                   curRank = (unsigned short) curAssignments->size();
 
-                   itR = rankedCandidates.find(curRank);
-                   if (itR != rankedCandidates.end())
+                   if (curAssignments->size() > 0)
+                      curRank = (unsigned short) curAssignments->size() - 1;
+                   else
                    {
-                	   itR->second.push_back(rank_pair(curSymbol,curAssignments));
+                	   m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+                	   return false;
+                   }
+
+
+
+                   curRankList = rankedCandidates[curRank];
+                   if (curRankList != NULL)
+                   {
+                	   curRankList->push_back(rank_pair(curSymbol,curAssignments));
                    }
                    else
                    {
-                	   curRankList.clear();
-                	   curRankList.push_back(rank_pair(curSymbol,curAssignments));
-                       rankedCandidates.insert(pair<unsigned short,rank_list>(curRank,curRankList));
+                	   curRankList = new list<rank_pair>();
+                	   curRankList->push_back(rank_pair(curSymbol,curAssignments));
+                       rankedCandidates[curRank] = curRankList;
+                       m_iRankCount++;
                    }
                }
            }
@@ -206,7 +219,7 @@ namespace sudoku
      return res;
   }
 
-  bool BTSolver::update_ranked_list(map<unsigned short,rank_list > & c)
+  bool BTSolver::update_ranked_list(vector<rank_list *> & c)
   {
  	  bool res = true;
 
@@ -214,24 +227,54 @@ namespace sudoku
   }
 
 
-  // called in case the current symbol was empty but now it has been assigned a value
+  // called in case the current symbol was empty but now it has been assigned a value.
   // this means that the other symbols in the containing row, column and region need
   // have update in their candidate lists. The update in the candidate lists will
-  // trigger an update in the map with the ranked pairs
+  // trigger an update in the map with the list of ranked pairs since the rank of all
+  // empty symbols in the containing row, column and region will be decremented.
   //
+
   bool BTSolver::update_assignments(Symbol * s)
   {
 	  bool res = true;
 
+	  Symbol * curSymbol = NULL;
+	  HorizLine * curRow = s->getRow();
+	  if (curRow != NULL)
+	  {
+          for (int i = 0; i < curRow->getDim(); i++)
+          {
+        	  if (curRow->getSymbols() != NULL)
+                 curSymbol = curRow->getSymbols()[i];
+        	  else
+        	  {
+        	      m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+        	      return false;
+        	  }
+        	  if (curSymbol->isEmpty())
+        	  {
+        		  if (curSymbol->getAssignments() != NULL)
+        		  {
+
+        		  }
+        	  }
+
+          }
+	  }
+	  else
+	  {
+	       m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	       return false;
+	  }
 
 
 	  return res;
   }
 
-  bool BTSolver::solve_internal(map<unsigned short,rank_list > & c, stack<Symbol *> & s)
+  bool BTSolver::solve_internal(vector<rank_list *> & c, stack<Symbol *> & s)
   {
       bool res = true;
-	  map<unsigned short, rank_list>::iterator itC;
+	  vector<rank_list *>::iterator itC;
 	  list<rank_pair>::iterator itRL;
 	  list<char>::iterator itCL;
 	  Symbol * curSymbol=NULL;
@@ -239,7 +282,7 @@ namespace sudoku
 	  char curChar= 0;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {
-          for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
+          for (itRL = (*itC)->begin(); itRL != (*itC)->end(); itRL++)
           {
               curSymbol = itRL->first;
               if (curSymbol == NULL)

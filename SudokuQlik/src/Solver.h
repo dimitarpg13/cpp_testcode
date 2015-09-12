@@ -94,11 +94,19 @@ struct printer {
 class BTSolver : public Solver
 {
 public:
-	BTSolver(Puzzle * puzzle) : Solver(puzzle) {};
+	BTSolver(Puzzle * puzzle) : Solver(puzzle), m_iRankCount(0)
+    {
+	    if (puzzle != NULL)
+	    {
+	    	m_vRankedCandidates.resize(puzzle->getDim(),NULL);
+	    }
+    };
+
 	bool solve();
     ~BTSolver()
     {
-    	// TO DO: do implementation cleanup
+    	for (vector<rank_list *>::iterator it = m_vRankedCandidates.begin(); it != m_vRankedCandidates.end(); it++)
+    		delete *it;
     };
 private:
 
@@ -106,21 +114,22 @@ private:
 	// the map entry value is a list of pairs where the pair key is the current empty symbol which
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
-	map<unsigned short,rank_list> m_mRankedCandidates;
+	vector<rank_list *> m_vRankedCandidates;
+	unsigned short m_iRankCount;
 
-	bool assign_rank_to_candidates(map<unsigned short,rank_list > &);
+	bool assign_rank_to_candidates(vector<rank_list *> &);
 	bool get_available_assignments(Symbol *,list<char> &);
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
 
-	bool solve_internal(map<unsigned short,rank_list > &, stack<Symbol*> &);
+	bool solve_internal(vector<rank_list *> &, stack<Symbol *> &);
 
-	bool update_ranked_list(map<unsigned short,rank_list > &);
+	bool update_ranked_list(vector<rank_list *> &);
 
 	bool update_assignments(Symbol * s);
 
 	// helper methods for debugging
-	void print_ranked_candidates(map<unsigned short,rank_list > &);
+	void print_ranked_candidates(vector<rank_list *> &);
 	template<typename Iterator>
 	void print_collection(Iterator begin, Iterator end)
 	{
