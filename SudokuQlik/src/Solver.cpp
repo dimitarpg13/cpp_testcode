@@ -42,8 +42,9 @@ namespace sudoku
       if (!res)
     	  return res;
 
+#ifdef _DEBUG
       print_ranked_candidates(m_vRankedCandidates);
-
+#endif
 
 
 	  return res;
@@ -123,18 +124,21 @@ namespace sudoku
 
       const set<char>& symbTable = *m_pSrc->getSymbolTable();
 
-
+#ifdef _DEBUG
       cout << endl;
       print_collection(symbTable.begin(),symbTable.end());
       cout << endl;
       print_collection(assigned.begin(),assigned.end());
       cout << endl;
+#endif
 
       set<char> diff;
       set_symmetric_difference(assigned.begin(),assigned.end(),symbTable.begin(),symbTable.end(),inserter(diff,diff.end()));
+
+#ifdef _DEBUG
       print_collection(diff.begin(),diff.end());
       cout << endl;
-
+#endif
 
       assignments.assign(diff.begin(), diff.end());
 
@@ -240,6 +244,8 @@ namespace sudoku
 
 	  Symbol * curSymbol = NULL;
 	  HorizLine * curRow = s->getRow();
+	  list<char> * curAssignments = NULL;
+	  list<char>::iterator itA;
 	  if (curRow != NULL)
 	  {
           for (int i = 0; i < curRow->getDim(); i++)
@@ -253,9 +259,21 @@ namespace sudoku
         	  }
         	  if (curSymbol->isEmpty())
         	  {
-        		  if (curSymbol->getAssignments() != NULL)
+        		  curAssignments = curSymbol->getAssignments();
+        		  if (curAssignments != NULL)
         		  {
-
+                     itA = find(curAssignments->begin(),curAssignments->end(),s->getValue());
+                     if (itA != curAssignments->end())
+                     {
+#ifdef _DEBUG
+                        cout << endl << "Found redundant assignment for element with value " << s->getValue() << endl;
+#endif
+                     }
+        		  }
+        		  else
+        		  {
+              	      m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                	  return false;
         		  }
         	  }
 

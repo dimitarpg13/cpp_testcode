@@ -7473,3 +7473,20 @@ Binding(CTRL+SHIFT+C,
 
 !ENTRY org.eclipse.cdt.core 1 0 2015-09-10 22:19:54.615
 !MESSAGE Indexed 'TestSudoku' (1 sources, 138 headers) in 6.84 sec: 11,134 declarations; 18,119 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.01%)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2015-09-12 16:46:29.315
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /root/workspace/SudokuQlik/1Debug/SudokuQlik not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:659)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:675)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.runLocalApplication(LocalCDILaunchDelegate.java:85)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.launch(LocalCDILaunchDelegate.java:71)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-09-12 16:50:31.158
+!MESSAGE Indexed 'SudokuQlik' (3 sources, 215 headers) in 11.58 sec: 29,958 declarations; 54,388 references; 0 unresolved inclusions; 0 syntax errors; 12 unresolved names (0.01%)

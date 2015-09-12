@@ -215,7 +215,10 @@ bool Parser::parse(string inputFile)
 		 curColIdx = 0;
 	  }
 
+#ifdef _DEBUG
 	  std::cout << c;
+#endif
+
 	  c = fs.get();
 	}
 
