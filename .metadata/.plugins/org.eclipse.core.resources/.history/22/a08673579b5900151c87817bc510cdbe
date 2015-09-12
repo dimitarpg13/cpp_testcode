@@ -381,11 +381,8 @@ namespace sudoku
 					  }
 					  else
 					  {
-						  //TO DO:
-
-						  // the current symbol is empty and there are no candidate values
-						  // which can be assigned to it. This leads to unfeasible configuration.
-
+						 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+						 return false;
 					  }
             	  }
             	  else
