@@ -36,6 +36,8 @@ namespace sudoku
   {
 	  bool res = true;
       res &= assign_rank_to_candidates(m_mRankedCandidates);
+      if (!res)
+    	  return res;
 
       print_ranked_candidates(m_mRankedCandidates);
 
@@ -155,7 +157,19 @@ namespace sudoku
            curRow = m_pSol->getRows()[i];
            for (int j = 0; j < m_pSol->getDim(); j++)
            {
+        	   if (curRow == NULL)
+        	   {
+        	       m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+        	      return false;
+        	   }
+
                curSymbol = curRow->getSymbols()[j];
+               if (curSymbol == NULL)
+               {
+                  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                  return false;
+               }
+
                if (curSymbol->isEmpty())
                {
             	   if (curSymbol->getAssignments() == NULL)
@@ -195,6 +209,7 @@ namespace sudoku
   bool BTSolver::update_ranked_list(map<unsigned short,rank_list > & c)
   {
 	  bool res = true;
+
 	  return res;
   }
 
@@ -204,11 +219,22 @@ namespace sudoku
 	  map<unsigned short, rank_list>::iterator itC;
 	  list<rank_pair>::iterator itRL;
 	  list<char>::iterator itCL;
+	  Symbol * curSymbol=NULL;
+	  list<char> * curAssignments=NULL;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {
           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
           {
+              curSymbol = itRL->first;
+              if (curSymbol == NULL)
+              {
+            	  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+            	  return false;
+              }
+              if (curSymbol->isEmpty())
+              {
 
+              }
 
           }
 
