@@ -90,6 +90,7 @@ public:
 		m_pCols = new VertLine* [m_iRegionDim];
     };
 
+	unsigned char getDim() { return m_iDim; };
 	unsigned char getSymbCount() { return m_iSymbCount; };
 	Symbol ** const getSymbols() { return m_pSymbols; };
 

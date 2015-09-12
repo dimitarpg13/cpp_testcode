@@ -106,7 +106,8 @@ public:
     ~BTSolver()
     {
     	for (vector<rank_list *>::iterator it = m_vRankedCandidates.begin(); it != m_vRankedCandidates.end(); it++)
-    		delete *it;
+    	   if (*it != NULL)
+    		 delete *it;
     };
 private:
 
@@ -124,9 +125,12 @@ private:
 
 	bool solve_internal(vector<rank_list *> &, stack<Symbol *> &);
 
-	bool update_ranked_list(vector<rank_list *> &);
+	bool update_rank_lists(vector<rank_list *> &);
 
-	bool update_assignments(Symbol * s);
+	bool update_symbols(Symbol*, Symbol **, unsigned char);
+	bool update_line(Symbol *, Line *);
+	bool update_region(Symbol *, Region *);
+	bool update_assignments(Symbol *);
 
 	// helper methods for debugging
 	void print_ranked_candidates(vector<rank_list *> &);
