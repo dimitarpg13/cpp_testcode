@@ -13,6 +13,7 @@
 #include <list>
 #include <algorithm>
 #include <iterator>
+#include <stack>
 
 #include "Sudoku.h"
 
@@ -113,7 +114,7 @@ private:
 
 	bool update_ranked_list(map<unsigned short,rank_list > &);
 
-	bool solve_internal(map<unsigned short,rank_list > &);
+	bool solve_internal(map<unsigned short,rank_list > &, stack<Symbol*> &);
 
 
 	// helper methods for debugging

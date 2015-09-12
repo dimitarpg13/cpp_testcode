@@ -213,7 +213,7 @@ namespace sudoku
 	  return res;
   }
 
-  bool BTSolver::solve_internal(map<unsigned short,rank_list > & c)
+  bool BTSolver::solve_internal(map<unsigned short,rank_list > & c, stack<Symbol *> & s)
   {
       bool res = true;
 	  map<unsigned short, rank_list>::iterator itC;
@@ -221,6 +221,7 @@ namespace sudoku
 	  list<char>::iterator itCL;
 	  Symbol * curSymbol=NULL;
 	  list<char> * curAssignments=NULL;
+	  char curChar= 0;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {
           for (itRL = itC->second.begin(); itRL != itC->second.end(); itRL++)
@@ -233,7 +234,18 @@ namespace sudoku
               }
               if (curSymbol->isEmpty())
               {
-
+            	  curAssignments = curSymbol->getAssignments();
+                  curChar = curAssignments->front();
+                  if (curChar != 0)
+                  {
+                     curAssignments->remove(curAssignments->front());
+                     curSymbol->setValue(curChar);
+                  }
+                  else
+                  {
+                	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                	 return false;
+                  }
               }
 
           }
