@@ -87,7 +87,8 @@ struct printer {
     template<typename T>
     void operator()(const T& obj) { os << obj << ' '; }
 };
-//
+
+// solver using backtracking i.e. depth first search
 //
 //
 class BTSolver : public Solver

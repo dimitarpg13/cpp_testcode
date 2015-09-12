@@ -214,6 +214,11 @@ namespace sudoku
   }
 
 
+  // called in case the current symbol was empty but now it has been assigned a value
+  // this means that the other symbols in the containing row, column and region need
+  // have update in their candidate lists. The update in the candidate lists will
+  // trigger an update in the map with the ranked pairs
+  //
   bool BTSolver::update_assignments(Symbol * s)
   {
 	  bool res = true;
