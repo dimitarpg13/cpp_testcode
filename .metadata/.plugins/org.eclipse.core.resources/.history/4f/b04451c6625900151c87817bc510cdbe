@@ -208,17 +208,7 @@ namespace sudoku
 
   bool BTSolver::update_ranked_list(map<unsigned short,rank_list > & c)
   {
- 	  bool res = true;
-
- 	  return res;
-  }
-
-
-  bool BTSolver::update_assignments(Symbol * s)
-  {
 	  bool res = true;
-
-
 
 	  return res;
   }
@@ -245,29 +235,17 @@ namespace sudoku
               if (curSymbol->isEmpty())
               {
             	  curAssignments = curSymbol->getAssignments();
-            	  if (curAssignments != NULL)
-            	  {
-					  curChar = curAssignments->front();
-					  if (curChar != 0)
-					  {
-						 curAssignments->remove(curAssignments->front());
-						 curSymbol->setValue(curChar);
-						 s.push(curSymbol);
-						 res &= update_assignments(curSymbol);
-						 if (!res)
-							 return false;
-					  }
-					  else
-					  {
-						 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-						 return false;
-					  }
-            	  }
-            	  else
-            	  {
-            		  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-                      return false;
-            	  }
+                  curChar = curAssignments->front();
+                  if (curChar != 0)
+                  {
+                     curAssignments->remove(curAssignments->front());
+                     curSymbol->setValue(curChar);
+                  }
+                  else
+                  {
+                	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                	 return false;
+                  }
               }
 
           }
@@ -276,8 +254,6 @@ namespace sudoku
 
 	  return res;
   }
-
-
 
 
 }

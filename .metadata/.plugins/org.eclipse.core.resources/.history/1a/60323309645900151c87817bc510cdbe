@@ -253,7 +253,7 @@ namespace sudoku
 						 curAssignments->remove(curAssignments->front());
 						 curSymbol->setValue(curChar);
 						 s.push(curSymbol);
-						 res &= update_assignments(curSymbol);
+						 res &= update_assignments(s);
 						 if (!res)
 							 return false;
 					  }

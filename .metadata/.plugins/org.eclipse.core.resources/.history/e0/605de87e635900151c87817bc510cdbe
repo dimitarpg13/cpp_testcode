@@ -112,11 +112,10 @@ private:
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
 
-	bool solve_internal(map<unsigned short,rank_list > &, stack<Symbol*> &);
-
 	bool update_ranked_list(map<unsigned short,rank_list > &);
 
-	bool update_assignments(Symbol * s);
+	bool solve_internal(map<unsigned short,rank_list > &, stack<Symbol*> &);
+
 
 	// helper methods for debugging
 	void print_ranked_candidates(map<unsigned short,rank_list > &);

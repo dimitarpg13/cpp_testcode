@@ -208,17 +208,7 @@ namespace sudoku
 
   bool BTSolver::update_ranked_list(map<unsigned short,rank_list > & c)
   {
- 	  bool res = true;
-
- 	  return res;
-  }
-
-
-  bool BTSolver::update_assignments(Symbol * s)
-  {
 	  bool res = true;
-
-
 
 	  return res;
   }
@@ -253,9 +243,6 @@ namespace sudoku
 						 curAssignments->remove(curAssignments->front());
 						 curSymbol->setValue(curChar);
 						 s.push(curSymbol);
-						 res &= update_assignments(curSymbol);
-						 if (!res)
-							 return false;
 					  }
 					  else
 					  {
@@ -276,8 +263,6 @@ namespace sudoku
 
 	  return res;
   }
-
-
 
 
 }
