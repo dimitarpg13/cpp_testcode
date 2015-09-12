@@ -46,6 +46,9 @@ namespace sudoku
       print_ranked_candidates(m_vRankedCandidates);
 #endif
 
+      stack<Symbol *> stack;
+      res &= solve_internal(m_vRankedCandidates, stack);
+
 
 	  return res;
   }
