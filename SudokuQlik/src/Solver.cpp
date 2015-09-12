@@ -173,12 +173,12 @@ namespace sudoku
                    itR = rankedCandidates.find(curRank);
                    if (itR != rankedCandidates.end())
                    {
-                	   itR->second.push_back(pair<Symbol*,list<char>* >(curSymbol,curAssignments));
+                	   itR->second.push_back(rank_pair(curSymbol,curAssignments));
                    }
                    else
                    {
                 	   curRankList.clear();
-                	   curRankList.push_back(pair<Symbol*,list<char>* >(curSymbol,curAssignments));
+                	   curRankList.push_back(rank_pair(curSymbol,curAssignments));
                        rankedCandidates.insert(pair<unsigned short,rank_list>(curRank,curRankList));
                    }
                }
@@ -202,7 +202,7 @@ namespace sudoku
   {
       bool res = true;
 	  map<unsigned short, rank_list>::iterator itC;
-	  list<pair<Symbol*,list<char>* > >::iterator itRL;
+	  list<rank_pair>::iterator itRL;
 	  list<char>::iterator itCL;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {

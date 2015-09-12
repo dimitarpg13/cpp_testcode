@@ -77,7 +77,8 @@ public:
 
 };
 
-typedef list<pair<Symbol*,list<char>* > > rank_list;
+typedef pair<Symbol*,list<char>*> rank_pair;
+typedef list<rank_pair>  rank_list;
 
 struct printer {
     std::ostream& os;
