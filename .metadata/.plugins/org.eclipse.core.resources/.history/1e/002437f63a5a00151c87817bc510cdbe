@@ -458,13 +458,11 @@ namespace sudoku
 									else
 									   return false;
 								 }
-								 else
-								 {
-								    // push he current symbol to the stack and proceed one level further
-								    // down onto the solution tree
-								    s.push(curSymbol);
-								    break;
-								 }
+
+								 // push he current symbol to the stack and proceed one level further
+								 // down onto the solution tree
+								 s.push(curSymbol);
+								 break;
 							  }
 							  else
 							  {
