@@ -702,3 +702,123 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+12:50:34 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:408:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+12:53:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:408:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+13:02:22 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+13:03:34 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+13:04:00 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+13:04:31 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+13:05:11 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+13:06:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:408:31: warning: variable ‘prevSymbol’ set but not used [-Wunused-but-set-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+13:12:01 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

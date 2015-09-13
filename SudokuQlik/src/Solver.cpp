@@ -446,9 +446,9 @@ namespace sudoku
 									{
 										// updating the assignments with the new change
 										// failed which indicates infeasible configuration
-										// so restore the assignments before the last attempt
-										// and check for a different value to be assigned to
-										// curSymbol
+										// was reached so restore the assignments before the
+										// last attempt and check for a different value to be
+										// assigned to curSymbol
 										restore_assignment(curSymbol);
 
 										curAssignments->push_back(curSymbol->getValue());
@@ -459,6 +459,8 @@ namespace sudoku
 									   return false;
 								 }
 
+								 // push he current symbol to the stack and proceed one level further
+								 // down onto the solution tree
 								 s.push(curSymbol);
 								 break;
 							  }
@@ -467,6 +469,43 @@ namespace sudoku
 								 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
 								 return false;
 							  }
+
+                          }
+
+
+                          if (s.empty() || curSymbol != s.top())
+                          {
+                        	  // No feasible assignment was found for the current symbol where
+                        	  // all attempts lead to an infeasible configuration. So take a step
+                        	  // back (backtrace) one level up the solution tree if the stack
+                        	  // is not empty
+
+                        	  if (!s.empty())
+                        	  {
+                        	     prevSymbol = s.top();
+                        	     s.pop();
+
+                        	     if (prevSymbol != NULL)
+                        	     {
+
+                        	     }
+                        	     else
+                        	     {
+                        	    	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                        	         return false;
+                        	     }
+
+
+                        	  }
+                        	  else
+                        	  {
+                        		  // the stack is empty so this is the top level of the solution tree
+                        		  // and in that case nothing can be done
+                        		  m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+                                  return false;
+                        	  }
+
+
 
                           }
 

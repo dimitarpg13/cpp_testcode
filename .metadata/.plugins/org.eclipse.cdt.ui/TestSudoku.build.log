@@ -1,4 +1,4 @@
-22:39:59 **** Incremental Build of configuration Debug for project TestSudoku ****
+13:05:11 **** Incremental Build of configuration Debug for project TestSudoku ****
 make all 
 Building file: ../src/TestSudoku.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "TestSudoku"  ./src/TestSudoku.o
 Finished building target: TestSudoku
  
 
-22:39:59 Build Finished (took 621ms)
+13:05:12 Build Finished (took 625ms)
 
