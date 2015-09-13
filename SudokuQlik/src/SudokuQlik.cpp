@@ -25,7 +25,7 @@ int main() {
     Puzzle * p = new Puzzle();
     Solver * s = NULL;
 
-    cout << "Example1:" << endl;
+   /* cout << "Example1:" << endl;
     p->load("./src/example1.txt");
     s = new BTSolver(p);
     if (!s->solve())
@@ -93,9 +93,8 @@ int main() {
 
    cout << endl << "The solution is:" << endl;
    s->printToConsole();
-
    delete s;
-   cout << endl << endl;
+   cout << endl << endl;*/
 
 
    cout << "Example4:" << endl;
@@ -128,8 +127,7 @@ int main() {
    delete p;
 
 
-    char c = 0101;
-    cout << c ;
+
 
 	return 0;
 }

@@ -274,11 +274,38 @@ namespace sudoku
 
        		  if (curAssignments != NULL)
        		  {
-       			  if (curAssignments->size() > 1)
+       			  unsigned short sz = curAssignments->size();
+       			  if (sz > 1)
+       			  {
                      curAssignments->remove_if(Remover(s->getValue()));
+                     if (curAssignments->size() < sz)
+                     {
+                    	 // there was a removal so we need to update corresponding rank list
+                         rank_list * curRankList = m_vRankedCandidates[sz-1];
+                         if (curRankList != NULL)
+                         {
+                             curRankList->remove_if(SymbolFinder(curSymbol));
+                             if (sz - 2 >= 0)
+                             {
+                                 m_vRankedCandidates[sz-2]->push_back(rank_pair(curSymbol,curAssignments));
+                             }
+                             else
+                             {
+                            	 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+                            	 return false;
+                             }
+                         }
+                         else
+                         {
+                        	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                        	 return false;
+                         }
+
+                     }
+       			  }
        			  else
        			  {
-       				  if (curAssignments->size() == 1)
+       				  if (sz == 1)
        				  {
                          if (curAssignments->front() == s->getValue())
                          {

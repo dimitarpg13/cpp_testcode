@@ -100,7 +100,13 @@ struct Printer {
 struct Remover {
 	char m_cVal;
 	Remover(char val) : m_cVal(val) {}
-	bool operator()(const char v) { return v == m_cVal; }
+	bool operator()(const char& v) { return v == m_cVal; }
+};
+
+struct SymbolFinder {
+	Symbol * m_pSymb;
+	SymbolFinder(Symbol * symb) : m_pSymb(symb) {}
+	bool operator()(const rank_pair& rp) { return rp.first == m_pSymb; }
 };
 
 // solver using backtracking i.e. depth first search
