@@ -138,6 +138,8 @@ private:
 	bool update_line(Symbol *, Line *);
 	bool update_region(Symbol *, Region *);
 	bool update_assignments(Symbol *);
+	bool restore_symbol(Symbol*, Symbol **, unsigned char);
+	bool restore_assignment(Symbol *);
 
 	// helper methods for debugging
 	void print_ranked_candidates(vector<rank_list *> &);

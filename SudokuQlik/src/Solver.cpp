@@ -327,6 +327,45 @@ namespace sudoku
 	  return res;
   }
 
+
+  bool BTSolver::restore_symbol(Symbol* s, Symbol ** arr, unsigned char dim)
+  {
+  	  bool res = true;
+
+  	  Symbol * curSymbol = NULL;
+  	  list<char> * curAssignments = NULL;
+  	  list<char>::iterator itA;
+
+        for (int i = 0; i < dim; i++)
+        {
+            curSymbol = arr[i];
+            if (curSymbol->isEmpty())
+            {
+         		  curAssignments = curSymbol->getAssignments();
+         		  if (curAssignments != NULL)
+                   curAssignments->push_back(s->getValue());
+         		  else
+         		  {
+               	     m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                 	  return false;
+         		  }
+            }
+
+        }
+
+  	  return res;
+
+  }
+
+
+  bool BTSolver::restore_assignment(Symbol * s)
+  {
+	  bool res = true;
+
+
+	  return res;
+  }
+
   bool BTSolver::solve_internal(vector<rank_list *> & c, stack<Symbol *> & s)
   {
       bool res = true;
@@ -359,7 +398,7 @@ namespace sudoku
 					      curChar = curAssignments->front();
 					      if (curChar != 0)
 					      {
-						     curAssignments->remove(curAssignments->front());
+						     curAssignments->pop_front();
 						     curSymbol->setValue(curChar);
 						     s.push(curSymbol);
 						     res &= update_assignments(curSymbol);
