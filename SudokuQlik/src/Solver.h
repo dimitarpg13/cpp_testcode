@@ -82,10 +82,17 @@ typedef pair<Symbol*,list<char>*> rank_pair;
 typedef list<rank_pair>  rank_list;
 
 struct printer {
-    std::ostream& os;
-    printer(std::ostream& os) : os(os) {}
+    ostream& m_os;
+    printer(ostream& os) : m_os(os) {}
     template<typename T>
-    void operator()(const T& obj) { os << obj << ' '; }
+    void operator()(const T& obj) { m_os << obj << ' '; }
+};
+
+
+struct remover {
+	char m_cVal;
+	remover(char val) : m_cVal(val) {}
+	bool operator()(const char v) { return v == m_cVal; }
 };
 
 // solver using backtracking i.e. depth first search

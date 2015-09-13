@@ -249,15 +249,18 @@ namespace sudoku
        		  curAssignments = curSymbol->getAssignments();
        		  if (curAssignments != NULL)
        		  {
+
+                    curAssignments->remove_if(remover(s->getValue()));
                     itA = find(curAssignments->begin(),curAssignments->end(),s->getValue());
                     if (itA != curAssignments->end())
                     {
-
-                   	 //TO DO:
+                       //TO DO:
 #ifdef _DEBUG
-                       cout << endl << "Found redundant assignment for element with value " << s->getValue() << endl;
+                    	cout << endl << "------------Not REmoved!!!----------" << endl;
 #endif
                     }
+
+
        		  }
        		  else
        		  {

@@ -272,3 +272,74 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+09:44:14 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::update_symbols(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:261:50: error: no matching function for call to ‘std::list<char>::remove(std::list<char>::iterator&)’
+                        curAssignments->remove(itA);
+                                                  ^
+../src/Solver.cpp:261:50: note: candidate is:
+In file included from /usr/include/c++/4.8/list:64:0,
+                 from ../src/Solver.h:13,
+                 from ../src/Solver.cpp:8:
+/usr/include/c++/4.8/bits/list.tcc:238:5: note: void std::list<_Tp, _Alloc>::remove(const value_type&) [with _Tp = char; _Alloc = std::allocator<char>; std::list<_Tp, _Alloc>::value_type = char]
+     list<_Tp, _Alloc>::
+     ^
+/usr/include/c++/4.8/bits/list.tcc:238:5: note:   no known conversion for argument 1 from ‘std::list<char>::iterator {aka std::_List_iterator<char>}’ to ‘const value_type& {aka const char&}’
+make: *** [src/Solver.o] Error 1
+09:49:18 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:348:31: warning: variable ‘prevSymbol’ set but not used [-Wunused-but-set-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+09:50:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:348:31: warning: variable ‘prevSymbol’ set but not used [-Wunused-but-set-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+09:51:42 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:349:31: warning: variable ‘prevSymbol’ set but not used [-Wunused-but-set-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
