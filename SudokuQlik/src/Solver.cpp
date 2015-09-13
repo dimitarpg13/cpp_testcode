@@ -343,11 +343,14 @@ namespace sudoku
 	  vector<rank_list *>::iterator itC;
 	  list<rank_pair>::iterator itRL;
 	  list<char>::iterator itCL;
-	  Symbol * curSymbol=NULL;
+	  Symbol * curSymbol=NULL, * prevSymbol=NULL;
 	  list<char> * curAssignments=NULL;
 	  char curChar= 0;
 	  for (itC = c.begin(); itC != c.end(); itC++)
 	  {
+		  if (*itC == NULL)
+			  continue;
+
           for (itRL = (*itC)->begin(); itRL != (*itC)->end(); itRL++)
           {
               curSymbol = itRL->first;
@@ -385,6 +388,11 @@ namespace sudoku
 
 						  // the current symbol is empty and there are no candidate values
 						  // which can be assigned to it. This leads to unfeasible configuration.
+                          prevSymbol = s.top();
+                          s.pop();
+
+                          // restore the old state of rank lists
+
 
 					  }
             	  }
