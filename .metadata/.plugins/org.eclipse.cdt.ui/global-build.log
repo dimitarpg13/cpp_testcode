@@ -1713,3 +1713,105 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+17:45:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘void sudoku::Puzzle::printToConsole()’:
+../src/Sudoku.cpp:380:31: error: request for member ‘getDim’ in ‘*((sudoku::Puzzle*)this)->sudoku::Puzzle::m_pRows’, which is of pointer type ‘sudoku::HorizLine*’ (maybe you meant to use ‘->’ ?)
+    for (int i=0; i < m_pRows->getDim(); i++)
+                               ^
+make: *** [src/Sudoku.o] Error 1
+17:46:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘void sudoku::Puzzle::printToConsole()’:
+../src/Sudoku.cpp:380:22: error: ‘m_pDim’ was not declared in this scope
+    for (int i=0; i < m_pDim; i++)
+                      ^
+make: *** [src/Sudoku.o] Error 1
+17:46:44 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+17:48:33 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘void sudoku::Puzzle::printToConsole()’:
+../src/Sudoku.cpp:380:14: warning: variable ‘curRow’ set but not used [-Wunused-but-set-variable]
+  HorizLine * curRow=NULL;
+              ^
+../src/Sudoku.cpp:381:11: warning: unused variable ‘curSymbol’ [-Wunused-variable]
+  Symbol * curSymbol=NULL;
+           ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+17:50:42 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+17:53:14 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+17:54:07 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+../src/SudokuQlik.cpp: In function ‘int main()’:
+../src/SudokuQlik.cpp:46:5: error: expected ‘;’ before ‘s’
+     s->printToConsole();
+     ^
+make: *** [src/SudokuQlik.o] Error 1
+17:54:22 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

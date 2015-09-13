@@ -68,6 +68,7 @@ public:
 
     virtual bool solve() = 0;
 
+    void printToConsole();
 
     virtual ~Solver()
     {

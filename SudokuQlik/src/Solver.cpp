@@ -584,6 +584,12 @@ namespace sudoku
   }
 
 
+  void Solver::printToConsole()
+  {
+	  if (m_pSol != NULL)
+		  m_pSol->printToConsole();
+  }
+
 
 }
 

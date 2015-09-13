@@ -42,6 +42,9 @@ int main() {
     	}
     }
 
+    cout << endl << "The solution is:" << endl;
+    s->printToConsole();
+
     cout << endl << endl;
 
 

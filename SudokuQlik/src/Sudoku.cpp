@@ -377,7 +377,22 @@ Puzzle * const Puzzle::getCopy()
 
 void Puzzle::printToConsole()
 {
+	HorizLine * curRow=NULL;
+	Symbol * curSymbol=NULL;
+	char sep = ' ';
+    for (int i=0; i < m_iDim; i++)
+    {
+       curRow = m_pRows[i];
+       for (int j=0; j < m_iDim; j++)
+       {
+           curSymbol = curRow->getSymbols()[j];
+           cout << curSymbol->getValue();
+           if (j < m_iDim - 1)
+        	   cout << sep;
+       }
+       cout << endl;
 
+    }
 
 }
 
