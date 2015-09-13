@@ -428,31 +428,50 @@ namespace sudoku
             	  {
             		  if (!curAssignments->empty())
             		  {
-					      curChar = curAssignments->front();
-					      if (curChar != 0)
-					      {
-						     curAssignments->pop_front();
-						     curSymbol->setValue(curChar);
-						     curSymbol->setLastRemoved(curChar);
-						     s.push(curSymbol);
-						     res &= update_assignments(curSymbol);
-						     if (!res)
-						     {
-						        if (m_lError == SUDOKU_NO_ERROR)
-						        {
-                                    // updating the assignments with the new change
-						            // failed which indicates infeasible configuration
 
-						        }
-						        else
-							       return false;
-						     }
-					      }
-					      else
-					      {
-					      	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-					      	 return false;
-					      }
+
+                          unsigned int idx = 0;
+                          while (idx++ < curAssignments->size())
+                          {
+							  curChar = curAssignments->front();
+							  if (curChar != 0)
+							  {
+								 curAssignments->pop_front();
+								 curSymbol->setValue(curChar);
+								 curSymbol->setLastRemoved(curChar);
+								 res &= update_assignments(curSymbol);
+								 if (!res)
+								 {
+									if (m_lError == SUDOKU_NO_ERROR)
+									{
+										// updating the assignments with the new change
+										// failed which indicates infeasible configuration
+										// so restore the assignments before the last attempt
+										// and check for a different value to be assigned to
+										// curSymbol
+										restore_assignment(curSymbol);
+
+										curAssignments->push_back(curSymbol->getValue());
+
+
+									}
+									else
+									   return false;
+								 }
+
+								 s.push(curSymbol);
+								 break;
+							  }
+							  else
+							  {
+								 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+								 return false;
+							  }
+
+                          }
+
+
+
 					  }
 					  else
 					  {
