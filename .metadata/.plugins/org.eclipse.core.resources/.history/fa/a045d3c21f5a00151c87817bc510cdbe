@@ -248,7 +248,20 @@ namespace sudoku
           {
        		  curAssignments = curSymbol->getAssignments();
        		  if (curAssignments != NULL)
-                 curAssignments->remove_if(remover(s->getValue()));
+       		  {
+
+                    curAssignments->remove_if(remover(s->getValue()));
+                    itA = find(curAssignments->begin(),curAssignments->end(),s->getValue());
+                    if (itA != curAssignments->end())
+                    {
+                       //TO DO:
+#ifdef _DEBUG
+                    	cout << endl << "------------Not REmoved!!!----------" << endl;
+#endif
+                    }
+
+
+       		  }
        		  else
        		  {
              	  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
