@@ -421,7 +421,6 @@ namespace sudoku
             	  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
             	  return false;
               }
-
               if (curSymbol->isEmpty())
               {
             	  curAssignments = curSymbol->getAssignments();
@@ -490,8 +489,6 @@ namespace sudoku
 
                         	     if (prevSymbol != NULL)
                         	     {
-                                     // TO DO: re-process the previous symbol
-                        	    	 //
 
                         	     }
                         	     else
