@@ -31,11 +31,12 @@ class VertLine;
 enum Error
 {
    SUDOKU_NO_ERROR=0,
-   SUDOKU_ERROR_INCORRECT_INPUT_FORMAT=1,
-   SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT=2,
-   SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT=4,
-   SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE=8,
-   SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION=16
+   SUDOKU_ERROR_MISSING_INPUT_FILE=1,
+   SUDOKU_ERROR_INCORRECT_INPUT_FORMAT=2,
+   SUDOKU_ERROR_INCORRECT_INPUT_ROW_COUNT=4,
+   SUDOKU_ERROR_INCORRECT_INPUT_COL_COUNT=8,
+   SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE=16,
+   SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION=32
 };
 
 class Symbol
@@ -48,14 +49,18 @@ private:
 	Region * m_pRegion;
 	list<char> * m_pAssignments;
 
+	char m_cLastRemoved;
+
 public:
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
-		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region), m_pAssignments(NULL)
+		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
+		m_pAssignments(NULL), m_cLastRemoved(0)
     { }
 
 
 	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
-		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region), m_pAssignments(NULL)
+		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region),
+		m_pAssignments(NULL), m_cLastRemoved(0)
 	{ }
 
 	~Symbol() { if (m_pAssignments != NULL) delete m_pAssignments; }
@@ -69,11 +74,13 @@ public:
 	HorizLine * getRow() { return m_pRow; }
 	VertLine * getCol() { return m_pCol; }
 	list<char> * getAssignments() { return m_pAssignments; }
+	char getLastRemoved() { return m_cLastRemoved; }
 
     void setRegion(Region * region) { m_pRegion = region; }
     void setRow(HorizLine * row) { m_pRow = row; }
     void setCol(VertLine * col) { m_pCol = col; }
     void setAssignments(list<char> * assignments) { m_pAssignments = assignments; }
+    void setLastRemoved(char lastRemoved) { m_cLastRemoved = lastRemoved; }
 
 };
 

@@ -247,13 +247,34 @@ namespace sudoku
           if (curSymbol->isEmpty())
           {
        		  curAssignments = curSymbol->getAssignments();
+
        		  if (curAssignments != NULL)
-                 curAssignments->remove_if(remover(s->getValue()));
+       		  {
+       			  if (curAssignments->size() > 1)
+                     curAssignments->remove_if(remover(s->getValue()));
+       			  else
+       			  {
+       				  if (curAssignments->size() == 1)
+       				  {
+                         if (curAssignments->front() == s->getValue())
+                         {
+                             return false;
+                         }
+       				  }
+       				  else
+       				  {
+       					 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+       					 return false;
+       				  }
+       			  }
+       		  }
        		  else
        		  {
              	  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
                	  return false;
        		  }
+
+
           }
 
       }
@@ -332,6 +353,12 @@ namespace sudoku
   {
   	  bool res = true;
 
+  	  if (s == NULL)
+  	  {
+  		  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+  		  return false;
+  	  }
+
   	  Symbol * curSymbol = NULL;
   	  list<char> * curAssignments = NULL;
   	  list<char>::iterator itA;
@@ -343,7 +370,13 @@ namespace sudoku
             {
          		  curAssignments = curSymbol->getAssignments();
          		  if (curAssignments != NULL)
-                   curAssignments->push_back(s->getValue());
+         		  {
+         			  if (curSymbol->getLastRemoved() == s->getValue())
+         			  {
+                         curAssignments->push_back(s->getValue());
+                         curSymbol->setLastRemoved(0);
+         			  }
+         		  }
          		  else
          		  {
                	     m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
@@ -400,10 +433,20 @@ namespace sudoku
 					      {
 						     curAssignments->pop_front();
 						     curSymbol->setValue(curChar);
+						     curSymbol->setLastRemoved(curChar);
 						     s.push(curSymbol);
 						     res &= update_assignments(curSymbol);
 						     if (!res)
-							   return false;
+						     {
+						        if (m_lError == SUDOKU_NO_ERROR)
+						        {
+                                    // updating the assignments with the new change
+						            // failed which indicates infeasible configuration
+
+						        }
+						        else
+							       return false;
+						     }
 					      }
 					      else
 					      {
@@ -413,15 +456,8 @@ namespace sudoku
 					  }
 					  else
 					  {
-						  //TO DO:
-
-						  // the current symbol is empty and there are no candidate values
-						  // which can be assigned to it. This leads to unfeasible configuration.
-                          prevSymbol = s.top();
-                          s.pop();
-
-                          // restore the old state of rank lists
-
+						 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+						 return false;
 
 					  }
             	  }
