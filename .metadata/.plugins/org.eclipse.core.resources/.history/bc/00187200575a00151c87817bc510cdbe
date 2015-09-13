@@ -60,7 +60,6 @@ namespace sudoku
 	  }
 
 	  prev->Next = cur;
-	  cur->Next = NULL;
 
 	  return head;
   }

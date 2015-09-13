@@ -146,6 +146,8 @@ private:
     bool solve_internal(RankNode *);
 
 
+	bool update_rank_lists(vector<rank_list *> &);
+
 	bool update_symbols(Symbol*, Symbol **, unsigned char);
 	bool update_line(Symbol *, Line *);
 	bool update_region(Symbol *, Region *);
