@@ -23,10 +23,11 @@ int main() {
 
 
     Puzzle * p = new Puzzle();
+    Solver * s = NULL;
 
     cout << "Example1:" << endl;
     p->load("./src/example1.txt");
-    Solver * s = new BTSolver(p);
+    s = new BTSolver(p);
     if (!s->solve())
     {
     	if (s->getError() > 0)
@@ -44,26 +45,87 @@ int main() {
 
     cout << endl << "The solution is:" << endl;
     s->printToConsole();
-
+    delete s;
     cout << endl << endl;
 
 
 
     cout << "Example2:" << endl;
     p->load("./src/example2.txt");
+    s = new BTSolver(p);
+    if (!s->solve())
+    {
+       if (s->getError() > 0)
+       {
+       	  if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+       	  {
+       	     cout << endl << "Unsolvable configuration!!!" << endl;
+       	  }
+       	  else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+       	  {
+       		 cout << endl << "Inconsistent internal state!!!" << endl;
+       	  }
+       	}
+    }
+
+    cout << endl << "The solution is:" << endl;
+    s->printToConsole();
+    delete s;
     cout << endl << endl;
 
     cout << "Example3:" << endl;
     p->load("./src/example3.txt");
-    cout << endl << endl;
+    s = new BTSolver(p);
+    if (!s->solve())
+    {
+       if (s->getError() > 0)
+       {
+          if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+          {
+         	 cout << endl << "Unsolvable configuration!!!" << endl;
+          }
+          else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+          {
+         	 cout << endl << "Inconsistent internal state!!!" << endl;
+          }
+       }
+   }
 
-    cout << "Example4:" << endl;
-    p->load("./src/example4.txt");
-    cout << endl << endl;
+   cout << endl << "The solution is:" << endl;
+   s->printToConsole();
+
+   delete s;
+   cout << endl << endl;
+
+
+   cout << "Example4:" << endl;
+   p->load("./src/example4.txt");
+   s = new BTSolver(p);
+   if (!s->solve())
+   {
+      if (s->getError() > 0)
+      {
+          if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+          {
+            cout << endl << "Unsolvable configuration!!!" << endl;
+          }
+          else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+          {
+            cout << endl << "Inconsistent internal state!!!" << endl;
+          }
+      }
+   }
+
+   cout << endl << "The solution is:" << endl;
+   s->printToConsole();
+
+   delete s;
+   cout << endl << endl;
 
 
 
-    delete p;
+
+   delete p;
 
 
     char c = 0101;
