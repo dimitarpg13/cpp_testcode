@@ -75,6 +75,15 @@ namespace sudoku
 
       m_lstRankedCandidates = init_rank_node_list(m_vRankedCandidates);
 
+      RankNode * cur = m_lstRankedCandidates;
+      while (cur != NULL)
+      {
+    	  if (!cur->Val->first->isEmpty())
+    		  cout << "\tSymbol is not empty!" << endl;
+    	  else
+    		  cout << "\tSymbol is empty!" << endl;
+    	  cur = cur->Next;
+      }
 
       res &= solve_internal(m_lstRankedCandidates);
 
