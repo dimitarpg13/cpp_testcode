@@ -58,6 +58,7 @@ namespace sudoku
               prev = cur;
 	      }
 	  }
+	  cur->Next = NULL;
 
 	  return head;
   }
