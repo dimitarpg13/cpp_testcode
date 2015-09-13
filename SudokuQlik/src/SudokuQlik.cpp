@@ -27,7 +27,21 @@ int main() {
     cout << "Example1:" << endl;
     p->load("./src/example1.txt");
     Solver * s = new BTSolver(p);
-    s->solve();
+    if (!s->solve())
+    {
+    	if (s->getError() > 0)
+    	{
+    		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+    		{
+    			cout << endl << "Unsolvable configuration!!!" << endl;
+    		}
+    		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+    		{
+    			cout << endl << "Inconsistent internal state!!!" << endl;
+    		}
+    	}
+    }
+
     cout << endl << endl;
 
 

@@ -500,9 +500,8 @@ namespace sudoku
 	            curAssignments = curSymbol->getAssignments();
 	            if (curAssignments != NULL)
 	            {
-	                if (!curAssignments->empty())
+	                if (!curAssignments->empty() && curSymbol->getFailedAttempts() < curAssignments->size())
 	                {
-
 	                   processed = false;
 	                   unsigned int idx = 0;
 	                   while (idx++ < curAssignments->size())
@@ -526,6 +525,7 @@ namespace sudoku
 								   restore_assignment(curSymbol);
 
 								   curAssignments->push_back(curSymbol->getValue());
+								   curSymbol->incrementFailedAttempts();
 
 							     }
 								 else
