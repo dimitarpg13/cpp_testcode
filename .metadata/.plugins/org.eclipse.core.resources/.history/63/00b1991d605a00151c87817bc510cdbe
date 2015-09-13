@@ -375,11 +375,4 @@ Puzzle * const Puzzle::getCopy()
 }
 
 
-void Puzzle::printToConsole()
-{
-
-
-}
-
-
 }

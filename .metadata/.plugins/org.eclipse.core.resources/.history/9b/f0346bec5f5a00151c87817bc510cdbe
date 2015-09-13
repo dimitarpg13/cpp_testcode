@@ -359,7 +359,6 @@ public:
 
    Puzzle * const getCopy();
 
-   void printToConsole();
 
 
 };

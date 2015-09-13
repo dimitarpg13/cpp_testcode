@@ -9,9 +9,11 @@
 #define SOLVER_H_
 
 #include <vector>
+#include <map>
 #include <list>
 #include <algorithm>
 #include <iterator>
+#include <stack>
 
 #include "Sudoku.h"
 
