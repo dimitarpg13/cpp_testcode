@@ -49,5 +49,7 @@ int main() {
 	}
 	else
 		cout << "the stack is empty!" << endl;
+
+	cout << 2 + 3*2 << endl;
 	return 0;
 }

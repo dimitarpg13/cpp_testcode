@@ -81,17 +81,26 @@ public:
 typedef pair<Symbol*,list<char>*> rank_pair;
 typedef list<rank_pair>  rank_list;
 
-struct printer {
+struct RankNode
+{
+	RankNode (rank_pair * val) : Val(val), Prev(NULL), Next(NULL) {};
+
+	rank_pair * Val;
+	RankNode * Prev;
+	RankNode * Next;
+};
+
+struct Printer {
     ostream& m_os;
-    printer(ostream& os) : m_os(os) {}
+    Printer(ostream& os) : m_os(os) {}
     template<typename T>
     void operator()(const T& obj) { m_os << obj << ' '; }
 };
 
 
-struct remover {
+struct Remover {
 	char m_cVal;
-	remover(char val) : m_cVal(val) {}
+	Remover(char val) : m_cVal(val) {}
 	bool operator()(const char v) { return v == m_cVal; }
 };
 
@@ -123,6 +132,7 @@ private:
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
 	vector<rank_list *> m_vRankedCandidates;
+	RankNode * m_lstRankedCandidates;
 	unsigned short m_iRankCount;
 
 	bool assign_rank_to_candidates(vector<rank_list *> &);
@@ -130,7 +140,11 @@ private:
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
 
-	bool solve_internal(vector<rank_list *> &, stack<Symbol *> &);
+	RankNode * init_rank_node_list(vector<rank_list *> &);
+
+
+    bool solve_internal(RankNode *);
+
 
 	bool update_rank_lists(vector<rank_list *> &);
 
@@ -138,7 +152,10 @@ private:
 	bool update_line(Symbol *, Line *);
 	bool update_region(Symbol *, Region *);
 	bool update_assignments(Symbol *);
+
 	bool restore_symbol(Symbol*, Symbol **, unsigned char);
+	bool restore_line(Symbol *, Line *);
+	bool restore_region(Symbol *, Region *);
 	bool restore_assignment(Symbol *);
 
 	// helper methods for debugging
@@ -146,7 +163,7 @@ private:
 	template<typename Iterator>
 	void print_collection(Iterator begin, Iterator end)
 	{
-		for_each(begin,end,printer(cout));
+		for_each(begin,end,Printer(cout));
 	}
 
 };

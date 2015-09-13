@@ -846,3 +846,651 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+13:38:42 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+13:40:14 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:93:24: error: ISO C++ forbids declaration of ‘printer’ with no type [-fpermissive]
+     printer(ostream& os) : m_os(os) {}
+                        ^
+../src/Solver.h: In member function ‘int sudoku::Printer::printer(std::ostream&)’:
+../src/Solver.h:93:28: error: only constructors take member initializers
+     printer(ostream& os) : m_os(os) {}
+                            ^
+../src/Solver.h:93:38: warning: no return statement in function returning non-void [-Wreturn-type]
+     printer(ostream& os) : m_os(os) {}
+                                      ^
+../src/Solver.h: At global scope:
+../src/Solver.h:101:18: error: ISO C++ forbids declaration of ‘remover’ with no type [-fpermissive]
+  remover(char val) : m_cVal(val) {}
+                  ^
+../src/Solver.h: In member function ‘int sudoku::Remover::remover(char)’:
+../src/Solver.h:101:22: error: only constructors take member initializers
+  remover(char val) : m_cVal(val) {}
+                      ^
+../src/Solver.h:101:35: warning: no return statement in function returning non-void [-Wreturn-type]
+  remover(char val) : m_cVal(val) {}
+                                   ^
+../src/Solver.h: In member function ‘void sudoku::BTSolver::print_collection(Iterator, Iterator)’:
+../src/Solver.h:156:34: error: there are no arguments to ‘printer’ that depend on a template parameter, so a declaration of ‘printer’ must be available [-fpermissive]
+   for_each(begin,end,printer(cout));
+                                  ^
+../src/Solver.h:156:34: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::update_symbols(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:254:69: error: ‘remover’ was not declared in this scope
+                      curAssignments->remove_if(remover(s->getValue()));
+                                                                     ^
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In instantiation of ‘void sudoku::BTSolver::print_collection(Iterator, Iterator) [with Iterator = std::_Rb_tree_const_iterator<char>]’:
+../src/Solver.cpp:132:57:   required from here
+../src/Solver.h:156:34: error: ‘printer’ was not declared in this scope
+   for_each(begin,end,printer(cout));
+                                  ^
+make: *** [src/Solver.o] Error 1
+13:40:27 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In member function ‘void sudoku::BTSolver::print_collection(Iterator, Iterator)’:
+../src/Solver.h:156:34: error: there are no arguments to ‘printer’ that depend on a template parameter, so a declaration of ‘printer’ must be available [-fpermissive]
+   for_each(begin,end,printer(cout));
+                                  ^
+../src/Solver.h:156:34: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::update_symbols(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:254:69: error: ‘remover’ was not declared in this scope
+                      curAssignments->remove_if(remover(s->getValue()));
+                                                                     ^
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In instantiation of ‘void sudoku::BTSolver::print_collection(Iterator, Iterator) [with Iterator = std::_Rb_tree_const_iterator<char>]’:
+../src/Solver.cpp:132:57:   required from here
+../src/Solver.h:156:34: error: ‘printer’ was not declared in this scope
+   for_each(begin,end,printer(cout));
+                                  ^
+make: *** [src/Solver.o] Error 1
+13:41:41 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+13:43:33 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+14:20:48 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+14:27:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+14:31:10 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+14:34:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:44:13: warning: unused variable ‘curSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+             ^
+../src/Solver.cpp:44:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+../src/Solver.cpp:45:17: warning: unused variable ‘curAssignments’ [-Wunused-variable]
+    list<char> * curAssignments=NULL;
+                 ^
+../src/Solver.cpp:46:9: warning: unused variable ‘curChar’ [-Wunused-variable]
+    char curChar= 0;
+         ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+14:35:26 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:44:13: warning: unused variable ‘curSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+             ^
+../src/Solver.cpp:44:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+../src/Solver.cpp:45:17: warning: unused variable ‘curAssignments’ [-Wunused-variable]
+    list<char> * curAssignments=NULL;
+                 ^
+../src/Solver.cpp:46:9: warning: unused variable ‘curChar’ [-Wunused-variable]
+    char curChar= 0;
+         ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:05:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:708:37: error: cannot convert ‘sudoku::rank_pair* {aka std::pair<sudoku::Symbol*, std::list<char>*>*}’ to ‘sudoku::RankNode*’ in assignment
+                             curNode = curNode->Prev;
+                                     ^
+../src/Solver.cpp:740:18: error: cannot convert ‘sudoku::rank_pair* {aka std::pair<sudoku::Symbol*, std::list<char>*>*}’ to ‘sudoku::RankNode*’ in assignment
+          curNode = curNode->Next;
+                  ^
+make: *** [src/Solver.o] Error 1
+15:05:44 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::RankNode::RankNode(sudoku::rank_pair*)’:
+../src/Solver.h:86:62: error: cannot convert ‘sudoku::rank_pair* {aka std::pair<sudoku::Symbol*, std::list<char>*>*}’ to ‘sudoku::RankNode*’ in initialization
+  RankNode (rank_pair * cur) : Cur(cur), Prev(NULL), Next(NULL) {};
+                                                              ^
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:631:36: error: ‘struct sudoku::RankNode’ has no member named ‘first’
+          curSymbol = curNode->Cur->first;
+                                    ^
+make: *** [src/Solver.o] Error 1
+15:06:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::RankNode::RankNode(sudoku::rank_pair*)’:
+../src/Solver.h:86:35: error: ‘vval’ was not declared in this scope
+  RankNode (rank_pair * val) : Val(vval), Prev(NULL), Next(NULL) {};
+                                   ^
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:631:31: error: ‘struct sudoku::RankNode’ has no member named ‘Cur’
+          curSymbol = curNode->Cur->first;
+                               ^
+make: *** [src/Solver.o] Error 1
+15:06:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*, std::stack<sudoku::Symbol*>&)’:
+../src/Solver.cpp:631:31: error: ‘struct sudoku::RankNode’ has no member named ‘Cur’
+          curSymbol = curNode->Cur->first;
+                               ^
+make: *** [src/Solver.o] Error 1
+15:07:23 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:08:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:678:9: error: ‘s’ was not declared in this scope
+         s.push(curSymbol);
+         ^
+../src/Solver.cpp:691:27: error: ‘s’ was not declared in this scope
+                       if (s.empty() || curSymbol != s.top())
+                           ^
+make: *** [src/Solver.o] Error 1
+15:30:39 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:626:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:33:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:626:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:35:53 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: unused variable ‘cur’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:42:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:51:38: error: no matching function for call to ‘sudoku::RankNode::RankNode(std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator&)’
+               cur = new RankNode(itRL);
+                                      ^
+../src/Solver.cpp:51:38: note: candidates are:
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:86:2: note: sudoku::RankNode::RankNode(sudoku::rank_pair*)
+  RankNode (rank_pair * val) : Val(val), Prev(NULL), Next(NULL) {};
+  ^
+../src/Solver.h:86:2: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘sudoku::rank_pair* {aka std::pair<sudoku::Symbol*, std::list<char>*>*}’
+../src/Solver.h:84:8: note: sudoku::RankNode::RankNode(const sudoku::RankNode&)
+ struct RankNode
+        ^
+../src/Solver.h:84:8: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const sudoku::RankNode&’
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+make: *** [src/Solver.o] Error 1
+15:43:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: variable ‘cur’ set but not used [-Wunused-but-set-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:47:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: variable ‘cur’ set but not used [-Wunused-but-set-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:47:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:51:40: error: no matching function for call to ‘sudoku::RankNode::RankNode(std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator&)’
+               cur = new RankNode(*&itRL);
+                                        ^
+../src/Solver.cpp:51:40: note: candidates are:
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h:86:2: note: sudoku::RankNode::RankNode(sudoku::rank_pair*)
+  RankNode (rank_pair * val) : Val(val), Prev(NULL), Next(NULL) {};
+  ^
+../src/Solver.h:86:2: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘sudoku::rank_pair* {aka std::pair<sudoku::Symbol*, std::list<char>*>*}’
+../src/Solver.h:84:8: note: sudoku::RankNode::RankNode(const sudoku::RankNode&)
+ struct RankNode
+        ^
+../src/Solver.h:84:8: note:   no known conversion for argument 1 from ‘std::list<std::pair<sudoku::Symbol*, std::list<char>*> >::iterator {aka std::_List_iterator<std::pair<sudoku::Symbol*, std::list<char>*> >}’ to ‘const sudoku::RankNode&’
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+make: *** [src/Solver.o] Error 1
+15:47:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘sudoku::RankNode* sudoku::BTSolver::init_rank_node_list(std::vector<std::list<std::pair<sudoku::Symbol*, std::list<char>*> >*>&)’:
+../src/Solver.cpp:39:30: warning: variable ‘cur’ set but not used [-Wunused-but-set-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                              ^
+../src/Solver.cpp:39:44: warning: unused variable ‘prev’ [-Wunused-variable]
+    RankNode * head = NULL, * cur = NULL, * prev = NULL;
+                                            ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:624:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:50:46 **** Incremental Build of configuration Debug for project TestSudoku ****
+make all 
+Building file: ../src/TestSudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TestSudoku.d" -MT"src/TestSudoku.d" -o "src/TestSudoku.o" "../src/TestSudoku.cpp"
+Finished building: ../src/TestSudoku.cpp
+ 
+Building target: TestSudoku
+Invoking: GCC C++ Linker
+g++  -o "TestSudoku"  ./src/TestSudoku.o   
+Finished building target: TestSudoku
+ 
+15:53:17 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:632:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+15:57:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:633:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+16:03:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+16:04:15 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:493:31: warning: unused variable ‘prevSymbol’ [-Wunused-variable]
+    Symbol * curSymbol=NULL, * prevSymbol=NULL;
+                               ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+16:04:39 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+16:05:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+16:05:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

@@ -34,6 +34,36 @@ namespace sudoku
 	  	}
    }
 
+  RankNode * BTSolver::init_rank_node_list(vector<rank_list *> & c)
+  {
+	  RankNode * head = NULL, * cur = NULL, * prev = NULL;
+
+	  vector<rank_list *>::iterator itC;
+	  list<rank_pair>::iterator itRL;
+
+	  for (itC = c.begin(); itC != c.end(); itC++)
+	  {
+		  if (*itC == NULL)
+		     continue;
+
+	      for (itRL = (*itC)->begin(); itRL != (*itC)->end(); itRL++)
+	      {
+              cur = new RankNode(&(*itRL));
+              if (prev == NULL)
+                head = cur;
+              else
+            	prev->Next = cur;
+
+              cur->Prev = prev;
+              prev = cur;
+	      }
+	  }
+
+	  prev->Next = cur;
+	  cur->Next = NULL;
+
+	  return head;
+  }
 
   bool BTSolver::solve()
   {
@@ -46,8 +76,8 @@ namespace sudoku
       print_ranked_candidates(m_vRankedCandidates);
 #endif
 
-      stack<Symbol *> stack;
-      res &= solve_internal(m_vRankedCandidates, stack);
+      m_lstRankedCandidates = init_rank_node_list(m_vRankedCandidates);
+      res &= solve_internal(m_lstRankedCandidates);
 
 
 	  return res;
@@ -251,7 +281,7 @@ namespace sudoku
        		  if (curAssignments != NULL)
        		  {
        			  if (curAssignments->size() > 1)
-                     curAssignments->remove_if(remover(s->getValue()));
+                     curAssignments->remove_if(Remover(s->getValue()));
        			  else
        			  {
        				  if (curAssignments->size() == 1)
@@ -391,153 +421,173 @@ namespace sudoku
   }
 
 
+  bool BTSolver::restore_line(Symbol * s, Line * l)
+  {
+  	  bool res = true;
+  	  if (l != NULL && l->getSymbols() != NULL)
+  	  {
+            res |= restore_symbol(s,l->getSymbols(),l->getDim());
+            if (!res)
+          	  return false;
+  	  }
+  	  else
+  	  {
+  		  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+  		     return false;
+  	  }
+
+  	  return res;
+   }
+
+   bool BTSolver::restore_region(Symbol * s, Region * r)
+   {
+  	  bool res = true;
+  	  if (r != NULL && r->getSymbols() != NULL)
+  	  {
+            res |= restore_symbol(s,r->getSymbols(),r->getDim());
+            if (!res)
+          	  return false;
+  	  }
+  	  else
+  	  {
+  		  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+  		     return false;
+  	  }
+
+  	  return res;
+   }
+
+
+
   bool BTSolver::restore_assignment(Symbol * s)
   {
 	  bool res = true;
 
+	 	  res |= restore_line(s,s->getRow());
+	       if (!res)
+	     	  return false;
 
-	  return res;
+	       res |= restore_line(s,s->getCol());
+	       if (!res)
+	           return false;
+
+
+	       res |= restore_region(s,s->getRegion());
+	       if (!res)
+	     	  return false;
+
+	 	  return res;
   }
 
-  bool BTSolver::solve_internal(vector<rank_list *> & c, stack<Symbol *> & s)
+
+  bool BTSolver::solve_internal(RankNode * head)
   {
-      bool res = true;
-	  vector<rank_list *>::iterator itC;
-	  list<rank_pair>::iterator itRL;
-	  list<char>::iterator itCL;
-	  Symbol * curSymbol=NULL, * prevSymbol=NULL;
+	  bool res = true;
+
+	  RankNode * curNode = head;
+
+	  Symbol * curSymbol=NULL;
 	  list<char> * curAssignments=NULL;
 	  char curChar= 0;
-	  for (itC = c.begin(); itC != c.end(); itC++)
+	  bool processed = false;
+	  while (curNode != NULL)
 	  {
-		  if (*itC == NULL)
-			  continue;
+	        curSymbol = curNode->Val->first;
 
-          for (itRL = (*itC)->begin(); itRL != (*itC)->end(); itRL++)
-          {
-              curSymbol = itRL->first;
-              if (curSymbol == NULL)
-              {
-            	  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-            	  return false;
-              }
+	        if (curSymbol == NULL)
+	        {
+	           m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	           return false;
+	        }
 
-              if (curSymbol->isEmpty())
-              {
-            	  curAssignments = curSymbol->getAssignments();
-            	  if (curAssignments != NULL)
-            	  {
-            		  if (!curAssignments->empty())
-            		  {
+	        if (curSymbol->isEmpty())
+	        {
 
+	            curAssignments = curSymbol->getAssignments();
+	            if (curAssignments != NULL)
+	            {
+	                if (!curAssignments->empty())
+	                {
 
-                          unsigned int idx = 0;
-                          while (idx++ < curAssignments->size())
-                          {
-							  curChar = curAssignments->front();
-							  if (curChar != 0)
-							  {
-								 curAssignments->pop_front();
-								 curSymbol->setValue(curChar);
-								 curSymbol->setLastRemoved(curChar);
-								 res &= update_assignments(curSymbol);
-								 if (!res)
-								 {
-									if (m_lError == SUDOKU_NO_ERROR)
-									{
-										// updating the assignments with the new change
-										// failed which indicates infeasible configuration
-										// was reached so restore the assignments before the
-										// last attempt and check for a different value to be
-										// assigned to curSymbol
-										restore_assignment(curSymbol);
+	                   processed = false;
+	                   unsigned int idx = 0;
+	                   while (idx++ < curAssignments->size())
+	                   { // while loop start
+						  curChar = curAssignments->front();
+						  if (curChar != 0)
+						  {
+							curAssignments->pop_front();
+						    curSymbol->setValue(curChar);
+							curSymbol->setLastRemoved(curChar);
+							res &= update_assignments(curSymbol);
+							if (!res)
+							{
+								if (m_lError == SUDOKU_NO_ERROR)
+								{
+								   // updating the assignments with the new change
+								   // failed which indicates infeasible configuration
+								   // was reached so restore the assignments before the
+								   // last attempt and check for a different value to be
+								   // assigned to curSymbol
+								   restore_assignment(curSymbol);
 
-										curAssignments->push_back(curSymbol->getValue());
+								   curAssignments->push_back(curSymbol->getValue());
 
-
-									}
-									else
-									   return false;
-								 }
+							     }
 								 else
-								 {
-								    // push he current symbol to the stack and proceed one level further
-								    // down onto the solution tree
-								    s.push(curSymbol);
-								    break;
-								 }
-							  }
-							  else
-							  {
-								 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-								 return false;
-							  }
+								   return false;
+							 }
+							 else
+							 {
+							    // done with the current symbol. proceed one level further
+								// down onto the solution tree
+								processed = true;
+								break;
+							 }
+						   }
+						   else
+						   {
+							  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+							  return false;
+						   }
 
-                          }
-
-
-                          if (s.empty() || curSymbol != s.top())
-                          {
-                        	  // No feasible assignment was found for the current symbol where
-                        	  // all attempts lead to an infeasible configuration. So take a step
-                        	  // back (backtrace) one level up the solution tree if the stack
-                        	  // is not empty
-
-                        	  if (!s.empty())
-                        	  {
-                        	     prevSymbol = s.top();
-                        	     s.pop();
-
-                        	     if (prevSymbol != NULL)
-                        	     {
-                                     // TO DO: re-process the previous symbol
-                        	    	 //
-
-                        	     }
-                        	     else
-                        	     {
-                        	    	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-                        	         return false;
-                        	     }
+	                     } // while loop end
 
 
-                        	  }
-                        	  else
-                        	  {
-                        		  // the stack is empty so this is the top level of the solution tree
-                        		  // and in that case nothing can be done
-                        		  m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
-                                  return false;
-                        	  }
+	                     if (!processed)
+	                     {
+	                         // No feasible assignment was found for the current symbol where
+	                         // all attempts lead to an infeasible configuration. So take a step
+	                         // back (backtrace) one level up the solution tree if the stack
+	                         // is not empty
 
+                    		 curNode = curNode->Prev;
+                    		 if (curNode == NULL)
+                    			 curNode = head;
 
+                    		 continue;
 
-                          }
+	                     }
+					}
+					else
+				    {
+					   m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+					   return false;
+					}
+	            }
+	            else
+	            {
+	               m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+	               return false;
+	            }
+	        }
 
-
-
-					  }
-					  else
-					  {
-						 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
-						 return false;
-
-					  }
-            	  }
-            	  else
-            	  {
-            		  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-                      return false;
-            	  }
-              }
-
-          }
-
+	        curNode = curNode->Next;
 	  }
 
 	  return res;
-  }
 
+  }
 
 
 
