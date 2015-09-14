@@ -342,7 +342,7 @@ namespace sudoku
 	  bool res = true;
 	  if (l != NULL && l->getSymbols() != NULL)
 	  {
-          res |= update_symbols(s,l->getSymbols(),l->getDim());
+          res &= update_symbols(s,l->getSymbols(),l->getDim());
           if (!res)
         	  return false;
 	  }
@@ -360,7 +360,7 @@ namespace sudoku
 	  bool res = true;
 	  if (r != NULL && r->getSymbols() != NULL)
 	  {
-          res |= update_symbols(s,r->getSymbols(),r->getDim());
+          res &= update_symbols(s,r->getSymbols(),r->getDim());
           if (!res)
         	  return false;
 	  }
@@ -385,16 +385,16 @@ namespace sudoku
   {
 	  bool res = true;
 
-	  res |= update_line(s,s->getRow());
+	  res &= update_line(s,s->getRow());
       if (!res)
     	  return false;
 
-      res |= update_line(s,s->getCol());
+      res &= update_line(s,s->getCol());
       if (!res)
           return false;
 
 
-      res |= update_region(s,s->getRegion());
+      res &= update_region(s,s->getRegion());
       if (!res)
     	  return false;
 
@@ -449,7 +449,7 @@ namespace sudoku
   	  bool res = true;
   	  if (l != NULL && l->getSymbols() != NULL)
   	  {
-            res |= restore_symbol(s,l->getSymbols(),l->getDim());
+            res &= restore_symbol(s,l->getSymbols(),l->getDim());
             if (!res)
           	  return false;
   	  }
@@ -467,7 +467,7 @@ namespace sudoku
   	  bool res = true;
   	  if (r != NULL && r->getSymbols() != NULL)
   	  {
-            res |= restore_symbol(s,r->getSymbols(),r->getDim());
+            res &= restore_symbol(s,r->getSymbols(),r->getDim());
             if (!res)
           	  return false;
   	  }
@@ -486,16 +486,16 @@ namespace sudoku
   {
 	  bool res = true;
 
-	 	  res |= restore_line(s,s->getRow());
+	 	  res &= restore_line(s,s->getRow());
 	       if (!res)
 	     	  return false;
 
-	       res |= restore_line(s,s->getCol());
+	       res &= restore_line(s,s->getCol());
 	       if (!res)
 	           return false;
 
 
-	       res |= restore_region(s,s->getRegion());
+	       res &= restore_region(s,s->getRegion());
 	       if (!res)
 	     	  return false;
 
@@ -523,6 +523,7 @@ namespace sudoku
 	           return false;
 	        }
 
+
 	        if (curSymbol->isEmpty())
 	        {
 
@@ -543,7 +544,9 @@ namespace sudoku
 							curSymbol->setLastRemoved(curChar);
 							res &= update_assignments(curSymbol);
 
-
+#ifdef _DEBUG
+                            cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned and Updated assignments in enclosing containers" << endl;
+#endif
 
 							if (!res)
 							{
