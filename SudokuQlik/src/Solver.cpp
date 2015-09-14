@@ -426,8 +426,36 @@ namespace sudoku
          		  {
          			  if (curSymbol->getLastRemoved() == s->getValue())
          			  {
-                         curAssignments->push_back(s->getValue());
-                         curSymbol->setLastRemoved(0);
+         				 unsigned short sz = curAssignments->size();
+         				 curAssignments->push_back(s->getValue());
+         				 curSymbol->setLastRemoved(0);
+
+                         if (sz > 0)
+                         {
+                             rank_list * curRankList = m_vRankedCandidates[sz-1];
+                             if (curRankList != NULL)
+                             {
+                                  //remove the rank_pair with curSymbol from the current rank list
+                            	  // and move it to the rank list with rank one higher than the current
+                            	  curRankList->remove_if(SymbolFinder(curSymbol));
+                            	  m_vRankedCandidates[sz]->push_back(rank_pair(curSymbol,curAssignments));
+
+                             }
+                             else
+                             {
+                            	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                            	 return false;
+                             }
+                         }
+                         else
+                         {
+                        	 // this is a situation which should not happen
+                        	 // the current Symbol has the last value removed but it appears
+                        	 // to have had empty candidate list before the removal
+                        	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+                        	 return false;
+                         }
+
          			  }
          		  }
          		  else

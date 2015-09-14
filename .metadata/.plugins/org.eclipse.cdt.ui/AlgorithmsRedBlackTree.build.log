@@ -1,15 +1,6 @@
-20:22:42 **** Incremental Build of configuration Debug for project AlgorithmsRedBlackTree ****
+22:14:35 **** Build of configuration Debug for project AlgorithmsRedBlackTree ****
 make all 
-Building file: ../src/RBTree.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RBTree.d" -MT"src/RBTree.d" -o "src/RBTree.o" "../src/RBTree.cpp"
-Finished building: ../src/RBTree.cpp
- 
-Building target: AlgorithmsRedBlackTree
-Invoking: GCC C++ Linker
-g++  -o "AlgorithmsRedBlackTree"  ./src/AVLTree.o ./src/AlgorithmsRedBlackTree.o ./src/BSTree.o ./src/RBTree.o   
-Finished building target: AlgorithmsRedBlackTree
- 
+make: Nothing to be done for `all'.
 
-20:22:42 Build Finished (took 265ms)
+22:14:35 Build Finished (took 70ms)
 
