@@ -282,7 +282,7 @@ namespace sudoku
                      curAssignments->remove_if(Remover(s->getValue()));
                      if (curAssignments->size() < sz)
                      {
-                    	 // there was a removal so we need to update corresponding rank list
+                    	 // there was a removal so we need to update the corresponding rank list
                          rank_list * curRankList = m_vRankedCandidates[sz-1];
                          if (curRankList != NULL)
                          {
@@ -566,7 +566,6 @@ namespace sudoku
 
 			   curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
-			   curSymbol->incrementFailedAttempts();
 
 	        }
 
@@ -574,7 +573,7 @@ namespace sudoku
 
 			if (curAssignments != NULL)
 			{
-				if (!curAssignments->empty()) // && curSymbol->getFailedAttempts() < curAssignments->size())
+				if (!curAssignments->empty())
 				{
 				   processed = false;
 				   unsigned int idx = 0, sz = curAssignments->size();
@@ -586,11 +585,12 @@ namespace sudoku
 						curAssignments->pop_front();
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
-						res &= update_assignments(curSymbol);
+						res = update_assignments(curSymbol);
 
 #ifdef _DEBUG
-						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned " << curChar << endl;
+						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] with " << sz << " candidates. trying " << curChar << ".. "  << endl;
 #endif
+
 
 						if (!res)
 						{
@@ -603,9 +603,13 @@ namespace sudoku
 							   // assigned to curSymbol
 							   restore_assignment(curSymbol);
 
+
 							   curAssignments->push_back(curSymbol->getValue());
 							   curSymbol->setValue(0);
-							   curSymbol->incrementFailedAttempts();
+#ifdef _DEBUG
+						       cout << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] failed to assign " << curChar << ".. "  << endl;
+#endif
+
 
 							 }
 							 else
@@ -615,6 +619,11 @@ namespace sudoku
 						 {
 							// done with the current symbol. proceed one level further
 							// down onto the solution tree
+
+#ifdef _DEBUG
+						     cout << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned " << curChar << endl;
+#endif
+
 							processed = true;
 							break;
 						 }
@@ -635,7 +644,9 @@ namespace sudoku
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
 
-						 curNode = curNode->Prev;
+						 //while (curNode->Val->second->size() == 1)
+						    curNode = curNode->Prev;
+
 						 if (curNode == NULL)
 						 {
 							 // we cannot backtrack from the head of the list with the rank_pairs so it has to be
@@ -643,6 +654,8 @@ namespace sudoku
 							 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
 							 return false;
 						 }
+
+
 
 						 continue;
 

@@ -53,20 +53,19 @@ private:
 	list<char> * m_pAssignments;
 
 	char m_cLastRemoved;
-	unsigned short m_iFailedAttempts;
 
 public:
 
 
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_iFailedAttempts(0)
+		m_pAssignments(NULL), m_cLastRemoved(0)
     { }
 
 
 	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_iFailedAttempts(0)
+		m_pAssignments(NULL), m_cLastRemoved(0)
 	{ }
 
 
@@ -82,14 +81,13 @@ public:
 	VertLine * getCol() { return m_pCol; }
 	list<char> * getAssignments() { return m_pAssignments; }
 	char getLastRemoved() { return m_cLastRemoved; }
-	unsigned short getFailedAttempts() { return m_iFailedAttempts; }
 
     void setRegion(Region * region) { m_pRegion = region; }
     void setRow(HorizLine * row) { m_pRow = row; }
     void setCol(VertLine * col) { m_pCol = col; }
     void setAssignments(list<char> * assignments) { m_pAssignments = assignments; }
     void setLastRemoved(char lastRemoved) { m_cLastRemoved = lastRemoved; }
-    void incrementFailedAttempts() { m_iFailedAttempts++; }
+
 
 };
 
