@@ -551,6 +551,13 @@ namespace sudoku
 	           return false;
 	        }
 
+	        if (curSymbol->getRow()->getIdx() == 0  && curSymbol->getCol()->getIdx() == 2	)
+	    	{
+	    	        	int ii=0;
+	    	        	ii++;
+	    	}
+
+
 	        curAssignments = curSymbol->getAssignments();
 	        if (!curSymbol->isEmpty())
 	        {
@@ -574,7 +581,7 @@ namespace sudoku
 
 			if (curAssignments != NULL)
 			{
-				if (!curAssignments->empty()) // && curSymbol->getFailedAttempts() < curAssignments->size())
+				if (!curAssignments->empty() && curSymbol->getFailedAttempts() < curAssignments->size())
 				{
 				   processed = false;
 				   unsigned int idx = 0, sz = curAssignments->size();
@@ -589,7 +596,7 @@ namespace sudoku
 						res &= update_assignments(curSymbol);
 
 #ifdef _DEBUG
-						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned " << curChar << endl;
+						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned and Updated assignments in enclosing containers" << endl;
 #endif
 
 						if (!res)

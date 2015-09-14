@@ -551,6 +551,13 @@ namespace sudoku
 	           return false;
 	        }
 
+	        if (curSymbol->getRow()->getIdx() == 0  && curSymbol->getCol()->getIdx() == 1	)
+	    	{
+	    	        	int ii=0;
+	    	        	ii++;
+	    	}
+
+
 	        curAssignments = curSymbol->getAssignments();
 	        if (!curSymbol->isEmpty())
 	        {
