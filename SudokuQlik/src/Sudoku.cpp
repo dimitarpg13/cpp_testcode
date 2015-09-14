@@ -402,7 +402,10 @@ void Puzzle::printToConsole()
        for (int j=0; j < m_iDim; j++)
        {
            curSymbol = curRow->getSymbols()[j];
-           cout << curSymbol->getValue();
+           if (!curSymbol->isEmpty())
+              cout << curSymbol->getValue();
+           else
+        	   cout << ".";
            if (j < m_iDim - 1)
         	   cout << sep;
        }

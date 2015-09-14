@@ -551,93 +551,115 @@ namespace sudoku
 	           return false;
 	        }
 
-
-	        if (curSymbol->isEmpty())
+	        curAssignments = curSymbol->getAssignments();
+	        if (!curSymbol->isEmpty())
 	        {
+               // this symbol is not empty because the algorithm has returned to it due to backtracking
+	           // so we need to make it empty and restore the state of the enclosing containers
+		       //
+	           // updating the assignments with the new change
+			   // failed which indicates infeasible configuration
+			   // was reached so restore the assignments before the
+			   // last attempt and check for a different value to be
+			   // assigned to curSymbol
+			   restore_assignment(curSymbol);
 
-	            curAssignments = curSymbol->getAssignments();
-	            if (curAssignments != NULL)
-	            {
-	                if (!curAssignments->empty() && curSymbol->getFailedAttempts() < curAssignments->size())
-	                {
-	                   processed = false;
-	                   unsigned int idx = 0;
-	                   while (idx++ < curAssignments->size())
-	                   { // while loop start
-						  curChar = curAssignments->front();
-						  if (curChar != 0)
-						  {
-							curAssignments->pop_front();
-						    curSymbol->setValue(curChar);
-							curSymbol->setLastRemoved(curChar);
-							res &= update_assignments(curSymbol);
+			   curAssignments->push_back(curSymbol->getValue());
+			   curSymbol->setValue(0);
+			   curSymbol->incrementFailedAttempts();
+
+	        }
+
+
+
+			if (curAssignments != NULL)
+			{
+				if (!curAssignments->empty() && curSymbol->getFailedAttempts() < curAssignments->size())
+				{
+				   processed = false;
+				   unsigned int idx = 0, sz = curAssignments->size();
+				   while (idx++ < sz)
+				   { // while loop start
+					  curChar = curAssignments->front();
+					  if (curChar != 0)
+					  {
+						curAssignments->pop_front();
+						curSymbol->setValue(curChar);
+						curSymbol->setLastRemoved(curChar);
+						res &= update_assignments(curSymbol);
 
 #ifdef _DEBUG
-                            cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned and Updated assignments in enclosing containers" << endl;
+						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned and Updated assignments in enclosing containers" << endl;
 #endif
 
-							if (!res)
+						if (!res)
+						{
+							if (m_lError == SUDOKU_NO_ERROR)
 							{
-								if (m_lError == SUDOKU_NO_ERROR)
-								{
-								   // updating the assignments with the new change
-								   // failed which indicates infeasible configuration
-								   // was reached so restore the assignments before the
-								   // last attempt and check for a different value to be
-								   // assigned to curSymbol
-								   restore_assignment(curSymbol);
+							   // updating the assignments with the new change
+							   // failed which indicates infeasible configuration
+							   // was reached so restore the assignments before the
+							   // last attempt and check for a different value to be
+							   // assigned to curSymbol
+							   restore_assignment(curSymbol);
 
-								   curAssignments->push_back(curSymbol->getValue());
-								   curSymbol->incrementFailedAttempts();
+							   curAssignments->push_back(curSymbol->getValue());
+							   curSymbol->setValue(0);
+							   curSymbol->incrementFailedAttempts();
 
-							     }
-								 else
-								   return false;
 							 }
 							 else
-							 {
-							    // done with the current symbol. proceed one level further
-								// down onto the solution tree
-								processed = true;
-								break;
-							 }
-						   }
-						   else
-						   {
-							  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-							  return false;
-						   }
+							   return false;
+						 }
+						 else
+						 {
+							// done with the current symbol. proceed one level further
+							// down onto the solution tree
+							processed = true;
+							break;
+						 }
+					   }
+					   else
+					   {
+						  m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+						  return false;
+					   }
 
-	                     } // while loop end
+					 } // while loop end
 
 
-	                     if (!processed)
-	                     {
-	                         // No feasible assignment was found for the current symbol where
-	                         // all attempts lead to an infeasible configuration. So take a step
-	                         // back (backtrace) one level up the solution tree if the stack
-	                         // is not empty
+					 if (!processed)
+					 {
+						 // No feasible assignment was found for the current symbol where
+						 // all attempts lead to an infeasible configuration. So take a step
+						 // back (backtracking) one level up the solution tree if the stack
+						 // is not empty
 
-                    		 curNode = curNode->Prev;
-                    		 if (curNode == NULL)
-                    			 curNode = head;
+						 curNode = curNode->Prev;
+						 if (curNode == NULL)
+						 {
+							 // we cannot backtrack from the head of the list with the rank_pairs so it has to be
+							 // infeasible configuration
+							 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+							 return false;
+						 }
 
-                    		 continue;
+						 continue;
 
-	                     }
-					}
-					else
-				    {
-					   m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
-					   return false;
-					}
-	            }
-	            else
-	            {
-	               m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-	               return false;
-	            }
-	        }
+					 }
+				}
+				else
+				{
+				   m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+				   return false;
+				}
+			}
+			else
+			{
+			   m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+			   return false;
+			}
+
 
 	        curNode = curNode->Next;
 	  }
