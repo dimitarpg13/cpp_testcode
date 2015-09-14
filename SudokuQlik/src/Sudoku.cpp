@@ -150,13 +150,21 @@ bool Parser::parse(string inputFile)
 	{
 
 	  if (curRow == NULL)
+#ifndef _DEBUG
 		  curRow = new HorizLine(m_iDim, m_iRegionDim);
+#else
+	      curRow = new HorizLine(m_iDim, m_iRegionDim, curRowIdx);
+#endif
 
 	  if (m_pCols[curColIdx] != NULL)
 		  curCol = m_pCols[curColIdx];
 	  else
 	  {
+#ifndef _DEBUG
 		  curCol = new VertLine(m_iDim, m_iRegionDim);
+#else
+		  curCol = new VertLine(m_iDim, m_iRegionDim, curColIdx);
+#endif
 		  m_pCols[curColIdx] = curCol;
 	  }
 
@@ -328,7 +336,11 @@ Puzzle * const Puzzle::getCopy()
     for (int i=0; i < m_iDim; i++) // i - row indx
     {
     	curRow = m_pRows[i];
+#ifndef _DEBUG
   	    copyRow = new HorizLine(m_iDim,m_iRegionDim);
+#else
+  	    copyRow = new HorizLine(m_iDim,m_iRegionDim,(unsigned char) i);
+#endif
         copyRows[i] = copyRow;
 
         for (int j=0; j < m_iDim; j++) // j - col indx
@@ -337,7 +349,11 @@ Puzzle * const Puzzle::getCopy()
       	    	copyCol = copyCols[j];
       	    else
       	    {
+#ifndef _DEBUG
       	    	copyCol = new VertLine(m_iDim,m_iRegionDim);
+#else
+      	    	copyCol = new VertLine(m_iDim,m_iRegionDim,(unsigned char) j);
+#endif
       	    	copyCols[j] = copyCol;
       	    }
 

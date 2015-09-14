@@ -39,6 +39,9 @@ enum Error
    SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION=32
 };
 
+
+
+
 class Symbol
 {
 private:
@@ -53,6 +56,8 @@ private:
 	unsigned short m_iFailedAttempts;
 
 public:
+
+
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
 		m_pAssignments(NULL), m_cLastRemoved(0), m_iFailedAttempts(0)
@@ -63,6 +68,7 @@ public:
 		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region),
 		m_pAssignments(NULL), m_cLastRemoved(0), m_iFailedAttempts(0)
 	{ }
+
 
 	~Symbol() { if (m_pAssignments != NULL) delete m_pAssignments; }
 
@@ -86,6 +92,114 @@ public:
     void incrementFailedAttempts() { m_iFailedAttempts++; }
 
 };
+
+class Line
+{
+protected:
+	unsigned char m_iDim, m_iRegionDim, m_iRegionCount;
+	Symbol **	m_pSymbols;
+	Region **   m_pRegions;
+	unsigned char m_iLastSymbolIdx;
+	unsigned char m_iLastRegionIdx;
+#ifdef _DEBUG
+	unsigned char m_iMyIdx;
+#endif
+
+public:
+    unsigned char getDim() { return m_iDim; }
+    unsigned char getRegionDim() { return m_iRegionDim; }
+	Symbol ** const getSymbols() { return m_pSymbols; }
+	Region ** const getRegions() { return m_pRegions; }
+#ifdef _DEBUG
+	unsigned char getIdx() { return m_iMyIdx; }
+#endif
+
+#ifndef _DEBUG
+	Line(unsigned char dim, unsigned char regDim) :
+		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
+    {
+		m_pSymbols = new Symbol* [m_iDim];
+		m_iRegionCount = m_iDim / m_iRegionDim;
+	    m_pRegions = new Region* [m_iRegionCount]; // the number of regions spanning single line
+    }
+#else
+	Line(unsigned char dim, unsigned char regDim, unsigned char myIdx) :
+			m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0),
+			m_iMyIdx(myIdx)
+	    {
+			m_pSymbols = new Symbol* [m_iDim];
+			m_iRegionCount = m_iDim / m_iRegionDim;
+		    m_pRegions = new Region* [m_iRegionCount]; // the number of regions spanning single line
+	    }
+
+#endif
+
+	bool addSymbol(Symbol* symb)
+	{
+		if (m_iLastSymbolIdx < m_iDim)
+		{
+           m_pSymbols[m_iLastSymbolIdx++] = symb;
+           return true;
+		}
+		else
+			return false;
+	}
+
+    bool addRegion(Region* region)
+    {
+        if (m_iLastRegionIdx < m_iRegionCount)
+        {
+    	   m_pRegions[m_iLastRegionIdx++] = region;
+    	   return true;
+        }
+        else
+           return false;
+    }
+};
+
+class HorizLine : public Line
+{
+public:
+#ifndef _DEBUG
+	HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+#else
+	HorizLine(unsigned char dim, unsigned char regionDim, unsigned char myIdx) : Line(dim, regionDim, myIdx) {};
+#endif
+
+    ~HorizLine()
+    {
+    	// the symbols will be cleaned up by the HorizLine's destructors
+    	if (m_pSymbols != NULL)
+        {
+    	   for (int i = 0; i < m_iDim; i++)
+    		  delete m_pSymbols[i];
+    	   delete [] m_pSymbols;
+    	}
+    }
+
+
+};
+
+class VertLine : public Line
+{
+public:
+#ifndef _DEBUG
+   VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+#else
+   VertLine(unsigned char dim, unsigned char regionDim, unsigned char myIdx) : Line(dim, regionDim, myIdx) {};
+#endif
+
+   ~VertLine()
+   {
+      	// the symbols will be cleaned up by the HorizLine's destructors
+      	if (m_pSymbols != NULL)
+        {
+      	   delete [] m_pSymbols;
+      	}
+   }
+
+};
+
 
 class Region
 {
@@ -166,85 +280,6 @@ private:
 
 
 
-class Line
-{
-protected:
-	unsigned char m_iDim, m_iRegionDim, m_iRegionCount;
-	Symbol **	m_pSymbols;
-	Region **   m_pRegions;
-	unsigned char m_iLastSymbolIdx;
-	unsigned char m_iLastRegionIdx;
-public:
-    unsigned char getDim() { return m_iDim; }
-    unsigned char getRegionDim() { return m_iRegionDim; }
-	Symbol ** const getSymbols() { return m_pSymbols; }
-	Region ** const getRegions() { return m_pRegions; }
-
-	Line(unsigned char dim, unsigned char regDim) :
-		m_iDim(dim), m_iRegionDim(regDim), m_iLastSymbolIdx(0), m_iLastRegionIdx(0)
-    {
-		m_pSymbols = new Symbol* [m_iDim];
-		m_iRegionCount = m_iDim / m_iRegionDim;
-	    m_pRegions = new Region* [m_iRegionCount]; // the number of regions spanning single line
-    }
-
-	bool addSymbol(Symbol* symb)
-	{
-		if (m_iLastSymbolIdx < m_iDim)
-		{
-           m_pSymbols[m_iLastSymbolIdx++] = symb;
-           return true;
-		}
-		else
-			return false;
-	}
-
-    bool addRegion(Region* region)
-    {
-        if (m_iLastRegionIdx < m_iRegionCount)
-        {
-    	   m_pRegions[m_iLastRegionIdx++] = region;
-    	   return true;
-        }
-        else
-           return false;
-    }
-};
-
-class HorizLine : public Line
-{
-public:
-	HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
-
-    ~HorizLine()
-    {
-    	// the symbols will be cleaned up by the HorizLine's destructors
-    	if (m_pSymbols != NULL)
-        {
-    	   for (int i = 0; i < m_iDim; i++)
-    		  delete m_pSymbols[i];
-    	   delete [] m_pSymbols;
-    	}
-    }
-
-
-};
-
-class VertLine : public Line
-{
-public:
-   VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
-
-   ~VertLine()
-   {
-      	// the symbols will be cleaned up by the HorizLine's destructors
-      	if (m_pSymbols != NULL)
-        {
-      	   delete [] m_pSymbols;
-      	}
-   }
-
-};
 
 
 class Parser

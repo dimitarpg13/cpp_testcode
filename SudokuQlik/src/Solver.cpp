@@ -24,7 +24,9 @@ namespace sudoku
             cout << indx++ << " => " << endl;
             for (itRL = (*itR)->begin(); itRL != (*itR)->end(); itRL++)
             {
-            	std::cout << "\t{";
+            	std::cout << "[" << (int) itRL->first->getRow()->getIdx()
+            			  << "," << (int) itRL->first->getCol()->getIdx()
+            			  << "]\t{";
             	for (itCL = itRL->second->begin(); itCL != itRL->second->end(); itCL++)
             	{
             		std::cout << *itCL << " ";
@@ -540,6 +542,9 @@ namespace sudoku
 						    curSymbol->setValue(curChar);
 							curSymbol->setLastRemoved(curChar);
 							res &= update_assignments(curSymbol);
+
+
+
 							if (!res)
 							{
 								if (m_lError == SUDOKU_NO_ERROR)

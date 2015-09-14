@@ -3194,3 +3194,696 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+19:52:07 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::HorizLine::HorizLine(unsigned char, unsigned char)’:
+../src/Sudoku.h:253:77: error: no matching function for call to ‘sudoku::Line::Line(unsigned char&, unsigned char&)’
+  HorizLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+                                                                             ^
+../src/Sudoku.h:253:77: note: candidates are:
+../src/Sudoku.h:217:2: note: sudoku::Line::Line(unsigned char, unsigned char, unsigned char)
+  Line(unsigned char dim, unsigned char regDim, unsigned char myIdx) :
+  ^
+../src/Sudoku.h:217:2: note:   candidate expects 3 arguments, 2 provided
+../src/Sudoku.h:187:7: note: sudoku::Line::Line(const sudoku::Line&)
+ class Line
+       ^
+../src/Sudoku.h:187:7: note:   candidate expects 1 argument, 2 provided
+../src/Sudoku.h: In constructor ‘sudoku::VertLine::VertLine(unsigned char, unsigned char)’:
+../src/Sudoku.h:272:78: error: no matching function for call to ‘sudoku::Line::Line(unsigned char&, unsigned char&)’
+    VertLine(unsigned char dim, unsigned char regionDim) : Line(dim, regionDim) {};
+                                                                              ^
+../src/Sudoku.h:272:78: note: candidates are:
+../src/Sudoku.h:217:2: note: sudoku::Line::Line(unsigned char, unsigned char, unsigned char)
+  Line(unsigned char dim, unsigned char regDim, unsigned char myIdx) :
+  ^
+../src/Sudoku.h:217:2: note:   candidate expects 3 arguments, 2 provided
+../src/Sudoku.h:187:7: note: sudoku::Line::Line(const sudoku::Line&)
+ class Line
+       ^
+../src/Sudoku.h:187:7: note:   candidate expects 1 argument, 2 provided
+make: *** [src/Solver.o] Error 1
+19:56:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+../src/Sudoku.cpp: In member function ‘sudoku::Puzzle* const sudoku::Puzzle::getCopy()’:
+../src/Sudoku.cpp:339:51: error: no matching function for call to ‘sudoku::HorizLine::HorizLine(unsigned char&, unsigned char&)’
+        copyRow = new HorizLine(m_iDim,m_iRegionDim);
+                                                   ^
+../src/Sudoku.cpp:339:51: note: candidates are:
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:256:2: note: sudoku::HorizLine::HorizLine(unsigned char, unsigned char, unsigned char)
+  HorizLine(unsigned char dim, unsigned char regionDim, unsigned char myIdx) : Line(dim, regionDim, myIdx) {};
+  ^
+../src/Sudoku.h:256:2: note:   candidate expects 3 arguments, 2 provided
+../src/Sudoku.h:250:7: note: sudoku::HorizLine::HorizLine(const sudoku::HorizLine&)
+ class HorizLine : public Line
+       ^
+../src/Sudoku.h:250:7: note:   candidate expects 1 argument, 2 provided
+../src/Sudoku.cpp:348:55: error: no matching function for call to ‘sudoku::VertLine::VertLine(unsigned char&, unsigned char&)’
+             copyCol = new VertLine(m_iDim,m_iRegionDim);
+                                                       ^
+../src/Sudoku.cpp:348:55: note: candidates are:
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h:279:4: note: sudoku::VertLine::VertLine(unsigned char, unsigned char, unsigned char)
+    VertLine(unsigned char dim, unsigned char regionDim, unsigned char myIdx) : Line(dim, regionDim, myIdx) {};
+    ^
+../src/Sudoku.h:279:4: note:   candidate expects 3 arguments, 2 provided
+../src/Sudoku.h:273:7: note: sudoku::VertLine::VertLine(const sudoku::VertLine&)
+ class VertLine : public Line
+       ^
+../src/Sudoku.h:273:7: note:   candidate expects 1 argument, 2 provided
+make: *** [src/Sudoku.o] Error 1
+19:58:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:59:18 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:78:4: error: ‘m_iRowIdx’ was not declared in this scope
+    m_iRowIdx = row->getIdx();
+    ^
+../src/Sudoku.h:78:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:80:4: error: ‘m_iRowIdx’ was not declared in this scope
+    m_iRowIdx=255;
+    ^
+make: *** [src/Solver.o] Error 1
+20:02:20 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:78:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:83:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:94:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:99:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:04:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:78:22: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = m_pRow->getIdx();
+                      ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:83:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:94:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:99:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:05:23 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:78:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:83:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:94:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:99:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:05:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h:47:2: error: ‘HorizLine’ does not name a type
+  HorizLine * m_pRow;
+  ^
+../src/Sudoku.h:48:2: error: ‘VertLine’ does not name a type
+  VertLine * m_pCol;
+  ^
+../src/Sudoku.h:73:19: error: ‘HorizLine’ has not been declared
+  Symbol(char val, HorizLine * row,  VertLine * col, Region * region = NULL) :
+                   ^
+../src/Sudoku.h:73:37: error: ‘VertLine’ has not been declared
+  Symbol(char val, HorizLine * row,  VertLine * col, Region * region = NULL) :
+                                     ^
+../src/Sudoku.h:89:19: error: expected ‘)’ before ‘*’ token
+  Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
+                   ^
+../src/Sudoku.h:113:2: error: ‘HorizLine’ does not name a type
+  HorizLine * getRow() { return m_pRow; }
+  ^
+../src/Sudoku.h:114:2: error: ‘VertLine’ does not name a type
+  VertLine * getCol() { return m_pCol; }
+  ^
+../src/Sudoku.h:120:17: error: ‘HorizLine’ has not been declared
+     void setRow(HorizLine * row) { m_pRow = row; }
+                 ^
+../src/Sudoku.h:121:17: error: ‘VertLine’ has not been declared
+     void setCol(VertLine * col) { m_pCol = col; }
+                 ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, int*, int*, sudoku::Region*)’:
+../src/Sudoku.h:74:16: error: class ‘sudoku::Symbol’ does not have any field named ‘m_pRow’
+   m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
+                ^
+../src/Sudoku.h:74:29: error: class ‘sudoku::Symbol’ does not have any field named ‘m_pCol’
+   m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
+                             ^
+../src/Sudoku.h:78:21: error: request for member ‘getIdx’ in ‘* row’, which is of non-class type ‘int’
+    m_iRowIdx = row->getIdx();
+                     ^
+../src/Sudoku.h:83:21: error: request for member ‘getIdx’ in ‘* col’, which is of non-class type ‘int’
+    m_iColIdx = col->getIdx();
+                     ^
+../src/Sudoku.h: In member function ‘void sudoku::Symbol::setRow(int*)’:
+../src/Sudoku.h:120:36: error: ‘m_pRow’ was not declared in this scope
+     void setRow(HorizLine * row) { m_pRow = row; }
+                                    ^
+../src/Sudoku.h: In member function ‘void sudoku::Symbol::setCol(int*)’:
+../src/Sudoku.h:121:35: error: ‘m_pCol’ was not declared in this scope
+     void setCol(VertLine * col) { m_pCol = col; }
+                                   ^
+../src/Sudoku.h: At global scope:
+../src/Sudoku.h:171:17: error: ‘HorizLine’ has not been declared
+     bool addRow(HorizLine * row)
+                 ^
+../src/Sudoku.h:181:17: error: ‘VertLine’ has not been declared
+     bool addCol(VertLine * col)
+                 ^
+../src/Sudoku.h:193:2: error: ‘HorizLine’ does not name a type
+  HorizLine ** m_pRows;
+  ^
+../src/Sudoku.h:194:2: error: ‘VertLine’ does not name a type
+  VertLine ** m_pCols;
+  ^
+../src/Sudoku.h: In constructor ‘sudoku::Region::Region(unsigned char, unsigned char)’:
+../src/Sudoku.h:137:3: error: ‘m_pRows’ was not declared in this scope
+   m_pRows = new HorizLine* [m_iRegionDim];
+   ^
+../src/Sudoku.h:137:17: error: expected type-specifier before ‘HorizLine’
+   m_pRows = new HorizLine* [m_iRegionDim];
+                 ^
+../src/Sudoku.h:137:17: error: expected ‘;’ before ‘HorizLine’
+../src/Sudoku.h:138:3: error: ‘m_pCols’ was not declared in this scope
+   m_pCols = new VertLine* [m_iRegionDim];
+   ^
+../src/Sudoku.h:138:17: error: expected type-specifier before ‘VertLine’
+   m_pCols = new VertLine* [m_iRegionDim];
+                 ^
+../src/Sudoku.h:138:17: error: expected ‘;’ before ‘VertLine’
+../src/Sudoku.h: In destructor ‘sudoku::Region::~Region()’:
+../src/Sudoku.h:152:10: error: ‘m_pRows’ was not declared in this scope
+      if (m_pRows != NULL)
+          ^
+../src/Sudoku.h:153:17: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+       delete [] m_pRows;
+                 ^
+../src/Sudoku.h:156:10: error: ‘m_pCols’ was not declared in this scope
+      if (m_pCols != NULL)
+          ^
+../src/Sudoku.h:157:17: error: type ‘<type error>’ argument given to ‘delete’, expected pointer
+       delete [] m_pCols;
+                 ^
+../src/Sudoku.h: In member function ‘bool sudoku::Region::addRow(int*)’:
+../src/Sudoku.h:174:7: error: ‘m_pRows’ was not declared in this scope
+       m_pRows[m_iLastRowIdx++] = row;
+       ^
+../src/Sudoku.h: In member function ‘bool sudoku::Region::addCol(int*)’:
+../src/Sudoku.h:184:7: error: ‘m_pCols’ was not declared in this scope
+       m_pCols[m_iLastColIdx++] = col;
+       ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::get_available_assignments(sudoku::Symbol*, std::list<char>&)’:
+../src/Solver.cpp:148:40: error: ‘class sudoku::Symbol’ has no member named ‘getRow’
+       if (!process_line_assignments(s->getRow(),assigned))
+                                        ^
+../src/Solver.cpp:151:40: error: ‘class sudoku::Symbol’ has no member named ‘getCol’
+       if (!process_line_assignments(s->getCol(),assigned))
+                                        ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::update_assignments(sudoku::Symbol*)’:
+../src/Solver.cpp:386:28: error: ‘class sudoku::Symbol’ has no member named ‘getRow’
+    res |= update_line(s,s->getRow());
+                            ^
+../src/Solver.cpp:390:31: error: ‘class sudoku::Symbol’ has no member named ‘getCol’
+       res |= update_line(s,s->getCol());
+                               ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_assignment(sudoku::Symbol*)’:
+../src/Solver.cpp:487:31: error: ‘class sudoku::Symbol’ has no member named ‘getRow’
+      res |= restore_line(s,s->getRow());
+                               ^
+../src/Solver.cpp:491:34: error: ‘class sudoku::Symbol’ has no member named ‘getCol’
+         res |= restore_line(s,s->getCol());
+                                  ^
+make: *** [src/Solver.o] Error 1
+20:06:12 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:78:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:83:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:94:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:99:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:08:23 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:79:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:84:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:30:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:95:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:100:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:30:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:09:33 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:123:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:123:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:123:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:123:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:123:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:123:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:123:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:123:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:123:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:09:48 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:121:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:121:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:121:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+In file included from ../src/Sudoku.cpp:8:0:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:121:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:121:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:121:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+In file included from ../src/SudokuQlik.cpp:14:0:
+../src/Sudoku.h: In destructor ‘sudoku::HorizLine::~HorizLine()’:
+../src/Sudoku.h:121:28: warning: possible problem detected in invocation of delete operator: [enabled by default]
+         delete m_pSymbols[i];
+                            ^
+../src/Sudoku.h:121:28: warning: invalid use of incomplete type ‘class sudoku::Symbol’ [enabled by default]
+../src/Sudoku.h:28:7: warning: forward declaration of ‘class sudoku::Symbol’ [enabled by default]
+ class Symbol;
+       ^
+../src/Sudoku.h:121:28: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+         delete m_pSymbols[i];
+                            ^
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:11:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(char, sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:81:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:86:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:97:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:102:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:11:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.h:16:0,
+                 from ../src/Solver.cpp:8:
+../src/Sudoku.h: In constructor ‘sudoku::Symbol::Symbol(sudoku::HorizLine*, sudoku::VertLine*, sudoku::Region*)’:
+../src/Sudoku.h:97:19: error: invalid use of incomplete type ‘class sudoku::HorizLine’
+    m_iRowIdx = row->getIdx();
+                   ^
+../src/Sudoku.h:28:7: error: forward declaration of ‘class sudoku::HorizLine’
+ class HorizLine;
+       ^
+../src/Sudoku.h:102:19: error: invalid use of incomplete type ‘class sudoku::VertLine’
+    m_iColIdx = col->getIdx();
+                   ^
+../src/Sudoku.h:29:7: error: forward declaration of ‘class sudoku::VertLine’
+ class VertLine;
+       ^
+make: *** [src/Solver.o] Error 1
+20:12:06 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:14:24 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:14:41 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:19:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:27:13 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:29:20 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+20:29:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
