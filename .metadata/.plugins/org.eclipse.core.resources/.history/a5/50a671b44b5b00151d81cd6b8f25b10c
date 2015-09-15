@@ -40,15 +40,15 @@ namespace sudoku
   {
 	  RankNode * head = NULL, * cur = NULL, * prev = NULL;
 
-	  vector<rank_list *>::iterator itC;
-	  list<rank_pair>::iterator itRL;
+	  vector<rank_list *>::reverse_iterator itC;
+	  list<rank_pair>::reverse_iterator itRL;
 
-	  for (itC = c.begin(); itC != c.end(); itC++)
+	  for (itC = c.rbegin(); itC != c.rend(); itC++)
 	  {
 		  if (*itC == NULL)
 		     continue;
 
-	      for (itRL = (*itC)->begin(); itRL != (*itC)->end(); itRL++)
+	      for (itRL = (*itC)->rbegin(); itRL != (*itC)->rend(); itRL++)
 	      {
               cur = new RankNode(&(*itRL));
               if (prev == NULL)

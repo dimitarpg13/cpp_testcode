@@ -1,4 +1,4 @@
-20:33:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
+21:47:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver
 Finished building target: SudokuQlik
  
 
-20:33:44 Build Finished (took 1s.18ms)
+21:47:38 Build Finished (took 1s.18ms)
 
