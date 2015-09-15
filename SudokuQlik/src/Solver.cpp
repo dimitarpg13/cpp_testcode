@@ -562,8 +562,8 @@ namespace sudoku
 				if (!curAssignments->empty())
 				{
 				   processed = false;
-				   int idx = 0, sz = (int) curAssignments->size();//, prevFailures = curSymbol->getFailedCount();
-				   //int effectiveSize = sz - prevFailures;
+				   int idx = 0, sz = (int) curAssignments->size();
+
 				   while (idx++ < sz)
 				   { // while loop start
 					  curChar = curAssignments->front();
@@ -599,7 +599,7 @@ namespace sudoku
 						    		<< "," << (int) curSymbol->getCol()->getIdx()
 						    		<< "] failed to assign " << curChar << ".. "  << endl;
 #endif
-						       curSymbol->incrementFailedCount();
+
 
 							 }
 							 else
@@ -607,8 +607,11 @@ namespace sudoku
 						 }
 						 else
 						 {
-							// done with the current symbol. proceed one level further
-							// down onto the solution tree
+							 // done with the current symbol. proceed one level further
+							 // down onto the solution tree
+
+//							 if (idx == sz)
+//								 curSymbol->setCanChoose(false);
 
 #ifdef _DEBUG
 						    cout << "[" << (int) curSymbol->getRow()->getIdx()
@@ -626,6 +629,9 @@ namespace sudoku
 						  return false;
 					   }
 
+					   if (idx == sz)
+					     curSymbol->setCanChoose(false);
+
 					 } // while loop end
 
 
@@ -636,12 +642,14 @@ namespace sudoku
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
 
+
+
 						 curNode = curNode->Prev;
 
-						 while ( curNode != NULL && curNode->Val->second->size() == 0 )
-								 //( curNode->Val->second->size() < 1 ||
-								 //  curNode->Val->first->getFailedCount() >= curNode->Val->second->size()))
+
+						 while ( curNode != NULL && !curNode->Val->first->getCanChoose() )
 							 curNode = curNode->Prev;
+
 
 						 if (curNode == NULL)
 						 {
@@ -650,6 +658,8 @@ namespace sudoku
 							 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
 							 return false;
 						 }
+
+
 
 						 continue;
 
@@ -667,8 +677,9 @@ namespace sudoku
 			   return false;
 			}
 
-
 	        curNode = curNode->Next;
+
+
 	  }
 
 	  return res;
