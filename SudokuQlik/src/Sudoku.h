@@ -54,19 +54,20 @@ private:
 
 	char m_cLastRemoved;
     bool m_bCanChoose;
+    unsigned short m_iFailedCount;
 
 public:
 
 
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true)
+		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true), m_iFailedCount(0)
     { }
 
 
 	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true)
+		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true), m_iFailedCount(0)
 	{ }
 
 
@@ -83,6 +84,7 @@ public:
 	list<char> * getAssignments() { return m_pAssignments; }
 	char getLastRemoved() { return m_cLastRemoved; }
 	bool getCanChoose() { return m_bCanChoose; }
+	unsigned short getFailedCount() { return m_iFailedCount; }
 
     void setRegion(Region * region) { m_pRegion = region; }
     void setRow(HorizLine * row) { m_pRow = row; }
@@ -90,6 +92,8 @@ public:
     void setAssignments(list<char> * assignments) { m_pAssignments = assignments; }
     void setLastRemoved(char lastRemoved) { m_cLastRemoved = lastRemoved; }
     void setCanChoose(bool canChoose) { m_bCanChoose = canChoose; }
+    void incrementFailedCount() { m_iFailedCount++; }
+    void resetFailedCount() { m_iFailedCount = 0; }
 };
 
 

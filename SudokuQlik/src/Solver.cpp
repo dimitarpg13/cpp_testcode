@@ -71,6 +71,8 @@ namespace sudoku
       if (!res)
     	  return res;
 
+
+
 #ifdef _DEBUG
       print_ranked_candidates(m_vRankedCandidates);
 #endif
@@ -531,11 +533,13 @@ namespace sudoku
 	  {
 	        curSymbol = curNode->Val->first;
 
+
 	        if (curSymbol == NULL)
 	        {
 	           m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
 	           return false;
 	        }
+
 
 	        curAssignments = curSymbol->getAssignments();
 	        if (!curSymbol->isEmpty())
@@ -552,6 +556,7 @@ namespace sudoku
 
 			   curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
+			  // curSymbol->setCanChoose(true);
 
 	        }
 
@@ -563,8 +568,9 @@ namespace sudoku
 				{
 				   processed = false;
 				   int idx = 0, sz = (int) curAssignments->size();
+                   int newSz = sz - (int) curSymbol->getFailedCount();
 
-				   while (idx++ < sz)
+				   while (idx++ < newSz)
 				   { // while loop start
 					  curChar = curAssignments->front();
 					  if (curChar != 0)
@@ -572,6 +578,7 @@ namespace sudoku
 						curAssignments->pop_front();
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
+
 						res = update_assignments(curSymbol);
 
 #ifdef _DEBUG
@@ -594,6 +601,7 @@ namespace sudoku
 
 							   curAssignments->push_back(curSymbol->getValue());
 							   curSymbol->setValue(0);
+							   curSymbol->incrementFailedCount();
 #ifdef _DEBUG
 						       cout << "[" << (int) curSymbol->getRow()->getIdx()
 						    		<< "," << (int) curSymbol->getCol()->getIdx()
@@ -610,15 +618,16 @@ namespace sudoku
 							 // done with the current symbol. proceed one level further
 							 // down onto the solution tree
 
-//							 if (idx == sz)
-//								 curSymbol->setCanChoose(false);
+							 if (idx == sz)
+								 curSymbol->setCanChoose(false);
 
 #ifdef _DEBUG
 						    cout << "[" << (int) curSymbol->getRow()->getIdx()
 						    	 << "," << (int) curSymbol->getCol()->getIdx()
 						    	 << "] Assigned " << curChar << endl;
-#endif
 
+
+#endif
 							processed = true;
 							break;
 						 }
@@ -629,11 +638,12 @@ namespace sudoku
 						  return false;
 					   }
 
-					   if (idx == sz)
-					     curSymbol->setCanChoose(false);
+
 
 					 } // while loop end
 
+				     if (idx == sz)
+				 			curSymbol->setCanChoose(false);
 
 					 if (!processed)
 					 {
@@ -641,15 +651,13 @@ namespace sudoku
 						 // all attempts lead to an infeasible configuration. So take a step
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
-
-
-
 						 curNode = curNode->Prev;
 
-
-						 while ( curNode != NULL && !curNode->Val->first->getCanChoose() )
+						 while ( curNode != NULL && !curNode->Val->first->getCanChoose() && curNode->Val->first->getFailedCount() == sz )
+						 {
+							 curNode->Val->first->resetFailedCount();
 							 curNode = curNode->Prev;
-
+						 }
 
 						 if (curNode == NULL)
 						 {
@@ -659,10 +667,7 @@ namespace sudoku
 							 return false;
 						 }
 
-
-
 						 continue;
-
 					 }
 				}
 				else
