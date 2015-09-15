@@ -1,0 +1,3 @@
+git add -A
+git commit -m "committing Sudoku 9-7-15 21:24pm"
+git push origin master

@@ -77,7 +77,6 @@ namespace sudoku
 
       m_lstRankedCandidates = init_rank_node_list(m_vRankedCandidates);
 
-
       res &= solve_internal(m_lstRankedCandidates);
 
 
@@ -576,7 +575,8 @@ namespace sudoku
 				if (!curAssignments->empty())
 				{
 				   processed = false;
-				   unsigned int idx = 0, sz = curAssignments->size();
+				   int idx = 0, sz = (int) curAssignments->size();//, prevFailures = curSymbol->getFailedCount();
+				   //int effectiveSize = sz - prevFailures;
 				   while (idx++ < sz)
 				   { // while loop start
 					  curChar = curAssignments->front();
@@ -588,7 +588,9 @@ namespace sudoku
 						res = update_assignments(curSymbol);
 
 #ifdef _DEBUG
-						cout << endl << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] with " << sz << " candidates. trying " << curChar << ".. "  << endl;
+						cout << endl << "[" << (int) curSymbol->getRow()->getIdx()
+						     << "," << (int) curSymbol->getCol()->getIdx() << "] with "
+						     << sz << " candidates. trying " << curChar << ".. "  << endl;
 #endif
 
 
@@ -603,13 +605,14 @@ namespace sudoku
 							   // assigned to curSymbol
 							   restore_assignment(curSymbol);
 
-
 							   curAssignments->push_back(curSymbol->getValue());
 							   curSymbol->setValue(0);
 #ifdef _DEBUG
-						       cout << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] failed to assign " << curChar << ".. "  << endl;
+						       cout << "[" << (int) curSymbol->getRow()->getIdx()
+						    		<< "," << (int) curSymbol->getCol()->getIdx()
+						    		<< "] failed to assign " << curChar << ".. "  << endl;
 #endif
-
+						       curSymbol->incrementFailedCount();
 
 							 }
 							 else
@@ -621,7 +624,9 @@ namespace sudoku
 							// down onto the solution tree
 
 #ifdef _DEBUG
-						     cout << "[" << (int) curSymbol->getRow()->getIdx() << "," << (int) curSymbol->getCol()->getIdx() << "] Assigned " << curChar << endl;
+						    cout << "[" << (int) curSymbol->getRow()->getIdx()
+						    	 << "," << (int) curSymbol->getCol()->getIdx()
+						    	 << "] Assigned " << curChar << endl;
 #endif
 
 							processed = true;
@@ -644,8 +649,12 @@ namespace sudoku
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
 
-						 //while (curNode->Val->second->size() == 1)
-						    curNode = curNode->Prev;
+						 curNode = curNode->Prev;
+
+						 while ( curNode != NULL && curNode->Val->second->size() <= 1 )
+								 //( curNode->Val->second->size() < 1 ||
+								 //  curNode->Val->first->getFailedCount() >= curNode->Val->second->size()))
+							 curNode = curNode->Prev;
 
 						 if (curNode == NULL)
 						 {
@@ -654,8 +663,6 @@ namespace sudoku
 							 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
 							 return false;
 						 }
-
-
 
 						 continue;
 
