@@ -6708,3 +6708,676 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+22:37:45 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:595:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:38:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:601:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:40:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:601:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:606:21: error: redeclaration of ‘std::list<char>* ass’
+        list<char> * ass = m_pSol->getRows()[1]->getSymbols()[2]->getAssignments();
+                     ^
+../src/Solver.cpp:594:20: error: ‘std::list<char>* ass’ previously declared here
+       list<char> * ass = m_pSol->getRows()[1]->getSymbols()[6]->getAssignments();
+                    ^
+make: *** [src/Solver.o] Error 1
+22:40:40 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:601:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:49:19 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:601:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:608:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:55:05 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:57:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:598:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+22:58:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:598:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:605:23: error: invalid type argument of unary ‘*’ (have ‘char’)
+            cout << (**it) << " ";
+                       ^
+make: *** [src/Solver.o] Error 1
+22:59:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:598:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:01:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:598:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:08:54 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+23:09:03 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:598:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:12:24 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:596:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:12:57 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:596:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:620:20: error: redeclaration of ‘std::list<char>* ass’
+       list<char> * ass = m_pSol->getRows()[2]->getSymbols()[0]->getAssignments();
+                    ^
+../src/Solver.cpp:608:20: error: ‘std::list<char>* ass’ previously declared here
+       list<char> * ass = m_pSol->getRows()[2]->getSymbols()[0]->getAssignments();
+                    ^
+../src/Solver.cpp:621:12: error: redeclaration of ‘char cc’
+       char cc;
+            ^
+../src/Solver.cpp:609:12: error: ‘char cc’ previously declared here
+       char cc;
+            ^
+make: *** [src/Solver.o] Error 1
+23:13:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:596:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:14:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:596:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:17:36 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:596:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:603:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:20:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+23:20:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:597:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:604:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:24:02 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+23:37:20 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+make: Nothing to be done for `all'.
+23:37:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:597:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:604:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:40:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:597:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:604:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:42:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:597:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:604:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:43:49 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:604:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:611:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:45:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:605:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:612:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:46:12 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:606:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:613:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:48:46 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:593:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:52:35 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:593:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:636:22: error: redeclaration of ‘std::list<char>* ass’
+         list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                      ^
+../src/Solver.cpp:616:22: error: ‘std::list<char>* ass’ previously declared here
+         list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                      ^
+../src/Solver.cpp:637:14: error: redeclaration of ‘char cc’
+         char cc;
+              ^
+../src/Solver.cpp:617:14: error: ‘char cc’ previously declared here
+         char cc;
+              ^
+../src/Solver.cpp:652:22: error: redeclaration of ‘std::list<char>* ass’
+         list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                      ^
+../src/Solver.cpp:616:22: error: ‘std::list<char>* ass’ previously declared here
+         list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                      ^
+../src/Solver.cpp:653:14: error: redeclaration of ‘char cc’
+         char cc;
+              ^
+../src/Solver.cpp:617:14: error: ‘char cc’ previously declared here
+         char cc;
+              ^
+make: *** [src/Solver.o] Error 1
+23:53:09 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:593:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+23:57:13 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:582:17: error: redeclaration of ‘std::list<char>* ass’
+    list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                 ^
+../src/Solver.cpp:549:17: error: ‘std::list<char>* ass’ previously declared here
+    list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                 ^
+../src/Solver.cpp:583:9: error: redeclaration of ‘char cc’
+    char cc;
+         ^
+../src/Solver.cpp:550:9: error: ‘char cc’ previously declared here
+    char cc;
+         ^
+make: *** [src/Solver.o] Error 1
+23:57:31 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:612:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:03:29 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:612:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+../src/Solver.cpp:717:21: error: redeclaration of ‘std::list<char>* ass’
+        list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                     ^
+../src/Solver.cpp:698:21: error: ‘std::list<char>* ass’ previously declared here
+        list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+                     ^
+../src/Solver.cpp:718:13: error: redeclaration of ‘char cc’
+        char cc;
+             ^
+../src/Solver.cpp:699:13: error: ‘char cc’ previously declared here
+        char cc;
+             ^
+make: *** [src/Solver.o] Error 1
+00:03:47 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:612:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:10:43 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:615:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:11:40 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:614:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:12:11 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:613:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:13:51 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:595:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:16:37 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:595:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:17:38 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:595:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+00:18:01 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
+../src/Solver.cpp:595:13: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
+         int iii=0;
+             ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

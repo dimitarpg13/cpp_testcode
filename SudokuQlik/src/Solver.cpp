@@ -404,6 +404,7 @@ namespace sudoku
   		  return false;
   	  }
 
+
   	  Symbol * curSymbol = NULL;
   	  list<char> * curAssignments = NULL;
   	  list<char>::iterator itA;
@@ -545,6 +546,7 @@ namespace sudoku
 	        }
 
 
+
 	        curAssignments = curSymbol->getAssignments();
 	        if (!curSymbol->isEmpty())
 	        {
@@ -559,12 +561,10 @@ namespace sudoku
 			   // assigned to curSymbol
 			   restore_assignment(curSymbol);
 
-			   curAssignments->push_back(curSymbol->getValue());
+			   if (curSymbol->getValue() != 0)
+			      curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
-			   curSymbol->incrementFailedCount();
-
-
-
+			   //curSymbol->incrementFailedCount();
 
 
 	        }
@@ -590,8 +590,15 @@ namespace sudoku
 						curSymbol->setLastRemoved(curChar);
 
 
+						if (curSymbol->getRow()->getIdx() == 2 && curSymbol->getCol()->getIdx() == 7)
+						{
+						  int iii=0;
+						  iii=1;
+						}
+
 
 						res = update_assignments(curSymbol);
+
 
 
 
@@ -606,6 +613,7 @@ namespace sudoku
 						{
 							if (m_lError == SUDOKU_NO_ERROR)
 							{
+
 							   // updating the assignments with the new change
 							   // failed which indicates infeasible configuration
 							   // was reached so restore the assignments before the
@@ -613,7 +621,10 @@ namespace sudoku
 							   // assigned to curSymbol
 							   restore_assignment(curSymbol);
 
-							   curAssignments->push_back(curSymbol->getValue());
+							   if (curSymbol->getValue()!=0)
+							      curAssignments->push_back(curSymbol->getValue());
+
+
 							   curSymbol->setValue(0);
 							   curSymbol->incrementFailedCount();
 #ifdef _DEBUG
@@ -667,21 +678,48 @@ namespace sudoku
 						 // is not empty
 
 
+						 ////////////////////////
+						cout << "Symbol [2,1] has at present " << m_pSol->getRows()[2]->getSymbols()[1]->getAssignments()->size() << " assignments" << endl;
+						list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+						char cc;
+						for (list<char>::const_iterator it = ass->begin(); it != ass->end(); ++it)
+						{
+							cc = *it;
+							cout << cc << " ";
+						}
+						cout << endl;
+
+
 						 curSymbol->resetFailedCount();
 					     restore_assignment(curSymbol);
 					     if (curSymbol->getValue() != 0)
 						    curSymbol->getAssignments()->push_back(curSymbol->getValue());
 					     curSymbol->setValue(0);
 
+
 						 curNode = curNode->Prev;
 
 
+						////////////////////
+						cout << "Symbol [2,1] has at present " << m_pSol->getRows()[2]->getSymbols()[1]->getAssignments()->size() << " assignments" << endl;
+						ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
+						for (list<char>::const_iterator it = ass->begin(); it != ass->end(); ++it)
+						{
+							cc = *it;
+							cout << cc << " ";
+						}
+						cout << endl;
+
 						 while ( curNode != NULL && !(curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == sz) )
 						 {
+
 							 curNode->Val->first->resetFailedCount();
 							 restore_assignment(curNode->Val->first);
+
+
 							 if (curNode->Val->first->getValue() != 0)
 							   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+
 							 curNode->Val->first->setValue(0);
 							 curNode = curNode->Prev;
 						 }
@@ -693,6 +731,8 @@ namespace sudoku
 							 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
 							 return false;
 						 }
+
+
 
 						 continue;
 					 }
