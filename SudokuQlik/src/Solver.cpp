@@ -448,14 +448,15 @@ namespace sudoku
                             	 return false;
                              }
                          }
-                         else
-                         {
-                        	 // this is a situation which should not happen
-                        	 // the current Symbol has the last value removed but it appears
-                        	 // to have had empty candidate list before the removal
-                        	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-                        	 return false;
-                         }
+                         // TO DO: figure out if this error condition is really necessary
+//                       else
+//                       {
+//                         // this is a situation which should not happen
+//                         // the current Symbol has the last value removed but it appears
+//                         // to have had empty candidate list before the removal
+//                         m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+//                         return false;
+//                       }
 
          			  }
          		  }
@@ -567,7 +568,11 @@ namespace sudoku
 			   // was reached so restore the assignments before the
 			   // last attempt and check for a different value to be
 			   // assigned to curSymbol
-			   restore_assignment(curSymbol);
+			   res &= restore_assignment(curSymbol);
+			   if (!res)
+			   {
+				   return false;
+			   }
 
 			   if (!curSymbol->isEmpty())
 			      curAssignments->push_back(curSymbol->getValue());
@@ -599,7 +604,26 @@ namespace sudoku
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
 
+
+
+
+					      if (curSymbol->getRow()->getIdx()==6 && curSymbol->getCol()->getIdx()==8 &&
+							m_pSol->getRows()[6]->getSymbols()[7]->getValue()=='8' &&
+							m_pSol->getRows()[6]->getSymbols()[8]->getValue()=='1')
+					      {
+						     int iii=0;
+
+						      iii=1;
+
+
+
+					     }
+
+
+
 						res = update_assignments(curSymbol);
+
+
 
 
 
@@ -620,8 +644,11 @@ namespace sudoku
 							   // was reached so restore the assignments before the
 							   // last attempt and check for a different value to be
 							   // assigned to curSymbol
-							   restore_assignment(curSymbol);
-
+							   res &= restore_assignment(curSymbol);
+							   if (!res)
+							   {
+							   	   return false;
+							   }
 							   if (!curSymbol->isEmpty())
 							   {
 							      curAssignments->push_back(curSymbol->getValue());
