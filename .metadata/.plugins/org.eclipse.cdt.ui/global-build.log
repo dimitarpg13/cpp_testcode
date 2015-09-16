@@ -9588,3 +9588,39 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+19:41:50 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:50:05 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:52:15 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
