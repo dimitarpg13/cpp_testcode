@@ -417,11 +417,11 @@ namespace sudoku
          		  curAssignments = curSymbol->getAssignments();
          		  if (curAssignments != NULL)
          		  {
-         			  if (curSymbol->getLastRemoved() == s->getValue())
+         			  if (curSymbol->getLastRemoved() == s->getValue() && !s->isEmpty())
          			  {
          				 unsigned short sz = curAssignments->size();
          				 curAssignments->push_back(s->getValue());
-         				 curSymbol->setLastRemoved(0);
+         				 curSymbol->popLastRemoved();
 
                          if (sz > 0)
                          {
@@ -561,10 +561,12 @@ namespace sudoku
 			   // assigned to curSymbol
 			   restore_assignment(curSymbol);
 
-			   if (curSymbol->getValue() != 0)
+			   if (!curSymbol->isEmpty())
 			      curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
-			   //curSymbol->incrementFailedCount();
+			   // increment the fail count because the whole sequence after it failed so it is a failure for
+			   // the current symbol as well.
+			   curSymbol->incrementFailedCount();
 
 
 	        }
@@ -589,16 +591,7 @@ namespace sudoku
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
 
-
-						if (curSymbol->getRow()->getIdx() == 2 && curSymbol->getCol()->getIdx() == 7)
-						{
-						  int iii=0;
-						  iii=1;
-						}
-
-
 						res = update_assignments(curSymbol);
-
 
 
 
@@ -621,12 +614,14 @@ namespace sudoku
 							   // assigned to curSymbol
 							   restore_assignment(curSymbol);
 
-							   if (curSymbol->getValue()!=0)
+							   if (!curSymbol->isEmpty())
+							   {
 							      curAssignments->push_back(curSymbol->getValue());
-
-
-							   curSymbol->setValue(0);
+                                  curSymbol->popLastRemoved();
+							      curSymbol->setValue(0);
+							   }
 							   curSymbol->incrementFailedCount();
+
 #ifdef _DEBUG
 						       cout << "[" << (int) curSymbol->getRow()->getIdx()
 						    		<< "," << (int) curSymbol->getCol()->getIdx()
@@ -667,8 +662,10 @@ namespace sudoku
 
 					 } // while loop end
 
-				     if (idx == sz)
+				     if (idx >= sz)
 				 			curSymbol->setCanChoose(false);
+				     else
+				    	  curSymbol->setCanChoose(true); // TO DO: check the validity of this 9-16-15 6:00am
 
 					 if (!processed)
 					 {
@@ -676,51 +673,41 @@ namespace sudoku
 						 // all attempts lead to an infeasible configuration. So take a step
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
-
-
-						 ////////////////////////
-						cout << "Symbol [2,1] has at present " << m_pSol->getRows()[2]->getSymbols()[1]->getAssignments()->size() << " assignments" << endl;
-						list<char> * ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
-						char cc;
-						for (list<char>::const_iterator it = ass->begin(); it != ass->end(); ++it)
-						{
-							cc = *it;
-							cout << cc << " ";
-						}
-						cout << endl;
-
-
 						 curSymbol->resetFailedCount();
 					     restore_assignment(curSymbol);
-					     if (curSymbol->getValue() != 0)
+
+					     if (!curSymbol->isEmpty())
+					     {
 						    curSymbol->getAssignments()->push_back(curSymbol->getValue());
-					     curSymbol->setValue(0);
+					        curSymbol->setValue(0);
+					        //curNode->Val->first->popLastRemoved();
+					     }
+						   if (curSymbol->getAssignments()->size() > 1)
+								curSymbol->setCanChoose(true);
 
 
 						 curNode = curNode->Prev;
 
 
-						////////////////////
-						cout << "Symbol [2,1] has at present " << m_pSol->getRows()[2]->getSymbols()[1]->getAssignments()->size() << " assignments" << endl;
-						ass = m_pSol->getRows()[2]->getSymbols()[1]->getAssignments();
-						for (list<char>::const_iterator it = ass->begin(); it != ass->end(); ++it)
-						{
-							cc = *it;
-							cout << cc << " ";
-						}
-						cout << endl;
 
-						 while ( curNode != NULL && !(curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == sz) )
+
+						 while ( curNode != NULL && (!curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == curNode->Val->first->getAssignments()->size()))
 						 {
+
+							 if (curNode->Val->first->getFailedCount() == curNode->Val->first->getAssignments()->size())  // TO DO: check the validity of this 9-16-15 6:00am
+								 curNode->Val->first->setCanChoose(true);
 
 							 curNode->Val->first->resetFailedCount();
 							 restore_assignment(curNode->Val->first);
 
 
-							 if (curNode->Val->first->getValue() != 0)
+							 if (!curNode->Val->first->isEmpty())
+							 {
 							   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+                               curNode->Val->first->popLastRemoved();
+                               curNode->Val->first->setValue(0);
+							 }
 
-							 curNode->Val->first->setValue(0);
 							 curNode = curNode->Prev;
 						 }
 

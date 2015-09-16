@@ -16,6 +16,7 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <stack>
 
 
 
@@ -52,7 +53,7 @@ private:
 	Region * m_pRegion;
 	list<char> * m_pAssignments;
 
-	char m_cLastRemoved;
+	stack<char> m_skLastRemoved;
     bool m_bCanChoose;
     unsigned short m_iFailedCount;
 
@@ -61,13 +62,13 @@ public:
 
 	Symbol(char val, HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(val), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true), m_iFailedCount(0)
+		m_pAssignments(NULL), m_bCanChoose(true), m_iFailedCount(0)
     { }
 
 
 	Symbol(HorizLine * row, VertLine * col, Region * region = NULL) :
 		m_cVal(0), m_pRow(row), m_pCol(col), m_pRegion(region),
-		m_pAssignments(NULL), m_cLastRemoved(0), m_bCanChoose(true), m_iFailedCount(0)
+		m_pAssignments(NULL), m_bCanChoose(true), m_iFailedCount(0)
 	{ }
 
 
@@ -82,7 +83,13 @@ public:
 	HorizLine * getRow() { return m_pRow; }
 	VertLine * getCol() { return m_pCol; }
 	list<char> * getAssignments() { return m_pAssignments; }
-	char getLastRemoved() { return m_cLastRemoved; }
+	char getLastRemoved()
+	{
+		if (!m_skLastRemoved.empty())
+		   return m_skLastRemoved.top();
+		else
+		   return 0;
+	}
 	bool getCanChoose() { return m_bCanChoose; }
 	unsigned short getFailedCount() { return m_iFailedCount; }
 
@@ -90,7 +97,8 @@ public:
     void setRow(HorizLine * row) { m_pRow = row; }
     void setCol(VertLine * col) { m_pCol = col; }
     void setAssignments(list<char> * assignments) { m_pAssignments = assignments; }
-    void setLastRemoved(char lastRemoved) { m_cLastRemoved = lastRemoved; }
+    void setLastRemoved(char lastRemoved) { m_skLastRemoved.push(lastRemoved); }
+    void popLastRemoved() { m_skLastRemoved.pop(); }
     void setCanChoose(bool canChoose) { m_bCanChoose = canChoose; }
     void incrementFailedCount() { m_iFailedCount++; }
     void resetFailedCount() { m_iFailedCount = 0; }
