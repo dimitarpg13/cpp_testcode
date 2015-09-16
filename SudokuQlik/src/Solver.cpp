@@ -270,7 +270,11 @@ namespace sudoku
                      curAssignments->remove_if(Remover(s->getValue()));
                      if (curAssignments->size() < sz)
                      {
-                    	 // there was a removal so we need to update the corresponding rank list
+                    	 // there was a removal so we to save the value of the removed
+                    	 // in order to be able to restore it afterwards and also we
+                    	 // need to update the corresponding rank list
+                    	 curSymbol->setLastRemoved(s->getValue());
+
                          rank_list * curRankList = m_vRankedCandidates[sz-1];
                          if (curRankList != NULL)
                          {
@@ -556,6 +560,7 @@ namespace sudoku
 
 			   curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
+			   curSymbol->incrementFailedCount();
 			  // curSymbol->setCanChoose(true);
 
 	        }
@@ -578,6 +583,7 @@ namespace sudoku
 						curAssignments->pop_front();
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
+
 
 						res = update_assignments(curSymbol);
 
@@ -651,11 +657,23 @@ namespace sudoku
 						 // all attempts lead to an infeasible configuration. So take a step
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
+
+						 curNode->Val->first->resetFailedCount();
+					     restore_assignment(curNode->Val->first);
+						 curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+						 curSymbol->setValue(0);
+
 						 curNode = curNode->Prev;
 
-						 while ( curNode != NULL && !curNode->Val->first->getCanChoose() && curNode->Val->first->getFailedCount() == sz )
+
+						 while ( curNode != NULL && (!curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == sz) )
 						 {
+
 							 curNode->Val->first->resetFailedCount();
+							 restore_assignment(curNode->Val->first);
+							 curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+							 curSymbol->setValue(0);
+
 							 curNode = curNode->Prev;
 						 }
 
