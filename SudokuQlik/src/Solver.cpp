@@ -669,7 +669,8 @@ namespace sudoku
 
 						 curSymbol->resetFailedCount();
 					     restore_assignment(curSymbol);
-						 curSymbol->getAssignments()->push_back(curSymbol->getValue());
+					     if (curSymbol->getValue() != 0)
+						    curSymbol->getAssignments()->push_back(curSymbol->getValue());
 					     curSymbol->setValue(0);
 
 						 curNode = curNode->Prev;
@@ -679,7 +680,8 @@ namespace sudoku
 						 {
 							 curNode->Val->first->resetFailedCount();
 							 restore_assignment(curNode->Val->first);
-							 curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+							 if (curNode->Val->first->getValue() != 0)
+							   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
 							 curNode->Val->first->setValue(0);
 							 curNode = curNode->Prev;
 						 }
