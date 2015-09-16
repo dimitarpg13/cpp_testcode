@@ -26,7 +26,7 @@ int main() {
     Solver * s = NULL;
 
     cout << "Example3:" << endl;
-    p->load("./src/example3.txt");
+    p->load("./src/example4.txt");
     s = new BTSolver(p);
     if (!s->solve())
     {
