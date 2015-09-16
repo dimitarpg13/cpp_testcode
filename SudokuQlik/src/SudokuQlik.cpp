@@ -25,8 +25,8 @@ int main() {
     Puzzle * p = new Puzzle();
     Solver * s = NULL;
 
-    cout << "Example1:" << endl;
-    p->load("./src/example1.txt");
+    cout << "Example3:" << endl;
+    p->load("./src/example3.txt");
     s = new BTSolver(p);
     if (!s->solve())
     {

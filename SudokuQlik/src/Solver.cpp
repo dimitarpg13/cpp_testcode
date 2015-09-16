@@ -281,7 +281,15 @@ namespace sudoku
                              curRankList->remove_if(SymbolFinder(curSymbol));
                              if (sz - 2 >= 0)
                              {
-                                 m_vRankedCandidates[sz-2]->push_back(rank_pair(curSymbol,curAssignments));
+                            	 curRankList = m_vRankedCandidates[sz-2];
+                            	 if (curRankList != NULL)
+                                   curRankList->push_back(rank_pair(curSymbol,curAssignments));
+                            	 else
+                            	 {
+                            		 curRankList = new list<rank_pair>();
+                            		 curRankList->push_back(rank_pair(curSymbol,curAssignments));
+                            		 m_vRankedCandidates[sz-2] = curRankList;
+                            	 }
                              }
                              else
                              {
