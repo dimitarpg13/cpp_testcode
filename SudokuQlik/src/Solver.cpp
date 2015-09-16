@@ -279,23 +279,23 @@ namespace sudoku
                          if (curRankList != NULL)
                          {
                              curRankList->remove_if(SymbolFinder(curSymbol));
-                             if (sz - 2 >= 0)
-                             {
-                            	 curRankList = m_vRankedCandidates[sz-2];
-                            	 if (curRankList != NULL)
-                                   curRankList->push_back(rank_pair(curSymbol,curAssignments));
-                            	 else
-                            	 {
-                            		 curRankList = new list<rank_pair>();
-                            		 curRankList->push_back(rank_pair(curSymbol,curAssignments));
-                            		 m_vRankedCandidates[sz-2] = curRankList;
-                            	 }
-                             }
-                             else
-                             {
-                            	 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
-                            	 return false;
-                             }
+//                             if (sz - 2 >= 0)
+//                             {
+//                            	 curRankList = m_vRankedCandidates[sz-2];
+//                            	 if (curRankList != NULL)
+//                                   curRankList->push_back(rank_pair(curSymbol,curAssignments));
+//                            	 else
+//                            	 {
+//                            		 curRankList = new list<rank_pair>();
+//                            		 curRankList->push_back(rank_pair(curSymbol,curAssignments));
+//                            		 m_vRankedCandidates[sz-2] = curRankList;
+//                            	 }
+//                             }
+//                             else
+//                             {
+//                            	 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+//                            	 return false;
+//                             }
                          }
                          else
                          {
@@ -440,23 +440,23 @@ namespace sudoku
 
          				 curSymbol->popLastRemoved();
 
-                         if (sz > 0)
-                         {
-                             rank_list * curRankList = m_vRankedCandidates[sz-1];
-                             if (curRankList != NULL)
-                             {
-                                  //remove the rank_pair with curSymbol from the current rank list
-                            	  // and move it to the rank list with rank one higher than the current
-                            	  curRankList->remove_if(SymbolFinder(curSymbol));
-                            	  m_vRankedCandidates[sz]->push_back(rank_pair(curSymbol,curAssignments));
-
-                             }
-                             else
-                             {
-                            	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
-                            	 return false;
-                             }
-                         }
+//                         if (sz > 0)
+//                         {
+//                             rank_list * curRankList = m_vRankedCandidates[sz-1];
+//                             if (curRankList != NULL)
+//                             {
+//                                  //remove the rank_pair with curSymbol from the current rank list
+//                            	  // and move it to the rank list with rank one higher than the current
+//                            	  curRankList->remove_if(SymbolFinder(curSymbol));
+//                            	  m_vRankedCandidates[sz]->push_back(rank_pair(curSymbol,curAssignments));
+//
+//                             }
+//                             else
+//                             {
+//                            	 m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+//                            	 return false;
+//                             }
+//                         }
                          // TO DO: figure out if this error condition is really necessary
 //                       else
 //                       {
@@ -544,6 +544,8 @@ namespace sudoku
 
   bool BTSolver::solve_internal(RankNode * head)
   {
+	  int count25=0,afterCount7HowManySymbols=0,countMark=0, allIterCount=0;
+
 	  bool res = true;
 
 	  RankNode * curNode = head;
@@ -610,6 +612,55 @@ namespace sudoku
 						curSymbol->setValue(curChar);
 						curSymbol->setLastRemoved(curChar);
 
+
+
+
+						allIterCount++;
+
+						if (curSymbol->getRow()->getIdx()==2 && curSymbol->getCol()->getIdx()==5)
+						{
+							int iii=0;
+
+							count25++;
+							iii=1;
+
+
+
+						}
+
+						if (count25==7)
+						{
+							afterCount7HowManySymbols++;
+
+
+							cout<< "[2,5] now has value: " << m_pSol->getRows()[2]->getSymbols()[5]->getValue() << endl;
+							if (m_pSol->getRows()[2]->getSymbols()[5]->getValue()==0 && countMark==0)
+							{
+								countMark=afterCount7HowManySymbols;
+							}
+
+							if (afterCount7HowManySymbols==17)
+							{
+								int kkk=0;
+							}
+
+						}
+
+						if (curSymbol->getRow()->getIdx()==4 && curSymbol->getCol()->getIdx()==3)
+						{
+							int iii=0;
+
+							iii=1;
+
+						}
+
+						if (curSymbol->getRow()->getIdx()==6 && curSymbol->getCol()->getIdx()==4)
+						{
+							int iii=0;
+
+							iii=1;
+
+						}
 
 						res = update_assignments(curSymbol);
 
@@ -719,11 +770,12 @@ namespace sudoku
 								 curNode->Val->first->setCanChoose(true);
 
 							 curNode->Val->first->resetFailedCount();
-							 restore_assignment(curNode->Val->first);
 
+							 restore_assignment(curNode->Val->first);
 
 							 if (!curNode->Val->first->isEmpty())
 							 {
+
 							   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
                                curNode->Val->first->popLastRemoved();
                                curNode->Val->first->setValue(0);
@@ -757,10 +809,12 @@ namespace sudoku
 					 // back (backtracking) one level up the solution tree if the stack
 					 // is not empty
 
+					 restore_assignment(curSymbol);
+
 					 if (!curSymbol->isEmpty())
 					 {
 						 curSymbol->resetFailedCount();
-						 restore_assignment(curSymbol);
+
 
 						curSymbol->getAssignments()->push_back(curSymbol->getValue());
 						curSymbol->setValue(0);
@@ -780,11 +834,12 @@ namespace sudoku
 							 curNode->Val->first->setCanChoose(true);
 
 						 curNode->Val->first->resetFailedCount();
-						 restore_assignment(curNode->Val->first);
 
+						 restore_assignment(curNode->Val->first);
 
 						 if (!curNode->Val->first->isEmpty())
 						 {
+
 						   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
 						   curNode->Val->first->popLastRemoved();
 						   curNode->Val->first->setValue(0);
@@ -816,6 +871,9 @@ namespace sudoku
 
 
 	  }
+
+	  cout << endl << endl << "count25=" << count25 << "  afterCount7HowManySymbols = " << afterCount7HowManySymbols
+			  << " countMark = " << countMark << allIterCount << endl << endl;
 
 	  return res;
 
