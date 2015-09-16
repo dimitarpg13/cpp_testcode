@@ -428,7 +428,16 @@ namespace sudoku
          			  if (curSymbol->getLastRemoved() == s->getValue() && !s->isEmpty())
          			  {
          				 unsigned short sz = curAssignments->size();
-         				 curAssignments->push_back(s->getValue());
+
+         				 list<char>::iterator it = find(curAssignments->begin(),curAssignments->end(),s->getValue());
+
+		                 // restore the last removed symbol value only in case it has not been done already from
+		                 // previous restore line invocation
+         				 if (it == curAssignments->end())
+         				 {
+         				    curAssignments->push_back(s->getValue());
+         				 }
+
          				 curSymbol->popLastRemoved();
 
                          if (sz > 0)
@@ -568,11 +577,9 @@ namespace sudoku
 			   // was reached so restore the assignments before the
 			   // last attempt and check for a different value to be
 			   // assigned to curSymbol
-			   res &= restore_assignment(curSymbol);
-			   if (!res)
-			   {
+			   if (!restore_assignment(curSymbol))
 				   return false;
-			   }
+
 
 			   if (!curSymbol->isEmpty())
 			      curAssignments->push_back(curSymbol->getValue());
@@ -594,7 +601,6 @@ namespace sudoku
 				   int idx = 0, sz = (int) curAssignments->size();
                    int newSz = sz - (int) curSymbol->getFailedCount();
 
-
 				   while (idx++ < newSz)
 				   { // while loop start
 					  curChar = curAssignments->front();
@@ -605,26 +611,7 @@ namespace sudoku
 						curSymbol->setLastRemoved(curChar);
 
 
-
-
-					      if (curSymbol->getRow()->getIdx()==6 && curSymbol->getCol()->getIdx()==8 &&
-							m_pSol->getRows()[6]->getSymbols()[7]->getValue()=='8' &&
-							m_pSol->getRows()[6]->getSymbols()[8]->getValue()=='1')
-					      {
-						     int iii=0;
-
-						      iii=1;
-
-
-
-					     }
-
-
-
 						res = update_assignments(curSymbol);
-
-
-
 
 
 #ifdef _DEBUG
@@ -644,11 +631,9 @@ namespace sudoku
 							   // was reached so restore the assignments before the
 							   // last attempt and check for a different value to be
 							   // assigned to curSymbol
-							   res &= restore_assignment(curSymbol);
-							   if (!res)
-							   {
-							   	   return false;
-							   }
+							   if (!restore_assignment(curSymbol))
+								   return false;
+
 							   if (!curSymbol->isEmpty())
 							   {
 							      curAssignments->push_back(curSymbol->getValue());
@@ -709,6 +694,7 @@ namespace sudoku
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
 						 curSymbol->resetFailedCount();
+
 					     restore_assignment(curSymbol);
 
 					     if (!curSymbol->isEmpty())
@@ -761,8 +747,63 @@ namespace sudoku
 				}
 				else
 				{
-				   m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
-				   return false;
+				   //m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+				   //return false;
+
+
+
+					 // No feasible assignment was found for the current symbol where
+							 // all attempts lead to an infeasible configuration. So take a step
+							 // back (backtracking) one level up the solution tree if the stack
+							 // is not empty
+
+						     if (!curSymbol->isEmpty())
+						     {
+								 curSymbol->resetFailedCount();
+							     restore_assignment(curSymbol);
+
+							    curSymbol->getAssignments()->push_back(curSymbol->getValue());
+						        curSymbol->setValue(0);
+						        curNode->Val->first->popLastRemoved();
+						     }
+
+
+							 curNode = curNode->Prev;
+
+
+
+
+							 while ( curNode != NULL && (!curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == curNode->Val->first->getAssignments()->size()))
+							 {
+
+								 if (curNode->Val->first->getFailedCount() == curNode->Val->first->getAssignments()->size())  // TO DO: check the validity of this 9-16-15 6:00am
+									 curNode->Val->first->setCanChoose(true);
+
+								 curNode->Val->first->resetFailedCount();
+								 restore_assignment(curNode->Val->first);
+
+
+								 if (!curNode->Val->first->isEmpty())
+								 {
+								   curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
+	                               curNode->Val->first->popLastRemoved();
+	                               curNode->Val->first->setValue(0);
+								 }
+
+								 curNode = curNode->Prev;
+
+							 }
+
+							 if (curNode == NULL)
+							 {
+								 // we cannot backtrack from the head of the list with the rank_pairs so it has to be
+								 // infeasible configuration
+								 m_lError |= SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION;
+								 return false;
+							 }
+
+							 continue;
+
 				}
 			}
 			else

@@ -1,12 +1,8 @@
-14:22:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
+16:45:26 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
 g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
-../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::solve_internal(sudoku::RankNode*)’:
-../src/Solver.cpp:614:16: warning: variable ‘iii’ set but not used [-Wunused-but-set-variable]
-            int iii=0;
-                ^
 Finished building: ../src/Solver.cpp
  
 Building target: SudokuQlik
@@ -15,5 +11,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Solver
 Finished building target: SudokuQlik
  
 
-14:22:31 Build Finished (took 1s.130ms)
+16:45:27 Build Finished (took 1s.225ms)
 

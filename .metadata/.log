@@ -8019,3 +8019,19 @@ java.io.FileNotFoundException: /root/workspace/SudokuQlik/Debug/SudokuQlik not f
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-16 14:48:19.752
+!MESSAGE An internal error occurred during: "Launching SudokuQlik".
+!STACK 0
+java.lang.NullPointerException
+	at java.util.TreeMap.getEntry(TreeMap.java:342)
+	at java.util.TreeMap.get(TreeMap.java:273)
+	at org.eclipse.ptp.internal.etfw.jaxb.util.JAXBExtensionUtils.getTool(JAXBExtensionUtils.java:55)
+	at org.eclipse.ptp.internal.etfw.ToolLaunchManager.launchJAXBTool(ToolLaunchManager.java:105)
+	at org.eclipse.ptp.internal.etfw.ToolLaunchManager.launch(ToolLaunchManager.java:96)
+	at org.eclipse.ptp.internal.etfw.ToolLaunchConfigurationDelegate.launch(ToolLaunchConfigurationDelegate.java:86)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
