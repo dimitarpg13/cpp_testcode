@@ -548,6 +548,7 @@ namespace sudoku
 	        curAssignments = curSymbol->getAssignments();
 	        if (!curSymbol->isEmpty())
 	        {
+
                // this symbol is not empty because the algorithm has returned to it due to backtracking
 	           // so we need to make it empty and restore the state of the enclosing containers
 		       //
@@ -561,7 +562,10 @@ namespace sudoku
 			   curAssignments->push_back(curSymbol->getValue());
 			   curSymbol->setValue(0);
 			   curSymbol->incrementFailedCount();
-			  // curSymbol->setCanChoose(true);
+
+
+
+
 
 	        }
 
@@ -575,6 +579,7 @@ namespace sudoku
 				   int idx = 0, sz = (int) curAssignments->size();
                    int newSz = sz - (int) curSymbol->getFailedCount();
 
+
 				   while (idx++ < newSz)
 				   { // while loop start
 					  curChar = curAssignments->front();
@@ -585,7 +590,10 @@ namespace sudoku
 						curSymbol->setLastRemoved(curChar);
 
 
+
 						res = update_assignments(curSymbol);
+
+
 
 #ifdef _DEBUG
 						cout << endl << "[" << (int) curSymbol->getRow()->getIdx()
@@ -658,22 +666,21 @@ namespace sudoku
 						 // back (backtracking) one level up the solution tree if the stack
 						 // is not empty
 
-						 curNode->Val->first->resetFailedCount();
-					     restore_assignment(curNode->Val->first);
-						 curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
-						 curSymbol->setValue(0);
+
+						 curSymbol->resetFailedCount();
+					     restore_assignment(curSymbol);
+						 curSymbol->getAssignments()->push_back(curSymbol->getValue());
+					     curSymbol->setValue(0);
 
 						 curNode = curNode->Prev;
 
 
-						 while ( curNode != NULL && (!curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == sz) )
+						 while ( curNode != NULL && !(curNode->Val->first->getCanChoose() || curNode->Val->first->getFailedCount() == sz) )
 						 {
-
 							 curNode->Val->first->resetFailedCount();
 							 restore_assignment(curNode->Val->first);
 							 curNode->Val->first->getAssignments()->push_back(curNode->Val->first->getValue());
-							 curSymbol->setValue(0);
-
+							 curNode->Val->first->setValue(0);
 							 curNode = curNode->Prev;
 						 }
 
