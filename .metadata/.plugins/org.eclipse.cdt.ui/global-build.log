@@ -818,3 +818,97 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+18:58:22 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+In file included from /usr/include/_G_config.h:15:0,
+                 from /usr/include/libio.h:31,
+                 from /usr/include/stdio.h:74,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/Sudoku.h:14,
+                 from ../src/Solver.h:16,
+                 from ../src/Solver.cpp:8:
+../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::validate()’:
+../src/Solver.cpp:818:48: error: conversion from ‘long int’ to non-scalar type ‘sudoku::Symbol’ requested
+       Symbol * curSymbSol = NULL, curSymbSrc = NULL;
+                                                ^
+../src/Solver.cpp:818:16: warning: unused variable ‘curSymbSol’ [-Wunused-variable]
+       Symbol * curSymbSol = NULL, curSymbSrc = NULL;
+                ^
+make: *** [src/Solver.o] Error 1
+18:58:33 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::validate()’:
+../src/Solver.cpp:818:16: warning: unused variable ‘curSymbSol’ [-Wunused-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                ^
+../src/Solver.cpp:818:37: warning: unused variable ‘curSymbSrc’ [-Wunused-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                                     ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:07:27 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::validate()’:
+../src/Solver.cpp:818:16: warning: variable ‘curSymbSol’ set but not used [-Wunused-but-set-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                ^
+../src/Solver.cpp:818:37: warning: variable ‘curSymbSrc’ set but not used [-Wunused-but-set-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                                     ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+19:10:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::validate()’:
+../src/Solver.cpp:818:16: warning: variable ‘curSymbSol’ set but not used [-Wunused-but-set-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                ^
+../src/Solver.cpp:818:37: warning: variable ‘curSymbSrc’ set but not used [-Wunused-but-set-variable]
+       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+                                     ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 

@@ -818,8 +818,7 @@ namespace sudoku
       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
       while (headSol != NULL)
       {
-          curSymbSol = headSol->Val->first;
-          curSymbSrc = headSrc->Val->first;
+
 
 
 

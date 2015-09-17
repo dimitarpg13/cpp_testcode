@@ -813,18 +813,17 @@ namespace sudoku
       RankNode * headSol = m_lstRankedCandidates;
 
       // the second list serves as a scratch pad in the validation process
-	  RankNode * headSrc = init_rank_node_list(m_vRankedCandidatesCopy);
+	  RankNode * headValid = init_rank_node_list(m_vRankedCandidatesCopy);
 
-      Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+
       while (headSol != NULL)
       {
-          curSymbSol = headSol->Val->first;
-          curSymbSrc = headSrc->Val->first;
+
 
 
 
     	  headSol = headSol->Next;
-    	  headSrc = headSrc->Next;
+    	  headValid = headValid->Next;
       }
 
 
