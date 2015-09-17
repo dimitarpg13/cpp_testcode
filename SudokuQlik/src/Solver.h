@@ -118,7 +118,10 @@ struct SymbolFinder {
 class BTSolver : public Solver
 {
 public:
-	BTSolver(Puzzle * puzzle) : Solver(puzzle), m_iRankCount(0)
+	BTSolver(Puzzle * puzzle) : Solver(puzzle),
+	m_iRankCount(0),
+	m_lstRankedCandidates(NULL),
+	m_lstRankedCandidatesCopy(NULL)
     {
 	    if (puzzle != NULL)
 	    {
@@ -137,13 +140,16 @@ public:
     };
 private:
 
+    unsigned short m_iRankCount;
+
 	// the map entry key is the number of possible assignments available for the current candidate
 	// the map entry value is a list of pairs where the pair key is the current empty symbol which
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
 	vector<rank_list *> m_vRankedCandidates;
+
 	RankNode * m_lstRankedCandidates;
-	unsigned short m_iRankCount;
+	RankNode * m_lstRankedCandidatesCopy; // for the validation code
 
 	bool assign_rank_to_candidates(vector<rank_list *> &);
 	bool get_available_assignments(Symbol *,list<char> &);
@@ -166,6 +172,7 @@ private:
 	bool restore_region(Symbol *, Region *);
 	bool restore_assignment(Symbol *);
 
+	bool copy_rank_list(RankNode * const headSrc, RankNode ** headCopy);
 
 
 	// helper methods for debugging

@@ -803,12 +803,31 @@ namespace sudoku
   bool BTSolver::validate()
   {
 	  bool res = true;
-      RankNode * head = m_lstRankedCandidates;
+
+	  vector<rank_list *>  newRankedCandidates(m_pSrc->getDim(),NULL);
+
+
+      RankNode * head = NULL;
+
+      while (head != NULL)
+      {
+
+
+    	  head = head->Next;
+      }
+
 
 
 	  return res;
   }
 
+
+  bool BTSolver::copy_rank_list(RankNode * const headSrc, RankNode ** headCopy)
+  {
+	  bool res = true;
+
+	  return res;
+  }
 
   void Solver::printToConsole()
   {
