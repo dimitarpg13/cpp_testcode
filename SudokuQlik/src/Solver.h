@@ -24,7 +24,8 @@ class Solver
 {
 protected:
 	Puzzle * m_pSrc;
-	Puzzle * m_pSol;
+	Puzzle * m_pSol; // to obtain the solution using depth-first search
+	Puzzle * m_pValid; // for validation of the solution
 	long long m_lError;
 
 public:
@@ -58,6 +59,7 @@ public:
     	if (m_pSrc != NULL)
     	{
           m_pSol = m_pSrc->getCopy();
+          m_pValid = m_pSrc->getCopy();
           m_lError |= m_pSrc->getError();
     	}
     	else
@@ -75,7 +77,8 @@ public:
 
     virtual ~Solver()
     {
-	   // TO DO: do base class clean-up
+	   delete m_pSol;
+	   delete m_pValid;
     };
 
 };
