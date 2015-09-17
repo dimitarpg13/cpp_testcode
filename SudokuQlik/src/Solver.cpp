@@ -803,6 +803,7 @@ namespace sudoku
   bool BTSolver::validate()
   {
 	  bool res = true;
+      RankNode * head = m_lstRankedCandidates;
 
 
 	  return res;

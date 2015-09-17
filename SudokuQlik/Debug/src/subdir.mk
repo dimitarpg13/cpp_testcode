@@ -4,16 +4,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/Generator.cpp \
 ../src/Solver.cpp \
 ../src/Sudoku.cpp \
 ../src/SudokuQlik.cpp 
 
 OBJS += \
+./src/Generator.o \
 ./src/Solver.o \
 ./src/Sudoku.o \
 ./src/SudokuQlik.o 
 
 CPP_DEPS += \
+./src/Generator.d \
 ./src/Solver.d \
 ./src/Sudoku.d \
 ./src/SudokuQlik.d 
