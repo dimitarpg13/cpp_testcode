@@ -172,7 +172,7 @@ private:
 	bool restore_region(Symbol *, Region *);
 	bool restore_assignment(Symbol *);
 
-	bool copy_rank_list(RankNode * const headSrc, RankNode ** headCopy);
+	bool copy_rank_list(const RankNode * headSrc, RankNode ** headCopy);
 
 
 	// helper methods for debugging

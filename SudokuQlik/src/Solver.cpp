@@ -79,6 +79,9 @@ namespace sudoku
 
       m_lstRankedCandidates = init_rank_node_list(m_vRankedCandidates);
 
+      res &= copy_rank_list(m_lstRankedCandidates,&m_lstRankedCandidatesCopy);
+
+
       res &= solve_internal(m_lstRankedCandidates);
 
 
@@ -804,7 +807,7 @@ namespace sudoku
   {
 	  bool res = true;
 
-	  vector<rank_list *>  newRankedCandidates(m_pSrc->getDim(),NULL);
+
 
 
       RankNode * head = NULL;
@@ -822,9 +825,15 @@ namespace sudoku
   }
 
 
-  bool BTSolver::copy_rank_list(RankNode * const headSrc, RankNode ** headCopy)
+  bool BTSolver::copy_rank_list(const RankNode * headSrc, RankNode ** headCopy)
   {
 	  bool res = true;
+
+	  RankNode * curSrc = NULL;
+	  while (headSrc != NULL)
+	  {
+		  headSrc = headSrc->Next;
+	  }
 
 	  return res;
   }
