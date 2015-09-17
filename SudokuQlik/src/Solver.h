@@ -86,7 +86,6 @@ typedef list<rank_pair>  rank_list;
 struct RankNode
 {
 	RankNode (rank_pair * val) : Val(val), Prev(NULL), Next(NULL) {};
-
 	rank_pair * Val;
 	RankNode * Prev;
 	RankNode * Next;
@@ -120,8 +119,7 @@ class BTSolver : public Solver
 public:
 	BTSolver(Puzzle * puzzle) : Solver(puzzle),
 	m_iRankCount(0),
-	m_lstRankedCandidates(NULL),
-	m_lstRankedCandidatesCopy(NULL)
+	m_lstRankedCandidates(NULL)
     {
 	    if (puzzle != NULL)
 	    {
@@ -149,7 +147,7 @@ private:
 	vector<rank_list *> m_vRankedCandidates;
 
 	RankNode * m_lstRankedCandidates;
-	RankNode * m_lstRankedCandidatesCopy; // for the validation code
+
 
 	bool assign_rank_to_candidates(vector<rank_list *> &);
 	bool get_available_assignments(Symbol *,list<char> &);
@@ -171,8 +169,6 @@ private:
 	bool restore_line(Symbol *, Line *);
 	bool restore_region(Symbol *, Region *);
 	bool restore_assignment(Symbol *);
-
-	bool copy_rank_list(const RankNode * headSrc, RankNode ** headCopy);
 
 
 	// helper methods for debugging

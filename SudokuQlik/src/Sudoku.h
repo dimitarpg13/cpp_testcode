@@ -72,6 +72,8 @@ public:
 	{ }
 
 
+
+
 	~Symbol() { if (m_pAssignments != NULL) delete m_pAssignments; }
 
 	bool isEmpty() {  return m_cVal == 0; }

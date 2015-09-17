@@ -357,3 +357,134 @@ Invoking: GCC C++ Linker
 g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
 Finished building target: SudokuQlik
  
+17:55:23 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:427:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::copy_rank_list(const sudoku::RankNode*, sudoku::RankNode**)’:
+../src/Solver.cpp:832:15: warning: unused variable ‘curNode’ [-Wunused-variable]
+    RankNode * curNode = NULL;
+               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+17:58:30 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:427:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::copy_rank_list(const sudoku::RankNode*, sudoku::RankNode**)’:
+../src/Solver.cpp:832:15: warning: unused variable ‘curNode’ [-Wunused-variable]
+    RankNode * curNode = NULL;
+               ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+18:00:04 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:427:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::copy_rank_list(const sudoku::RankNode*, sudoku::RankNode**)’:
+../src/Solver.cpp:832:15: warning: unused variable ‘curNode’ [-Wunused-variable]
+    RankNode * curNode = NULL;
+               ^
+Finished building: ../src/Solver.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+18:17:54 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:427:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::copy_rank_list(const sudoku::RankNode*, sudoku::RankNode**)’:
+../src/Solver.cpp:832:15: warning: unused variable ‘curNode’ [-Wunused-variable]
+    RankNode * curNode = NULL;
+               ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/Sudoku.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Sudoku.d" -MT"src/Sudoku.d" -o "src/Sudoku.o" "../src/Sudoku.cpp"
+Finished building: ../src/Sudoku.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
+18:19:25 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+In file included from ../src/Solver.cpp:8:0:
+../src/Solver.h: In constructor ‘sudoku::BTSolver::BTSolver(sudoku::Puzzle*)’:
+../src/Solver.h:123:2: error: class ‘sudoku::BTSolver’ does not have any field named ‘m_lstRankedCandidatesCopy’
+  m_lstRankedCandidatesCopy(NULL)
+  ^
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+make: *** [src/Solver.o] Error 1
+18:20:16 **** Incremental Build of configuration Debug for project SudokuQlik ****
+make all 
+Building file: ../src/Solver.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
+../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
+../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+               unsigned short sz = curAssignments->size();
+                              ^
+Finished building: ../src/Solver.cpp
+ 
+Building file: ../src/SudokuQlik.cpp
+Invoking: GCC C++ Compiler
+g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SudokuQlik.d" -MT"src/SudokuQlik.d" -o "src/SudokuQlik.o" "../src/SudokuQlik.cpp"
+Finished building: ../src/SudokuQlik.cpp
+ 
+Building target: SudokuQlik
+Invoking: GCC C++ Linker
+g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Generator.o ./src/Solver.o ./src/Sudoku.o ./src/SudokuQlik.o   -lboost_system -lboost_thread
+Finished building target: SudokuQlik
+ 
