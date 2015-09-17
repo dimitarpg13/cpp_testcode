@@ -63,10 +63,7 @@ public:
           m_lError |= m_pSrc->getError();
     	}
     	else
-    	{
     	  m_pSol = NULL;
-    	  m_pValid = NULL;
-    	}
     }
 
     long long getError() { return m_lError; };
@@ -80,10 +77,8 @@ public:
 
     virtual ~Solver()
     {
-    	if (m_pSol != NULL)
-	       delete m_pSol;
-    	if (m_pValid != NULL)
-	       delete m_pValid;
+	   delete m_pSol;
+	   delete m_pValid;
     };
 
 };
