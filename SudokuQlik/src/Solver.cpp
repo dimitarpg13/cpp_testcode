@@ -810,18 +810,20 @@ namespace sudoku
 	  if (!res)
 	      return res;
 
+      RankNode * headSol = m_lstRankedCandidates;
 
-	  m_lstRankedCandidatesCopy = init_rank_node_list(m_vRankedCandidatesCopy);
+      // the second list serves as a scratch pad in the validation process
+	  RankNode * headValid = init_rank_node_list(m_vRankedCandidatesCopy);
 
 
-
-      RankNode * head = NULL;
-
-      while (head != NULL)
+      while (headSol != NULL)
       {
 
 
-    	  head = head->Next;
+
+
+    	  headSol = headSol->Next;
+    	  headValid = headValid->Next;
       }
 
 

@@ -127,8 +127,7 @@ class BTSolver : public Solver
 public:
 	BTSolver(Puzzle * puzzle) : Solver(puzzle),
 	m_iRankCount(0),
-	m_lstRankedCandidates(NULL),
-	m_lstRankedCandidatesCopy(NULL)
+	m_lstRankedCandidates(NULL)
     {
 	    if (puzzle != NULL)
 	    {
@@ -155,10 +154,8 @@ private:
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
 	vector<rank_list *> m_vRankedCandidates; // used to find the solution by depth-first search
-	vector<rank_list *> m_vRankedCandidatesCopy; // for validation purposes
+	vector<rank_list *> m_vRankedCandidatesCopy; // used for validation purposes
 	RankNode * m_lstRankedCandidates; // used to keep the found solution
-    RankNode * m_lstRankedCandidatesCopy; // used for validation purposes
-
 
 	bool assign_rank_to_candidates(Puzzle *, vector<rank_list *> &);
 	bool get_available_assignments(Symbol *,list<char> &);
