@@ -67,7 +67,7 @@ namespace sudoku
   bool BTSolver::solve()
   {
 	  bool res = true;
-      res &= assign_rank_to_candidates(m_vRankedCandidates);
+      res &= assign_rank_to_candidates(m_pSol,m_vRankedCandidates);
       if (!res)
     	  return res;
 
@@ -170,11 +170,11 @@ namespace sudoku
   }
 
 
-  bool BTSolver::assign_rank_to_candidates(
+  bool BTSolver::assign_rank_to_candidates(Puzzle * puzzle,
 		  vector<rank_list *> & rankedCandidates)
   {
      bool res=true;
-     if (m_pSol != NULL && m_lError == 0)
+     if (puzzle != NULL && m_lError == 0)
      {
     	HorizLine *  curRow=NULL;
     	Symbol * curSymbol=NULL;
@@ -182,10 +182,10 @@ namespace sudoku
     	unsigned short curRank=0;
     	rank_list * curRankList = NULL;
 
-        for (int i = 0; i < m_pSol->getDim(); i++)
+        for (int i = 0; i < puzzle->getDim(); i++)
         {
-           curRow = m_pSol->getRows()[i];
-           for (int j = 0; j < m_pSol->getDim(); j++)
+           curRow = puzzle->getRows()[i];
+           for (int j = 0; j < puzzle->getDim(); j++)
            {
         	   if (curRow == NULL)
         	   {
@@ -805,6 +805,13 @@ namespace sudoku
   {
 	  bool res = true;
 
+
+	  res &= assign_rank_to_candidates(m_pValid,m_vRankedCandidatesCopy);
+	  if (!res)
+	      return res;
+
+
+	  m_lstRankedCandidatesCopy = init_rank_node_list(m_vRankedCandidatesCopy);
 
 
 

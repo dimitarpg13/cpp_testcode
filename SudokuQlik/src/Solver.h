@@ -127,11 +127,13 @@ class BTSolver : public Solver
 public:
 	BTSolver(Puzzle * puzzle) : Solver(puzzle),
 	m_iRankCount(0),
-	m_lstRankedCandidates(NULL)
+	m_lstRankedCandidates(NULL),
+	m_lstRankedCandidatesCopy(NULL)
     {
 	    if (puzzle != NULL)
 	    {
 	    	m_vRankedCandidates.resize(puzzle->getDim(),NULL);
+	    	m_vRankedCandidatesCopy.resize(puzzle->getDim(),NULL);
 	    }
     };
 
@@ -152,12 +154,13 @@ private:
 	// the map entry value is a list of pairs where the pair key is the current empty symbol which
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
-	vector<rank_list *> m_vRankedCandidates;
+	vector<rank_list *> m_vRankedCandidates; // used to find the solution by depth-first search
+	vector<rank_list *> m_vRankedCandidatesCopy; // for validation purposes
+	RankNode * m_lstRankedCandidates; // used to keep the found solution
+    RankNode * m_lstRankedCandidatesCopy; // used for validation purposes
 
-	RankNode * m_lstRankedCandidates;
 
-
-	bool assign_rank_to_candidates(vector<rank_list *> &);
+	bool assign_rank_to_candidates(Puzzle *, vector<rank_list *> &);
 	bool get_available_assignments(Symbol *,list<char> &);
 	bool process_line_assignments(Line *, set<char> &);
 	bool process_region_assignments(Region *, set<char>&);
