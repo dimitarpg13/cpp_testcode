@@ -1,6 +1,6 @@
-21:04:51 **** Build of configuration Debug for project AlgorithmsRedBlackTree ****
+13:03:13 **** Incremental Build of configuration Debug for project AlgorithmsRedBlackTree ****
 make all 
 make: Nothing to be done for `all'.
 
-21:04:51 Build Finished (took 69ms)
+13:03:13 Build Finished (took 91ms)
 
