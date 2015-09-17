@@ -70,7 +70,6 @@ public:
 
     void printToConsole();
 
-    // validates the solution and verifies uniqueness
     virtual bool validate() = 0;
 
     virtual ~Solver()
@@ -127,8 +126,6 @@ public:
     };
 
 	bool solve();
-	bool validate();
-
     ~BTSolver()
     {
     	for (vector<rank_list *>::iterator it = m_vRankedCandidates.begin(); it != m_vRankedCandidates.end(); it++)

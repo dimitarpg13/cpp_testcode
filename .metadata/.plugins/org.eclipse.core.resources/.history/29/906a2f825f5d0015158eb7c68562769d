@@ -70,9 +70,6 @@ public:
 
     void printToConsole();
 
-    // validates the solution and verifies uniqueness
-    virtual bool validate() = 0;
-
     virtual ~Solver()
     {
 	   // TO DO: do base class clean-up
@@ -127,8 +124,6 @@ public:
     };
 
 	bool solve();
-	bool validate();
-
     ~BTSolver()
     {
     	for (vector<rank_list *>::iterator it = m_vRankedCandidates.begin(); it != m_vRankedCandidates.end(); it++)
@@ -165,8 +160,6 @@ private:
 	bool restore_line(Symbol *, Line *);
 	bool restore_region(Symbol *, Region *);
 	bool restore_assignment(Symbol *);
-
-
 
 	// helper methods for debugging
 	void print_ranked_candidates(vector<rank_list *> &);

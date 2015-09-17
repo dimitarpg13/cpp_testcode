@@ -799,24 +799,11 @@ namespace sudoku
   }
 
 
-  // validates the solution and verifies uniqueness
-  bool BTSolver::validate()
-  {
-	  bool res = true;
-
-
-	  return res;
-  }
-
-
   void Solver::printToConsole()
   {
 	  if (m_pSol != NULL)
 		  m_pSol->printToConsole();
   }
-
-
-
 
 
 }

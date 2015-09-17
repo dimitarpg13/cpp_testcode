@@ -799,7 +799,6 @@ namespace sudoku
   }
 
 
-  // validates the solution and verifies uniqueness
   bool BTSolver::validate()
   {
 	  bool res = true;

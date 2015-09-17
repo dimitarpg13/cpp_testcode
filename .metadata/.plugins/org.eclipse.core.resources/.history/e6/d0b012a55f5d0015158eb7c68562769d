@@ -127,8 +127,6 @@ public:
     };
 
 	bool solve();
-	bool validate();
-
     ~BTSolver()
     {
     	for (vector<rank_list *>::iterator it = m_vRankedCandidates.begin(); it != m_vRankedCandidates.end(); it++)
