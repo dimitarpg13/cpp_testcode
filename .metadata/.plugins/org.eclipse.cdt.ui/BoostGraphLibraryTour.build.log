@@ -1,0 +1,19 @@
+21:12:04 **** Incremental Build of configuration Debug for project BoostGraphLibraryTour ****
+make all 
+Building file: ../src/BoostGraphLibraryTour.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostGraphLibraryTour.d" -MT"src/BoostGraphLibraryTour.d" -o "src/BoostGraphLibraryTour.o" "../src/BoostGraphLibraryTour.cpp"
+../src/BoostGraphLibraryTour.cpp: In function ‘void create_graph()’:
+../src/BoostGraphLibraryTour.cpp:26:18: warning: unused variable ‘name’ [-Wunused-variable]
+     const char * name = "ABCDE";
+                  ^
+Finished building: ../src/BoostGraphLibraryTour.cpp
+ 
+Building target: BoostGraphLibraryTour
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostGraphLibraryTour"  ./src/BoostGraphLibraryTour.o   -lboost_system -lboost_thread
+Finished building target: BoostGraphLibraryTour
+ 
+
+21:12:09 Build Finished (took 4s.787ms)
+

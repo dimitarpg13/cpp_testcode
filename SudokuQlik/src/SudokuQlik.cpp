@@ -54,92 +54,92 @@ int main() {
     cout << endl << endl;
 
 
-    cout << "example2:" << endl;
-    p->load("./src/example2.txt");
-    s = new BTSolver(p);
-    if (!s->solve())
-    {
-	  if (s->getError() > 0)
-      {
-		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
-		{
-			cout << endl << "Unsolvable configuration!!!" << endl;
-		}
-		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
-		{
-			cout << endl << "Inconsistent internal state!!!" << endl;
-		}
-	  }
-    }
-
-    if (!s->validate())
-    {
-       	cout << "The solution is not unique!" << endl;
-    }
-
-    cout << endl << "The solution is:" << endl;
-    s->printToConsole();
-    delete s;
-    cout << endl << endl;
-
-
-    cout << "example3:" << endl;
-    p->load("./src/example3.txt");
-    s = new BTSolver(p);
-    if (!s->solve())
-    {
-    	if (s->getError() > 0)
-    	{
-    		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
-    		{
-    			cout << endl << "Unsolvable configuration!!!" << endl;
-    		}
-    		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
-    		{
-    			cout << endl << "Inconsistent internal state!!!" << endl;
-    		}
-    	}
-    }
-
-    if (!s->validate())
-    {
-       	cout << "The solution is not unique!" << endl;
-    }
-
-    cout << endl << "The solution of example3 is:" << endl;
-    s->printToConsole();
-    delete s;
-    cout << endl << endl;
-
-
-
-    cout << "example4:" << endl;
-    p->load("./src/example4.txt");
-    s = new BTSolver(p);
-    if (!s->solve())
-    {
-     	if (s->getError() > 0)
-     	{
-     		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
-     		{
-     			cout << endl << "Unsolvable configuration!!!" << endl;
-     		}
-     		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
-     		{
-     			cout << endl << "Inconsistent internal state!!!" << endl;
-     		}
-     	}
-    }
-
-    if (!s->validate())
-    {
-       	cout << "The solution is not unique!" << endl;
-    }
-
-    cout << endl << "The solution of example4 is:" << endl;
-    s->printToConsole();
-    delete s;
-    cout << endl << endl;
+//    cout << "example2:" << endl;
+//    p->load("./src/example2.txt");
+//    s = new BTSolver(p);
+//    if (!s->solve())
+//    {
+//	  if (s->getError() > 0)
+//      {
+//		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+//		{
+//			cout << endl << "Unsolvable configuration!!!" << endl;
+//		}
+//		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+//		{
+//			cout << endl << "Inconsistent internal state!!!" << endl;
+//		}
+//	  }
+//    }
+//
+//    if (!s->validate())
+//    {
+//       	cout << "The solution is not unique!" << endl;
+//    }
+//
+//    cout << endl << "The solution is:" << endl;
+//    s->printToConsole();
+//    delete s;
+//    cout << endl << endl;
+//
+//
+//    cout << "example3:" << endl;
+//    p->load("./src/example3.txt");
+//    s = new BTSolver(p);
+//    if (!s->solve())
+//    {
+//    	if (s->getError() > 0)
+//    	{
+//    		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+//    		{
+//    			cout << endl << "Unsolvable configuration!!!" << endl;
+//    		}
+//    		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+//    		{
+//    			cout << endl << "Inconsistent internal state!!!" << endl;
+//    		}
+//    	}
+//    }
+//
+//    if (!s->validate())
+//    {
+//       	cout << "The solution is not unique!" << endl;
+//    }
+//
+//    cout << endl << "The solution of example3 is:" << endl;
+//    s->printToConsole();
+//    delete s;
+//    cout << endl << endl;
+//
+//
+//
+//    cout << "example4:" << endl;
+//    p->load("./src/example4.txt");
+//    s = new BTSolver(p);
+//    if (!s->solve())
+//    {
+//     	if (s->getError() > 0)
+//     	{
+//     		if (s->getError() & SUDOKU_ERROR_UNSOLVABLE_CONFIGURATION)
+//     		{
+//     			cout << endl << "Unsolvable configuration!!!" << endl;
+//     		}
+//     		else if (s->getError() & SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE)
+//     		{
+//     			cout << endl << "Inconsistent internal state!!!" << endl;
+//     		}
+//     	}
+//    }
+//
+//    if (!s->validate())
+//    {
+//       	cout << "The solution is not unique!" << endl;
+//    }
+//
+//    cout << endl << "The solution of example4 is:" << endl;
+//    s->printToConsole();
+//    delete s;
+//    cout << endl << endl;
 
 
 

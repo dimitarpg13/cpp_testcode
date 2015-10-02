@@ -367,7 +367,10 @@ Puzzle * const Puzzle::getCopy()
       	    }
 
             curSymbol = curRow->getSymbols()[j];
-            copySymbol = new Symbol(curSymbol->getValue(),copyRow,copyCol,copyRegion);
+            if (curSymbol->isEmpty())
+               copySymbol = new Symbol(copyRow,copyCol,copyRegion);
+            else
+               copySymbol = new Symbol(curSymbol->getValue(),copyRow,copyCol,copyRegion);
             copyRow->addSymbol(copySymbol);
             if (j % m_iRegionDim == 0)
                 copyRow->addRegion(copyRegion);

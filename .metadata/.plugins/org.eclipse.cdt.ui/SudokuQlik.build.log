@@ -1,19 +1,16 @@
-19:10:08 **** Incremental Build of configuration Debug for project SudokuQlik ****
+20:47:25 **** Incremental Build of configuration Debug for project SudokuQlik ****
 make all 
 Building file: ../src/Solver.cpp
 Invoking: GCC C++ Compiler
 g++ -D_DEBUG=1 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Solver.d" -MT"src/Solver.d" -o "src/Solver.o" "../src/Solver.cpp"
 ../src/Solver.cpp: In member function ‘bool sudoku::BTSolver::restore_symbol(sudoku::Symbol*, sudoku::Symbol**, unsigned char)’:
-../src/Solver.cpp:425:30: warning: unused variable ‘sz’ [-Wunused-variable]
+../src/Solver.cpp:424:30: warning: unused variable ‘sz’ [-Wunused-variable]
                unsigned short sz = curAssignments->size();
                               ^
 ../src/Solver.cpp: In member function ‘virtual bool sudoku::BTSolver::validate()’:
-../src/Solver.cpp:818:16: warning: variable ‘curSymbSol’ set but not used [-Wunused-but-set-variable]
-       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
-                ^
-../src/Solver.cpp:818:37: warning: variable ‘curSymbSrc’ set but not used [-Wunused-but-set-variable]
-       Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
-                                     ^
+../src/Solver.cpp:808:15: warning: unused variable ‘srcCopy’ [-Wunused-variable]
+      Puzzle * srcCopy = m_pSrc->getCopy();
+               ^
 Finished building: ../src/Solver.cpp
  
 Building target: SudokuQlik
@@ -22,5 +19,5 @@ g++ -pthread -L-L/opt/boost/boost_1_57_0/stage/lib -o "SudokuQlik"  ./src/Genera
 Finished building target: SudokuQlik
  
 
-19:10:10 Build Finished (took 1s.173ms)
+20:47:26 Build Finished (took 1s.169ms)
 

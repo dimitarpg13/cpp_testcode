@@ -25,7 +25,6 @@ class Solver
 protected:
 	Puzzle * m_pSrc;
 	Puzzle * m_pSol; // to obtain the solution using depth-first search
-	Puzzle * m_pValid; // for validation of the solution
 	long long m_lError;
 
 public:
@@ -59,13 +58,11 @@ public:
     	if (m_pSrc != NULL)
     	{
           m_pSol = m_pSrc->getCopy();
-          m_pValid = m_pSrc->getCopy();
           m_lError |= m_pSrc->getError();
     	}
     	else
     	{
     	  m_pSol = NULL;
-    	  m_pValid = NULL;
     	}
     }
 
@@ -82,8 +79,6 @@ public:
     {
     	if (m_pSol != NULL)
 	       delete m_pSol;
-    	if (m_pValid != NULL)
-	       delete m_pValid;
     };
 
 };
@@ -132,7 +127,6 @@ public:
 	    if (puzzle != NULL)
 	    {
 	    	m_vRankedCandidates.resize(puzzle->getDim(),NULL);
-	    	m_vRankedCandidatesCopy.resize(puzzle->getDim(),NULL);
 	    }
     };
 
@@ -154,7 +148,6 @@ private:
 	// needs to be assigned a value and the pair vaue is a list of possible assignments available.
 	//
 	vector<rank_list *> m_vRankedCandidates; // used to find the solution by depth-first search
-	vector<rank_list *> m_vRankedCandidatesCopy; // used for validation purposes
 	RankNode * m_lstRankedCandidates; // used to keep the found solution
 
 	bool assign_rank_to_candidates(Puzzle *, vector<rank_list *> &);

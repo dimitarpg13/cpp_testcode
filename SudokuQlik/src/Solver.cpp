@@ -82,7 +82,6 @@ namespace sudoku
 
       res &= solve_internal(m_lstRankedCandidates);
 
-
 	  return res;
   }
 
@@ -806,26 +805,53 @@ namespace sudoku
 	  bool res = true;
 
 
-	  res &= assign_rank_to_candidates(m_pValid,m_vRankedCandidatesCopy);
-	  if (!res)
-	      return res;
+     Puzzle * srcCopy = m_pSrc->getCopy();
+
+    //    vector<rank_list *> rankedCandidatesCopy(m_pSrc->getDim(),NULL);
+	 // res &= assign_rank_to_candidates(srcCopy,rankedCandidatesCopy);
+	 // if (!res)
+	 //     return res;
 
       RankNode * headSol = m_lstRankedCandidates;
 
       // the second list serves as a scratch pad in the validation process
-	  RankNode * headSrc = init_rank_node_list(m_vRankedCandidatesCopy);
+	//  RankNode * headSrc = init_rank_node_list(rankedCandidatesCopy);
 
-      Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
-      while (headSol != NULL)
-      {
-          curSymbSol = headSol->Val->first;
-          curSymbSrc = headSrc->Val->first;
+	  while (headSol != NULL)
+	  {
+		  cout << "[" << (int) headSol->Val->first->getRow()->getIdx() << "," << (int) headSol->Val->first->getCol()->getIdx() << "]" <<  headSol->Val->first->getValue() << endl;
+		  headSol=headSol->Next;
+	  }
+
+//	  while (headSrc != NULL)
+//	  {
+//		  cout << "[" << (int) headSrc->Val->first->getRow()->getIdx() << "," << (int) headSrc->Val->first->getCol()->getIdx() << "]" <<  headSrc->Val->first->getValue() << endl;
+//		  headSrc=headSrc->Next;
+//	  }
 
 
 
-    	  headSol = headSol->Next;
-    	  headSrc = headSrc->Next;
-      }
+
+//      Symbol * curSymbSol = NULL, * curSymbSrc = NULL;
+//      list<char> * curListSrc = NULL;
+//      list<char>::iterator itA;
+//      while (headSol != NULL)
+//      {
+//          curSymbSol = headSol->Val->first;
+//          curSymbSrc = headSrc->Val->first;
+//
+//          curListSrc = curSymbSrc->getAssignments();
+//
+//          itA = find(curListSrc->begin(),curListSrc->end(),curSymbSol->getValue());
+//          if (itA == curListSrc->end())
+//          {
+//        	   m_lError |= SUDOKU_ERROR_INCONSISTENT_INTERNAL_STATE;
+//               return false;
+//          }
+//
+//    	  headSol = headSol->Next;
+//    	  headSrc = headSrc->Next;
+//      }
 
 
 
