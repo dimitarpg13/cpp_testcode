@@ -17,3 +17,388 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
+21:41:05 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘int main()’:
+../src/BoostAppDevCookbookCh2.cpp:41:2: error: ‘cout’ was not declared in this scope
+  cout << "Boost C++ Application Development Cookbook Chapter 2" << endl; // prints Boost C++ Application Development Cookbook
+  ^
+../src/BoostAppDevCookbookCh2.cpp:41:2: note: suggested alternative:
+In file included from ../src/BoostAppDevCookbookCh2.cpp:15:0:
+/usr/include/c++/4.8/iostream:61:18: note:   ‘std::cout’
+   extern ostream cout;  /// Linked to standard output
+                  ^
+../src/BoostAppDevCookbookCh2.cpp:41:68: error: ‘endl’ was not declared in this scope
+  cout << "Boost C++ Application Development Cookbook Chapter 2" << endl; // prints Boost C++ Application Development Cookbook
+                                                                    ^
+../src/BoostAppDevCookbookCh2.cpp:41:68: note: suggested alternative:
+In file included from /usr/include/c++/4.8/iostream:39:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:15:
+/usr/include/c++/4.8/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+21:41:38 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:52:05 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp:55:1: error: expected ‘;’ after struct definition
+ }
+ ^
+../src/BoostAppDevCookbookCh2.cpp: In member function ‘void db_sum::operator()(const cell_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:51:26: warning: unused variable ‘ti’ [-Wunused-variable]
+   const std::type_info & ti =
+                          ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+21:52:59 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In member function ‘void db_sum::operator()(const cell_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:51:26: warning: unused variable ‘ti’ [-Wunused-variable]
+   const std::type_info & ti =
+                          ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+22:48:59 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+22:58:32 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp:88:1: error: expected ‘;’ after struct definition
+ }
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+22:58:56 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+23:02:42 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_variant_example()’:
+../src/BoostAppDevCookbookCh2.cpp:107:48: error: expected primary-expression before ‘)’ token
+      boost::apply_visitor(db_sum_visitor(), it*);
+                                                ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+23:03:24 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+In file included from /usr/local/include/boost/variant/apply_visitor.hpp:16:0,
+                 from /usr/local/include/boost/variant/detail/hash_variant.hpp:23,
+                 from /usr/local/include/boost/variant/variant.hpp:34,
+                 from /usr/local/include/boost/variant.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:12:
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp: In instantiation of ‘typename Visitor::result_type boost::apply_visitor(const Visitor&, Visitable&) [with Visitor = db_sum_visitor; Visitable = const boost::any; typename Visitor::result_type = double]’:
+../src/BoostAppDevCookbookCh2.cpp:107:48:   required from here
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp:74:43: error: ‘const class boost::any’ has no member named ‘apply_visitor’
+     return visitable.apply_visitor(visitor);
+                                           ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+23:07:52 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+In file included from /usr/local/include/boost/variant/apply_visitor.hpp:16:0,
+                 from /usr/local/include/boost/variant/detail/hash_variant.hpp:23,
+                 from /usr/local/include/boost/variant/variant.hpp:34,
+                 from /usr/local/include/boost/variant.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:12:
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp: In instantiation of ‘typename Visitor::result_type boost::apply_visitor(const Visitor&, Visitable&) [with Visitor = db_sum_visitor; Visitable = const boost::any; typename Visitor::result_type = double]’:
+../src/BoostAppDevCookbookCh2.cpp:107:48:   required from here
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp:74:43: error: ‘const class boost::any’ has no member named ‘apply_visitor’
+     return visitable.apply_visitor(visitor);
+                                           ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+23:11:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+In file included from /usr/local/include/boost/variant/apply_visitor.hpp:16:0,
+                 from /usr/local/include/boost/variant/detail/hash_variant.hpp:23,
+                 from /usr/local/include/boost/variant/variant.hpp:34,
+                 from /usr/local/include/boost/variant.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:12:
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp: In instantiation of ‘typename Visitor::result_type boost::apply_visitor(const Visitor&, Visitable&) [with Visitor = db_sum_visitor; Visitable = const boost::any; typename Visitor::result_type = double]’:
+../src/BoostAppDevCookbookCh2.cpp:107:48:   required from here
+/usr/local/include/boost/variant/detail/apply_visitor_unary.hpp:74:43: error: ‘const class boost::any’ has no member named ‘apply_visitor’
+     return visitable.apply_visitor(visitor);
+                                           ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+23:16:01 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:28:44 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:37:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_array_example()’:
+../src/BoostAppDevCookbookCh2.cpp:191:2: error: ‘array_t’ was not declared in this scope
+  array_t & vector_advance(array4_t & val);
+  ^
+../src/BoostAppDevCookbookCh2.cpp:191:36: error: expected primary-expression before ‘&’ token
+  array_t & vector_advance(array4_t & val);
+                                    ^
+../src/BoostAppDevCookbookCh2.cpp:191:38: error: ‘val’ was not declared in this scope
+  array_t & vector_advance(array4_t & val);
+                                      ^
+../src/BoostAppDevCookbookCh2.cpp:191:41: error: ‘vector_advance’ was not declared in this scope
+  array_t & vector_advance(array4_t & val);
+                                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:38:14 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_array_example()’:
+../src/BoostAppDevCookbookCh2.cpp:191:2: error: ‘array_t’ was not declared in this scope
+  array_t & vector_advance(array4_t & val)
+  ^
+../src/BoostAppDevCookbookCh2.cpp:191:36: error: expected primary-expression before ‘&’ token
+  array_t & vector_advance(array4_t & val)
+                                    ^
+../src/BoostAppDevCookbookCh2.cpp:191:38: error: ‘val’ was not declared in this scope
+  array_t & vector_advance(array4_t & val)
+                                      ^
+../src/BoostAppDevCookbookCh2.cpp:191:41: error: ‘vector_advance’ was not declared in this scope
+  array_t & vector_advance(array4_t & val)
+                                         ^
+../src/BoostAppDevCookbookCh2.cpp:192:2: error: expected ‘;’ before ‘{’ token
+  {
+  ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:39:20 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:39:33 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_array_example()’:
+../src/BoostAppDevCookbookCh2.cpp:193:3: error: a function-definition is not allowed here before ‘{’ token
+   {
+   ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:41:40 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_array_example()’:
+../src/BoostAppDevCookbookCh2.cpp:196:13: warning: variable ‘res’ set but not used [-Wunused-but-set-variable]
+    array4_t res = vector_advance(val);
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:44:37 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:141:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_array_example()’:
+../src/BoostAppDevCookbookCh2.cpp:200:13: warning: variable ‘res’ set but not used [-Wunused-but-set-variable]
+    array4_t res = vector_advance(val);
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:46:47 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:141:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:47:26 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:141:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:49:05 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:141:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:49:38 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:141:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+22:13:23 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:142:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+../src/BoostAppDevCookbookCh2.cpp: At global scope:
+../src/BoostAppDevCookbookCh2.cpp:154:1: error: expected ‘;’ after struct definition
+ }
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+22:13:34 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘array4_t& vector_advance(array4_t&)’:
+../src/BoostAppDevCookbookCh2.cpp:142:11: warning: reference to local variable ‘res’ returned [-Wreturn-local-addr]
+  array4_t res;
+           ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+22:36:52 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
