@@ -402,3 +402,2400 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
+09:14:09 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+09:32:59 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:03:49 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:234:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:04:47 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:234:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:05:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:234:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:11:45 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+make: Nothing to be done for `all'.
+10:15:21 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:237:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_tuple_comparison()’:
+../src/BoostAppDevCookbookCh2.cpp:245:2: error: ‘set’ is not a member of ‘std’
+  std::set<tuple<int, double, int> > s;
+  ^
+../src/BoostAppDevCookbookCh2.cpp:245:11: error: ‘tuple’ was not declared in this scope
+  std::set<tuple<int, double, int> > s;
+           ^
+../src/BoostAppDevCookbookCh2.cpp:245:11: note: suggested alternatives:
+In file included from /usr/include/c++/4.8/utility:70:0,
+                 from /usr/include/c++/4.8/algorithm:60,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_pair.h:83:11: note:   ‘std::tuple’
+     class tuple;
+           ^
+In file included from /usr/local/include/boost/tuple/tuple.hpp:28:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:14:
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:81:7: note:   ‘boost::tuples::tuple’
+ class tuple;
+       ^
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:81:7: note:   ‘boost::tuples::tuple’
+../src/BoostAppDevCookbookCh2.cpp:245:17: error: expected primary-expression before ‘int’
+  std::set<tuple<int, double, int> > s;
+                 ^
+../src/BoostAppDevCookbookCh2.cpp:245:17: error: expected ‘;’ before ‘int’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+10:16:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_tuple_comparison()’:
+../src/BoostAppDevCookbookCh2.cpp:246:11: error: ‘tuple’ was not declared in this scope
+  std::set<tuple<int, double, int> > s;
+           ^
+../src/BoostAppDevCookbookCh2.cpp:246:11: note: suggested alternatives:
+In file included from /usr/include/c++/4.8/utility:70:0,
+                 from /usr/include/c++/4.8/algorithm:60,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_pair.h:83:11: note:   ‘std::tuple’
+     class tuple;
+           ^
+In file included from /usr/local/include/boost/tuple/tuple.hpp:28:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:14:
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:81:7: note:   ‘boost::tuples::tuple’
+ class tuple;
+       ^
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:81:7: note:   ‘boost::tuples::tuple’
+../src/BoostAppDevCookbookCh2.cpp:246:33: error: template argument 1 is invalid
+  std::set<tuple<int, double, int> > s;
+                                 ^
+../src/BoostAppDevCookbookCh2.cpp:246:33: error: template argument 2 is invalid
+../src/BoostAppDevCookbookCh2.cpp:246:33: error: template argument 3 is invalid
+../src/BoostAppDevCookbookCh2.cpp:246:35: error: expected unqualified-id before ‘>’ token
+  std::set<tuple<int, double, int> > s;
+                                   ^
+../src/BoostAppDevCookbookCh2.cpp:247:5: error: ‘s’ was not declared in this scope
+     s.insert(make_tuple(1, 1.0, 2));
+     ^
+../src/BoostAppDevCookbookCh2.cpp:247:34: error: ‘make_tuple’ was not declared in this scope
+     s.insert(make_tuple(1, 1.0, 2));
+                                  ^
+../src/BoostAppDevCookbookCh2.cpp:247:34: note: suggested alternatives:
+In file included from /usr/include/c++/4.8/functional:55:0,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/tuple:860:5: note:   ‘std::make_tuple’
+     make_tuple(_Elements&&... __args)
+     ^
+In file included from /usr/local/include/boost/tuple/tuple.hpp:28:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:14:
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:737:16: note:   ‘boost::tuples::make_tuple’
+ inline tuple<> make_tuple() {
+                ^
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:820:1: note:   ‘boost::tuples::make_tuple’
+ make_tuple(const T0& t0, const T1& t1, const T2& t2, const T3& t3,
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+10:17:19 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:19:35 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/local/include/boost/assert.hpp:54:0,
+                 from /usr/local/include/boost/array.hpp:44,
+                 from ../src/BoostAppDevCookbookCh2.cpp:13:
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_tuple_comparison()’:
+../src/BoostAppDevCookbookCh2.cpp:252:17: error: ‘get’ was not declared in this scope
+     assert(2 == get<2>(t));
+                 ^
+../src/BoostAppDevCookbookCh2.cpp:252:17: note: suggested alternatives:
+In file included from /usr/include/c++/4.8/functional:55:0,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/tuple:773:5: note:   ‘std::get’
+     get(tuple<_Elements...>&& __t) noexcept
+     ^
+In file included from /usr/local/include/boost/tuple/tuple.hpp:28:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:14:
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:216:1: note:   ‘boost::tuples::get’
+ get(cons<HT, TT>& c) {
+ ^
+/usr/local/include/boost/tuple/detail/tuple_basic.hpp:230:1: note:   ‘boost::tuples::get’
+ get(const cons<HT, TT>& c) {
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+10:20:04 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:30:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:33:51 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:238:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+10:56:36 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:246:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: At global scope:
+../src/BoostAppDevCookbookCh2.cpp:161:15: warning: inline function ‘Number operator+(Number, Number)’ used but never defined [enabled by default]
+ inline Number operator + (Number, Number);
+               ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:00:08 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:253:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: At global scope:
+../src/BoostAppDevCookbookCh2.cpp:161:15: warning: inline function ‘Number operator+(Number, Number)’ used but never defined [enabled by default]
+ inline Number operator + (Number, Number);
+               ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+./src/BoostAppDevCookbookCh2.o: In function `mul_2_func_obj::operator()(Number) const':
+/root/workspace/BoostAppDevCookbookCh2/Debug/../src/BoostAppDevCookbookCh2.cpp:167: undefined reference to `operator+(Number, Number)'
+collect2: error: ld returned 1 exit status
+make: *** [BoostAppDevCookbookCh2] Error 1
+11:02:13 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:262:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:04:08 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:262:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:10:30 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:262:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_mul_using_func_obj_example()’:
+../src/BoostAppDevCookbookCh2.cpp:300:2: error: ‘vector’ was not declared in this scope
+  vector<Number&> v;
+  ^
+../src/BoostAppDevCookbookCh2.cpp:300:2: note: suggested alternative:
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_vector.h:210:11: note:   ‘std::vector’
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/BoostAppDevCookbookCh2.cpp:300:15: error: expected primary-expression before ‘&’ token
+  vector<Number&> v;
+               ^
+../src/BoostAppDevCookbookCh2.cpp:300:16: error: expected primary-expression before ‘>’ token
+  vector<Number&> v;
+                ^
+../src/BoostAppDevCookbookCh2.cpp:300:18: error: ‘v’ was not declared in this scope
+  vector<Number&> v;
+                  ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:10:38 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:262:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/string:41,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/ext/new_allocator.h: In instantiation of ‘class __gnu_cxx::new_allocator<Number&>’:
+/usr/include/c++/4.8/bits/allocator.h:92:11:   required from ‘class std::allocator<Number&>’
+/usr/include/c++/4.8/bits/alloc_traits.h:90:43:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/ext/new_allocator.h:63:26: error: forming pointer to reference type ‘Number&’
+       typedef _Tp*       pointer;
+                          ^
+/usr/include/c++/4.8/ext/new_allocator.h:64:26: error: forming pointer to reference type ‘Number&’
+       typedef const _Tp* const_pointer;
+                          ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/allocator.h: In instantiation of ‘class std::allocator<Number&>’:
+/usr/include/c++/4.8/bits/alloc_traits.h:90:43:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/allocator.h:97:26: error: forming pointer to reference type ‘Number&’
+       typedef _Tp*       pointer;
+                          ^
+/usr/include/c++/4.8/bits/allocator.h:98:26: error: forming pointer to reference type ‘Number&’
+       typedef const _Tp* const_pointer;
+                          ^
+In file included from /usr/include/c++/4.8/ext/alloc_traits.h:36:0,
+                 from /usr/include/c++/4.8/bits/stl_construct.h:61,
+                 from /usr/include/c++/4.8/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:62,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/alloc_traits.h: In instantiation of ‘struct std::allocator_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: error: forming pointer to reference type ‘std::allocator_traits<std::allocator<Number&> >::value_type {aka Number&}’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note: template<class _Tp> static typename _Tp::pointer std::allocator_traits<_Alloc>::_S_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_const_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note: template<class _Tp> static typename _Tp::const_pointer std::allocator_traits<_Alloc>::_S_const_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_void_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note: template<class _Tp> static typename _Tp::void_pointer std::allocator_traits<_Alloc>::_S_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h: In substitution of ‘template<class _Tp> static typename _Tp::void_pointer std::allocator_traits<_Alloc>::_S_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>] [with _Tp = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: error: no type named ‘void_pointer’ in ‘class std::allocator<Number&>’
+/usr/include/c++/4.8/bits/alloc_traits.h: In instantiation of ‘struct std::allocator_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_const_void_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note: template<class _Tp> static typename _Tp::const_void_pointer std::allocator_traits<_Alloc>::_S_const_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h: In substitution of ‘template<class _Tp> static typename _Tp::const_void_pointer std::allocator_traits<_Alloc>::_S_const_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>] [with _Tp = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: error: no type named ‘const_void_pointer’ in ‘class std::allocator<Number&>’
+In file included from /usr/include/c++/4.8/bits/stl_construct.h:61:0,
+                 from /usr/include/c++/4.8/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:62,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/ext/alloc_traits.h: In instantiation of ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/ext/alloc_traits.h:137:23: error: no members matching ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka std::allocator_traits<std::allocator<Number&> >}::allocate’ in ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka struct std::allocator_traits<std::allocator<Number&> >}’
+     using _Base_type::allocate;
+                       ^
+/usr/include/c++/4.8/ext/alloc_traits.h:138:23: error: no members matching ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka std::allocator_traits<std::allocator<Number&> >}::deallocate’ in ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka struct std::allocator_traits<std::allocator<Number&> >}’
+     using _Base_type::deallocate;
+                       ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘class std::vector<Number&>’:
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:237:20: error: no members matching ‘std::vector<Number&>::_Base {aka std::_Vector_base<Number&, std::allocator<Number&> >}::_M_allocate’ in ‘std::vector<Number&>::_Base {aka struct std::_Vector_base<Number&, std::allocator<Number&> >}’
+       using _Base::_M_allocate;
+                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:238:20: error: no members matching ‘std::vector<Number&>::_Base {aka std::_Vector_base<Number&, std::allocator<Number&> >}::_M_deallocate’ in ‘std::vector<Number&>::_Base {aka struct std::_Vector_base<Number&, std::allocator<Number&> >}’
+       using _Base::_M_deallocate;
+                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:878:7: error: forming pointer to reference type ‘Number&’
+       data() _GLIBCXX_NOEXCEPT
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:886:7: error: forming pointer to reference type ‘Number&’
+       data() const _GLIBCXX_NOEXCEPT
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:919:7: error: ‘void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Number&; _Alloc = std::allocator<Number&>; std::vector<_Tp, _Alloc>::value_type = Number&]’ cannot be overloaded
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: error: with ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Number&; _Alloc = std::allocator<Number&>; std::vector<_Tp, _Alloc>::value_type = Number&]’
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::vector<_Tp, _Alloc>::~vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:416:30: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         _M_get_Tp_allocator()); }
+                              ^
+/usr/include/c++/4.8/bits/stl_vector.h:416:30: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_finish’
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/stl_vector.h:249:15:   required from ‘std::vector<_Tp, _Alloc>::vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:161:33: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         - this->_M_impl._M_start); }
+                                 ^
+/usr/include/c++/4.8/bits/stl_vector.h:161:9: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         - this->_M_impl._M_start); }
+         ^
+/usr/include/c++/4.8/bits/stl_vector.h:161:9: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_end_of_storage’
+/usr/include/c++/4.8/bits/stl_vector.h:161:33: error: ‘_M_deallocate’ was not declared in this scope
+         - this->_M_impl._M_start); }
+                                 ^
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/stl_vector.h:125:17:   required from ‘std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+/usr/include/c++/4.8/bits/stl_vector.h:249:15:   required from ‘std::vector<_Tp, _Alloc>::vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+../src/BoostAppDevCookbookCh2.cpp:300:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_start’
+  : _Tp_alloc_type(), _M_start(0), _M_finish(0), _M_end_of_storage(0)
+                                                                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_finish’
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_end_of_storage’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:11:55 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:263:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/string:41,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/ext/new_allocator.h: In instantiation of ‘class __gnu_cxx::new_allocator<Number&>’:
+/usr/include/c++/4.8/bits/allocator.h:92:11:   required from ‘class std::allocator<Number&>’
+/usr/include/c++/4.8/bits/alloc_traits.h:90:43:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/ext/new_allocator.h:63:26: error: forming pointer to reference type ‘Number&’
+       typedef _Tp*       pointer;
+                          ^
+/usr/include/c++/4.8/ext/new_allocator.h:64:26: error: forming pointer to reference type ‘Number&’
+       typedef const _Tp* const_pointer;
+                          ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/allocator.h: In instantiation of ‘class std::allocator<Number&>’:
+/usr/include/c++/4.8/bits/alloc_traits.h:90:43:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/allocator.h:97:26: error: forming pointer to reference type ‘Number&’
+       typedef _Tp*       pointer;
+                          ^
+/usr/include/c++/4.8/bits/allocator.h:98:26: error: forming pointer to reference type ‘Number&’
+       typedef const _Tp* const_pointer;
+                          ^
+In file included from /usr/include/c++/4.8/ext/alloc_traits.h:36:0,
+                 from /usr/include/c++/4.8/bits/stl_construct.h:61,
+                 from /usr/include/c++/4.8/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:62,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/alloc_traits.h: In instantiation of ‘struct std::allocator_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: error: forming pointer to reference type ‘std::allocator_traits<std::allocator<Number&> >::value_type {aka Number&}’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note: template<class _Tp> static typename _Tp::pointer std::allocator_traits<_Alloc>::_S_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(pointer, value_type*)
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:100:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_const_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note: template<class _Tp> static typename _Tp::const_pointer std::allocator_traits<_Alloc>::_S_const_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:109:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_void_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note: template<class _Tp> static typename _Tp::void_pointer std::allocator_traits<_Alloc>::_S_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h: In substitution of ‘template<class _Tp> static typename _Tp::void_pointer std::allocator_traits<_Alloc>::_S_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>] [with _Tp = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:120:1: error: no type named ‘void_pointer’ in ‘class std::allocator<Number&>’
+/usr/include/c++/4.8/bits/alloc_traits.h: In instantiation of ‘struct std::allocator_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: error: no matching function for call to ‘std::allocator_traits<std::allocator<Number&> >::_S_const_void_pointer_helper(std::allocator<Number&>*)’
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note: candidate is:
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note: template<class _Tp> static typename _Tp::const_void_pointer std::allocator_traits<_Alloc>::_S_const_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>]
+ _GLIBCXX_ALLOC_TR_NESTED_TYPE(const_void_pointer,
+ ^
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/alloc_traits.h: In substitution of ‘template<class _Tp> static typename _Tp::const_void_pointer std::allocator_traits<_Alloc>::_S_const_void_pointer_helper(_Tp*) [with _Tp = _Tp; _Alloc = std::allocator<Number&>] [with _Tp = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1:   required from ‘struct std::allocator_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/ext/alloc_traits.h:121:10:   required from ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/alloc_traits.h:131:1: error: no type named ‘const_void_pointer’ in ‘class std::allocator<Number&>’
+In file included from /usr/include/c++/4.8/bits/stl_construct.h:61:0,
+                 from /usr/include/c++/4.8/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:62,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/ext/alloc_traits.h: In instantiation of ‘struct __gnu_cxx::__alloc_traits<std::allocator<Number&> >’:
+/usr/include/c++/4.8/bits/stl_vector.h:75:28:   required from ‘struct std::_Vector_base<Number&, std::allocator<Number&> >’
+/usr/include/c++/4.8/bits/stl_vector.h:210:11:   required from ‘class std::vector<Number&>’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/ext/alloc_traits.h:137:23: error: no members matching ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka std::allocator_traits<std::allocator<Number&> >}::allocate’ in ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka struct std::allocator_traits<std::allocator<Number&> >}’
+     using _Base_type::allocate;
+                       ^
+/usr/include/c++/4.8/ext/alloc_traits.h:138:23: error: no members matching ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka std::allocator_traits<std::allocator<Number&> >}::deallocate’ in ‘__gnu_cxx::__alloc_traits<std::allocator<Number&> >::_Base_type {aka struct std::allocator_traits<std::allocator<Number&> >}’
+     using _Base_type::deallocate;
+                       ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘class std::vector<Number&>’:
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:237:20: error: no members matching ‘std::vector<Number&>::_Base {aka std::_Vector_base<Number&, std::allocator<Number&> >}::_M_allocate’ in ‘std::vector<Number&>::_Base {aka struct std::_Vector_base<Number&, std::allocator<Number&> >}’
+       using _Base::_M_allocate;
+                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:238:20: error: no members matching ‘std::vector<Number&>::_Base {aka std::_Vector_base<Number&, std::allocator<Number&> >}::_M_deallocate’ in ‘std::vector<Number&>::_Base {aka struct std::_Vector_base<Number&, std::allocator<Number&> >}’
+       using _Base::_M_deallocate;
+                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:878:7: error: forming pointer to reference type ‘Number&’
+       data() _GLIBCXX_NOEXCEPT
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:886:7: error: forming pointer to reference type ‘Number&’
+       data() const _GLIBCXX_NOEXCEPT
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:919:7: error: ‘void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Number&; _Alloc = std::allocator<Number&>; std::vector<_Tp, _Alloc>::value_type = Number&]’ cannot be overloaded
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h:901:7: error: with ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Number&; _Alloc = std::allocator<Number&>; std::vector<_Tp, _Alloc>::value_type = Number&]’
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::vector<_Tp, _Alloc>::~vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:416:30: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         _M_get_Tp_allocator()); }
+                              ^
+/usr/include/c++/4.8/bits/stl_vector.h:416:30: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_finish’
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/stl_vector.h:249:15:   required from ‘std::vector<_Tp, _Alloc>::vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:161:33: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         - this->_M_impl._M_start); }
+                                 ^
+/usr/include/c++/4.8/bits/stl_vector.h:161:9: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_start’
+         - this->_M_impl._M_start); }
+         ^
+/usr/include/c++/4.8/bits/stl_vector.h:161:9: error: ‘struct std::_Vector_base<Number&, std::allocator<Number&> >::_Vector_impl’ has no member named ‘_M_end_of_storage’
+/usr/include/c++/4.8/bits/stl_vector.h:161:33: error: ‘_M_deallocate’ was not declared in this scope
+         - this->_M_impl._M_start); }
+                                 ^
+/usr/include/c++/4.8/bits/stl_vector.h: In instantiation of ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’:
+/usr/include/c++/4.8/bits/stl_vector.h:125:17:   required from ‘std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+/usr/include/c++/4.8/bits/stl_vector.h:249:15:   required from ‘std::vector<_Tp, _Alloc>::vector() [with _Tp = Number&; _Alloc = std::allocator<Number&>]’
+../src/BoostAppDevCookbookCh2.cpp:301:23:   required from here
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_start’
+  : _Tp_alloc_type(), _M_start(0), _M_finish(0), _M_end_of_storage(0)
+                                                                    ^
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_finish’
+/usr/include/c++/4.8/bits/stl_vector.h:87:68: error: using invalid field ‘std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_M_end_of_storage’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:12:18 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:263:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:14:42 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:263:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_mul_using_func_obj_example()’:
+../src/BoostAppDevCookbookCh2.cpp:304:27: error: ‘Vector’ was not declared in this scope
+       v.push_back(Vector(i));
+                           ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:14:57 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:263:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:20:03 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:270:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:20:38 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:270:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:21:14 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:270:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:32:11 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number; F = std::plus<Number>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:84:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:20: error: no match for ‘operator+’ (operand types are ‘const Number’ and ‘const Number’)
+       { return __x + __y; }
+                    ^
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::move_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/vector:65:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+../src/BoostAppDevCookbookCh2.cpp:169:15: note: Number operator+(Number&, Number&)
+ inline Number operator + (Number& n1, Number& n2)
+               ^
+../src/BoostAppDevCookbookCh2.cpp:169:15: note:   no known conversion for argument 1 from ‘const Number’ to ‘Number&’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:37:23 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number; F = std::plus<Number>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:84:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:20: error: no match for ‘operator+’ (operand types are ‘const Number’ and ‘const Number’)
+       { return __x + __y; }
+                    ^
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::move_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/vector:65:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+../src/BoostAppDevCookbookCh2.cpp:169:15: note: Number operator+(Number&, Number&)
+ inline Number operator + (Number& n1, Number& n2)
+               ^
+../src/BoostAppDevCookbookCh2.cpp:169:15: note:   no known conversion for argument 1 from ‘const Number’ to ‘Number&’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:38:23 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number; F = std::plus<Number>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:84:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:20: error: no match for ‘operator+’ (operand types are ‘const Number’ and ‘const Number’)
+       { return __x + __y; }
+                    ^
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::move_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/vector:65:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+../src/BoostAppDevCookbookCh2.cpp:169:15: note: Number operator+(Number&, Number&)
+ inline Number operator + (Number& n1, Number& n2)
+               ^
+../src/BoostAppDevCookbookCh2.cpp:169:15: note:   no known conversion for argument 1 from ‘const Number’ to ‘Number&’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:39:48 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number; F = std::plus<Number>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:84:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:20: error: no match for ‘operator+’ (operand types are ‘const Number’ and ‘const Number’)
+       { return __x + __y; }
+                    ^
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/algorithm:61,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1118:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::move_iterator<_Iterator>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2365:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:692:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:53:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.tcc:708:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2402:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2418:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2430:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::basic_string<_CharT, _Traits, _Alloc>&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2436:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   ‘const Number’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2442:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2454:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   mismatched types ‘const _CharT*’ and ‘Number’
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2460:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2466:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note: template<class _CharT, class _Traits, class _Alloc> std::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2472:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h:144:20: note:   types ‘std::basic_string<_CharT, _Traits, _Alloc>’ and ‘const Number’ have incompatible cv-qualifiers
+       { return __x + __y; }
+                    ^
+In file included from /usr/include/c++/4.8/vector:65:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note: std::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:293:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note: std::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)
+   operator+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+   ^
+/usr/include/c++/4.8/bits/stl_bvector.h:379:3: note:   no known conversion for argument 1 from ‘const Number’ to ‘std::ptrdiff_t {aka long int}’
+../src/BoostAppDevCookbookCh2.cpp:169:15: note: Number operator+(Number, Number&)
+ inline Number operator + (Number n1, Number& n2)
+               ^
+../src/BoostAppDevCookbookCh2.cpp:169:15: note:   no known conversion for argument 2 from ‘const Number’ to ‘Number&’
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:39:58 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:40:49 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number&]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number&; F = std::plus<Number&>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number&>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number&]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number&>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:85:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:22: error: invalid initialization of non-const reference of type ‘Number&’ from an rvalue of type ‘Number’
+       { return __x + __y; }
+                      ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:41:08 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from /usr/include/c++/4.8/string:48:0,
+                 from /usr/include/c++/4.8/random:41,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_function.h: In instantiation of ‘_Tp std::plus<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = Number&]’:
+/usr/local/include/boost/bind/bind.hpp:303:41:   required from ‘R boost::_bi::list2<A1, A2>::operator()(boost::_bi::type<R>, F&, A&, long int) [with R = Number&; F = std::plus<Number&>; A = boost::_bi::list1<Number&>; A1 = boost::arg<1>; A2 = boost::arg<1>]’
+/usr/local/include/boost/bind/bind_template.hpp:32:59:   required from ‘boost::_bi::bind_t<R, F, L>::result_type boost::_bi::bind_t<R, F, L>::operator()(A1&) [with A1 = Number; R = boost::_bi::unspecified; F = std::plus<Number&>; L = boost::_bi::list2<boost::arg<1>, boost::arg<1> >; boost::_bi::bind_t<R, F, L>::result_type = Number&]’
+/usr/include/c++/4.8/bits/stl_algo.h:4417:14:   required from ‘_Funct std::for_each(_IIter, _IIter, _Funct) [with _IIter = __gnu_cxx::__normal_iterator<Number*, std::vector<Number> >; _Funct = boost::_bi::bind_t<boost::_bi::unspecified, std::plus<Number&>, boost::_bi::list2<boost::arg<1>, boost::arg<1> > >]’
+../src/BoostAppDevCookbookCh2.cpp:199:85:   required from here
+/usr/include/c++/4.8/bits/stl_function.h:144:22: error: invalid initialization of non-const reference of type ‘Number&’ from an rvalue of type ‘Number’
+       { return __x + __y; }
+                      ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:51:52 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:52:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp:197:46: error: ‘const’ qualifiers cannot be applied to ‘std::vector<Number>&’
+ void mul_2_impl2(std::vector<Number> & const values)
+                                              ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:53:03 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:53:18 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:278:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+11:57:27 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void mul_2_impl3(const std::vector<Number>&)’:
+../src/BoostAppDevCookbookCh2.cpp:205:68: error: ‘T’ was not declared in this scope
+  std::for_each(values.begin(), values.end(), boost::bind(std::plus<T>(), _1, _1));
+                                                                    ^
+../src/BoostAppDevCookbookCh2.cpp:205:69: error: template argument 1 is invalid
+  std::for_each(values.begin(), values.end(), boost::bind(std::plus<T>(), _1, _1));
+                                                                     ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:284:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+11:58:07 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:285:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+12:26:35 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In member function ‘void Device1::watch(const FuncT&)’:
+../src/BoostAppDevCookbookCh2.cpp:227:20: error: expected ‘)’ before ‘;’ token
+       temperature();
+                    ^
+../src/BoostAppDevCookbookCh2.cpp:231:4: error: expected primary-expression before ‘)’ token
+    );
+    ^
+../src/BoostAppDevCookbookCh2.cpp:231:4: error: expected ‘;’ before ‘)’ token
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:315:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+12:27:18 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:315:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+12:29:55 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:322:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+14:56:59 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:339:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+04:07:33 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+04:08:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In member function ‘void Device2::wait_for_data()’:
+../src/BoostAppDevCookbookCh2.cpp:246:81: error: no matching function for call to ‘std::chrono::duration<long int>::duration(double)’
+     void wait_for_data() { std::this_thread::sleep_for (std::chrono::seconds(0.5)); };
+                                                                                 ^
+../src/BoostAppDevCookbookCh2.cpp:246:81: note: candidates are:
+In file included from /usr/include/c++/4.8/thread:38:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:26:
+/usr/include/c++/4.8/chrono:269:14: note: template<class _Rep2, class _Period2, class> constexpr std::chrono::duration<_Rep, _Period>::duration(const std::chrono::duration<_Rep, _Period>&)
+    constexpr duration(const duration<_Rep2, _Period2>& __d)
+              ^
+/usr/include/c++/4.8/chrono:269:14: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:246:81: note:   mismatched types ‘const std::chrono::duration<_Rep1, _Period1>’ and ‘double’
+     void wait_for_data() { std::this_thread::sleep_for (std::chrono::seconds(0.5)); };
+                                                                                 ^
+In file included from /usr/include/c++/4.8/thread:38:0,
+                 from ../src/BoostAppDevCookbookCh2.cpp:26:
+/usr/include/c++/4.8/chrono:262:23: note: template<class _Rep2, class> constexpr std::chrono::duration<_Rep, _Period>::duration(const _Rep2&)
+    constexpr explicit duration(const _Rep2& __rep)
+                       ^
+/usr/include/c++/4.8/chrono:262:23: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/chrono:258:27: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+  template<typename _Rep2, typename = typename
+                           ^
+/usr/include/c++/4.8/chrono:256:2: note: std::chrono::duration<_Rep, _Period>::duration(const std::chrono::duration<_Rep, _Period>&) [with _Rep = long int; _Period = std::ratio<1l>]
+  duration(const duration&) = default;
+  ^
+/usr/include/c++/4.8/chrono:256:2: note:   no known conversion for argument 1 from ‘double’ to ‘const std::chrono::duration<long int>&’
+/usr/include/c++/4.8/chrono:251:12: note: constexpr std::chrono::duration<_Rep, _Period>::duration() [with _Rep = long int; _Period = std::ratio<1l>]
+  constexpr duration() = default;
+            ^
+/usr/include/c++/4.8/chrono:251:12: note:   candidate expects 0 arguments, 1 provided
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+04:09:15 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+04:12:58 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+04:13:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+make: Nothing to be done for `all'.
+04:15:37 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 

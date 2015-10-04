@@ -1,8 +1,12 @@
-22:36:52 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+04:15:37 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:341:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp
  
 Building target: BoostAppDevCookbookCh2
@@ -11,5 +15,5 @@ g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./
 Finished building target: BoostAppDevCookbookCh2
  
 
-22:36:55 Build Finished (took 2s.737ms)
+04:15:41 Build Finished (took 3s.428ms)
 

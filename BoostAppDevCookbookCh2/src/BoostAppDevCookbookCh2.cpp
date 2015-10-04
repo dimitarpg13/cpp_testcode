@@ -12,13 +12,19 @@
 #include <boost/optional.hpp>
 #include <boost/array.hpp>
 #include <boost/tuple/tuple.hpp> // combining multiple values into one
+#include <boost/tuple/tuple_comparison.hpp> // making tuples and comparing them
+#include <boost/bind.hpp>
 
 #include <vector>
+#include <set>
 #include <string>
 #include <typeinfo>
 #include <algorithm>
 #include <iostream>
 #include <stdlib.h>
+#include <functional> // for the boost::bind example
+#include <thread>         // std::this_thread::sleep_for
+#include <chrono>         // std::chrono::seconds
 
 
 
@@ -154,6 +160,108 @@ array4_t & vector_advance(array4_t & val)
 	return val;
 };
 
+class Number
+{
+public:
+	//Number() {};
+	Number(int val) : m_iVal(val) {};
+	int m_iVal;
+};
+
+inline Number operator + (Number n1, Number n2)
+{
+	return Number(n1.m_iVal + n2.m_iVal);
+}
+
+struct mul_2_func_obj :
+		public std::unary_function<Number, Number>
+{
+	Number operator() (Number n1) const {
+		return n1 + n1;
+	}
+};
+
+struct printer_obj
+{
+	void operator() (Number& n) const {
+		std::cout << n.m_iVal << ", ";
+	}
+};
+
+
+void mul_2_impl1(const std::vector<Number> & values)
+{
+	std::for_each(values.begin(), values.end(), mul_2_func_obj());
+
+};
+
+
+void mul_2_impl2(const std::vector<Number> & values)
+{
+	std::for_each(values.begin(), values.end(), boost::bind(std::plus<Number>(),_1,_1));
+};
+
+
+template <class T>
+void mul_2_impl3(const std::vector<T> & values)
+{
+	std::for_each(values.begin(), values.end(), boost::bind(std::plus<T>(), _1, _1));
+};
+
+
+class Device1
+{
+private:
+	short temperature() { return 12; };
+	short wetness() { return 34; };
+	int illumination() { return 100; };
+	int atmospheric_pressure() { return 56; };
+	void wait_for_data() { std::this_thread::sleep_for (std::chrono::seconds(1)); };
+
+public:
+	template<class FuncT>
+	void watch(const FuncT & f)
+	{
+		for (;;)
+		{
+			wait_for_data();
+			f(
+			   temperature(),
+			   wetness(),
+			   illumination(),
+			   atmospheric_pressure()
+			);
+		}
+	}
+};
+
+
+class Device2
+{
+private:
+	short temperature() { return 43; };
+	short wetness() { return 88; };
+	int illumination() { return 101; };
+    int atmospheric_pressure() { return 66; };
+    void wait_for_data() { std::this_thread::sleep_for (std::chrono::milliseconds(100)); };
+public:
+    template <class FuncT>
+    void watch(const FuncT& f)
+    {
+    	for (;;)
+    	{
+    		wait_for_data();
+    		f
+    		(
+    		   wetness(),
+    		   temperature(),
+    		   atmospheric_pressure(),
+    		   illumination()
+    		);
+    	}
+    }
+};
+
 
 void boost_any_example()
 {
@@ -224,6 +332,68 @@ void boost_array_example()
 
 };
 
+void boost_multiple_values_example()
+{
+	std::cout << "boost_multiple_values_example:" << std::endl;
+	boost::tuple<int,std::string> almost_a_pair(10, "Hello");
+    boost::tuple<int, float, double, int> quad(10, 1.0f, 10.1, 1);
+    int i = boost::get<0>(almost_a_pair);
+    const std::string & str = boost::get<1>(almost_a_pair);
+    double d = boost::get<2>(quad);
+    std::cout << "boost::get<0>(...) = " << i << std::endl;
+    std::cout << "boost::get<1>(...) = " << d << std::endl;
+};
+
+void boost_tuple_comparison_example()
+{
+	std::cout << "boost_tuple_comparison_example:" << std::endl;
+	std::set<boost::tuple<int, double, int> > s;
+    s.insert(boost::make_tuple(1, 1.0, 2));
+    s.insert(boost::make_tuple(2, 10.0, 2));
+    s.insert(boost::make_tuple(3, 100.0, 2));
+
+    auto t = boost::make_tuple(0, -1.0, 2);
+    assert(2 == boost::get<2>(t));
+
+};
+
+void boost_tie_example()
+{
+	std::cout << "boost_tie_example:" << std::endl;
+	boost::tuple<int, float, double, int> quad(10, 1.0f, 10.0, 1);
+    int i;
+    float f;
+    double d;
+    int i2;
+
+    // passing values from 'quad' variables to variables 'i', 'f', 'd', 'i2'
+    boost::tie(i,f, d, i2) = quad;
+    assert(i == 10);
+    assert(i2 == 1);
+};
+
+
+void boost_mul_using_func_obj_example()
+{
+	std::cout << "boost_mul_using_func_obj:" << std::endl;
+	std::vector<Number> v;
+    for (int i=0; i < 4; i++)
+    {
+      v.push_back(Number(i));
+    }
+
+    mul_2_impl1(v);
+
+    std::for_each(v.begin(), v.end(), printer_obj());
+
+};
+
+void boost_argument_order_example()
+{
+
+};
+
+
 int main() {
 	std::cout << "Boost C++ Application Development Cookbook Chapter 2" << std::endl; // prints Boost C++ Application Development Cookbook
 
@@ -231,6 +401,10 @@ int main() {
     boost_variant_example();
     boost_optional_example();
     boost_array_example();
+    boost_multiple_values_example();
+    boost_tuple_comparison_example();
+    boost_tie_example();
+    boost_mul_using_func_obj_example();
 
 	return 0;
 }
