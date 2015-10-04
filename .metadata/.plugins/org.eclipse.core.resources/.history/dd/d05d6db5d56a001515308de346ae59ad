@@ -93,12 +93,6 @@ void call_many_threads_example()
 }
 
 
-void thread_detach_example()
-{
-	threadCaller();
-	std::this_thread::sleep_for(std::chrono::seconds(5));
-}
-
 
 int main() {
 	std::cout << "Concurrency in Action examples" << std::endl; // prints Concurrency in Action examples
@@ -106,7 +100,6 @@ int main() {
 	call_a_thread_example();
     call_a_posix_thread_example();
     call_many_threads_example();
-    thread_detach_example();
 
 	return 0;
 }

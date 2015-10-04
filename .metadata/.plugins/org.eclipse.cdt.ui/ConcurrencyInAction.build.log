@@ -1,4 +1,4 @@
-11:36:03 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+16:23:03 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
 make all 
 Building file: ../src/ConcurrencyInAction.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o
 Finished building target: ConcurrencyInAction
  
 
-11:36:04 Build Finished (took 984ms)
+16:23:04 Build Finished (took 1s.126ms)
 
