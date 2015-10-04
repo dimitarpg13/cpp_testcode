@@ -1,0 +1,15 @@
+11:05:41 **** Build of configuration Debug for project forkExample ****
+make all 
+Building file: ../src/forkExample.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/forkExample.d" -MT"src/forkExample.d" -o "src/forkExample.o" "../src/forkExample.c"
+Finished building: ../src/forkExample.c
+ 
+Building target: forkExample
+Invoking: GCC C Linker
+gcc  -o "forkExample"  ./src/forkExample.o   
+Finished building target: forkExample
+ 
+
+11:05:41 Build Finished (took 171ms)
+

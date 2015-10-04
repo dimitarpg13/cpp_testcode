@@ -1,0 +1,30 @@
+/*
+ ============================================================================
+ Name        : signalHandlerExample.c
+ Author      : Dimitar Gueorguiev
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+
+
+void sig_handler(int signo)
+{
+	if (signo == SIGINT)
+		printf("received SIGINT\n");
+
+}
+
+int main(void) {
+	puts("Signal Handler Example"); /* prints Signal Handler Example */
+
+
+
+	return EXIT_SUCCESS;
+}

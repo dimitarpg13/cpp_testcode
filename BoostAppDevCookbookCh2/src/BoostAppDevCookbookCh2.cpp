@@ -15,6 +15,7 @@
 #include <boost/tuple/tuple_comparison.hpp> // making tuples and comparing them
 #include <boost/bind.hpp>
 
+
 #include <vector>
 #include <set>
 #include <string>
@@ -218,11 +219,14 @@ private:
 	int atmospheric_pressure() { return 56; };
 	void wait_for_data() { std::this_thread::sleep_for (std::chrono::seconds(1)); };
 
+
 public:
 	template<class FuncT>
 	void watch(const FuncT & f)
 	{
-		for (;;)
+
+
+		while (1)
 		{
 			wait_for_data();
 			f(
@@ -248,7 +252,7 @@ public:
     template <class FuncT>
     void watch(const FuncT& f)
     {
-    	for (;;)
+        while (1)
     	{
     		wait_for_data();
     		f
@@ -260,6 +264,13 @@ public:
     		);
     	}
     }
+};
+
+void detect_storm(int wetness, int temperature, int atmospheric_pressure)
+{
+	std::cout << "detect_storm called with wetness = " << wetness
+			<< ", temperature = " << temperature
+			<< ", atmospheric_pressure = " << atmospheric_pressure << std::endl;
 };
 
 
@@ -390,6 +401,14 @@ void boost_mul_using_func_obj_example()
 
 void boost_argument_order_example()
 {
+   Device1 d1;
+   // resulting functional object will silently ignore
+   // additional parameters passed to the function call
+   d1.watch(boost::bind(&detect_storm, _2, _1, _4));
+
+   Device2 d2;
+
+   d2.watch(boost::bind(&detect_storm, _1, _2, _3));
 
 };
 
@@ -405,6 +424,7 @@ int main() {
     boost_tuple_comparison_example();
     boost_tie_example();
     boost_mul_using_func_obj_example();
+    boost_argument_order_example();
 
 	return 0;
 }
