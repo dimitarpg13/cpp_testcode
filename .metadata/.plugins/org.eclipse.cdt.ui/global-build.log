@@ -3024,3 +3024,97 @@ Invoking: GCC C Linker
 gcc  -o "forkExample"  ./src/forkExample.o   
 Finished building target: forkExample
  
+11:22:10 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+Finished building: ../src/ConcurrencyInAction.cpp
+ 
+Building target: ConcurrencyInAction
+Invoking: GCC C++ Linker
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+Finished building target: ConcurrencyInAction
+ 
+11:26:31 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+Finished building: ../src/ConcurrencyInAction.cpp
+ 
+Building target: ConcurrencyInAction
+Invoking: GCC C++ Linker
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+Finished building target: ConcurrencyInAction
+ 
+11:27:45 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+Finished building: ../src/ConcurrencyInAction.cpp
+ 
+Building target: ConcurrencyInAction
+Invoking: GCC C++ Linker
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+Finished building target: ConcurrencyInAction
+ 
+11:28:04 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+Finished building: ../src/ConcurrencyInAction.cpp
+ 
+Building target: ConcurrencyInAction
+Invoking: GCC C++ Linker
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+Finished building target: ConcurrencyInAction
+ 
+11:34:26 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+../src/ConcurrencyInAction.cpp: In function ‘void call_a_posix_thread_example()’:
+../src/ConcurrencyInAction.cpp:40:58: error: invalid conversion from ‘void* (*)()’ to ‘void* (*)(void*)’ [-fpermissive]
+     pthread_create(&t, NULL, call_from_posix_thread, NULL);
+                                                          ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:35:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h:148,
+                 from /usr/include/c++/4.8/ext/atomicity.h:35,
+                 from /usr/include/c++/4.8/bits/ios_base.h:39,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/ConcurrencyInAction.cpp:9:
+/usr/include/pthread.h:244:12: error:   initializing argument 3 of ‘int pthread_create(pthread_t*, const pthread_attr_t*, void* (*)(void*), void*)’ [-fpermissive]
+ extern int pthread_create (pthread_t *__restrict __newthread,
+            ^
+../src/ConcurrencyInAction.cpp:44:12: error: return-statement with a value, in function returning 'void' [-fpermissive]
+     return 0;
+            ^
+make: *** [src/ConcurrencyInAction.o] Error 1
+11:35:25 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+../src/ConcurrencyInAction.cpp: In function ‘void call_a_posix_thread_example()’:
+../src/ConcurrencyInAction.cpp:44:12: error: return-statement with a value, in function returning 'void' [-fpermissive]
+     return 0;
+            ^
+make: *** [src/ConcurrencyInAction.o] Error 1
+11:36:03 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
+make all 
+Building file: ../src/ConcurrencyInAction.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+Finished building: ../src/ConcurrencyInAction.cpp
+ 
+Building target: ConcurrencyInAction
+Invoking: GCC C++ Linker
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+Finished building target: ConcurrencyInAction
+ 

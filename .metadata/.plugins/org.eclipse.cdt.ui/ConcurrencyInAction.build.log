@@ -1,15 +1,15 @@
-10:32:53 **** Build of configuration Debug for project ConcurrencyInAction ****
+11:36:03 **** Incremental Build of configuration Debug for project ConcurrencyInAction ****
 make all 
 Building file: ../src/ConcurrencyInAction.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ConcurrencyInAction.d" -MT"src/ConcurrencyInAction.d" -o "src/ConcurrencyInAction.o" "../src/ConcurrencyInAction.cpp"
 Finished building: ../src/ConcurrencyInAction.cpp
  
 Building target: ConcurrencyInAction
 Invoking: GCC C++ Linker
-g++  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
+g++ -pthread  -o "ConcurrencyInAction"  ./src/ConcurrencyInAction.o   
 Finished building target: ConcurrencyInAction
  
 
-10:32:53 Build Finished (took 422ms)
+11:36:04 Build Finished (took 984ms)
 
