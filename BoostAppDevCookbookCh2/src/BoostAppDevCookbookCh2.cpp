@@ -507,7 +507,9 @@ int main() {
     boost_tuple_comparison_example();
     boost_tie_example();
     boost_mul_using_func_obj_example();
-    boost_argument_order_example();
+   // boost_argument_order_example();
+    boost_bind_example();
+    boost_binding_val_as_func_par_example();
 
 	return 0;
 }

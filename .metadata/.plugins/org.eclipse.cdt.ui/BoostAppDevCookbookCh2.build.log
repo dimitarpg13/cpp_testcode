@@ -1,4 +1,4 @@
-22:34:29 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+07:10:47 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
@@ -19,5 +19,5 @@ g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./
 Finished building target: BoostAppDevCookbookCh2
  
 
-22:34:33 Build Finished (took 4s.788ms)
+07:10:52 Build Finished (took 4s.878ms)
 
