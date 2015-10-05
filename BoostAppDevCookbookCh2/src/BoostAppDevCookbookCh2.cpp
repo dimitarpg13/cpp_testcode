@@ -26,7 +26,8 @@
 #include <functional> // for the boost::bind example
 #include <thread>         // std::this_thread::sleep_for
 #include <chrono>         // std::chrono::seconds
-
+#include <memory>
+#include <random>
 
 
 //these typedefs and methods will be in our header
@@ -273,6 +274,24 @@ void detect_storm(int wetness, int temperature, int atmospheric_pressure)
 			<< ", atmospheric_pressure = " << atmospheric_pressure << std::endl;
 };
 
+void f (int n1, int n2, int n3, const int & n4, int n5)
+{
+	std::cout << n1 << ' ' << n2 << ' ' << n3 << ' ' << n4 << ' ' << n5 << std::endl;
+}
+
+int g (int n1)
+{
+	return n1;
+}
+
+struct Foo
+{
+	void print_sum(int n1, int n2)
+	{
+		std::cout << n1+n2 << std::endl;
+	}
+	int data = 10;
+};
 
 void boost_any_example()
 {
@@ -411,6 +430,70 @@ void boost_argument_order_example()
    d2.watch(boost::bind(&detect_storm, _1, _2, _3));
 
 };
+
+void boost_bind_example()
+{
+   // demonstrates argument reordering and pass by reference
+   int n = 7;
+
+   // (_1 and _2 are from std::placeholders and represent future arguments that will
+   // be passed to f1
+   auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+   n = 10;
+   f1(1, 2, 1001); // 1 is bound by _2, 2 is bound by _1, 1001 is unused
+
+   // nested bind subexpressions share the placeholders
+   auto f2 = std::bind(f, std::placeholders::_3,
+		   std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+   f2(10, 11, 12);
+
+   // common use case : binding an RNG with a distribution
+   std::default_random_engine e;
+   std::uniform_int_distribution<> d(0, 10);
+   std::function<int()> rnd = std::bind(d, e); // copy of e is stored in rnd
+   for (int i = 0; n < 10; ++n)
+   {
+	   std::cout << rnd() << ' ';
+   }
+
+   std::cout << std::endl;
+
+   // bind to a member function
+   Foo foo;
+   auto f3 = std::bind(&Foo::print_sum, &foo, 95, std::placeholders::_1);
+   f3(5);
+
+   // bind to member data
+   auto f4 = std::bind(&Foo::data, std::placeholders::_1);
+   std::cout << f4(foo) << std::endl;
+
+   // smart pointers can be used to call members of the referenced objects, too
+   std::cout << f4(std::make_shared<Foo>(foo)) << std::endl
+		   << f4(std::unique_ptr<Foo>(new Foo(foo))) << std::endl;
+
+
+
+
+
+
+};
+
+void boost_binding_val_as_func_par_example()
+{
+   boost::array<int, 12> values = {{ 1, 2, 3, 4, 5, 6,
+		   7, 100, 99, 98, 97, 96 }};
+
+   std::size_t count0 =
+		   std::count_if(values.begin(), values.end(),
+				   std::bind1st(std::less<int>(), 5));
+   std::size_t count1 =
+	   std::count_if(values.begin(), values.end(),
+				   std::bind(std::less<int>(), 5, std::placeholders::_1));
+  assert(count0 == count1);
+
+};
+
+
 
 
 int main() {
