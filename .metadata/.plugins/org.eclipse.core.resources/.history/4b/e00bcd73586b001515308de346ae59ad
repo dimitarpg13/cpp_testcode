@@ -491,23 +491,7 @@ void boost_binding_val_as_func_par_example()
 				   std::bind(std::less<int>(), 5, std::placeholders::_1));
   assert(count0 == count1);
 
-
-  boost::array<std::string, 3> str_values =
-  {{ "We ", "are", " the champions!" }};
-
-  count0 = std::count_if(str_values.begin(), str_values.end(),
-		  std::mem_fun_ref(&std::string::empty));
-
-
-  count1 = std::count_if(str_values.begin(), str_values.end(),
-		  boost::bind(&std::string::empty, _1));
-  assert(count0 == count1);
-
-
-
-
 };
-
 
 
 

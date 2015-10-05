@@ -960,3 +960,75 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
+07:58:56 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_binding_val_as_func_par_example()’:
+../src/BoostAppDevCookbookCh2.cpp:498:62: error: no matching function for call to ‘count_if(boost::array<std::basic_string<char>, 3ul>::iterator, boost::array<std::basic_string<char>, 3ul>::iterator)’
+   count0 = std::count_if(str_values.begin(), str_values.end());
+                                                              ^
+../src/BoostAppDevCookbookCh2.cpp:498:62: note: candidate is:
+In file included from /usr/include/c++/4.8/algorithm:62:0,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/bits/stl_algo.h:4647:5: note: template<class _IIter, class _Predicate> typename std::iterator_traits<_Iterator>::difference_type std::count_if(_IIter, _IIter, _Predicate)
+     count_if(_InputIterator __first, _InputIterator __last, _Predicate __pred)
+     ^
+/usr/include/c++/4.8/bits/stl_algo.h:4647:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:498:62: note:   candidate expects 3 arguments, 2 provided
+   count0 = std::count_if(str_values.begin(), str_values.end());
+                                                              ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+08:00:11 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+08:03:05 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+08:05:42 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+make: Nothing to be done for `all'.
