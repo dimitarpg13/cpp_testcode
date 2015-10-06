@@ -465,7 +465,7 @@ void stl_bind_example()
    std::default_random_engine e;
    std::uniform_int_distribution<> d(0, 10);
    std::function<int()> rnd = std::bind(d, e); // copy of e is stored in rnd
-   for (int i = 0; n < 10; ++n)
+   for (int i = 0; i < 10; ++i)
    {
 	   std::cout << rnd() << ' ';
    }
