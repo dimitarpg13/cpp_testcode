@@ -14,7 +14,7 @@
 #include <boost/tuple/tuple.hpp> // combining multiple values into one
 #include <boost/tuple/tuple_comparison.hpp> // making tuples and comparing them
 #include <boost/bind.hpp>
-
+#include <boost/ref.hpp>
 
 #include <vector>
 #include <set>
@@ -293,6 +293,16 @@ struct Foo
 	int data = 10;
 };
 
+int f1(int a, int b)
+{
+	return a + b;
+};
+
+int g1(int a, int b, int c)
+{
+	return a + b + c;
+};
+
 void boost_any_example()
 {
 	std::cout << "boost_any_example:" << std::endl;
@@ -405,7 +415,7 @@ void boost_tie_example()
 
 void boost_mul_using_func_obj_example()
 {
-	std::cout << "boost_mul_using_func_obj:" << std::endl;
+	std::cout << "boost_mul_using_func_obj_example:" << std::endl;
 	std::vector<Number> v;
     for (int i=0; i < 4; i++)
     {
@@ -415,11 +425,13 @@ void boost_mul_using_func_obj_example()
     mul_2_impl1(v);
 
     std::for_each(v.begin(), v.end(), printer_obj());
+    std::cout << std::endl;
 
 };
 
 void boost_argument_order_example()
 {
+   std::cout << "boost_argument_order_example:" << std::endl;
    Device1 d1;
    // resulting functional object will silently ignore
    // additional parameters passed to the function call
@@ -429,10 +441,12 @@ void boost_argument_order_example()
 
    d2.watch(boost::bind(&detect_storm, _1, _2, _3));
 
+
 };
 
-void boost_bind_example()
+void stl_bind_example()
 {
+   std::cout << "stl_bind_example:" << std::endl;
    // demonstrates argument reordering and pass by reference
    int n = 7;
 
@@ -474,12 +488,20 @@ void boost_bind_example()
 
 
 
+};
 
+void boost_bind_example()
+{
+	std::cout << "boost_bind_example:" << std::endl;
+	auto f5 = boost::bind(f1, 1, 2);
+
+	std::cout << f5() << std::endl;
 
 };
 
 void boost_binding_val_as_func_par_example()
 {
+   std::cout << "boost_binding_val_as_func_par_example:" << std::endl;
    boost::array<int, 12> values = {{ 1, 2, 3, 4, 5, 6,
 		   7, 100, 99, 98, 97, 96 }};
 
@@ -504,9 +526,46 @@ void boost_binding_val_as_func_par_example()
   assert(count0 == count1);
 
 
+  count1 =
+		  std::count_if(str_values.begin(),
+				        str_values.end(),
+				        boost::bind(std::less<std::size_t>(),
+				        boost::bind(&std::string::size, _1), 5));
+  assert(count1 == 2);
 
+  std::string s("Expensive copy constructor of std::string will be called when binding");
+  count0 =
+		  std::count_if(str_values.begin(),
+				  	    str_values.end(),
+				  	    std::bind2nd(std::less<std::string>(),s));
+  count1 =
+		  std::count_if(str_values.begin(),
+				        str_values.end(),
+				        boost::bind(std::less<std::string>(), _1, s));
+  assert(count1 == count0);
+
+  std::string s1("Expensive copy constructor of std::string now won't be called when binding");
+  count0 = std::count_if(str_values.begin(), str_values.end(),
+		   std::bind2nd(std::less<std::string>(),
+		   boost::cref(s)));
+  count1 = std::count_if(str_values.begin(),
+		                 str_values.end(),
+		                 boost::bind(std::less<std::string>(), _1, boost::cref(s)));
+  assert(count0 == count1);
 
 };
+
+
+void stl_mem_func_ref_example()
+{
+	std::cout << "stl_mem_func_ref_example:" << std::endl;
+	std::vector<std::string> v = {"once", "upon", "a", "time"};
+	std::transform(v.begin(), v.end(),
+			std::ostream_iterator<std::size_t>(std::cout, " "),
+			std::mem_fun_ref(&std::string::size));
+
+};
+
 
 
 
@@ -525,7 +584,11 @@ int main() {
     boost_mul_using_func_obj_example();
    // boost_argument_order_example();
     boost_bind_example();
+    stl_bind_example();
     boost_binding_val_as_func_par_example();
+    stl_mem_func_ref_example();
+
+
 
 	return 0;
 }

@@ -1032,3 +1032,456 @@ Finished building target: BoostAppDevCookbookCh2
 08:05:42 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 make: Nothing to be done for `all'.
+18:38:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:39:24 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:40:32 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:46:01 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:47:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+make: Nothing to be done for `all'.
+18:54:55 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:59:04 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+make: Nothing to be done for `all'.
+20:37:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+20:42:18 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:02:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:451:92: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<2>&, const std::_Placeholder<1>&, int, std::reference_wrapper<const int>, int&)’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+../src/BoostAppDevCookbookCh2.cpp:451:92: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Func’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Result’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+../src/BoostAppDevCookbookCh2.cpp:457:40: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<3>&)’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+../src/BoostAppDevCookbookCh2.cpp:457:40: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Func’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Result’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+21:02:53 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:451:92: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<2>&, const std::_Placeholder<1>&, int, std::reference_wrapper<const int>, int&)’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+../src/BoostAppDevCookbookCh2.cpp:451:92: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Func’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Result’
+    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
+                                                                                            ^
+../src/BoostAppDevCookbookCh2.cpp:457:40: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<3>&)’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+../src/BoostAppDevCookbookCh2.cpp:457:40: note: candidates are:
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Func’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/local/include/boost/any.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:10:
+/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
+     bind(_Func&& __f, _BoundArgs&&... __args)
+     ^
+/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
+../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Result’
+      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
+                                        ^
+../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+21:03:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:05:28 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:465:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:492:9: warning: variable ‘f5’ set but not used [-Wunused-but-set-variable]
+    auto f5 = boost::bind(f1, 1, 2);
+         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:07:09 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:497:15: error: cannot bind ‘std::ostream {aka std::basic_ostream<char>}’ lvalue to ‘std::basic_ostream<char>&&’
+  std::cout << f5 << std::endl;
+               ^
+In file included from /usr/include/c++/4.8/iterator:64:0,
+                 from /usr/local/include/boost/variant/detail/move.hpp:23,
+                 from /usr/local/include/boost/variant/detail/initializer.hpp:23,
+                 from /usr/local/include/boost/variant/variant.hpp:30,
+                 from /usr/local/include/boost/variant.hpp:17,
+                 from ../src/BoostAppDevCookbookCh2.cpp:11:
+/usr/include/c++/4.8/ostream:602:5: error:   initializing argument 1 of ‘std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = boost::_bi::bind_t<int, int (*)(int, int), boost::_bi::list2<boost::_bi::value<int>, boost::_bi::value<int> > >]’
+     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
+     ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+21:07:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:495:7: warning: variable ‘f5’ set but not used [-Wunused-but-set-variable]
+  auto f5 = boost::bind(f1, 1, 2);
+       ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:16:19 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:17:48 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:18:49 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+21:19:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
+../src/BoostAppDevCookbookCh2.cpp:468:13: warning: unused variable ‘i’ [-Wunused-variable]
+    for (int i = 0; n < 10; ++n)
+             ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
