@@ -1,0 +1,45 @@
+//============================================================================
+// Name        : BoostBindExamples.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <string>
+
+#include <boost/bind.hpp>
+
+std::string f(std::string const & x)
+{
+	return "f(" + x + ")";
+}
+
+std::string g(std::string const & x)
+{
+	return "g(" + x + ")";
+}
+
+std::string h(std::string const & x, std::string const & y)
+{
+	return "h(" + x + "," + y + ")";
+}
+
+std::string k()
+{
+	return "k()";
+}
+
+template<class F> void test(F f)
+{
+	std::cout << f("x","y") << std::endl;
+}
+
+
+int main() {
+	std::cout << "Boost bind examples" << std::endl; // prints Boost bind examples
+
+
+	return 0;
+}

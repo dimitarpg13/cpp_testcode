@@ -1,1423 +1,128 @@
-19:39:54 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:09:06 **** Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:352:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-In file included from /usr/include/c++/4.8/algorithm:62:0,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_algo.h: In instantiation of ‘typename std::iterator_traits<_Iterator>::difference_type std::count_if(_IIter, _IIter, _Predicate) [with _IIter = int*; _Predicate = std::_Bind<std::less<int>(int, boost::arg<1>)>; typename std::iterator_traits<_Iterator>::difference_type = long int]’:
-../src/BoostAppDevCookbookCh2.cpp:425:42:   required from here
-/usr/include/c++/4.8/bits/stl_algo.h:4656:21: error: no match for call to ‘(std::_Bind<std::less<int>(int, boost::arg<1>)>) (int&)’
-  if (__pred(*__first))
-                     ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {int, boost::arg<1>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: no match for call to ‘(std::less<int>) (int&, boost::arg<1>&)’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 2 from ‘boost::arg<1>’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {int, boost::arg<1>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: no match for call to ‘(const std::less<int>) (const int&, const boost::arg<1>&)’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 2 from ‘const boost::arg<1>’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {int, boost::arg<1>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: no match for call to ‘(volatile std::less<int>) (volatile int&, volatile boost::arg<1>&)’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘volatile int’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {int, boost::arg<1>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: no match for call to ‘(const volatile std::less<int>) (const volatile int&, const volatile boost::arg<1>&)’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘const volatile int’ to ‘const int&’
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-19:43:23 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:352:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-In file included from /usr/include/c++/4.8/algorithm:62:0,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_algo.h: In instantiation of ‘typename std::iterator_traits<_Iterator>::difference_type std::count_if(_IIter, _IIter, _Predicate) [with _IIter = int*; _Predicate = std::_Bind<std::less<int>(boost::arg<1>, int)>; typename std::iterator_traits<_Iterator>::difference_type = long int]’:
-../src/BoostAppDevCookbookCh2.cpp:425:42:   required from here
-/usr/include/c++/4.8/bits/stl_algo.h:4656:21: error: no match for call to ‘(std::_Bind<std::less<int>(boost::arg<1>, int)>) (int&)’
-  if (__pred(*__first))
-                     ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {boost::arg<1>, int}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: no match for call to ‘(std::less<int>) (boost::arg<1>&, int&)’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘boost::arg<1>’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {boost::arg<1>, int}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: no match for call to ‘(const std::less<int>) (const boost::arg<1>&, const int&)’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘const boost::arg<1>’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {boost::arg<1>, int}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: no match for call to ‘(volatile std::less<int>) (volatile boost::arg<1>&, volatile int&)’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘volatile boost::arg<1>’ to ‘const int&’
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::less<int>; _Bound_args = {boost::arg<1>, int}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: no match for call to ‘(const volatile std::less<int>) (const volatile boost::arg<1>&, const volatile int&)’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-In file included from /usr/include/c++/4.8/string:48:0,
-                 from /usr/include/c++/4.8/random:41,
-                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_function.h:231:12: note: candidate is:
-     struct less : public binary_function<_Tp, _Tp, bool>
-            ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note: bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = int]
-       operator()(const _Tp& __x, const _Tp& __y) const
-       ^
-/usr/include/c++/4.8/bits/stl_function.h:234:7: note:   no known conversion for argument 1 from ‘const volatile boost::arg<1>’ to ‘const int&’
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-19:45:56 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void mul_2_impl2(const std::vector<Number>&)’:
-../src/BoostAppDevCookbookCh2.cpp:202:78: error: reference to ‘_1’ is ambiguous
-  std::for_each(values.begin(), values.end(), boost::bind(std::plus<Number>(),_1,_1));
-                                                                              ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:202:81: error: reference to ‘_1’ is ambiguous
-  std::for_each(values.begin(), values.end(), boost::bind(std::plus<Number>(),_1,_1));
-                                                                                 ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void mul_2_impl3(const std::vector<_RealType>&)’:
-../src/BoostAppDevCookbookCh2.cpp:209:74: error: reference to ‘_1’ is ambiguous
-  std::for_each(values.begin(), values.end(), boost::bind(std::plus<T>(), _1, _1));
-                                                                          ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:209:78: error: reference to ‘_1’ is ambiguous
-  std::for_each(values.begin(), values.end(), boost::bind(std::plus<T>(), _1, _1));
-                                                                              ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:352:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_argument_order_example()’:
-../src/BoostAppDevCookbookCh2.cpp:407:40: error: reference to ‘_2’ is ambiguous
-    d1.watch(boost::bind(&detect_storm, _2, _1, _4));
-                                        ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1005:34: note: candidates are: const std::_Placeholder<2> std::placeholders::_2
-     extern const _Placeholder<2> _2;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:56:15: note:                 boost::arg<2> {anonymous}::_2
- boost::arg<2> _2;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:407:44: error: reference to ‘_1’ is ambiguous
-    d1.watch(boost::bind(&detect_storm, _2, _1, _4));
-                                            ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:407:48: error: reference to ‘_4’ is ambiguous
-    d1.watch(boost::bind(&detect_storm, _2, _1, _4));
-                                                ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1007:34: note: candidates are: const std::_Placeholder<4> std::placeholders::_4
-     extern const _Placeholder<4> _4;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:58:15: note:                 boost::arg<4> {anonymous}::_4
- boost::arg<4> _4;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:411:40: error: reference to ‘_1’ is ambiguous
-    d2.watch(boost::bind(&detect_storm, _1, _2, _3));
-                                        ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:411:44: error: reference to ‘_2’ is ambiguous
-    d2.watch(boost::bind(&detect_storm, _1, _2, _3));
-                                            ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1005:34: note: candidates are: const std::_Placeholder<2> std::placeholders::_2
-     extern const _Placeholder<2> _2;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:56:15: note:                 boost::arg<2> {anonymous}::_2
- boost::arg<2> _2;
-               ^
-../src/BoostAppDevCookbookCh2.cpp:411:48: error: reference to ‘_3’ is ambiguous
-    d2.watch(boost::bind(&detect_storm, _1, _2, _3));
-                                                ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1006:34: note: candidates are: const std::_Placeholder<3> std::placeholders::_3
-     extern const _Placeholder<3> _3;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:57:15: note:                 boost::arg<3> {anonymous}::_3
- boost::arg<3> _3;
-               ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_binding_val_as_func_par_example()’:
-../src/BoostAppDevCookbookCh2.cpp:425:39: error: reference to ‘_1’ is ambiguous
-        std::bind(std::less<int>(), 5, _1));
-                                       ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1004:34: note: candidates are: const std::_Placeholder<1> std::placeholders::_1
-     extern const _Placeholder<1> _1;
-                                  ^
-In file included from /usr/local/include/boost/bind/bind.hpp:1742:0,
-                 from /usr/local/include/boost/bind.hpp:22,
-                 from ../src/BoostAppDevCookbookCh2.cpp:16:
-/usr/local/include/boost/bind/placeholders.hpp:55:15: note:                 boost::arg<1> {anonymous}::_1
- boost::arg<1> _1;
-               ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-19:46:57 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:352:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-20:02:30 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:10:13 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:370:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-22:11:25 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:10:56 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:447:17: error: no match for call to ‘(std::_Bind<void (*(boost::arg<3>, std::_Bind<int (*(boost::arg<3>))(int)>, boost::arg<3>, int, int))(int, int, int, const int&, int)>) (int, int, int)’
-    f2(10, 11, 12);
-                 ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = void (*)(int, int, int, const int&, int); _Bound_args = {boost::arg<3>, std::_Bind<int (*(boost::arg<3>))(int)>, boost::arg<3>, int, int}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1349:40: error: no match for call to ‘(std::_Mu<std::_Bind<int (*(boost::arg<3>))(int)>, true, false>) (std::_Bind<int (*(boost::arg<3>))(int)>&, std::tuple<int, int, int>&)’
-       std::declval<tuple<_Args...>&>() )... ) )>
-                                        ^
-/usr/include/c++/4.8/functional:1131:11: note: candidate is:
-     class _Mu<_Arg, true, false>
-           ^
-/usr/include/c++/4.8/functional:1136:2: note: template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>]
-  operator()(_CVArg& __arg,
-  ^
-/usr/include/c++/4.8/functional:1136:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional: In substitution of ‘template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>] [with _CVArg = std::_Bind<int (*(boost::arg<3>))(int)>; _Args = {int, int, int}]’:
-/usr/include/c++/4.8/functional:1349:40:   required from here
-/usr/include/c++/4.8/functional:1138:39: error: no match for call to ‘(std::_Bind<int (*(boost::arg<3>))(int)>) (int, int, int)’
-  -> decltype(__arg(declval<_Args>()...))
-                                       ^
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: cannot convert ‘boost::arg<3>’ to ‘int’ in argument passing
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: cannot convert ‘const boost::arg<3>’ to ‘int’ in argument passing
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: cannot convert ‘volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: cannot convert ‘const volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:1347:37: error: cannot convert ‘boost::arg<3>’ to ‘int’ in argument passing
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = void (*)(int, int, int, const int&, int); _Bound_args = {boost::arg<3>, std::_Bind<int (*(boost::arg<3>))(int)>, boost::arg<3>, int, int}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1363:40: error: no match for call to ‘(std::_Mu<std::_Bind<int (*(boost::arg<3>))(int)>, true, false>) (const std::_Bind<int (*(boost::arg<3>))(int)>&, std::tuple<int, int, int>&)’
-       std::declval<tuple<_Args...>&>() )... ) )>
-                                        ^
-/usr/include/c++/4.8/functional:1131:11: note: candidate is:
-     class _Mu<_Arg, true, false>
-           ^
-/usr/include/c++/4.8/functional:1136:2: note: template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>]
-  operator()(_CVArg& __arg,
-  ^
-/usr/include/c++/4.8/functional:1136:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional: In substitution of ‘template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>] [with _CVArg = const std::_Bind<int (*(boost::arg<3>))(int)>; _Args = {int, int, int}]’:
-/usr/include/c++/4.8/functional:1363:40:   required from here
-/usr/include/c++/4.8/functional:1138:39: error: no match for call to ‘(const std::_Bind<int (*(boost::arg<3>))(int)>) (int, int, int)’
-  -> decltype(__arg(declval<_Args>()...))
-                                       ^
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: cannot convert ‘boost::arg<3>’ to ‘int’ in argument passing
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: cannot convert ‘const boost::arg<3>’ to ‘int’ in argument passing
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: cannot convert ‘volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: cannot convert ‘const volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:1361:53: error: cannot convert ‘const boost::arg<3>’ to ‘int’ in argument passing
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = void (*)(int, int, int, const int&, int); _Bound_args = {boost::arg<3>, std::_Bind<int (*(boost::arg<3>))(int)>, boost::arg<3>, int, int}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1377:40: error: no match for call to ‘(std::_Mu<std::_Bind<int (*(boost::arg<3>))(int)>, true, false>) (volatile std::_Bind<int (*(boost::arg<3>))(int)>&, std::tuple<int, int, int>&)’
-       std::declval<tuple<_Args...>&>() )... ) )>
-                                        ^
-/usr/include/c++/4.8/functional:1131:11: note: candidate is:
-     class _Mu<_Arg, true, false>
-           ^
-/usr/include/c++/4.8/functional:1136:2: note: template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>]
-  operator()(_CVArg& __arg,
-  ^
-/usr/include/c++/4.8/functional:1136:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional: In substitution of ‘template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>] [with _CVArg = volatile std::_Bind<int (*(boost::arg<3>))(int)>; _Args = {int, int, int}]’:
-/usr/include/c++/4.8/functional:1377:40:   required from here
-/usr/include/c++/4.8/functional:1138:39: error: no match for call to ‘(volatile std::_Bind<int (*(boost::arg<3>))(int)>) (int, int, int)’
-  -> decltype(__arg(declval<_Args>()...))
-                                       ^
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: cannot convert ‘boost::arg<3>’ to ‘int’ in argument passing
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: cannot convert ‘const boost::arg<3>’ to ‘int’ in argument passing
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: cannot convert ‘volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: cannot convert ‘const volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:1375:70: error: cannot convert ‘volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = void (*)(int, int, int, const int&, int); _Bound_args = {boost::arg<3>, std::_Bind<int (*(boost::arg<3>))(int)>, boost::arg<3>, int, int}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1391:40: error: no match for call to ‘(std::_Mu<std::_Bind<int (*(boost::arg<3>))(int)>, true, false>) (const volatile std::_Bind<int (*(boost::arg<3>))(int)>&, std::tuple<int, int, int>&)’
-       std::declval<tuple<_Args...>&>() )... ) )>
-                                        ^
-/usr/include/c++/4.8/functional:1131:11: note: candidate is:
-     class _Mu<_Arg, true, false>
-           ^
-/usr/include/c++/4.8/functional:1136:2: note: template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>]
-  operator()(_CVArg& __arg,
-  ^
-/usr/include/c++/4.8/functional:1136:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional: In substitution of ‘template<class _CVArg, class ... _Args> decltype (__arg((declval<_Args>)()...)) std::_Mu<_Arg, true, false>::operator()(_CVArg&, std::tuple<_Args2 ...>&) const volatile [with _CVArg = _CVArg; _Args = {_Args ...}; _Arg = std::_Bind<int (*(boost::arg<3>))(int)>] [with _CVArg = const volatile std::_Bind<int (*(boost::arg<3>))(int)>; _Args = {int, int, int}]’:
-/usr/include/c++/4.8/functional:1391:40:   required from here
-/usr/include/c++/4.8/functional:1138:39: error: no match for call to ‘(const volatile std::_Bind<int (*(boost::arg<3>))(int)>) (int, int, int)’
-  -> decltype(__arg(declval<_Args>()...))
-                                       ^
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: cannot convert ‘boost::arg<3>’ to ‘int’ in argument passing
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: cannot convert ‘const boost::arg<3>’ to ‘int’ in argument passing
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: cannot convert ‘volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = int (*)(int); _Bound_args = {boost::arg<3>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: cannot convert ‘const volatile boost::arg<3>’ to ‘int’ in argument passing
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:1389:64: error: cannot convert ‘const volatile boost::arg<3>’ to ‘int’ in argument passing
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-22:12:33 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-22:13:52 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:11:23 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-22:24:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:13:49 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-../src/BoostAppDevCookbookCh2.cpp:464:8: error: no match for call to ‘(std::_Bind<std::_Mem_fn<void (Foo::*)(int, int)>(Foo*, int, boost::arg<1>)>) (int)’
-    f3(5);
-        ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1280:11: note: candidates are:
-     class _Bind<_Functor(_Bound_args...)>
-           ^
-/usr/include/c++/4.8/functional:1351:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) [with _Args = {_Args ...}; _Result = _Result; _Functor = std::_Mem_fn<void (Foo::*)(int, int)>; _Bound_args = {Foo*, int, boost::arg<1>}]
-  operator()(_Args&&... __args)
-  ^
-/usr/include/c++/4.8/functional:1351:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: error: no match for call to ‘(std::_Mem_fn<void (Foo::*)(int, int)>) (Foo*&, int&, boost::arg<1>&)’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:541:11: note: candidates are:
-     class _Mem_fn<_Res (_Class::*)(_ArgTypes...)>
-           ^
-/usr/include/c++/4.8/functional:587:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:587:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo*&, std::tuple<int> >((* & std::declval<Foo*&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo*’) to type ‘Foo&’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:592:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:592:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo*&, std::tuple<int> >((* & std::declval<Foo*&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo*’) to type ‘Foo&&’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:600:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class*, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class* __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:600:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:607:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Tp&&, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Tp&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:607:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:616:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(std::reference_wrapper<_Tp>, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(reference_wrapper<_Tp> __ref, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:616:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1347:37: note:   mismatched types ‘std::reference_wrapper<_Tp>’ and ‘Foo*’
-  = decltype( std::declval<_Functor>()(
-                                     ^
-/usr/include/c++/4.8/functional:1365:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const [with _Args = {_Args ...}; _Result = _Result; _Functor = std::_Mem_fn<void (Foo::*)(int, int)>; _Bound_args = {Foo*, int, boost::arg<1>}]
-  operator()(_Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:1365:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: error: no match for call to ‘(const std::_Mem_fn<void (Foo::*)(int, int)>) (Foo* const&, const int&, const boost::arg<1>&)’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:541:11: note: candidates are:
-     class _Mem_fn<_Res (_Class::*)(_ArgTypes...)>
-           ^
-/usr/include/c++/4.8/functional:587:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:587:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* const&, std::tuple<int> >((* & std::declval<Foo* const&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* const’) to type ‘Foo&’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:592:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:592:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* const&, std::tuple<int> >((* & std::declval<Foo* const&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* const’) to type ‘Foo&&’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:600:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class*, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class* __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:600:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:607:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Tp&&, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Tp&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:607:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:616:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(std::reference_wrapper<_Tp>, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(reference_wrapper<_Tp> __ref, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:616:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1361:53: note:   mismatched types ‘std::reference_wrapper<_Tp>’ and ‘Foo*’
-          typename add_const<_Functor>::type>::type>()(
-                                                     ^
-/usr/include/c++/4.8/functional:1379:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::_Mem_fn<void (Foo::*)(int, int)>; _Bound_args = {Foo*, int, boost::arg<1>}]
-  operator()(_Args&&... __args) volatile
-  ^
-/usr/include/c++/4.8/functional:1379:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: error: no match for call to ‘(volatile std::_Mem_fn<void (Foo::*)(int, int)>) (Foo* volatile&, volatile int&, volatile boost::arg<1>&)’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:541:11: note: candidates are:
-     class _Mem_fn<_Res (_Class::*)(_ArgTypes...)>
-           ^
-/usr/include/c++/4.8/functional:587:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:587:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* volatile&, std::tuple<int> >((* & std::declval<Foo* volatile&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* volatile’) to type ‘Foo&’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:592:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:592:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* volatile&, std::tuple<int> >((* & std::declval<Foo* volatile&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* volatile’) to type ‘Foo&&’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:600:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class*, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class* __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:600:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:607:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Tp&&, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Tp&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:607:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:616:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(std::reference_wrapper<_Tp>, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(reference_wrapper<_Tp> __ref, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:616:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1375:70: note:   mismatched types ‘std::reference_wrapper<_Tp>’ and ‘Foo*’
-                        typename add_volatile<_Functor>::type>::type>()(
-                                                                      ^
-/usr/include/c++/4.8/functional:1393:2: note: template<class ... _Args, class _Result> _Result std::_Bind<_Functor(_Bound_args ...)>::operator()(_Args&& ...) const volatile [with _Args = {_Args ...}; _Result = _Result; _Functor = std::_Mem_fn<void (Foo::*)(int, int)>; _Bound_args = {Foo*, int, boost::arg<1>}]
-  operator()(_Args&&... __args) const volatile
-  ^
-/usr/include/c++/4.8/functional:1393:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: error: no match for call to ‘(const volatile std::_Mem_fn<void (Foo::*)(int, int)>) (Foo* const volatile&, const volatile int&, const volatile boost::arg<1>&)’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:541:11: note: candidates are:
-     class _Mem_fn<_Res (_Class::*)(_ArgTypes...)>
-           ^
-/usr/include/c++/4.8/functional:587:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:587:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* const volatile&, std::tuple<int> >((* & std::declval<Foo* const volatile&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* const volatile’) to type ‘Foo&’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:592:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class&&, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:592:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: note:   cannot convert ‘std::_Mu<Foo*, false, false>().std::_Mu<_Arg, false, false>::operator()<Foo* const volatile&, std::tuple<int> >((* & std::declval<Foo* const volatile&>()), (* & std::declval<std::tuple<int>&>()))’ (type ‘Foo* const volatile’) to type ‘Foo&&’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-/usr/include/c++/4.8/functional:600:2: note: template<class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Class*, _Args&& ...) const [with _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Class* __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:600:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:607:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(_Tp&&, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(_Tp&& __object, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:607:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:616:2: note: template<class _Tp, class ... _Args, class _Req> _Res std::_Mem_fn<_Res (_Class::*)(_ArgTypes ...)>::operator()(std::reference_wrapper<_Tp>, _Args&& ...) const [with _Tp = _Tp; _Args = {_Args ...}; _Req = _Req; _Res = void; _Class = Foo; _ArgTypes = {int, int}]
-  operator()(reference_wrapper<_Tp> __ref, _Args&&... __args) const
-  ^
-/usr/include/c++/4.8/functional:616:2: note:   template argument deduction/substitution failed:
-/usr/include/c++/4.8/functional:1389:64: note:   mismatched types ‘std::reference_wrapper<_Tp>’ and ‘Foo*’
-                        typename add_cv<_Functor>::type>::type>()(
-                                                                ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-22:27:07 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-22:34:29 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:26:15 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
+Building file: ../src/BoostBindExamples.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
  
-Building target: BoostAppDevCookbookCh2
+Building target: BoostBindExamples
 Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
  
-07:09:46 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+03:56:12 **** Incremental Build of configuration Debug for project BoostBindExamples ****
+make all 
+Building file: ../src/BoostBindExamples.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostBindExamples.d" -MT"src/BoostBindExamples.d" -o "src/BoostBindExamples.o" "../src/BoostBindExamples.cpp"
+Finished building: ../src/BoostBindExamples.cpp
+ 
+Building target: BoostBindExamples
+Invoking: GCC C++ Linker
+g++ -L/opt/boost/boost_1_57_0/stage/lib -o "BoostBindExamples"  ./src/BoostBindExamples.o   -lboost_system -lboost_thread
+Finished building target: BoostBindExamples
+ 
+03:59:53 **** Incremental Build of configuration Debug for project BoostBindExamples ****
 make all 
 make: Nothing to be done for `all'.
-07:10:47 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+06:47:15 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:458:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-07:58:56 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_binding_val_as_func_par_example()’:
-../src/BoostAppDevCookbookCh2.cpp:498:62: error: no matching function for call to ‘count_if(boost::array<std::basic_string<char>, 3ul>::iterator, boost::array<std::basic_string<char>, 3ul>::iterator)’
-   count0 = std::count_if(str_values.begin(), str_values.end());
-                                                              ^
-../src/BoostAppDevCookbookCh2.cpp:498:62: note: candidate is:
-In file included from /usr/include/c++/4.8/algorithm:62:0,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/bits/stl_algo.h:4647:5: note: template<class _IIter, class _Predicate> typename std::iterator_traits<_Iterator>::difference_type std::count_if(_IIter, _IIter, _Predicate)
-     count_if(_InputIterator __first, _InputIterator __last, _Predicate __pred)
-     ^
-/usr/include/c++/4.8/bits/stl_algo.h:4647:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:498:62: note:   candidate expects 3 arguments, 2 provided
-   count0 = std::count_if(str_values.begin(), str_values.end());
-                                                              ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-08:00:11 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-08:03:05 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-08:05:42 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-make: Nothing to be done for `all'.
-18:38:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-18:39:24 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-18:40:32 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-18:46:01 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-18:47:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-make: Nothing to be done for `all'.
-18:54:55 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-18:59:04 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-make: Nothing to be done for `all'.
-20:37:41 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-20:42:18 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:371:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:454:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-21:02:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:451:92: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<2>&, const std::_Placeholder<1>&, int, std::reference_wrapper<const int>, int&)’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-../src/BoostAppDevCookbookCh2.cpp:451:92: note: candidates are:
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Func’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Result’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-../src/BoostAppDevCookbookCh2.cpp:457:40: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<3>&)’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-../src/BoostAppDevCookbookCh2.cpp:457:40: note: candidates are:
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Func’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Result’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-21:02:53 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:451:92: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<2>&, const std::_Placeholder<1>&, int, std::reference_wrapper<const int>, int&)’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-../src/BoostAppDevCookbookCh2.cpp:451:92: note: candidates are:
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Func’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:451:92: note:   couldn't deduce template parameter ‘_Result’
-    auto f1 = std::bind(f, std::placeholders::_2, std::placeholders::_1, 42, std::cref(n), n);
-                                                                                            ^
-../src/BoostAppDevCookbookCh2.cpp:457:40: error: no matching function for call to ‘bind(<unresolved overloaded function type>, const std::_Placeholder<3>&)’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-../src/BoostAppDevCookbookCh2.cpp:457:40: note: candidates are:
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1655:5: note: template<class _Func, class ... _BoundArgs> typename std::_Bind_helper<std::__or_<std::is_integral<typename std::decay<_Tp>::type>, std::is_enum<typename std::decay<_Tp>::type> >::value, _Func, _BoundArgs ...>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1655:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Func’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
-                 from /usr/include/c++/4.8/algorithm:62,
-                 from /usr/local/include/boost/any.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:10:
-/usr/include/c++/4.8/functional:1682:5: note: template<class _Result, class _Func, class ... _BoundArgs> typename std::_Bindres_helper<_Result, _Func, _BoundArgs>::type std::bind(_Func&&, _BoundArgs&& ...)
-     bind(_Func&& __f, _BoundArgs&&... __args)
-     ^
-/usr/include/c++/4.8/functional:1682:5: note:   template argument deduction/substitution failed:
-../src/BoostAppDevCookbookCh2.cpp:457:40: note:   couldn't deduce template parameter ‘_Result’
-      std::bind(g, std::placeholders::_3), std::placeholders::_3, 4, 5);
-                                        ^
-../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-21:03:12 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:464:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-21:05:28 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:465:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:492:9: warning: variable ‘f5’ set but not used [-Wunused-but-set-variable]
-    auto f5 = boost::bind(f1, 1, 2);
-         ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-21:07:09 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:497:15: error: cannot bind ‘std::ostream {aka std::basic_ostream<char>}’ lvalue to ‘std::basic_ostream<char>&&’
-  std::cout << f5 << std::endl;
-               ^
-In file included from /usr/include/c++/4.8/iterator:64:0,
-                 from /usr/local/include/boost/variant/detail/move.hpp:23,
-                 from /usr/local/include/boost/variant/detail/initializer.hpp:23,
-                 from /usr/local/include/boost/variant/variant.hpp:30,
-                 from /usr/local/include/boost/variant.hpp:17,
-                 from ../src/BoostAppDevCookbookCh2.cpp:11:
-/usr/include/c++/4.8/ostream:602:5: error:   initializing argument 1 of ‘std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&&, const _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = boost::_bi::bind_t<int, int (*)(int, int), boost::_bi::list2<boost::_bi::value<int>, boost::_bi::value<int> > >]’
-     operator<<(basic_ostream<_CharT, _Traits>&& __os, const _Tp& __x)
-     ^
-make: *** [src/BoostAppDevCookbookCh2.o] Error 1
-21:07:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:495:7: warning: variable ‘f5’ set but not used [-Wunused-but-set-variable]
-  auto f5 = boost::bind(f1, 1, 2);
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void cpp11_move_emulation_example()’:
+../src/BoostAppDevCookbookCh2.cpp:327:14: error: ‘std::string person_info::name_’ is private
+  std::string name_;
+              ^
+../src/BoostAppDevCookbookCh2.cpp:650:10: error: within this context
+    vasya.name_ = "Vasya";
+          ^
+../src/BoostAppDevCookbookCh2.cpp:328:14: error: ‘std::string person_info::second_name_’ is private
+  std::string second_name_;
+              ^
+../src/BoostAppDevCookbookCh2.cpp:651:10: error: within this context
+    vasya.second_name_ = "Snow";
+          ^
+../src/BoostAppDevCookbookCh2.cpp:326:7: error: ‘bool person_info::is_male_’ is private
+  bool is_male_;
        ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-21:16:19 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+../src/BoostAppDevCookbookCh2.cpp:652:10: error: within this context
+    vasya.is_male_ = true;
+          ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+06:48:02 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:458:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp
  
 Building target: BoostAppDevCookbookCh2
@@ -1425,19 +130,15 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
-21:17:48 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+17:59:08 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:458:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp
  
 Building target: BoostAppDevCookbookCh2
@@ -1445,19 +146,15 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
-21:18:49 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+21:27:50 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:458:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:467:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp
  
 Building target: BoostAppDevCookbookCh2
@@ -1465,33 +162,13 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
-21:19:39 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+21:32:22 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
-     const std::string & str = boost::get<1>(almost_a_pair);
-                         ^
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void stl_bind_example()’:
-../src/BoostAppDevCookbookCh2.cpp:468:13: warning: unused variable ‘i’ [-Wunused-variable]
-    for (int i = 0; n < 10; ++n)
-             ^
-Finished building: ../src/BoostAppDevCookbookCh2.cpp
- 
-Building target: BoostAppDevCookbookCh2
-Invoking: GCC C++ Linker
-g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
-Finished building target: BoostAppDevCookbookCh2
- 
-21:25:19 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
-make all 
-Building file: ../src/BoostAppDevCookbookCh2.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
-../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:381:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:468:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp

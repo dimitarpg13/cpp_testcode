@@ -15,6 +15,7 @@
 #include <boost/tuple/tuple_comparison.hpp> // making tuples and comparing them
 #include <boost/bind.hpp>
 #include <boost/ref.hpp>
+#include <boost/swap.hpp> // cpp11_move_emulation_example
 
 #include <vector>
 #include <set>
@@ -303,6 +304,92 @@ int g1(int a, int b, int c)
 	return a + b + c;
 };
 
+// cpp11_move_emulation_example
+namespace other
+{
+   // its default characteristics is cheap/fast class characteristics{};
+   class characteristics
+   {
+
+   };
+
+};
+
+// cpp11_move_emulation_example
+struct person_info {
+
+	bool is_male_;
+	std::string name_;
+	std::string second_name_;
+	other::characteristics characteristic_;
+
+
+private:
+	BOOST_COPYABLE_AND_MOVABLE(person_info)
+
+
+
+public:
+	// for the simplicity of the example we will assume that person_info default
+    // constructor and swap are very fast/cheap to call
+    person_info() {}
+
+    person_info(const person_info & p) : is_male_(p.is_male_),
+    									 name_(p.name_),
+    									 second_name_(p.second_name_),
+    									 characteristic_(p.characteristic_)
+    {
+
+    }
+
+    person_info(BOOST_RV_REF(person_info) person)
+    {
+    	swap(person);
+    }
+
+    person_info & operator= (BOOST_COPY_ASSIGN_REF(person_info) person)
+    {
+    	if (this != &person)
+    	{
+    		person_info tmp(person);
+    		swap(tmp);
+    	}
+    	return *this;
+    }
+
+    person_info& operator= (BOOST_RV_REF(person_info) person)
+    {
+    	if (this != &person)
+    	{
+    		swap(person);
+    		person_info tmp;
+    		tmp.swap(person);
+    	}
+    	return *this;
+    }
+
+
+	void swap(person_info & rhs)
+	{
+		std::swap(is_male_, rhs.is_male_);
+		name_.swap(rhs.name_);
+		second_name_.swap(rhs.second_name_);
+		boost::swap(characteristic_, rhs.characteristic_);
+	};
+
+
+};
+
+
+class descriptor_owner
+{
+	void * descriptor_;
+
+public:
+	explicit descriptor_owner(const char * params);
+
+};
+
 void boost_any_example()
 {
 	std::cout << "boost_any_example:" << std::endl;
@@ -567,6 +654,28 @@ void stl_mem_func_ref_example()
 };
 
 
+void cpp11_move_emulation_example()
+{
+   person_info vasya;
+   vasya.name_ = "Vasya";
+   vasya.second_name_ = "Snow";
+   vasya.is_male_ = true;
+
+   person_info new_vasya(boost::move(vasya));
+   assert(new_vasya.name_ == "Vasya");
+   assert(new_vasya.second_name_ == "Snow");
+   assert(vasya.name_.empty());
+   assert(vasya.second_name_.empty());
+
+   vasya = boost::move(new_vasya);
+   assert(vasya.name_ == "Vasya");
+   assert(vasya.second_name_ == "Snow");
+   assert(new_vasya.name_.empty());
+   assert(new_vasya.second_name_.empty());
+
+};
+
+
 
 
 
@@ -587,7 +696,7 @@ int main() {
     stl_bind_example();
     boost_binding_val_as_func_par_example();
     stl_mem_func_ref_example();
-
+    cpp11_move_emulation_example();
 
 
 	return 0;
