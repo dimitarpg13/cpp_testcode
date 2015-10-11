@@ -1,4 +1,4 @@
-21:04:51 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh1 ****
+19:33:19 **** Build of configuration Debug for project BoostAppDevCookbookCh1 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh1.cpp
 Invoking: GCC C++ Compiler
@@ -10,7 +10,7 @@ Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.8.4-2ubuntu1~14
 Thread model: posix
 gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04) 
 COLLECT_GCC_OPTIONS='-std=c++11' '-O0' '-g3' '-p' '-pg' '-Wall' '-c' '-fmessage-length=0' '-fpermissive' '-v' '-MMD' '-MP' '-MF' 'src/BoostAppDevCookbookCh1.d' '-MT' 'src/BoostAppDevCookbookCh1.d' '-o' 'src/BoostAppDevCookbookCh1.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -MMD src/BoostAppDevCookbookCh1.d -MF src/BoostAppDevCookbookCh1.d -MP -MT src/BoostAppDevCookbookCh1.d -dD -D_GNU_SOURCE ../src/BoostAppDevCookbookCh1.cpp -quiet -dumpbase BoostAppDevCookbookCh1.cpp -mtune=generic -march=x86-64 -auxbase-strip src/BoostAppDevCookbookCh1.o -g3 -O0 -Wall -std=c++11 -version -p -p -fmessage-length=0 -fpermissive -fstack-protector -Wformat-security -o /tmp/ccH4bY7n.s
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -MMD src/BoostAppDevCookbookCh1.d -MF src/BoostAppDevCookbookCh1.d -MP -MT src/BoostAppDevCookbookCh1.d -dD -D_GNU_SOURCE ../src/BoostAppDevCookbookCh1.cpp -quiet -dumpbase BoostAppDevCookbookCh1.cpp -mtune=generic -march=x86-64 -auxbase-strip src/BoostAppDevCookbookCh1.o -g3 -O0 -Wall -std=c++11 -version -p -p -fmessage-length=0 -fpermissive -fstack-protector -Wformat-security -o /tmp/ccTFaLKa.s
 GNU C++ (Ubuntu 4.8.4-2ubuntu1~14.04) version 4.8.4 (x86_64-linux-gnu)
 	compiled by GNU C version 4.8.4, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -32,8 +32,12 @@ GNU C++ (Ubuntu 4.8.4-2ubuntu1~14.04) version 4.8.4 (x86_64-linux-gnu)
 	compiled by GNU C version 4.8.4, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 9cb21c615435621dce26fe5e793192fd
+../src/BoostAppDevCookbookCh1.cpp: In function ‘int main()’:
+../src/BoostAppDevCookbookCh1.cpp:657:10: warning: unused variable ‘j’ [-Wunused-variable]
+      int j = convert(text).value();
+          ^
 make: *** [src/BoostAppDevCookbookCh1.o] Terminated
 Command canceled
 
-21:04:53 Build Cancelled (took 1s.386ms)
+19:33:24 Build Cancelled (took 5s.286ms)
 

@@ -16,9 +16,13 @@
 #include <boost/bind.hpp>
 #include <boost/ref.hpp>
 #include <boost/swap.hpp> // cpp11_move_emulation_example
+#include <boost/container/vector.hpp>
+#include <boost/lexical_cast.hpp>
+
 
 #include <vector>
 #include <set>
+#include <deque>
 #include <string>
 #include <typeinfo>
 #include <algorithm>
@@ -29,7 +33,8 @@
 #include <chrono>         // std::chrono::seconds
 #include <memory>
 #include <random>
-
+#include <locale>  // used in the lexical_cast example
+#include <iterator>
 
 //these typedefs and methods will be in our header
 //that wraps around native SQL iface
@@ -380,15 +385,168 @@ public:
 
 };
 
-
+// this class is copyable and this create resource deallocation problem
+// after copying an instance of descriptor_owner to another local instance
 class descriptor_owner
 {
 	void * descriptor_;
 
 public:
 	explicit descriptor_owner(const char * params);
+    ~descriptor_owner() {
+    	//system_api_free_descriptor(descriptor_);
+    };
+};
+
+// by inheriting from boost::noncopyable we preclude the user
+// from doing bad things with this class
+class descriptor_owner_fixed : private boost::noncopyable
+{
+	void * descriptor_;
+
+public:
+	explicit descriptor_owner_fixed(const char * params);
+    ~descriptor_owner_fixed() {
+    	//system_api_free_descriptor(descriptor_);
+    };
+};
+
+// this will only work on C++11 compatible compilers
+class descriptor_owner1
+{
+    void * descriptor_;
+
+public:
+    descriptor_owner1() : descriptor_(NULL) {};
+    explicit descriptor_owner1(const char * param) : descriptor_(strdup(param))
+    {
+    }
+
+    descriptor_owner1(descriptor_owner1 && param) : descriptor_(param.descriptor_)
+    {
+    	param.descriptor_ = NULL;
+    }
+
+    descriptor_owner1 & operator= (descriptor_owner1 && param)
+    {
+    	clear();
+    	std::swap(descriptor_, param.descriptor_);
+    	return *this;
+    }
+
+    void clear()
+    {
+    	free(descriptor_);
+    	descriptor_ = NULL;
+    }
+
+    bool empty() const
+    {
+    	return !descriptor_;
+    }
+
+    ~descriptor_owner1()
+    {
+    	clear();
+    }
 
 };
+
+
+
+// gcc compiles the following with std=c++0x
+descriptor_owner1 construct_descriptor2()
+{
+	return descriptor_owner1("Construct using this string");
+};
+
+void foo_rv()
+{
+	std::cout << "C++11" << std::endl;
+	descriptor_owner1 desc;
+	desc = construct_descriptor2();
+	assert(!desc.empty());
+};
+
+
+
+class descriptor_owner_movable
+{
+private:
+    void * descriptor_;
+
+    BOOST_MOVABLE_BUT_NOT_COPYABLE(descriptor_owner_movable);
+
+public:
+    descriptor_owner_movable() : descriptor_(NULL) {};
+    explicit descriptor_owner_movable(const char * param) : descriptor_(strdup(param))
+    {
+    }
+
+    descriptor_owner_movable(descriptor_owner_movable && param) : descriptor_(param.descriptor_)
+    {
+    	param.descriptor_ = NULL;
+    }
+
+    descriptor_owner_movable & operator= (descriptor_owner_movable && param)
+    {
+    	clear();
+    	std::swap(descriptor_, param.descriptor_);
+    	return *this;
+    }
+
+    void clear()
+    {
+    	free(descriptor_);
+    	descriptor_ = NULL;
+    }
+
+    bool empty() const
+    {
+    	return !descriptor_;
+    }
+
+    ~descriptor_owner_movable()
+    {
+    	clear();
+    }
+
+};
+
+
+descriptor_owner_movable construct_descriptor3()
+{
+	return descriptor_owner_movable("Construct using this string");
+};
+
+template<class T> void swap(T& a, T& b)
+{
+	T tmp(boost::move(a));
+	a = boost::move(b);
+	b = boost::move(tmp);
+};
+
+class move_test
+{
+private:
+	int val;
+
+public:
+	move_test(int newVal) : val(newVal) {};
+	int getVal()  { return val; };
+};
+
+template<class ContainerT>
+std::vector<long int> container_to_longs(const ContainerT& container)
+{
+	typedef typename ContainerT::value_type value_type;
+	std::vector<long int> ret;
+	typedef long int (*func_t) (const value_type &);
+    func_t f = &boost::lexical_cast<long int, value_type>;
+    std::transform(container.begin(), container.end(), std::back_inserter(ret), f);
+
+	return ret;
+}
 
 void boost_any_example()
 {
@@ -676,8 +834,59 @@ void cpp11_move_emulation_example()
 };
 
 
+void boost_movable_descriptor_example()
+{
+	descriptor_owner_movable movable;
+	movable = construct_descriptor3();
 
+	boost::container::vector<descriptor_owner_movable> vec;
+	vec.resize(10);
+	vec.push_back(construct_descriptor3());
+	vec.back() = boost::move(vec.front());
+};
 
+void boost_move_example()
+{
+   std::cout << "boos_move_example:" << std::endl;
+   move_test t1(1), t2(2);
+   std::cout << "Before swap: t1.val = " << t1.getVal() << ", t2.val = " << t2.getVal() << std::endl;
+   swap(t1,t2);
+   std::cout << "After swap: t1.val = " << t1.getVal() << ", t2.val = " << t2.getVal() << std::endl;
+};
+
+void boost_lexical_cast_example()
+{
+   std::cout << "boos_lexical_cast_example:" << std::endl;
+   int i = boost::lexical_cast<int>("100");
+   char chars[] = {'1', '0', '0'};
+   int ii = boost::lexical_cast<int>(chars,3);
+   assert(i == 100);
+   assert(i == ii);
+
+   //std::locale::global(std::locale("ru_RU.UTF"));
+   //float f = boost::lexical_cast<float> ("1,0");
+   //assert(f < 1.01 && f > 0.99);
+
+   std::set<std::string> str_set;
+   str_set.insert("1");
+   assert(container_to_longs(str_set).front() == 1);
+
+   std::deque<const char*> char_deque;
+   char_deque.push_front("1");
+   char_deque.push_back("2");
+   assert(container_to_longs(char_deque).front() == 1);
+   assert(container_to_longs(char_deque).back() == 2);
+
+   // obfuscating people with curly braces
+   typedef boost::array<unsigned char,2> element_t;
+   boost::array<element_t,2> arrays = {{ {{'1','0'}}, {{'2','0'}} }};
+   assert(container_to_longs(arrays).front() == 10);
+   assert(container_to_longs(arrays).back() == 20);
+
+   std::string s = boost::lexical_cast<std::string>(100);
+   assert(s == "100");
+
+};
 
 
 int main() {
@@ -697,7 +906,8 @@ int main() {
     boost_binding_val_as_func_par_example();
     stl_mem_func_ref_example();
     cpp11_move_emulation_example();
-
+    boost_move_example();
+    boost_lexical_cast_example();
 
 	return 0;
 }
