@@ -18,6 +18,7 @@
 #include <boost/swap.hpp> // cpp11_move_emulation_example
 #include <boost/container/vector.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/numeric/conversion/cast.hpp> // for numeric-to-numeric conversions
 
 
 #include <vector>
@@ -548,6 +549,69 @@ std::vector<long int> container_to_longs(const ContainerT& container)
 	return ret;
 }
 
+void some_function(unsigned short param)
+{
+
+}
+
+bool some_extremely_rare_condition()
+{
+	bool res = false;
+
+	return res;
+
+}
+
+bool another_extremely_rare_condition()
+{
+	bool res = false;
+
+	return res;
+}
+
+
+int foo()
+{
+	if (some_extremely_rare_condition())
+		return -1;
+	else if (another_extremely_rare_condition())
+		return 1000000;
+
+	return 65535;
+}
+
+void numeric_conversion_correct_implementation()
+{
+	some_function(boost::numeric_cast<unsigned short>(foo()));
+}
+
+template<class SourceT, class TargetT>
+struct mythrow_overflow_handler
+{
+	void operator()(boost::numeric::range_check_result r)
+	{
+	   if (r != boost::numeric::cInRange)
+	   {
+		   throw std::logic_error("Not in range");
+	   }
+	}
+};
+
+template<class TargetT, class SourceT>
+TargetT my_numeric_cast(const SourceT& in)
+{
+	using namespace boost;
+	typedef numeric::conversion_traits<TargetT, SourceT> conv_traits;
+	typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+	typedef boost::numeric::converter
+			<
+			  TargetT,SourceT,conv_traits,mythrow_overflow_handler<SourceT,TargetT>
+	        > converter;
+	return converter::convert(in);
+
+};
+
+
 void boost_any_example()
 {
 	std::cout << "boost_any_example:" << std::endl;
@@ -888,6 +952,40 @@ void boost_lexical_cast_example()
 
 };
 
+void boost_numeric_conversion_example()
+{
+	for (unsigned int i = 0; i < 100; ++i)
+	{
+		try
+		{
+			numeric_conversion_correct_implementation();
+		}
+		//catch (const boost::numeric::bad_numeric_cast& e)
+		//{
+		//	std::cout << '#' << i << ' ' << e.what() << std::endl;
+		//}
+		catch (const boost::numeric::positive_overflow& e)
+		{
+			// do something specific for positive overflow
+			std::cout << "POS OVERFLOW in #" << i << ' ' << e.what() << std::endl;
+		}
+		catch (const boost::numeric::negative_overflow& e)
+		{
+			// do something specific for negative overflow
+			std::cout << "NEG OVERFLOW in #" << i << ' ' << e.what() << std::endl;
+		}
+	}
+
+	try
+	{
+		my_numeric_cast<short>(100000);
+	}
+	catch (const std::logic_error & e)
+	{
+		std::cout << "It works! " << e.what() << std::endl;
+	}
+};
+
 
 int main() {
 	std::cout << "Boost C++ Application Development Cookbook Chapter 2" << std::endl; // prints Boost C++ Application Development Cookbook
@@ -908,6 +1006,7 @@ int main() {
     cpp11_move_emulation_example();
     boost_move_example();
     boost_lexical_cast_example();
+    boost_numeric_conversion_example();
 
 	return 0;
 }
