@@ -912,3 +912,348 @@ Invoking: GCC C++ Linker
 g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
 Finished building target: BoostAppDevCookbookCh2
  
+18:45:50 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:715:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:54:46 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:729:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘std::istream& operator>>(std::istream&, negative_number&)’:
+../src/BoostAppDevCookbookCh2.cpp:650:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+18:59:20 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:729:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from ../src/BoostAppDevCookbookCh2.cpp:20:0:
+/usr/local/include/boost/lexical_cast.hpp: In instantiation of ‘Target boost::lexical_cast(const Source&) [with Target = negative_number; Source = char [5]]’:
+../src/BoostAppDevCookbookCh2.cpp:1031:65:   required from here
+/usr/local/include/boost/lexical_cast.hpp:39:16: error: no matching function for call to ‘negative_number::negative_number()’
+         Target result;
+                ^
+/usr/local/include/boost/lexical_cast.hpp:39:16: note: candidates are:
+../src/BoostAppDevCookbookCh2.cpp:622:11: note: negative_number::negative_number(short unsigned int)
+  explicit negative_number(unsigned short number) : number_(number)
+           ^
+../src/BoostAppDevCookbookCh2.cpp:622:11: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(const negative_number&)
+ class negative_number
+       ^
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(negative_number&&)
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp: In function ‘std::istream& operator>>(std::istream&, negative_number&)’:
+../src/BoostAppDevCookbookCh2.cpp:650:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:00:06 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:729:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from ../src/BoostAppDevCookbookCh2.cpp:20:0:
+/usr/local/include/boost/lexical_cast.hpp: In instantiation of ‘Target boost::lexical_cast(const Source&) [with Target = negative_number; Source = char [5]]’:
+../src/BoostAppDevCookbookCh2.cpp:1031:65:   required from here
+/usr/local/include/boost/lexical_cast.hpp:39:16: error: no matching function for call to ‘negative_number::negative_number()’
+         Target result;
+                ^
+/usr/local/include/boost/lexical_cast.hpp:39:16: note: candidates are:
+../src/BoostAppDevCookbookCh2.cpp:622:11: note: negative_number::negative_number(short unsigned int)
+  explicit negative_number(unsigned short number) : number_(number)
+           ^
+../src/BoostAppDevCookbookCh2.cpp:622:11: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(const negative_number&)
+ class negative_number
+       ^
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(negative_number&&)
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp: In function ‘std::istream& operator>>(std::istream&, negative_number&)’:
+../src/BoostAppDevCookbookCh2.cpp:650:1: warning: control reaches end of non-void function [-Wreturn-type]
+ };
+ ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:01:08 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:731:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+In file included from ../src/BoostAppDevCookbookCh2.cpp:20:0:
+/usr/local/include/boost/lexical_cast.hpp: In instantiation of ‘Target boost::lexical_cast(const Source&) [with Target = negative_number; Source = char [5]]’:
+../src/BoostAppDevCookbookCh2.cpp:1033:65:   required from here
+/usr/local/include/boost/lexical_cast.hpp:39:16: error: no matching function for call to ‘negative_number::negative_number()’
+         Target result;
+                ^
+/usr/local/include/boost/lexical_cast.hpp:39:16: note: candidates are:
+../src/BoostAppDevCookbookCh2.cpp:622:11: note: negative_number::negative_number(short unsigned int)
+  explicit negative_number(unsigned short number) : number_(number)
+           ^
+../src/BoostAppDevCookbookCh2.cpp:622:11: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(const negative_number&)
+ class negative_number
+       ^
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+../src/BoostAppDevCookbookCh2.cpp:618:7: note: constexpr negative_number::negative_number(negative_number&&)
+../src/BoostAppDevCookbookCh2.cpp:618:7: note:   candidate expects 1 argument, 0 provided
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:06:09 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:733:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:06:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:733:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:10:43 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:733:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:12:59 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:733:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:21:02 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: At global scope:
+../src/BoostAppDevCookbookCh2.cpp:657:20: error: ‘CharT’ was not declared in this scope
+ std::basic_ostream<CharT>&
+                    ^
+../src/BoostAppDevCookbookCh2.cpp:657:25: error: template argument 1 is invalid
+ std::basic_ostream<CharT>&
+                         ^
+../src/BoostAppDevCookbookCh2.cpp:657:25: error: template argument 2 is invalid
+../src/BoostAppDevCookbookCh2.cpp:658:31: error: ‘CharT’ was not declared in this scope
+ operator<<(std::basic_ostream<CharT>& os,
+                               ^
+../src/BoostAppDevCookbookCh2.cpp:658:36: error: template argument 1 is invalid
+ operator<<(std::basic_ostream<CharT>& os,
+                                    ^
+../src/BoostAppDevCookbookCh2.cpp:658:36: error: template argument 2 is invalid
+../src/BoostAppDevCookbookCh2.cpp: In function ‘int& operator<<(int&, const negative_number&)’:
+../src/BoostAppDevCookbookCh2.cpp:661:20: error: expected type-specifier before ‘CharT’
+  os << static_cast<CharT>('-') << num.value_without_sign() ;
+                    ^
+../src/BoostAppDevCookbookCh2.cpp:661:20: error: expected ‘>’ before ‘CharT’
+../src/BoostAppDevCookbookCh2.cpp:661:20: error: expected ‘(’ before ‘CharT’
+../src/BoostAppDevCookbookCh2.cpp:661:20: error: ‘CharT’ was not declared in this scope
+../src/BoostAppDevCookbookCh2.cpp:661:60: error: expected ‘)’ before ‘;’ token
+  os << static_cast<CharT>('-') << num.value_without_sign() ;
+                                                            ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:742:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+19:22:10 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:742:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+19:55:57 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:756:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 
+20:16:57 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:760:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_user_defined_type_conversion_example()’:
+../src/BoostAppDevCookbookCh2.cpp:1079:9: error: conflicting declaration ‘warr_t arr’
+  warr_t arr = boost::lexical_cast<warr_t>(n1);
+         ^
+../src/BoostAppDevCookbookCh2.cpp:1068:8: error: ‘arr’ has a previous declaration as ‘arr_t arr’
+  arr_t arr =
+        ^
+make: *** [src/BoostAppDevCookbookCh2.o] Error 1
+20:17:26 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+make all 
+Building file: ../src/BoostAppDevCookbookCh2.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevCookbookCh2.d" -MT"src/BoostAppDevCookbookCh2.d" -o "src/BoostAppDevCookbookCh2.o" "../src/BoostAppDevCookbookCh2.cpp"
+../src/BoostAppDevCookbookCh2.cpp: In function ‘TargetT my_numeric_cast(const SourceT&)’:
+../src/BoostAppDevCookbookCh2.cpp:608:57: warning: typedef ‘cast_traits’ locally defined but not used [-Wunused-local-typedefs]
+  typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
+                                                         ^
+../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
+../src/BoostAppDevCookbookCh2.cpp:760:25: warning: unused variable ‘str’ [-Wunused-variable]
+     const std::string & str = boost::get<1>(almost_a_pair);
+                         ^
+Finished building: ../src/BoostAppDevCookbookCh2.cpp
+ 
+Building target: BoostAppDevCookbookCh2
+Invoking: GCC C++ Linker
+g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./src/BoostAppDevCookbookCh2.o   -lboost_system -lboost_thread
+Finished building target: BoostAppDevCookbookCh2
+ 

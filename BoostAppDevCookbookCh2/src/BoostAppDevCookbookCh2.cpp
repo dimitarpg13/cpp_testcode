@@ -36,6 +36,9 @@
 #include <random>
 #include <locale>  // used in the lexical_cast example
 #include <iterator>
+#include <iosfwd>  // for user-defined types conversions
+#include <stdexcept> // for user-defined types conversions
+
 
 //these typedefs and methods will be in our header
 //that wraps around native SQL iface
@@ -611,6 +614,73 @@ TargetT my_numeric_cast(const SourceT& in)
 
 };
 
+//negative number that does not store minus sign
+class negative_number
+{
+	unsigned short number_;
+public:
+	explicit negative_number(unsigned short number) : number_(number)
+	{
+	}
+
+	negative_number() : number_(1) {};
+
+    unsigned short value_without_sign() const
+    {
+    	return number_;
+    }
+};
+
+std::ostream& operator<< (std::ostream& os, const negative_number& num)
+{
+	os << '-'  << num.value_without_sign();
+	return os;
+};
+
+std::istream& operator>> (std::istream& is, negative_number& num)
+{
+	char ch;
+	is >> ch;
+	if (ch != '-')
+	{
+		throw std::logic_error("negative_number class designed to store only negative values");
+	}
+
+	unsigned short s;
+    is >> s;
+	num = negative_number(s);
+	return is;
+
+};
+
+template<class CharT>
+std::basic_ostream<CharT>&
+operator<<(std::basic_ostream<CharT>& os,
+		const negative_number & num)
+{
+	os << static_cast<CharT>('-') << num.value_without_sign() ;
+	return os;
+};
+
+template<class CharT>
+std::basic_istream<CharT>& operator>>
+(std::basic_istream<CharT>& is,
+		negative_number& num)
+{
+	CharT ch;
+	is >> ch;
+	if (ch != static_cast<CharT>('-'))
+	{
+		throw std::logic_error("negative_number is designed to store only negative values");
+	}
+    unsigned short s;
+    is >> s;
+    num = negative_number(s);
+    return is;
+
+}
+
+
 
 void boost_any_example()
 {
@@ -987,6 +1057,33 @@ void boost_numeric_conversion_example()
 };
 
 
+void boost_user_defined_type_conversion_example()
+{
+	negative_number n = boost::lexical_cast<negative_number>("-100");
+	assert(n.value_without_sign() == 100);
+	int i = boost::lexical_cast<int>(n);
+	assert(i == -100);
+
+	typedef boost::array<char, 10> arr_t;
+	arr_t arr =
+			boost::lexical_cast<arr_t>(n);
+	assert(arr[0] == '-');
+	assert(arr[1] == '1');
+	assert(arr[2] == '0');
+	assert(arr[3] == '0');
+	assert(arr[4] == '\0');
+
+	negative_number n1 = boost::lexical_cast<negative_number>(L"-1");
+	assert(n1.value_without_sign() == 1);
+	typedef boost::array<wchar_t, 10> warr_t;
+	warr_t arr1 = boost::lexical_cast<warr_t>(n1);
+	assert(arr1[0] == L'-');
+	assert(arr1[1] == L'1');
+	assert(arr1[2] == L'\0');
+
+
+}
+
 int main() {
 	std::cout << "Boost C++ Application Development Cookbook Chapter 2" << std::endl; // prints Boost C++ Application Development Cookbook
 
@@ -1007,6 +1104,7 @@ int main() {
     boost_move_example();
     boost_lexical_cast_example();
     boost_numeric_conversion_example();
+    boost_user_defined_type_conversion_example();
 
 	return 0;
 }
