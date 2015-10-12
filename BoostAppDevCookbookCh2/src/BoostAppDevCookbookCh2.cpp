@@ -19,6 +19,11 @@
 #include <boost/container/vector.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/numeric/conversion/cast.hpp> // for numeric-to-numeric conversions
+#include <boost/cast.hpp> // for polymorphic cast example
+#include <boost/spirit/include/qi.hpp> // for parsing files with Boost.Spirit lib
+#include <boost/spirit/include/phoenix_core.hpp> // for parsing files with Boost.Spirit lib
+#include <boost/spirit/include/phoenix_operator.hpp> // for parsing files with Boost.Spirit lib
+
 
 
 #include <vector>
@@ -681,6 +686,109 @@ std::basic_istream<CharT>& operator>>
 }
 
 
+struct object
+{
+	virtual ~object() {};
+};
+
+
+struct banana : public object
+{
+	void eat() const {}
+	virtual ~banana() {}
+};
+
+struct pidgin : public object
+{
+	void fly() const {}
+	virtual ~pidgin() {}
+};
+
+object * try_produce_banana()
+{
+	return new banana();
+};
+
+void try_eat_banana_impl1()
+{
+	const object  * obj = try_produce_banana();
+	if (!obj)
+	{
+		throw std::bad_cast();
+	}
+	dynamic_cast<const banana&>(*obj).eat();
+};
+
+void try_eat_banana_impl2()
+{
+	const object * obj = try_produce_banana();
+	boost::polymorphic_cast<const banana*>(obj)->eat();
+};
+
+struct date
+{
+	unsigned short year;
+	unsigned short month;
+	unsigned short day;
+};
+
+date parse_date_time1(const std::string& s)
+{
+    using boost::spirit::qi::_1;
+    using boost::spirit::qi::ushort_;
+    using boost::spirit::qi::char_;
+    using boost::phoenix::ref;
+
+	date res;
+
+	const char * first = s.data();
+	const char * end = first + s.size();
+	bool success =
+			boost::spirit::qi::parse(first,end,
+				   ushort_[ref(res.year) = _1] >> char('-')
+				>> ushort_[ref(res.month) = _1] >> char('-')
+				>> ushort_[ref(res.day) = _1] );
+
+	if (!success && first != end)
+	{
+       throw std::logic_error("Parsing failed");
+	}
+
+	return res;
+
+};
+
+date parse_date_time2(const std::string & s)
+{
+	using boost::spirit::qi::_1;
+	using boost::spirit::qi::uint_parser;
+	using boost::spirit::qi::char_;
+	using boost::phoenix::ref;
+
+	// use unsigned short as output type
+	// require radix 10, and from 2 to 2 digits
+	uint_parser<unsigned short, 10, 2, 2> u2_;
+
+	// use unsigned short  as output type
+	// require radix 10, and from 4 to 4 digits
+	uint_parser<unsigned short, 10, 4, 4> u4_;
+
+    date res;
+    const char * first = s.data();
+    const char * const end = first + s.size();
+    bool success =
+    		boost::spirit::qi::parse(first, end,
+    				u4_ [ref(res.year) = _1] >> char_('-') >>
+    				u2_ [ref(res.month) = _1] >> char('-') >>
+    				u2_ [ref(res.day) = _1]);
+
+    if (!success && first != end)
+    {
+    	throw std::logic_error("Parsing failed");
+    }
+	return res;
+
+};
 
 void boost_any_example()
 {
@@ -1084,6 +1192,20 @@ void boost_user_defined_type_conversion_example()
 
 }
 
+void boost_simple_date_parser_example()
+{
+	date d = parse_date_time1("2012-12-31");
+	assert(d.year == 2012);
+	assert(d.month == 12);
+	assert(d.day == 31);
+
+	date d2 = parse_date_time2("2012-12-31");
+	assert(d2.year == 2012);
+	assert(d2.month == 12);
+	assert(d2.day == 31);
+
+}
+
 int main() {
 	std::cout << "Boost C++ Application Development Cookbook Chapter 2" << std::endl; // prints Boost C++ Application Development Cookbook
 
@@ -1105,6 +1227,8 @@ int main() {
     boost_lexical_cast_example();
     boost_numeric_conversion_example();
     boost_user_defined_type_conversion_example();
+    boost_simple_date_parser_example();
+
 
 	return 0;
 }
