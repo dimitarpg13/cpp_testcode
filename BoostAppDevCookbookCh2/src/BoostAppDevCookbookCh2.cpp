@@ -23,7 +23,7 @@
 #include <boost/spirit/include/qi.hpp> // for parsing files with Boost.Spirit lib
 #include <boost/spirit/include/phoenix_core.hpp> // for parsing files with Boost.Spirit lib
 #include <boost/spirit/include/phoenix_operator.hpp> // for parsing files with Boost.Spirit lib
-
+#include <boost/spirit/include/phoenix_bind.hpp> // using spirit bind function for parsers
 
 
 #include <vector>
@@ -749,7 +749,7 @@ date parse_date_time1(const std::string& s)
 				>> ushort_[ref(res.month) = _1] >> char('-')
 				>> ushort_[ref(res.day) = _1] );
 
-	if (!success && first != end)
+	if (!success || first != end)
 	{
        throw std::logic_error("Parsing failed");
 	}
@@ -782,13 +782,100 @@ date parse_date_time2(const std::string & s)
     				u2_ [ref(res.month) = _1] >> char('-') >>
     				u2_ [ref(res.day) = _1]);
 
-    if (!success && first != end)
+    if (!success || first != end)
     {
     	throw std::logic_error("Parsing failed");
     }
 	return res;
 
 };
+
+struct datetime {
+     enum zone_offset_t
+     {
+    	 OFFSET_NOT_SET,
+    	 OFFSET_Z,
+    	 OFFSET_UTC_PLUS,
+    	 OFFSET_UTC_MINUS
+     };
+
+private:
+     unsigned short year_;
+     unsigned short month_;
+     unsigned short day_;
+     unsigned short hours_;
+     unsigned short minutes_;
+     unsigned short seconds_;
+     zone_offset_t zone_offset_type_;
+     unsigned int zone_offset_in_min_;
+
+     static void dt_assert(bool v, const char * msg)
+     {
+    	 if (!v)
+    	 {
+    		 throw std::logic_error("Assertion failed: " + std::string(msg));
+    	 }
+     }
+
+public:
+     datetime() : year_(0), month_(0), day_(0), hours_(0),
+     	 	 	  minutes_(0), seconds_(0),
+     	 	 	  zone_offset_type_(OFFSET_NOT_SET),
+     	 	 	  zone_offset_in_min_(0)  {};
+
+    unsigned short year() { return year_; };
+    unsigned short month() { return month_; };
+    unsigned short day() { return day_; };
+    unsigned short hours() { return hours_; };
+    unsigned short minutes() { return minutes_; };
+    unsigned short seconds() { return seconds_; };
+
+    void set_year(unsigned short val) { year_ = val; };
+    void set_month(unsigned short val) { month_ = val; };
+    void set_day(unsigned short val) { day_ = val; };
+    void set_hours(unsigned short val) { hours_ = val; };
+    void set_minutes(unsigned short val) { minutes_ = val; };
+    void set_seconds(unsigned short val) { seconds_ = val; };
+    void set_zone_offset_type(zone_offset_t zone_offset_type)
+    {
+    	zone_offset_type_ = zone_offset_type;
+    }
+
+};
+
+void set_zone_offset(datetime& dt, char sign, unsigned short hours, unsigned short minutes)
+{
+   dt.set_zone_offset_type(sign == '+' ? datetime::OFFSET_UTC_PLUS : datetime::OFFSET_UTC_MINUS);
+}
+
+
+datetime parse_datetime(const std::string& s)
+{
+	using boost::spirit::qi::_1;
+	using boost::spirit::qi::_2;
+	using boost::spirit::qi::_3;
+	using boost::spirit::qi::uint_parser;
+	using boost::spirit::qi::char_;
+	using boost::phoenix::bind;
+	using boost::phoenix::ref;
+
+	datetime ret;
+
+	uint_parser<unsigned short, 10, 2, 2> u2_;
+	uint_parser<unsigned short, 10, 4, 4> u4_;
+	boost::spirit::qi::rule<const char*,void()> timezone_parser
+			= -( // unary minus means optional rule
+				  // zero offset
+				  char_('Z')[
+				    boost::phoenix::bind(&datetime::set_zone_offset_type, &ret, datetime::OFFSET_Z) ]
+				    	 |  // or
+				  // specific zone offset
+				  ((char_('+') | char_('-'))
+				  >> u2_ >> ':' >> u2_) [  boost::phoenix::bind(&set_zone_offset, ref(ret), _1, _2, _3) ]
+			   );
+
+	return ret;
+}
 
 void boost_any_example()
 {
@@ -1190,7 +1277,7 @@ void boost_user_defined_type_conversion_example()
 	assert(arr1[2] == L'\0');
 
 
-}
+};
 
 void boost_simple_date_parser_example()
 {
@@ -1204,7 +1291,18 @@ void boost_simple_date_parser_example()
 	assert(d2.month == 12);
 	assert(d2.day == 31);
 
-}
+};
+
+void boost_multi_format_date_parser_example()
+{
+	// 2012-10-20T10:00:00Z - date time with zero zone offset
+	// 2012-10-20T10:00:00 - date time with unspecified zone offset
+	// 2012-10-20T10:00:00+09:15 - date time with zone offset
+	// 2012-10-20-09:15 - date time with zone offset
+	// 10:00:09+09:15 - time with zone offset
+
+
+};
 
 int main() {
 	std::cout << "Boost C++ Application Development Cookbook Chapter 2" << std::endl; // prints Boost C++ Application Development Cookbook

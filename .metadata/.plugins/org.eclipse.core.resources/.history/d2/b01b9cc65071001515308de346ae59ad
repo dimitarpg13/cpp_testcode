@@ -1,0 +1,15 @@
+//============================================================================
+// Name        : BoostSpiritExamples.cpp
+// Author      : Dimitar Gueorguiev
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "Boost Spirit library examples" << endl; // prints Boost Spirit library examples
+	return 0;
+}

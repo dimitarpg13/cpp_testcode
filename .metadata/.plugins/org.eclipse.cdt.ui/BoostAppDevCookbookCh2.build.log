@@ -1,4 +1,4 @@
-09:28:28 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
+22:39:37 **** Incremental Build of configuration Debug for project BoostAppDevCookbookCh2 ****
 make all 
 Building file: ../src/BoostAppDevCookbookCh2.cpp
 Invoking: GCC C++ Compiler
@@ -8,7 +8,7 @@ g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BoostAppDevC
   typedef numeric::numeric_cast_traits<TargetT, SourceT> cast_traits;
                                                          ^
 ../src/BoostAppDevCookbookCh2.cpp: In function ‘void boost_multiple_values_example()’:
-../src/BoostAppDevCookbookCh2.cpp:868:25: warning: unused variable ‘str’ [-Wunused-variable]
+../src/BoostAppDevCookbookCh2.cpp:955:25: warning: unused variable ‘str’ [-Wunused-variable]
      const std::string & str = boost::get<1>(almost_a_pair);
                          ^
 Finished building: ../src/BoostAppDevCookbookCh2.cpp
@@ -19,5 +19,5 @@ g++ -pthread -L/opt/boost/boost_1_57_0/stage/lib -o "BoostAppDevCookbookCh2"  ./
 Finished building target: BoostAppDevCookbookCh2
  
 
-09:28:45 Build Finished (took 17s.70ms)
+22:39:56 Build Finished (took 19s.275ms)
 
