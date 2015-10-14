@@ -68,6 +68,7 @@ namespace client
    };
    //]
 
+   //[tutorial_complex_parser
    template<typename Iterator>
    bool parse_complex(Iterator first, Iterator last, std::complex<double>& c)
    {
@@ -94,7 +95,24 @@ namespace client
        c = std::complex<double>(rN,iN);
        return r;
    }
+   //]
 
+   //[tutorial_adder
+   template<typename Iterator>
+   bool adder(Iterator first, Iterator last, double& n)
+   {
+
+	   namespace qi = boost::spirit::qi;
+	   namespace ascii = boost::spirit::ascii;
+	   namespace phoenix = boost::phoenix;
+
+	   using qi::double_;
+	   using qi::_1;
+	   using ascii::space;
+	   using phoenix::ref;
+
+   }
+   //]
 }
 
 void spirit_comma_separated_parser1()
@@ -167,13 +185,39 @@ void spirit_semantic_action_functions()
 
 }
 
+void spirit_complex_number_micro_parser()
+{
+	std::cout << "spirit_complex_number_micro_parser:" << std::endl;
+	std::cout << "enter a complex number of the form r or (r) or (r,i):" << std::endl;
+	std::cout << "[type q or Q to quit]" << std::endl;
+
+	std::string str;
+	while (getline(std::cin, str))
+	{
+		if (str.empty() || str[0] == 'q' || str[0] == 'Q')
+			break;
+
+		std::complex<double> c;
+        if (client::parse_complex(str.begin(), str.end(), c))
+        {
+        	std::cout << "Parsing succeeded" << std::endl;
+        }
+        else
+        {
+        	std::cout << "Parsing failed" << std::endl;
+        }
+	}
+	std::cout << "bye!" << std::endl;
+
+}
+
 
 int main() {
 	std::cout << "Boost Spirit library examples" << std::endl; // prints Boost Spirit library examples
 
 	spirit_comma_separated_parser1();
     spirit_semantic_action_functions();
-
+    spirit_complex_number_micro_parser();
 
 	return 0;
 }
