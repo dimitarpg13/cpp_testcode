@@ -16,6 +16,7 @@
 #include <boost/bind.hpp>
 #include <boost/spirit/include/phoenix_core.hpp> // for the complex number parser
 #include <boost/spirit/include/phoenix_operator.hpp> // for the complex number parser
+#include <boost/spirit/include/phoenix_stl.hpp>
 
 
 namespace client
@@ -111,8 +112,70 @@ namespace client
 	   using ascii::space;
 	   using phoenix::ref;
 
+	   bool r = qi::phrase_parse(first, last,
+		// begin grammar
+		(
+		  double_[ref(n) = _1] >> *(',' >> double_[ref(n) += _1])
+		)
+	    // end grammar
+	    ,space);
+
+	   if (first != last)  // fail if we did not get full match
+		   return false;
+	   return r;
    }
    //]
+
+   //[tutorial_numlist2
+   template<typename Iterator>
+   bool parse_numbers(Iterator first, Iterator last, std::vector<double>& v)
+   {
+	   namespace qi = boost::spirit::qi;
+	   namespace ascii = boost::spirit::ascii;
+	   namespace phoenix = boost::phoenix;
+
+	   using qi::double_;
+	   using qi::phrase_parse;
+	   using qi::_1;
+	   using ascii::space;
+	   using phoenix::push_back;
+
+	   bool r = phrase_parse(first, last,
+	   // begin grammar
+	   (
+		  double_[push_back(phoenix::ref(v), _1)]
+		          >> *(',' >> double_[push_back(phoenix::ref(v), qi::_1)])
+	   )
+	   //end grammar
+	   ,space);
+
+	   return r;
+   }
+
+   //[tutorial_numlist3
+   template<typename Iterator>
+   bool parse_numbers_redux(Iterator first, Iterator last, std::vector<double> & v)
+   {
+	   using qi::double_;
+	   using qi::phrase_parse;
+	   using qi::_1;
+	   using ascii::space;
+	   using boost::phoenix::push_back;
+       bool r = phrase_parse(first, last,
+    		   // begin grammar
+    		   (
+    			 double_[push_back(boost::phoenix::ref(v), _1)] % ','
+    		   )
+    		   ,
+    		   // end grammar
+    		   space);
+
+       if (first != last) // fail if we do not get full match
+    	   return false;
+
+       return r;
+   }
+
 }
 
 void spirit_comma_separated_parser1()
@@ -209,15 +272,65 @@ void spirit_complex_number_micro_parser()
 	}
 	std::cout << "bye!" << std::endl;
 
+};
+
+void spirit_adder1()
+{
+	std::cout << "spirit_adder1:" << std::endl;
+	std::cout << "enter a comma separated list of numbers:" << std::endl;
+	std::cout << "[type q or Q to quit]" << std::endl;
+
+	std::string str;
+	while (getline(std::cin, str))
+	{
+		if (str.empty() || str[0] == 'q' || str[0] == 'Q')
+			break;
+
+		std::complex<double> c;
+        if (client::parse_complex(str.begin(), str.end(), c))
+        {
+        	std::cout << "Parsing succeeded" << std::endl;
+        }
+        else
+        {
+        	std::cout << "Parsing failed" << std::endl;
+        }
+	}
+	std::cout << "bye!" << std::endl;
+
 }
+
+
+void spirit_comma_separated_list_parser()
+{
+	std::cout << "spirit_comma_separated_list_parser:" << std::endl;
+	std::cout << "enter a comma separated list of numbers:" << std::endl;
+	std::cout << "[type q or Q to quit]" << std::endl;
+
+	std::string str;
+	while (getline(std::cin, str))
+	{
+		if (str.empty() || str[0] == 'q' || str[0] == 'Q')
+			break;
+
+		std::vector<double> v;
+		if (client::parse_numbers(str.begin(),str.end(),v))
+		{
+			std::cout << "Parsing succeeded" << std::endl;
+
+		}
+	}
+}
+
 
 
 int main() {
 	std::cout << "Boost Spirit library examples" << std::endl; // prints Boost Spirit library examples
 
-	spirit_comma_separated_parser1();
-    spirit_semantic_action_functions();
-    spirit_complex_number_micro_parser();
+	//spirit_comma_separated_parser1();
+    //spirit_semantic_action_functions();
+    //spirit_complex_number_micro_parser();
+    spirit_comma_separated_list_parser();
 
 	return 0;
 }
