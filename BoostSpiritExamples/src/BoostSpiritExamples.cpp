@@ -17,6 +17,9 @@
 #include <boost/spirit/include/phoenix_core.hpp> // for the complex number parser
 #include <boost/spirit/include/phoenix_operator.hpp> // for the complex number parser
 #include <boost/spirit/include/phoenix_stl.hpp>
+#include <boost/spirit/include/phoenix_object.hpp>
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
 
 
 namespace client
@@ -271,10 +274,64 @@ namespace client
 	   qi::rule<Iterator, unsigned()> start;
    };
 
+   //tutorial employee_struct
+   struct employee
+   {
+	   int age;
+	   std::string surname;
+	   std::string forename;
+	   double salary;
+   };
+   //]
+
+
+
 };
 
 
+//[tutorial_employee_adapt_struct
+BOOST_FUSION_ADAPT_STRUCT(
+   client::employee,
+   (int, age)
+   (std::string, surname)
+   (std::string, forename)
+   (double, salary)
+)
+//]
 
+
+namespace client
+{
+	//[tutorial_employee_parser
+	template<typename Iterator>
+	struct employee_parser : qi::grammar<Iterator, employee(), ascii::space_type>
+	{
+	    employee_parser()
+		{
+           using qi::int_;
+           using qi::lit;
+           using qi::double_;
+           using qi::lexeme;
+           using ascii::char_;
+
+           quoted_string %= lexeme['"' >> +(char_ - '"') >> '"'];
+
+           start %=
+        	   lit("employee")
+        	   >> '{'
+        	   >> int_ >> ','
+        	   >> quoted_string >> ','
+        	   >> quoted_string >> ','
+        	   >> double_
+        	   >> '}'
+        	   ;
+		}
+
+	    qi::rule<Iterator, std::string(), ascii::space_type> quoted_string;
+	    qi::rule<Iterator, employee(), ascii::space_type> start;
+	};
+	//]
+};
 
 void spirit_comma_separated_parser1()
 {
@@ -465,7 +522,8 @@ int main() {
 	//spirit_comma_separated_parser1();
     //spirit_semantic_action_functions();
     //spirit_complex_number_micro_parser();
-    spirit_comma_separated_list_parser();
+    //spirit_comma_separated_list_parser();
+    spirit_roman_numerals_parser();
 
 	return 0;
 }
