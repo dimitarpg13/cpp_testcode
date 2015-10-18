@@ -306,11 +306,15 @@ BOOST_FUSION_ADAPT_STRUCT(
 
 namespace client
 {
+	namespace qi = boost::spirit::qi;
+	namespace ascii = boost::spirit::ascii;
+	namespace phoenix = boost::phoenix;
+
 	//[tutorial_employee_parser
 	template<typename Iterator>
 	struct employee_parser : qi::grammar<Iterator, employee(), ascii::space_type>
 	{
-	    employee_parser()
+	    employee_parser() : employee_parser::base_type(start)
 		{
            using qi::int_;
            using qi::lit;
@@ -675,6 +679,20 @@ void spirit_employee_parser()
 	using boost::spirit::ascii::space;
 	typedef std::string::const_iterator iterator_type;
 	typedef client::employee_parser<iterator_type> employee_parser;
+
+	employee_parser g; // our grammar
+	std::string str;
+    while (getline(std::cin, str))
+    {
+    	if (str.empty() || str[0] == 'q' || str[0] == 'Q')
+    		break;
+
+    	client::employee emp;
+    	std::string::const_iterator iter = str.begin();
+    	std::string::const_iterator end = str.end();
+    	bool r = phrase_parse(iter, end, g, space, emp);
+    }
+
 
 }
 
