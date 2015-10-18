@@ -20,12 +20,16 @@
 #include <boost/spirit/include/phoenix_object.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
+#include <boost/variant/recursive_variant.hpp>
+#include <boost/foreach.hpp>
+//#include <boost/fusion/sequence/intrinsic/at_c.hpp>
 
 
 namespace client
 {
    namespace qi = boost::spirit::qi;
    namespace ascii = boost::spirit::ascii;
+
 
    //[tutorial_numlist1
    template<typename Iterator>
@@ -331,7 +335,151 @@ namespace client
 	    qi::rule<Iterator, employee(), ascii::space_type> start;
 	};
 	//]
+
+	namespace fusion = boost::fusion;
+	namespace phoenix = boost::phoenix;
+	namespace qi = boost::spirit::qi;
+	namespace ascii = boost::spirit::ascii;
+
+	//[tutorial_xml1_strustures
+	struct mini_xml;
+
+	typedef
+		boost::variant<
+				boost::recursive_wrapper<mini_xml>
+				, std::string
+				>
+		mini_xml_node;
+
+	struct mini_xml
+	{
+		std::string name;					 // tag name
+		std::vector<mini_xml_node> children; // childred
+	};
+	//]
 };
+
+// we need to tell fusion about our mini_xml struct
+// to make it a first class fusion citizen
+//[tutorial_xml1_adapt_structures
+BOOST_FUSION_ADAPT_STRUCT(
+  client::mini_xml,
+  (std::string, name)
+  (std::vector<client::mini_xml_node>, children)
+)
+//]
+
+namespace client
+{
+	// print out mini xml tree
+	int const tabsize = 4;
+
+	void tab(int indent)
+	{
+		for (int i = 0; i < indent; ++i)
+			std::cout << ' ';
+	}
+
+	struct mini_xml_printer
+	{
+		mini_xml_printer(int indent = 0)
+			: indent(indent)
+		{
+		}
+
+		void operator()(mini_xml const & xml) const;
+
+	    int indent;
+	};
+
+
+    struct mini_xml_node_printer : boost::static_visitor<>
+    {
+		mini_xml_node_printer(int indent = 0)
+				: indent(indent)
+		{
+		}
+
+		void operator()(mini_xml const & xml) const
+		{
+			mini_xml_printer(indent+tabsize)(xml);
+		}
+
+		void operator() (std::string const & text) const
+		{
+			tab(indent+tabsize);
+			std::cout << "text: \"" << text << '"' << std::endl;
+		}
+
+		int indent;
+    };
+
+    void mini_xml_printer::operator() (mini_xml const & xml) const
+    {
+    	tab(indent);
+    	std::cout << "tag: " << xml.name << std::endl;
+    	tab(indent);
+    	std::cout << '{' << std::endl;
+
+    	BOOST_FOREACH(mini_xml_node const& node, xml.children)
+    	{
+    		boost::apply_visitor(mini_xml_node_printer(indent), node);
+    	}
+
+    	tab(indent);
+    	std::cout << '}' << std::endl;
+    };
+
+
+    //[tutorial_xml1_grammar
+    template<typename Iterator>
+    struct mini_xml_grammar : qi::grammar<Iterator, mini_xml(), ascii::space_type>
+    {
+    	mini_xml_grammar() : mini_xml_grammar::base_type(xml)
+    	{
+    		using qi::lit;
+    		using qi::lexeme;
+    		using qi::_1;
+    		using ascii::char_;
+    		using ascii::string;
+    		using namespace qi::labels;
+
+    		using boost::fusion::at_c;
+    		using boost::phoenix::push_back;
+
+    		text = lexeme[+(char_ - '<')   [_val += _1]];
+    		node = (xml | text)		       [_val = _1];
+
+    		start_tag =
+    				'<'
+    			>> !lit('/')
+    			>> lexeme[+(char_ - '>')  [_val += _1]]
+    			>> '>'
+    		;
+
+    		end_tag =
+    				"</"
+    			>> string(_r1)
+    			>> '>'
+    		;
+
+    		xml =
+    			start_tag 					[at_c<0>(_val) = 1]
+    	    >> *node						[push_back(at_c<1>(_val), _1)]
+    	    >> end_tag(at_c<0>(_val))
+    	    ;
+
+    	}
+
+    	qi::rule<Iterator, mini_xml(), ascii::space_type> xml;
+    	qi::rule<Iterator, mini_xml_node(), ascii::space_type> node;
+    	qi::rule<Iterator, std::string(), ascii::space_type> text;
+    	qi::rule<Iterator, std::string(), ascii::space_type> start_tag;
+    	qi::rule<Iterator, void(std::string), ascii::space_type> end_tag;
+    };
+    //]
+
+}
 
 void spirit_comma_separated_parser1()
 {
@@ -480,6 +628,11 @@ void spirit_comma_separated_list_parser()
 
 void spirit_roman_numerals_parser()
 {
+	std::cout << "spirit_roman_numerals_parser:" << std::endl;
+	std::cout << "enter a comma separated list of numbers:" << std::endl;
+	std::cout << "[type q or Q to quit]" << std::endl;
+
+
 	typedef std::string::const_iterator iterator_type;
 	typedef client::roman<iterator_type> roman;
 
@@ -511,10 +664,24 @@ void spirit_roman_numerals_parser()
 
 	}
 
+}
 
+void spirit_employee_parser()
+{
+	std::cout << "spirit_employee_parser:" << std::endl;
+	std::cout << "employee{age,\"surname\",\"forename\",salary}" << std::endl;
+	std::cout << "[type q or Q to quit]" << std::endl;
+
+	using boost::spirit::ascii::space;
+	typedef std::string::const_iterator iterator_type;
+	typedef client::employee_parser<iterator_type> employee_parser;
 
 }
 
+void spirit_mini_xml1_parser()
+{
+
+}
 
 int main() {
 	std::cout << "Boost Spirit library examples" << std::endl; // prints Boost Spirit library examples
