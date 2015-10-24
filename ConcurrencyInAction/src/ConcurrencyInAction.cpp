@@ -9,7 +9,7 @@
 #include <iostream>
 #include <thread>
 #include <pthread.h> // for the pthread example
-
+#include <string>
 
 
 void do_some_work()
@@ -45,6 +45,44 @@ void threadCaller()
     std::cout << "Exiting thread caller" << std::endl;
 }
 
+class thread_guard
+{
+	std::thread & t;
+public:
+	explicit thread_guard(std::thread & t_) : t(t_)
+	{}
+
+    ~thread_guard()
+    {
+    	if (t.joinable())
+    	{
+    		t.join();
+    	}
+    }
+    thread_guard(thread_guard const&)=delete;
+    thread_guard& operator= (thread_guard const &) = delete;
+};
+
+void do_something(int i)
+{
+
+};
+
+struct func
+{
+	int & i;
+	func(int & i_) : i(i_) {}
+    void operator() ()
+    {
+    	for (int j = 0; j < 1000000; ++j )
+    	{
+    		do_something(i);
+    	}
+    }
+};
+
+
+
 void call_a_thread_example()
 {
 	std::cout << "call_a_thread_example:" << std::endl;
@@ -66,11 +104,12 @@ void call_a_posix_thread_example()
     pthread_join(t, NULL);
     std::cout << "Joined the posix thread. exiting..." << std::endl;
 
-}
+};
+
+
+
 
 static const int num_threads = 10;
-
-
 void call_many_threads_example()
 {
 	std::cout << "call_many_threads_example:" << std::endl;
