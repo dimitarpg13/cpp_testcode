@@ -15,7 +15,13 @@
 #include <algorithm> // for std::for_each
 #include <list>
 #include <mutex>
-
+#include <deque>
+#include <stack>
+#include <functional>
+#include <memory>
+#include <exception>
+#include <cstdlib>
+#include <time.h>
 
 void do_some_work()
 {
@@ -292,6 +298,264 @@ void foo3()
 	unprotected->do_something();
 }
 
+template<typename T,typename Container=std::deque<T> >
+class mystack
+{
+public:
+	explicit mystack (const Container &);
+	explicit mystack (Container && = Container());
+	template <class Alloc> explicit mystack (const Alloc &);
+	template <class Alloc> mystack(const Container &, const Alloc &);
+    template <class Alloc> mystack(Container &&, const Alloc &);
+    template <class Alloc> mystack(mystack&&, const Alloc &);
+
+    bool empty() const;
+    size_t size() const;
+    T& top();
+    T const & top() const;
+    void push(T const&);
+    void push(T&&);
+    void pop();
+    void swap(mystack&&);
+};
+
+struct empty_stack : std::exception
+{
+	const char * what() const throw()
+	{
+	   return "empty stack";
+	}
+};
+
+template <typename T>
+class threadsafe_stack
+{
+private:
+	std::stack<T> data;
+	mutable std::mutex m;
+
+public:
+	threadsafe_stack() {};
+	threadsafe_stack(const threadsafe_stack & other)
+	{
+	  std::lock_guard<std::mutex> lock(other.m);
+	  data = other.data;
+	};
+
+	threadsafe_stack& operator= (const threadsafe_stack &) = delete;
+
+	void push(T new_value)
+	{
+		std::lock_guard<std::mutex> lock(m);
+		data.push(new_value);
+	};
+
+	std::shared_ptr<T> pop()
+	{
+		std::lock_guard<std::mutex> lock(m);
+		if (data.empty()) throw empty_stack();
+		std::shared_ptr<T> const res (std::make_shared<T>(data.top()));
+		data.pop();
+		return res;
+	};
+
+    void pop(T & value)
+    {
+    	std::lock_guard<std::mutex> lock(m);
+        if (data.empty()) throw empty_stack();
+        value = data.top();
+        data.pop();
+    };
+
+    bool empty() const
+    {
+    	std::lock_guard<std::mutex> lock(m);
+    	return data.empty();
+    }
+
+};
+
+void do_work_spawn_threads(unsigned int id)
+{
+    std::cout << "called from thread " << id << std::endl;
+};
+
+
+template<typename Iterator, typename T>
+struct accumulate_block2
+{
+	void operator() (Iterator first, Iterator last, T& result)
+	{
+		result = std::accumulate(first,last,result);
+	}
+};
+
+template<typename Iterator, typename T>
+T parallel_accumulate2(Iterator first, Iterator last, T init)
+{
+	unsigned long const length = std::distance(first,last);
+    if (!length)
+    	return init;
+
+    unsigned long const min_per_thread = 25;
+    unsigned long const max_threads =
+    		(length + min_per_thread - 1) / min_per_thread;
+
+    unsigned long const hardware_threads =
+    		std::thread::hardware_concurrency();
+
+    unsigned long const num_threads =
+    		std::min(hardware_threads != 0 ? hardware_threads : 2, max_threads);
+
+    unsigned long const block_size =
+    		length / num_threads;
+
+    std::vector<T> results(num_threads);
+
+    std::vector<std::thread> threads(num_threads-1);
+
+    Iterator block_start=first;
+    for (unsigned long i = 0; i < (num_threads-1); ++i)
+    {
+    	Iterator block_end = block_start;
+    	std::advance(block_end,block_size);
+    	threads[i] = std::thread(
+    			accumulate_block2<Iterator,T>(),
+    			block_start,block_end,std::ref(results[i]));
+    	block_start = block_end;
+    }
+    accumulate_block2<Iterator,T>() (
+    		block_start,last,results[num_threads-1]);
+
+    std::for_each(threads.begin(),threads.end(),
+    		std::mem_fn(&std::thread::join));
+
+    return std::accumulate(results.begin(), results.end(), init);
+};
+
+
+class some_big_object
+{
+private:
+	std::size_t n = 1000000;
+
+public:
+	int id;
+	std::vector<int> blob;
+	some_big_object() : blob(n)
+	{
+
+       id = rand() % 1000000 + 1;
+       for (unsigned int i = 0; i < n; i++)
+    	   blob[i] = rand() % 256;
+	}
+
+	some_big_object(some_big_object const & sbo) : blob(sbo.blob)
+	{
+
+	   //id = rand() % 1000000 + 1;
+         id = sbo.id;
+	}
+};
+
+void swap(some_big_object & lhs, some_big_object & rhs)
+{
+    lhs.blob.swap(rhs.blob);
+    std::cout << "swapping blobs: lhs id = " << lhs.id << ", rhs id = " << rhs.id << std::endl;
+};
+
+class X
+{
+private:
+
+    mutable std::mutex m;
+public:
+    X() {};
+    X(some_big_object const & sd) : some_detail(sd) {}
+    X( const X& x) : some_detail(x.some_detail)
+    {}
+    some_big_object some_detail;
+    friend void myswap(X& lhs, X& rhs);
+};
+
+void myswap(X& lhs, X& rhs)
+{
+	if (&lhs==&rhs)
+		return;
+	std::lock(lhs.m,rhs.m);
+	std::lock_guard<std::mutex> lock_a(lhs.m,std::adopt_lock);
+	std::lock_guard<std::mutex> lock_b(rhs.m,std::adopt_lock);
+	swap(lhs.some_detail,rhs.some_detail);
+};
+
+void print_blob(some_big_object & o)
+{
+	std::cout << std::endl << "---- blob id " << o.id << " data ------ " << std::endl;
+    for (unsigned int i = 0; i < 1000; ++i)
+    {
+	   std::cout << o.blob[i];
+	   if (i % 50 == 0 && i > 0)
+		   std::cout << std::endl;
+    }
+
+    std::cout << std::endl << std::endl;
+}
+
+void threadsafe_swap_example()
+{
+	srand(time(NULL));
+	X obj1, obj2, obj3, obj4;
+	print_blob(obj1.some_detail);
+	print_blob(obj2.some_detail);
+	print_blob(obj3.some_detail);
+	print_blob(obj4.some_detail);
+	std::cout << "obj1 id = " << obj1.some_detail.id <<
+			     ", obj2 id = " << obj2.some_detail.id <<
+			     ", obj3 id = " << obj3.some_detail.id <<
+			     ", obj4 id = " << obj4.some_detail.id << std::endl;
+
+
+
+	std::vector<X> v;
+	v.push_back(obj1);
+	v.push_back(obj2);
+	v.push_back(obj3);
+	v.push_back(obj4);
+
+	std::vector<std::thread> threads;
+	for (unsigned i = 0; i < 20; i++)
+	{
+		threads.push_back(std::thread(myswap,std::ref(v[i % 4]), std::ref(v[(i + 1) % 4])));
+	};
+
+	std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
+
+};
+
+void threadsafe_stack_example()
+{
+	threadsafe_stack<int> si;
+	si.push(5);
+	si.pop();
+	if (!si.empty())
+	{
+		int x;
+		si.pop();
+	}
+}
+
+void spawn_threads_example()
+{
+	std::vector<std::thread> threads;
+	for (unsigned i = 0; i < 20; i++)
+	{
+		threads.push_back(std::thread(do_work_spawn_threads,i));
+	};
+
+	std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
+};
+
+
 void call_a_thread_example()
 {
 	std::cout << "call_a_thread_example:" << std::endl;
@@ -388,6 +652,7 @@ void protecting_shared_data_example()
 }
 
 
+
 int main() {
 	std::cout << "Concurrency in Action examples" << std::endl; // prints Concurrency in Action examples
 
@@ -397,8 +662,11 @@ int main() {
     //thread_detach_example();
 	//edit_document_example();
     //parallel_accumulate_example();
-	scoped_thread_example();
-	protecting_shared_data_example();
+	//scoped_thread_example();
+	//protecting_shared_data_example();
+    //spawn_threads_example();
+    //threadsafe_stack_example();
+    threadsafe_swap_example();
 
 	return 0;
 }
