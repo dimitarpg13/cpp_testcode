@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;DCalc/src/DCalc.cpp&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;DCalc.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DCalc.cpp" name="main.cpp" stamp="1415155948154" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;DCalc/src/main.cpp&apos; to &apos;dcalc.cpp&apos;" description="Rename resource &apos;main.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cpp" name="dcalc.cpp" stamp="1415157441535" updateReferences="true"/>
-</session>

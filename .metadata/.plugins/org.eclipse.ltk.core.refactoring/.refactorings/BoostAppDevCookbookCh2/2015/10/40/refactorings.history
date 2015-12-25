@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;BoostAppDevCookbookCh2/src/BoostAppDevCookbook.cpp&apos; to &apos;BoostAppDevCookbookCh2.cpp&apos;" description="Rename resource &apos;BoostAppDevCookbook.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/BoostAppDevCookbook.cpp" name="BoostAppDevCookbookCh2.cpp" stamp="1443748957698" updateReferences="true"/>
-</session>
