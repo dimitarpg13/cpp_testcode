@@ -642,7 +642,13 @@ void thread_b()
 }
 
 
-
+void hierarchical_mutex_example()
+{
+	std::thread t1(thread_a);
+	std::thread t2(thread_b);
+	t1.join();
+	t2.join();
+}
 
 void threadsafe_stack_example()
 {
@@ -779,6 +785,7 @@ int main() {
     //spawn_threads_example();
     //threadsafe_stack_example();
     //threadsafe_swap_example();
+    hierarchical_mutex_example();
 
 	return 0;
 }
