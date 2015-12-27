@@ -478,6 +478,7 @@ public:
     {}
     some_big_object some_detail;
     friend void myswap(X& lhs, X& rhs);
+    friend void myswap2(X& lhs, X& rhs);
 };
 
 void myswap(X& lhs, X& rhs)
@@ -488,6 +489,17 @@ void myswap(X& lhs, X& rhs)
 	std::lock_guard<std::mutex> lock_a(lhs.m,std::adopt_lock);
 	std::lock_guard<std::mutex> lock_b(rhs.m,std::adopt_lock);
 	swap(lhs.some_detail,rhs.some_detail);
+};
+
+void myswap2(X& lhs, X& rhs)
+{
+    if (&lhs==&rhs)
+    	return;
+    std::unique_lock<std::mutex> lock_a(lhs.m,std::defer_lock);
+    std::unique_lock<std::mutex> lock_b(rhs.m,std::defer_lock);
+    swap(lhs.some_detail,rhs.some_detail);
+
+
 };
 
 void print_blob(some_big_object & o)
@@ -502,6 +514,8 @@ void print_blob(some_big_object & o)
 
     std::cout << std::endl << std::endl;
 }
+
+
 
 void threadsafe_swap_example()
 {
@@ -533,6 +547,39 @@ void threadsafe_swap_example()
 	std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
 
 };
+
+void unique_lock_swap_example()
+{
+	srand(time(NULL));
+	X obj1, obj2, obj3, obj4;
+	print_blob(obj1.some_detail);
+	print_blob(obj2.some_detail);
+	print_blob(obj3.some_detail);
+	print_blob(obj4.some_detail);
+	std::cout << "obj1 id = " << obj1.some_detail.id <<
+			     ", obj2 id = " << obj2.some_detail.id <<
+			     ", obj3 id = " << obj3.some_detail.id <<
+			     ", obj4 id = " << obj4.some_detail.id << std::endl;
+
+
+
+	std::vector<X> v;
+	v.push_back(obj1);
+	v.push_back(obj2);
+	v.push_back(obj3);
+	v.push_back(obj4);
+
+	std::vector<std::thread> threads;
+	for (unsigned i = 0; i < 20; i++)
+	{
+		threads.push_back(std::thread(myswap2,std::ref(v[i % 4]), std::ref(v[(i + 1) % 4])));
+	};
+
+	std::for_each(threads.begin(),threads.end(),std::mem_fn(&std::thread::join));
+
+};
+
+
 
 
 
@@ -785,7 +832,8 @@ int main() {
     //spawn_threads_example();
     //threadsafe_stack_example();
     //threadsafe_swap_example();
-    hierarchical_mutex_example();
+    //hierarchical_mutex_example();
+    unique_lock_swap_example();
 
 	return 0;
 }
