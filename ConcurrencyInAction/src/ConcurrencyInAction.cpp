@@ -586,8 +586,55 @@ void unique_lock_swap_example()
 };
 
 
+class Y
+{
+private:
+	int some_detail;
+	mutable std::mutex m;
+
+	int get_detail() const
+	{
+		std::lock_guard<std::mutex> lock_a(m);
+		return some_detail;
+	}
+
+public:
+	Y(int sd) : some_detail(sd) {}
+
+	friend bool operator == (Y const & lhs, Y const & rhs)
+	{
+		if (&lhs == &rhs)
+		{
+			return true;
+		}
+
+		int const lhs_value = lhs.get_detail();
+		int const rhs_value = rhs.get_detail();
+		return lhs_value == rhs_value;
+	}
+};
 
 
+struct some_resource
+{
+	void do_something()
+	{
+
+	}
+};
+
+std::shared_ptr<some_resource> resource_ptr;
+std::mutex resource_mutex;
+void resource_mutex_example()
+{
+	std::unique_lock<std::mutex> lk(resource_mutex);
+	if (!resource_ptr)
+	{
+		resource_ptr.reset(new some_resource());
+	}
+	lk.unlock();
+	resource_ptr->do_something();
+}
 
 class hierarchical_mutex
 {
