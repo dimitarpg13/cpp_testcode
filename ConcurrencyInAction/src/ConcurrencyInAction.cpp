@@ -497,13 +497,17 @@ void myswap2(X& lhs, X& rhs)
     	return;
     std::unique_lock<std::mutex> lock_a(lhs.m,std::defer_lock);
     std::unique_lock<std::mutex> lock_b(rhs.m,std::defer_lock);
+    std::lock(lock_a,lock_b);
     swap(lhs.some_detail,rhs.some_detail);
 
 
 };
 
+std::mutex mtx;
+
 void print_blob(some_big_object & o)
 {
+	//std::lock_guard<std::mutex> lck(mtx);
 	std::cout << std::endl << "---- blob id " << o.id << " data ------ " << std::endl;
     for (unsigned int i = 0; i < 1000; ++i)
     {
@@ -552,16 +556,18 @@ void unique_lock_swap_example()
 {
 	srand(time(NULL));
 	X obj1, obj2, obj3, obj4;
-	print_blob(obj1.some_detail);
-	print_blob(obj2.some_detail);
-	print_blob(obj3.some_detail);
-	print_blob(obj4.some_detail);
-	std::cout << "obj1 id = " << obj1.some_detail.id <<
+	{
+		std::lock_guard<std::mutex> lck(mtx);
+    	print_blob(obj1.some_detail);
+	    print_blob(obj2.some_detail);
+	    print_blob(obj3.some_detail);
+	    print_blob(obj4.some_detail);
+	    std::cout << "obj1 id = " << obj1.some_detail.id <<
 			     ", obj2 id = " << obj2.some_detail.id <<
 			     ", obj3 id = " << obj3.some_detail.id <<
 			     ", obj4 id = " << obj4.some_detail.id << std::endl;
 
-
+	}
 
 	std::vector<X> v;
 	v.push_back(obj1);
