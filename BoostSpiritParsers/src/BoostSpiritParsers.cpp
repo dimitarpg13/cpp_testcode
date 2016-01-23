@@ -8,11 +8,12 @@
 
 
 #include <iostream>
-#include "miniXmlParser.h"
+#include "miniXml.h"
 
 using namespace std;
 
 int main() {
 	cout << "Boost Spirit Parsers" << endl; // prints Boost Spirit Parsers
+	client::parse_print_minixml("./src/1.toyxml");
 	return 0;
 }
