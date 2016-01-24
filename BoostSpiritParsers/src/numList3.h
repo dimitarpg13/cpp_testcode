@@ -1,15 +1,11 @@
 /*
- * numList2.h
+ * numList3.h
  *
  *  Created on: Jan 23, 2016
  *      Author: root
  */
 
-
 #pragma once
-
-// this sample demonstrates a parser from a comma separated list of numbers.
-// the numbers are inserted in a vector using phoenix
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -27,10 +23,9 @@ namespace client
     namespace ascii = boost::spirit::ascii;
     namespace phoenix = boost::phoenix;
 
-
     // our number list compiler
     template <typename Iterator>
-    bool parse_numbers2(Iterator first, Iterator last, std::vector<double>& v)
+    bool parse_numbers3(Iterator first, Iterator last, std::vector<double> & v)
     {
     	using qi::double_;
     	using qi::phrase_parse;
@@ -39,19 +34,21 @@ namespace client
     	using phoenix::push_back;
 
     	bool r = phrase_parse(first, last,
-    	   // begin grammar
-    		(
-               double_[push_back(phoenix::ref(v), _1)]
-                       >> *(',' >> double_[push_back(phoenix::ref(v),_1)])
-    		)
-    		,
-    		// end grammar
-    	    space);
+    	     // begin grammar
+    		 (
+    		   double_[push_back(phoenix::ref(v), _1)] % ','
+    		 )
+    		 ,
+    		 // end grammar
+    	     space);
 
-    	if (first != last)  // fail if we did not get a full match
+    	if (first != last)	// fail if we did not get full match
     		return false;
+
     	return r;
     }
 
-    bool test_numList2();
+
+    bool test_numList3();
+
 }

@@ -12,6 +12,7 @@
 #include "complexNumb.h"
 #include "sum.h"
 #include "numList2.h"
+#include "numList3.h"
 
 
 using namespace std;
@@ -21,7 +22,8 @@ int main() {
 	//client::test_minixml("./src/1.toyxml");
 	//client::test_complexnumb();
 	//client::test_sum();
-	client::test_numList2();
+	//client::test_numList2();
+	client::test_numList3();
 
 	return 0;
 }

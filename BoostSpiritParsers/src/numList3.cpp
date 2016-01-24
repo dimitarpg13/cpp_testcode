@@ -1,15 +1,15 @@
 /*
- * numList2.cpp
+ * numList3.cpp
  *
  *  Created on: Jan 23, 2016
  *      Author: root
  */
 
-#include "numList2.h"
+#include "numList3.h"
 
 namespace client
 {
-  bool test_numList2()
+  bool test_numList3()
   {
 	  std::cout << "/////////////////////////////////////////////////////////\n\n";
 	  std::cout << "\t\tA comma separated list parser for Spirit...\n\n";
@@ -26,7 +26,7 @@ namespace client
 	         break;
 
 	      std::vector<double> v;
-	      if (client::parse_numbers2(str.begin(), str.end(), v))
+	      if (client::parse_numbers3(str.begin(), str.end(), v))
 	      {
 	         std::cout << "-------------------------\n";
 	         std::cout << "Parsing succeeded\n";
