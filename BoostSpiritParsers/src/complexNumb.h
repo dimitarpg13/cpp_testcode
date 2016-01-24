@@ -40,6 +40,6 @@ namespace client
 	   return r;
    }
 
-   bool parse_print_complexnumb(std::string file);
+   bool test_complexnumb();
 
 }

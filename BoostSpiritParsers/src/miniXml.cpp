@@ -27,7 +27,7 @@ namespace client
     	std::cout << '}' << std::endl;
     };
 
-    bool parse_print_minixml(std::string filename)
+    bool test_minixml(std::string filename)
     {
 
     	std::ifstream in(filename, std::ios_base::in);

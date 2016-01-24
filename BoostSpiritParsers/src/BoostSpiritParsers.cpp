@@ -9,11 +9,15 @@
 
 #include <iostream>
 #include "miniXml.h"
+#include "complexNumb.h"
+#include "sum.h"
 
 using namespace std;
 
 int main() {
 	cout << "Boost Spirit Parsers" << endl; // prints Boost Spirit Parsers
-	client::parse_print_minixml("./src/1.toyxml");
+	//client::test_minixml("./src/1.toyxml");
+	//client::test_complexnumb();
+	client::test_sum();
 	return 0;
 }

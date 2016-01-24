@@ -161,6 +161,6 @@ namespace client
 	};
     //]
 
-	bool parse_print_minixml(std::string filename);
+	bool test_minixml(std::string filename);
 
 }

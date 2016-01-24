@@ -8,7 +8,7 @@
 
 namespace client
 {
-   bool parse_print_calc1(std::string filename)
+   bool test_calc1(std::string filename)
    {
 
      return true;
