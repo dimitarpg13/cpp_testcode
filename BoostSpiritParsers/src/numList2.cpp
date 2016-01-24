@@ -5,6 +5,15 @@
  *      Author: root
  */
 
+#include "numList2.h"
 
+namespace client
+{
+  bool test_numList2()
+  {
+	  return true;
+  }
+
+}
 
 

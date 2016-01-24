@@ -29,5 +29,29 @@ namespace client
 
 
     // our number list compiler
+    template <typename Iterator>
+    bool parse_numbers(Iterator first, Iterator last, std::vector<double>& v)
+    {
+    	using qi::double_;
+    	using qi::phrase_parse;
+    	using qi::_1;
+    	using ascii::space;
+    	using phoenix::push_back;
 
+    	bool r = phrase_parse(first, last,
+    	   // begin grammar
+    		(
+               double_[push_back(phoenix::ref(v), _1)]
+                       >> *(',' >> double_[push_back(phoenix::ref(v),_1)])
+    		)
+    		,
+    		// end grammar
+    	    space);
+
+    	if (first != last)  // fail if we did not get a full match
+    		return false;
+    	return r;
+    }
+
+    bool test_numList2();
 }
