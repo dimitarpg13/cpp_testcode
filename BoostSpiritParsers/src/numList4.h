@@ -36,11 +36,11 @@ namespace client
     	bool r = phrase_parse(first, last,
     	     // begin grammar
     		 (
-    		   double_[push_back(phoenix::ref(v), _1)] % ','
+    		   double_ % ','
     		 )
     		 ,
     		 // end grammar
-    	     space);
+    	     space, v);
 
     	if (first != last)	// fail if we did not get full match
     		return false;
