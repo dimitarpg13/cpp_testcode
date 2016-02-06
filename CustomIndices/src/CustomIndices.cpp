@@ -12,31 +12,68 @@
 #include <sstream>
 #include <utility>
 #include <vector>
+#include <map>
 #include <stack>
 
 const int max_quotes = 10000000;
 const int max_indices = 10000;
 const int max_comp = 10000;
 
-typedef std::pair<std::string,double> qtype;
-
-struct cindex
+struct cindex;
+struct stock
 {
 	std::string name;
-	bool composite() { return !name1.empty() && !name2.empty(); }
+	virtual bool composite() { return false; }
+	double value;
+	std::vector<cindex *> derivatives;
+	virtual ~stock() {};
+};
+
+struct cindex : stock
+{
+	std::string name;
+	bool composite() { return true; }
 	bool plus;
-	std::string name1;
-	std::string name2;
+	std::vector<stock *> components;
 
 };
 
-std::stack<qtype> quotes;
 
-bool process_quote(std::vector<std::string> & quote)
+
+std::map<std::string,stock *> squotes;
+std::map<std::string,cindex *> ciquotes;
+
+
+bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<std::string>::const_iterator qend)
 {
 
+	return true;
+};
+
+bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector<std::string>::const_iterator cend)
+{
+	while (cbegin != cend)
+	{
+
+		cbegin++;
+	}
 
 	return true;
+};
+
+
+bool process_input_line(std::vector<std::string> & quote)
+{
+   if (quote.size() < 2)
+		return false;
+
+
+  if (quote[0] == "Q")
+       process_quote(++quote.begin(),quote.end());
+  else
+	   process_config(++quote.begin(),quote.end());
+
+   return true;
 }
 
 
@@ -64,7 +101,7 @@ int main (int argc, char ** argv) {
             // Step 1: Input.
             //
             // Process the new line on the stdin.
-            process_quote(quote);
+            process_input_line(quote);
 
 
         }
