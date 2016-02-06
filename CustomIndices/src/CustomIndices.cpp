@@ -106,6 +106,8 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     		  cur = st.top();
               cur->components.push_back(s);
 
+              s->derivatives.push_back(cur);
+
               std::vector<std::string>::iterator itdel;
         	  itdel = std::find(cur->undefined.begin(),cur->undefined.end(),s->name);
         	  if (itdel != cur->undefined.end())
