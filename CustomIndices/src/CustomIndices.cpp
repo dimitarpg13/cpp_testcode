@@ -108,7 +108,10 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 		if (!not_avail)
 		{
 			(*itder)->value = cival;
-			std::cout << (*itder)->name << ": " << cival << std::endl;
+			//std::cout << (*itder)->name << ": " << cival << std::endl;
+			std::pair<std::map<std::string,cindex*>::iterator,bool> res = output.insert(std::make_pair((*itder)->name,*itder));
+            if (res.second==false)
+            	res.first->second->value = cival;
 		}
 
 
@@ -300,6 +303,11 @@ bool process_input_line(std::vector<std::string> & quote,  std::map<std::string,
    return true;
 }
 
+void print_output(std::map<std::string,cindex*> & output)
+{
+	for (std::map<std::string,cindex*>::const_iterator it = output.begin(); it != output.end(); it++)
+		std::cout << it->second->name << ": " << it->second->value << std::endl;
+}
 
 int main (int argc, char ** argv) {
     // Initialization
@@ -312,10 +320,12 @@ int main (int argc, char ** argv) {
 
 	ifs.open (argv[1], std::ifstream::in);
 
+	std::map<std::string,cindex*> output;
+
     std::string line;
     std::vector<std::string> quote;
     std::string item;
-    std::map<std::string,cindex*> output;
+
     while(std::getline(ifs, line)) {
         if(! line.empty()) {
             quote.clear();
@@ -334,6 +344,7 @@ int main (int argc, char ** argv) {
     // Step 2: Output
     //
     // Print the Custom Indices value.
+    print_output(output);
 
     return 0;
 }
