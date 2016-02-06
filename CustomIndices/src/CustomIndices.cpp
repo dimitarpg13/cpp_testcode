@@ -181,8 +181,10 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	return true;
 };
 
-bool consistency_test()
+bool consistency_test(std::map<std::string,cindex *> & ciquotes, std::map<std::string,std::stack<cindex *> > & undefined)
 {
+
+
 	return true;
 }
 
@@ -197,7 +199,7 @@ bool process_input_line(std::vector<std::string> & quote)
   {
 	  if (!end_of_config)
 	  {
-		 if (!consistency_test())
+		 if (!consistency_test(ciquotes,undefined))
 			 return false; // error: inconsistent configuration
 		 end_of_config = true;
 	  }
