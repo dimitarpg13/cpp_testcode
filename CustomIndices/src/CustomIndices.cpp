@@ -102,6 +102,12 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
                 	  unres.first->second.push(ci);
                    }
                 }
+                else
+                { // the referenced component is an index
+                  // so add its components to the component vector of the current index
+                	ci->components.assign(cires->second->components.begin(),cires->second->components.end());
+
+                }
 	        }
 	        else
 	        {  // the referenced component is a stock
