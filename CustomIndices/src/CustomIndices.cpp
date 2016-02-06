@@ -101,6 +101,12 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     else
     {
         cindex * ci = new cindex(name);
+        std::pair<std::map<std::string,cindex*>::iterator,bool> res = ciquotes.insert(std::make_pair(name,ci));
+        if (res.second == false)
+        {
+         	delete ci;
+         	return false; // bad input file - no index redefinition is allowed
+        }
 
         if (op == "+")
     	   ci->plus=true;
@@ -148,12 +154,7 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 		   cbegin++;
 	    }
 
-	    std::pair<std::map<std::string,cindex*>::iterator,bool> res = ciquotes.insert(std::make_pair(name,ci));
-	    if (res.second == false)
-	    {
-	       delete ci;
-	       return false; // bad input file - no stock redefinition is allowed
-	    }
+
 
 	    if (referenced) // the current component has already been referenced
 	    {               // and we need to fix the references
@@ -175,6 +176,8 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 
 	        undefined.erase(itref);
 	     }
+
+
 
     }
 
