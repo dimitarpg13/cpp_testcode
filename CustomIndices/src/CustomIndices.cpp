@@ -69,6 +69,7 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 	double val = atof(sval.c_str());
 
 
+
 	return true;
 };
 
@@ -160,12 +161,19 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 
                 	ci->components.assign(cires->second->components.begin(),cires->second->components.end());
 
+                	// update each of the components of the referenced index to
+                	// point to the current composite index through its derivatives array
+                	for (std::vector<stock *>::iterator it = cires->second->components.begin(); it != cires->second->components.end(); it++)
+                	{
+                        (*it)->derivatives.push_back(ci);
+                	}
                 }
 	        }
 	        else
 	        {  // the referenced component is a stock
 	           // so add it to the component vector of the current index
 	        	ci->components.push_back(sres->second);
+	        	sres->second->derivatives.push_back(ci);
 	        }
 
 
