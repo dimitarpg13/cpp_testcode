@@ -17,14 +17,16 @@
 #include <stack>
 #include <algorithm>
 
-const int max_quotes = 10000000;
-const int max_indices = 10000;
-const int max_comp = 10000;
+const int MAX_QUOTES = 10000000;
+const int MAX_INDICES = 10000;
+const int MAX_COMP = 10000;
+
+const int NOT_AVAIL = -1.0;
 
 struct cindex;
 struct stock
 {
-	stock (std::string name_) : name(name_), value(-1.0) {};
+	stock (std::string name_) : name(name_), value(NOT_AVAIL) {};
 
 	std::string name;
 	virtual bool composite() { return false; }
@@ -58,15 +60,60 @@ bool is_float( std::string str) {
     return iss.eof() && !iss.fail();
 }
 
-bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<std::string>::const_iterator qend)
+bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<std::string>::const_iterator qend, std::map<std::string,cindex*> & output)
 {
 
 	std::string name = *qbegin;
+	std::map<std::string,stock*>::iterator sres = squotes.find(name);
+	if (sres == squotes.end())
+		return false;  // bad quote
+
 	std::string sval = *++qbegin;
 	if (!is_float(sval))
 		return false;
 
 	double val = atof(sval.c_str());
+
+	sres->second->value = val;
+
+	std::vector<cindex*> & deriv = sres->second->derivatives;
+
+
+	for (std::vector<cindex*>::iterator itder = deriv.begin(); itder != deriv.end(); itder++)
+	{
+		bool plus = (*itder)->plus;
+		bool not_avail = false;
+		double cival = 0.0;
+		bool first=true;
+		for (std::vector<stock*>::iterator itcomp = (*itder)->components.begin(); itcomp != (*itder)->components.end(); itcomp++)
+		{
+			if ((*itcomp)->value == NOT_AVAIL)
+			{
+				not_avail = true;
+				break;
+			}
+
+			if (plus)
+				cival += (*itcomp)->value;
+			else
+			{
+				if (first)
+					cival += (*itcomp)->value;
+				else
+					cival -= (*itcomp)->value;
+			}
+			if (first)  first=false;
+		}
+
+		if (!not_avail)
+		{
+			(*itder)->value = cival;
+			std::cout << (*itder)->name << ": " << cival << std::endl;
+		}
+
+
+	}
+
 
 
 
@@ -225,7 +272,7 @@ bool consistency_test(std::map<std::string,cindex *> & ciquotes, std::map<std::s
 	return true;
 };
 
-bool process_input_line(std::vector<std::string> & quote)
+bool process_input_line(std::vector<std::string> & quote,  std::map<std::string,cindex*> & output)
 {
    if (quote.size() < 2)
 		return false;
@@ -241,7 +288,7 @@ bool process_input_line(std::vector<std::string> & quote)
 		 end_of_config = true;
 	  }
 
-	  if (!process_quote(++quote.begin(),quote.end()))
+	  if (!process_quote(++quote.begin(),quote.end(),output))
 		  return false;
   }
   else
@@ -268,6 +315,7 @@ int main (int argc, char ** argv) {
     std::string line;
     std::vector<std::string> quote;
     std::string item;
+    std::map<std::string,cindex*> output;
     while(std::getline(ifs, line)) {
         if(! line.empty()) {
             quote.clear();
@@ -278,7 +326,7 @@ int main (int argc, char ** argv) {
             // Step 1: Input.
             //
             // Process the new line on the stdin.
-            process_input_line(quote);
+            process_input_line(quote,output);
 
 
         }
