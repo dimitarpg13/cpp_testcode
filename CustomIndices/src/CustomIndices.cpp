@@ -182,7 +182,7 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 
 
 
-	    if (referenced) // the current component has already been referenced
+	    if (referenced) // the current composite index ci has already been referenced
 	    {               // and we need to fix the references
 	        std::stack<cindex*> & st = itref->second;
 	        cindex * cur = NULL;
@@ -191,6 +191,8 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	        {
 	           cur = st.top();
 	           cur->components.insert(cur->components.end(),ci->components.begin(), ci->components.end());
+
+	           ci->derivatives.push_back(cur);
 
 	           std::vector<std::string>::iterator itdel;
 	           itdel = std::find(cur->undefined.begin(),cur->undefined.end(),ci->name);
