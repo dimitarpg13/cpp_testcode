@@ -184,9 +184,15 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 bool consistency_test(std::map<std::string,cindex *> & ciquotes, std::map<std::string,std::stack<cindex *> > & undefined)
 {
 
+	if (undefined.size() > 0)
+		return false;
+
+	for (std::map<std::string,cindex *>::const_iterator it = ciquotes.begin(); it != ciquotes.end(); it++)
+		if (it->second->undefined.size() > 0)
+			return false;
 
 	return true;
-}
+};
 
 bool process_input_line(std::vector<std::string> & quote)
 {
