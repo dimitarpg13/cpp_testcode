@@ -38,10 +38,10 @@ struct stock
 struct cindex : stock
 {
 	cindex(std::string name_) : stock(name_), plus(false) {};
-
+    bool plus;
 	bool composite() { return true; }
-	bool plus;
-	std::vector<stock *> components; // either stock or another comp index
+	std::vector<stock *> components_add; // either stock or another comp index
+	std::vector<stock *> components_subtract; // either stock or another comp index
     std::vector<std::string> undefined; // container for all undefined components
 };
 
@@ -81,37 +81,40 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 
 	for (std::vector<cindex*>::iterator itder = deriv.begin(); itder != deriv.end(); itder++)
 	{
-		bool plus = (*itder)->plus;
 		bool not_avail = false;
 		double cival = 0.0;
-		bool first=true;
-		for (std::vector<stock*>::iterator itcomp = (*itder)->components.begin(); itcomp != (*itder)->components.end(); itcomp++)
+
+		for (std::vector<stock*>::iterator itcompa = (*itder)->components_add.begin(); itcompa != (*itder)->components_add.end(); itcompa++)
 		{
-			if ((*itcomp)->value == NOT_AVAIL)
+			if ((*itcompa)->value == NOT_AVAIL)
 			{
 				not_avail = true;
 				break;
 			}
 
-			if (plus)
-				cival += (*itcomp)->value;
-			else
-			{
-				if (first)
-					cival += (*itcomp)->value;
-				else
-					cival -= (*itcomp)->value;
-			}
-			if (first)  first=false;
+		    cival += (*itcompa)->value;
 		}
 
 		if (!not_avail)
 		{
-			(*itder)->value = cival;
-			//std::cout << (*itder)->name << ": " << cival << std::endl;
-			std::pair<std::map<std::string,cindex*>::iterator,bool> res = output.insert(std::make_pair((*itder)->name,*itder));
-            if (res.second==false)
-            	res.first->second->value = cival;
+			for (std::vector<stock*>::iterator itcomps = (*itder)->components_subtract.begin(); itcomps != (*itder)->components_subtract.end(); itcomps++)
+			{
+				if ((*itcomps)->value == NOT_AVAIL)
+				{
+				   not_avail = true;
+				   break;
+				}
+			    cival -= (*itcomps)->value;
+			}
+
+			if (!not_avail)
+			{
+			   (*itder)->value = cival;
+			   std::cout << (*itder)->name << ": " << cival << std::endl;
+			   std::pair<std::map<std::string,cindex*>::iterator,bool> res = output.insert(std::make_pair((*itder)->name,*itder));
+               if (res.second==false)
+            	  res.first->second->value = cival;
+			}
 		}
 
 
@@ -154,7 +157,15 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     	   while (!st.empty())
     	   {
     		  cur = st.top();
-              cur->components.push_back(s);
+    		  if (cur->plus)
+                 cur->components_add.push_back(s);
+    		  else
+    		  {
+    			  if (cur->components_add.size() == 0)
+    				  cur->components_add.push_back(s);
+    			  else
+    				  cur->components_subtract.push_back(s);
+    		  }
 
               s->derivatives.push_back(cur);
 
@@ -211,20 +222,33 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
                 { // the referenced component is an index
                   // so add its components to the component vector of the current index
 
-                	ci->components.assign(cires->second->components.begin(),cires->second->components.end());
+
+                	ci->components_add.assign(cires->second->components_add.begin(),cires->second->components_add.end());
+                	ci->components_subtract.assign(cires->second->components_subtract.begin(),cires->second->components_subtract.end());
 
                 	// update each of the components of the referenced index to
                 	// point to the current composite index through its derivatives array
-                	for (std::vector<stock *>::iterator it = cires->second->components.begin(); it != cires->second->components.end(); it++)
+                	for (std::vector<stock *>::iterator it = cires->second->components_add.begin(); it != cires->second->components_add.end(); it++)
                 	{
                         (*it)->derivatives.push_back(ci);
+                	}
+
+                	for (std::vector<stock *>::iterator it = cires->second->components_subtract.begin(); it != cires->second->components_subtract.end(); it++)
+                	{
+                	   (*it)->derivatives.push_back(ci);
                 	}
                 }
 	        }
 	        else
 	        {  // the referenced component is a stock
 	           // so add it to the component vector of the current index
-	        	ci->components.push_back(sres->second);
+	        	if(ci->plus)
+	        	   ci->components_add.push_back(sres->second);
+	        	else
+	        	{
+	        		if (ci->components_add.size() > 0)
+	        			ci->components_subtract.push_back(sres->second);
+	        	}
 	        	sres->second->derivatives.push_back(ci);
 	        }
 
@@ -242,7 +266,14 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	        while (!st.empty())
 	        {
 	           cur = st.top();
-	           cur->components.insert(cur->components.end(),ci->components.begin(), ci->components.end());
+	           if (ci->plus)
+	               cur->components_add.insert(cur->components_add.end(),ci->components_add.begin(), ci->components_add.end());
+	           else
+	           {
+	        	   cur->components_add.insert(cur->components_add.end(),ci->components_add.begin(), ci->components_add.end());
+	        	   cur->components_subtract.insert(cur->components_subtract.end(),ci->components_subtract.begin(), ci->components_subtract.end());
+	           }
+
 
 	           ci->derivatives.push_back(cur);
 
@@ -305,8 +336,10 @@ bool process_input_line(std::vector<std::string> & quote,  std::map<std::string,
 
 void print_output(std::map<std::string,cindex*> & output)
 {
+	std::cout.precision(2);
+	//std::cout << std::fixed;
 	for (std::map<std::string,cindex*>::const_iterator it = output.begin(); it != output.end(); it++)
-		std::cout << it->second->name << ": " << it->second->value << std::endl;
+		std::cout <<  std::fixed << it->second->name << ": " << it->second->value << std::endl;
 }
 
 int main (int argc, char ** argv) {
