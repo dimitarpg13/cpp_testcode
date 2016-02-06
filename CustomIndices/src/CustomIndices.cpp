@@ -22,19 +22,22 @@ const int max_comp = 10000;
 struct cindex;
 struct stock
 {
+	stock (std::string name_) : name(name_), value(-1.0) {};
+
 	std::string name;
 	virtual bool composite() { return false; }
 	double value;
-	std::vector<cindex *> derivatives;
+	std::vector<cindex *> derivatives; // any index which includes this component
 	virtual ~stock() {};
 };
 
 struct cindex : stock
 {
-	std::string name;
+	cindex(std::string name_) : stock(name_), plus(false) {};
+
 	bool composite() { return true; }
 	bool plus;
-	std::vector<stock *> components;
+	std::vector<stock *> components; // either stock or another comp index
 
 };
 
@@ -42,7 +45,7 @@ struct cindex : stock
 
 std::map<std::string,stock *> squotes;
 std::map<std::string,cindex *> ciquotes;
-
+std::map<std::string,std::stack<cindex *> > undefined;
 
 bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<std::string>::const_iterator qend)
 {
@@ -50,13 +53,67 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 	return true;
 };
 
+
+
+
 bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector<std::string>::const_iterator cend)
 {
-	while (cbegin != cend)
-	{
+	std::string name = *cbegin++;
+    std::string op = *cbegin++;
 
-		cbegin++;
-	}
+    if (op == "S")
+    {
+       stock * s = new stock(name);
+       std::pair<std::map<std::string,stock*>::iterator,bool> res = squotes.insert(std::make_pair(name,s));
+       if (res.second == false)
+       {
+    	   delete s;
+    	   return false; // bad input file - no stock redefinition is allowed
+       }
+    }
+    else
+    {
+        cindex * ci = new cindex(name);
+
+        if (op == "+")
+    	   ci->plus=true;
+
+
+        std::map<std::string,stock*>::iterator sres;
+        std::map<std::string,cindex*>::iterator cires;
+        std::pair<std::map<std::string,std::stack<cindex*> >::iterator, bool> unres;
+	    while (cbegin != cend)
+	    {
+	    	sres = squotes.find(*cbegin);
+	        if (sres == squotes.end())
+	        {
+	        	cires = ciquotes.find(*cbegin);
+                if (cires == ciquotes.end())
+                { // the referenced component
+                  // is not defined yet which
+                  // creates a small problem
+                   std::stack<cindex*> st;
+                   st.push(ci);
+                   unres = undefined.insert(std::make_pair(*cbegin,st));
+                   if (!unres.second)
+                   {  // there are more composites which contain the same
+                	  // undefined component so push the current composite on
+                	  // the undefined component's stack
+                	  unres.first->second.push(ci);
+                   }
+                }
+	        }
+	        else
+	        {  // the referenced component is a stock
+	           // so add it to the component vector of the current index
+	        	ci->components.push_back(sres->second);
+	        }
+
+           //if (*cbegin)
+
+		   cbegin++;
+	    }
+    }
 
 	return true;
 };
