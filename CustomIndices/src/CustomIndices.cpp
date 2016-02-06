@@ -8,6 +8,7 @@
 
 #include <fstream>
 
+#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 #include <utility>
@@ -48,8 +49,25 @@ std::map<std::string,stock *> squotes;
 std::map<std::string,cindex *> ciquotes;
 std::map<std::string,std::stack<cindex *> > undefined;
 
+
+bool is_float( std::string str) {
+    std::istringstream iss(str);
+    float f;
+    iss >> std::noskipws >> f; // leading whitespace invalid
+    // checks the entire string was consumed and if either failbit or badbit is set
+    return iss.eof() && !iss.fail();
+}
+
 bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<std::string>::const_iterator qend)
 {
+
+	std::string name = *qbegin;
+	std::string sval = *++qbegin;
+	if (!is_float(sval))
+		return false;
+
+	double val = atof(sval.c_str());
+
 
 	return true;
 };
@@ -177,8 +195,6 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	        undefined.erase(itref);
 	     }
 
-
-
     }
 
 	return true;
@@ -213,10 +229,14 @@ bool process_input_line(std::vector<std::string> & quote)
 		 end_of_config = true;
 	  }
 
-	  process_quote(++quote.begin(),quote.end());
+	  if (!process_quote(++quote.begin(),quote.end()))
+		  return false;
   }
   else
-	   process_config(++quote.begin(),quote.end());
+  {
+	  if (!process_config(++quote.begin(),quote.end()))
+		  return false;
+  }
 
    return true;
 }
