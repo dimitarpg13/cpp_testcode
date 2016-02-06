@@ -61,6 +61,12 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	std::string name = *cbegin++;
     std::string op = *cbegin++;
 
+    // check if the new component has already been referenced
+    bool referenced = false;
+    std::map<std::string,std::stack<cindex*> >::iterator itref = undefined.find(name);
+    if (itref != undefined.end())
+    	referenced = true;
+
     if (op == "S")
     {
        stock * s = new stock(name);
@@ -69,6 +75,20 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
        {
     	   delete s;
     	   return false; // bad input file - no stock redefinition is allowed
+       }
+
+       if (referenced)
+       {
+    	   std::stack<cindex*> & st = itref->second;
+    	   cindex * cur = NULL;
+    	   while (!st.empty())
+    	   {
+    		  cur = st.top();
+              cur->components.push_back(s);
+              st.pop();
+    	   }
+
+    	   undefined.erase(itref);
        }
     }
     else
@@ -115,10 +135,31 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	        	ci->components.push_back(sres->second);
 	        }
 
-           //if (*cbegin)
 
 		   cbegin++;
 	    }
+
+	    std::pair<std::map<std::string,cindex*>::iterator,bool> res = ciquotes.insert(std::make_pair(name,ci));
+	    if (res.second == false)
+	    {
+	       delete ci;
+	       return false; // bad input file - no stock redefinition is allowed
+	    }
+
+	    if (referenced)
+	    {
+	        std::stack<cindex*> & st = itref->second;
+	        cindex * cur = NULL;
+	        while (!st.empty())
+	        {
+	           cur = st.top();
+	           cur->components.insert(cur->components.end(),ci->components.begin(), ci->components.end());
+	           st.pop();
+	        }
+
+	        undefined.erase(itref);
+	     }
+
     }
 
 	return true;
