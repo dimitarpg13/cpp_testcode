@@ -14,6 +14,7 @@
 #include <vector>
 #include <map>
 #include <stack>
+#include <algorithm>
 
 const int max_quotes = 10000000;
 const int max_indices = 10000;
@@ -38,7 +39,7 @@ struct cindex : stock
 	bool composite() { return true; }
 	bool plus;
 	std::vector<stock *> components; // either stock or another comp index
-
+    std::vector<std::string> undefined; // container for all undefined components
 };
 
 
@@ -77,14 +78,20 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     	   return false; // bad input file - no stock redefinition is allowed
        }
 
-       if (referenced)
-       {
+       if (referenced) // the current component has already been referenced
+       {               // and we need to fix the references
     	   std::stack<cindex*> & st = itref->second;
     	   cindex * cur = NULL;
     	   while (!st.empty())
     	   {
     		  cur = st.top();
               cur->components.push_back(s);
+
+              std::vector<std::string>::iterator itdel;
+        	  itdel = std::find(cur->undefined.begin(),cur->undefined.end(),s->name);
+        	  if (itdel != cur->undefined.end())
+        	      cur->undefined.erase(itdel);
+
               st.pop();
     	   }
 
@@ -121,10 +128,12 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
                 	  // the undefined component's stack
                 	  unres.first->second.push(ci);
                    }
+                   ci->undefined.push_back(*cbegin);
                 }
                 else
                 { // the referenced component is an index
                   // so add its components to the component vector of the current index
+
                 	ci->components.assign(cires->second->components.begin(),cires->second->components.end());
 
                 }
@@ -146,14 +155,21 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	       return false; // bad input file - no stock redefinition is allowed
 	    }
 
-	    if (referenced)
-	    {
+	    if (referenced) // the current component has already been referenced
+	    {               // and we need to fix the references
 	        std::stack<cindex*> & st = itref->second;
 	        cindex * cur = NULL;
+
 	        while (!st.empty())
 	        {
 	           cur = st.top();
 	           cur->components.insert(cur->components.end(),ci->components.begin(), ci->components.end());
+
+	           std::vector<std::string>::iterator itdel;
+	           itdel = std::find(cur->undefined.begin(),cur->undefined.end(),ci->name);
+	           if (itdel != cur->undefined.end())
+	        	   cur->undefined.erase(itdel);
+
 	           st.pop();
 	        }
 
@@ -165,15 +181,29 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	return true;
 };
 
+bool consistency_test()
+{
+	return true;
+}
 
 bool process_input_line(std::vector<std::string> & quote)
 {
    if (quote.size() < 2)
 		return false;
 
+   bool end_of_config=false;
 
   if (quote[0] == "Q")
-       process_quote(++quote.begin(),quote.end());
+  {
+	  if (!end_of_config)
+	  {
+		 if (!consistency_test())
+			 return false; // error: inconsistent configuration
+		 end_of_config = true;
+	  }
+
+	  process_quote(++quote.begin(),quote.end());
+  }
   else
 	   process_config(++quote.begin(),quote.end());
 
