@@ -110,7 +110,7 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 			if (!not_avail)
 			{
 			   (*itder)->value = cival;
-			   std::cout << (*itder)->name << ": " << cival << std::endl;
+			   //std::cout << (*itder)->name << ": " << cival << std::endl;
 			   std::pair<std::map<std::string,cindex*>::iterator,bool> res = output.insert(std::make_pair((*itder)->name,*itder));
                if (res.second==false)
             	  res.first->second->value = cival;
@@ -223,8 +223,25 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
                   // so add its components to the component vector of the current index
 
 
-                	ci->components_add.assign(cires->second->components_add.begin(),cires->second->components_add.end());
-                	ci->components_subtract.assign(cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                	if (ci->plus)
+                	{
+
+                	   ci->components_add.insert(ci->components_add.end(),cires->second->components_add.begin(),cires->second->components_add.end());
+                	   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                	}
+                	else
+                	{
+                		if (ci->components_add.size() == 0)
+                		{
+                		   ci->components_add.insert(ci->components_add.end(),cires->second->components_add.begin(),cires->second->components_add.end());
+                		   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                		}
+                		else
+                		{
+                		   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_add.begin(),cires->second->components_add.end());
+                		   ci->components_add.insert(ci->components_add.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                		}
+                	}
 
                 	// update each of the components of the referenced index to
                 	// point to the current composite index through its derivatives array
@@ -246,7 +263,9 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	        	   ci->components_add.push_back(sres->second);
 	        	else
 	        	{
-	        		if (ci->components_add.size() > 0)
+	        		if (ci->components_add.size() == 0)
+	        			ci->components_add.push_back(sres->second);
+	        		else
 	        			ci->components_subtract.push_back(sres->second);
 	        	}
 	        	sres->second->derivatives.push_back(ci);
