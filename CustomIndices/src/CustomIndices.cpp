@@ -14,6 +14,7 @@
 #include <utility>
 #include <vector>
 #include <map>
+#include <set>
 #include <stack>
 #include <algorithm>
 
@@ -31,7 +32,7 @@ struct stock
 	std::string name;
 	virtual bool composite() { return false; }
 	double value;
-	std::vector<cindex *> derivatives; // any index which includes this component
+	std::set<cindex *> derivatives; // any index which includes this component
 	virtual ~stock() {};
 };
 
@@ -40,9 +41,9 @@ struct cindex : stock
 	cindex(std::string name_) : stock(name_), plus(false) {};
     bool plus;
 	bool composite() { return true; }
-	std::vector<stock *> components_add; // either stock or another comp index
-	std::vector<stock *> components_subtract; // either stock or another comp index
-    std::vector<std::string> undefined; // container for all undefined components
+	std::map<stock *,int> components_add; // either stock or another comp index
+	std::map<stock *,int> components_subtract; // either stock or another comp index
+    std::set<std::string> undefined; // container for all undefined components
 };
 
 
@@ -76,35 +77,43 @@ bool process_quote(std::vector<std::string>::const_iterator qbegin, std::vector<
 
 	sres->second->value = val;
 
-	std::vector<cindex*> & deriv = sres->second->derivatives;
+	std::set<cindex*> & deriv = sres->second->derivatives;
 
 
-	for (std::vector<cindex*>::iterator itder = deriv.begin(); itder != deriv.end(); itder++)
+	std::cout << "derivative count : " << deriv.size() << std::endl;
+
+
+
+	for (std::set<cindex*>::iterator itder = deriv.begin(); itder != deriv.end(); itder++)
 	{
 		bool not_avail = false;
 		double cival = 0.0;
 
-		for (std::vector<stock*>::iterator itcompa = (*itder)->components_add.begin(); itcompa != (*itder)->components_add.end(); itcompa++)
+		//std::cout << "derivative name: " << (*itder)->name << std::endl;
+        //std::cout << "component_add count: " << (*itder)->components_add.size() << std::endl;
+        //std::cout << "component_subtract count: " << (*itder)->components_subtract.size() << std::endl;
+
+		for (std::map<stock*,int>::iterator itcompa = (*itder)->components_add.begin(); itcompa != (*itder)->components_add.end(); itcompa++)
 		{
-			if ((*itcompa)->value == NOT_AVAIL)
+			if (itcompa->first->value == NOT_AVAIL)
 			{
 				not_avail = true;
 				break;
 			}
 
-		    cival += (*itcompa)->value;
+		    cival += itcompa->first->value * itcompa->second;
 		}
 
 		if (!not_avail)
 		{
-			for (std::vector<stock*>::iterator itcomps = (*itder)->components_subtract.begin(); itcomps != (*itder)->components_subtract.end(); itcomps++)
+			for (std::map<stock*,int>::iterator itcomps = (*itder)->components_subtract.begin(); itcomps != (*itder)->components_subtract.end(); itcomps++)
 			{
-				if ((*itcomps)->value == NOT_AVAIL)
+				if (itcomps->first->value == NOT_AVAIL)
 				{
 				   not_avail = true;
 				   break;
 				}
-			    cival -= (*itcomps)->value;
+			    cival -= itcomps->first->value * itcomps->second;
 			}
 
 			if (!not_avail)
@@ -149,7 +158,7 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     	   delete s;
     	   return false; // bad input file - no stock redefinition is allowed
        }
-
+       std::pair<std::map<stock *,int>::iterator,bool> resas;
        if (referenced) // the current component has already been referenced
        {               // and we need to fix the references
     	   std::stack<cindex*> & st = itref->second;
@@ -158,21 +167,32 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
     	   {
     		  cur = st.top();
     		  if (cur->plus)
-                 cur->components_add.push_back(s);
+    		  {
+                 resas = cur->components_add.insert(std::make_pair(s,1));
+                 if (!resas.second)
+                	 resas.first->second++;
+    		  }
     		  else
     		  {
     			  if (cur->components_add.size() == 0)
-    				  cur->components_add.push_back(s);
+    			  {
+    				  resas = cur->components_add.insert(std::make_pair(s,1));
+    				  if (!resas.second)
+    				     resas.first->second++;
+    			  }
     			  else
-    				  cur->components_subtract.push_back(s);
+    			  {
+    				  resas = cur->components_subtract.insert(std::make_pair(s,1));
+    				  if (!resas.second)
+    				       resas.first->second++;
+    			  }
     		  }
 
-              s->derivatives.push_back(cur);
+              s->derivatives.insert(cur);
 
-              std::vector<std::string>::iterator itdel;
-        	  itdel = std::find(cur->undefined.begin(),cur->undefined.end(),s->name);
-        	  if (itdel != cur->undefined.end())
-        	      cur->undefined.erase(itdel);
+
+
+        	  cur->undefined.erase(s->name);
 
               st.pop();
     	   }
@@ -216,59 +236,101 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
                 	  // the undefined component's stack
                 	  unres.first->second.push(ci);
                    }
-                   ci->undefined.push_back(*cbegin);
+                   ci->undefined.insert(*cbegin);
                 }
                 else
                 { // the referenced component is an index
                   // so add its components to the component vector of the current index
 
 
+                	std::pair<std::map<stock *,int>::iterator,bool> resas;
                 	if (ci->plus)
                 	{
-
-                	   ci->components_add.insert(ci->components_add.end(),cires->second->components_add.begin(),cires->second->components_add.end());
-                	   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                		for (std::map<stock*,int>::iterator ita = cires->second->components_add.begin(); ita != cires->second->components_add.end(); ita++)
+                		{
+                	       resas = ci->components_add.insert(*ita);
+                	       if (!resas.second)
+                	        resas.first->second++;
+                		}
+                		for (std::map<stock*,int>::iterator its = cires->second->components_subtract.begin(); its != cires->second->components_subtract.end(); its++)
+                		{
+                	        resas = ci->components_subtract.insert(*its);
+                	        if (!resas.second)
+                	          resas.first->second++;
+                		}
                 	}
                 	else
                 	{
                 		if (ci->components_add.size() == 0)
                 		{
-                		   ci->components_add.insert(ci->components_add.end(),cires->second->components_add.begin(),cires->second->components_add.end());
-                		   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+                			for (std::map<stock*,int>::iterator ita = cires->second->components_add.begin(); ita != cires->second->components_add.end(); ita++)
+                			{
+                		        resas = ci->components_add.insert(*ita);
+                		        if (!resas.second)
+                		          resas.first->second++;
+                			}
+
+                			for (std::map<stock*,int>::iterator its= cires->second->components_subtract.begin(); its != cires->second->components_subtract.end(); its++)
+                			{
+                		       resas = ci->components_subtract.insert(*its);
+                		       if (!resas.second)
+                		         resas.first->second++;
+                			}
                 		}
                 		else
                 		{
-                		   ci->components_subtract.insert(ci->components_subtract.end(),cires->second->components_add.begin(),cires->second->components_add.end());
-                		   ci->components_add.insert(ci->components_add.end(),cires->second->components_subtract.begin(),cires->second->components_subtract.end());
+
+                			for (std::map<stock*,int>::iterator ita = cires->second->components_add.begin(); ita != cires->second->components_add.end(); ita++)
+                			{
+                		        resas = ci->components_subtract.insert(*ita);
+                		        if (!resas.second)
+                		           resas.first->second++;
+                			}
+
+                			for (std::map<stock*,int>::iterator its= cires->second->components_subtract.begin(); its != cires->second->components_subtract.end(); its++)
+                			{
+                		       resas = ci->components_add.insert(*its);
+                		       if (!resas.second)
+                		           resas.first->second++;
+                			}
                 		}
                 	}
 
                 	// update each of the components of the referenced index to
                 	// point to the current composite index through its derivatives array
-                	for (std::vector<stock *>::iterator it = cires->second->components_add.begin(); it != cires->second->components_add.end(); it++)
+                	for (std::map<stock *,int>::iterator it = cires->second->components_add.begin(); it != cires->second->components_add.end(); it++)
                 	{
-                        (*it)->derivatives.push_back(ci);
+                        it->first->derivatives.insert(ci);
                 	}
 
-                	for (std::vector<stock *>::iterator it = cires->second->components_subtract.begin(); it != cires->second->components_subtract.end(); it++)
+                	for (std::map<stock *,int>::iterator it = cires->second->components_subtract.begin(); it != cires->second->components_subtract.end(); it++)
                 	{
-                	   (*it)->derivatives.push_back(ci);
+                	   it->first->derivatives.insert(ci);
                 	}
                 }
 	        }
 	        else
 	        {  // the referenced component is a stock
 	           // so add it to the component vector of the current index
+	        	std::pair<std::map<stock *,int>::iterator,bool> resas;
 	        	if(ci->plus)
-	        	   ci->components_add.push_back(sres->second);
+	        	{
+	        	   resas = ci->components_add.insert(std::make_pair(sres->second,1));
+	        	   if (!resas.second)
+	        	      resas.first->second++;
+	        	}
 	        	else
 	        	{
 	        		if (ci->components_add.size() == 0)
-	        			ci->components_add.push_back(sres->second);
+	        			ci->components_add.insert(std::make_pair(sres->second,1));
 	        		else
-	        			ci->components_subtract.push_back(sres->second);
+	        		{
+	        			resas = ci->components_subtract.insert(std::make_pair(sres->second,1));
+	        			if (!resas.second)
+	        			  resas.first->second++;
+	        		}
 	        	}
-	        	sres->second->derivatives.push_back(ci);
+	        	sres->second->derivatives.insert(ci);
 	        }
 
 
@@ -281,25 +343,39 @@ bool process_config(std::vector<std::string>::const_iterator cbegin, std::vector
 	    {               // and we need to fix the references
 	        std::stack<cindex*> & st = itref->second;
 	        cindex * cur = NULL;
-
+	        std::pair<std::map<stock *,int>::iterator,bool> resas;
 	        while (!st.empty())
 	        {
 	           cur = st.top();
 	           if (ci->plus)
-	               cur->components_add.insert(cur->components_add.end(),ci->components_add.begin(), ci->components_add.end());
+	           {
+	        	   for (std::map<stock*,int>::iterator ita = ci->components_add.begin(); ita != ci->components_add.end(); ita++)
+	        	   {
+	        	       resas = cur->components_add.insert(*ita);
+	        	       if (!resas.second)
+	        	         resas.first->second++;
+	        	   }
+
+	           }
 	           else
 	           {
-	        	   cur->components_add.insert(cur->components_add.end(),ci->components_add.begin(), ci->components_add.end());
-	        	   cur->components_subtract.insert(cur->components_subtract.end(),ci->components_subtract.begin(), ci->components_subtract.end());
+	        	  /* for (std::map<stock*,int>::iterator ita = ci->components_add.begin(); ita != ci->components_add.end(); ita++)
+	        	   {
+	        	  	   resas = cur->components_add.insert(ita);
+	        	  	   if (!resas.second)
+	        	  	      resas.first->second++;
+	        	  }
+	        	   resas = cur->components_subtract.insert(ci->components_subtract.begin(), ci->components_subtract.end());
+	        	   if (!resas.second)
+	        	   	   resas.first->second++;*/
 	           }
 
 
-	           ci->derivatives.push_back(cur);
+	           ci->derivatives.insert(cur);
 
-	           std::vector<std::string>::iterator itdel;
-	           itdel = std::find(cur->undefined.begin(),cur->undefined.end(),ci->name);
-	           if (itdel != cur->undefined.end())
-	        	   cur->undefined.erase(itdel);
+
+
+	           cur->undefined.erase(ci->name);
 
 	           st.pop();
 	        }
